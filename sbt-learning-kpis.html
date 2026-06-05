@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 6: Strategy Map and KPIs — Small Business Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--plum-dk:#5A2F59;--plum-lt:#EDE8EE;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--warm:#EDE8EE;--white:#fff;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
+.topbar{background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;}
+.topbar-logo{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;}
+.topbar-logo span{color:var(--mauve);}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.strategy-btn{background:rgba(166,130,164,0.2);border:1px solid var(--mauve);color:var(--mauve);font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;}
+.prog-wrap{display:flex;align-items:center;gap:8px;}
+.prog-label{font-size:0.7rem;color:rgba(255,255,255,0.4);}
+.prog-bar{width:80px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--mauve);transition:width 0.4s;}
+.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:24px 28px;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-step{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.hero p{font-size:0.83rem;color:rgba(255,255,255,0.55);}
+.cols{display:grid;grid-template-columns:1fr 320px;max-width:1100px;margin:0 auto;min-height:calc(100vh - 130px);}
+@media(max-width:850px){.cols{grid-template-columns:1fr;}}
+.col-content{padding:22px 24px 100px;border-right:1px solid rgba(0,0,0,0.07);}
+.col-notes{padding:18px 18px 100px;background:rgba(121,69,119,0.03);}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.06);}
+.card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:7px;}
+.card p{font-size:0.83rem;color:var(--mid);line-height:1.65;}
+.card.c-mauve{border-left-color:var(--mauve);}
+.card.c-dark{border-left-color:var(--black);}
+.card.c-red{border-left-color:#9b3535;}
+.insight{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:12px;color:#fff;}
+.insight-tag{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.insight h4{font-size:0.9rem;font-weight:700;margin-bottom:5px;}
+.insight p{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.6;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.sc{padding:18px 14px;}
+.sc.s{background:linear-gradient(135deg,#1a4731,#2d6b4a);}
+.sc.w{background:linear-gradient(135deg,#4a1a1a,#7a2e2e);}
+.sc.o{background:linear-gradient(135deg,var(--dk),var(--plum));}
+.sc.t{background:linear-gradient(135deg,#1a2a4a,#2e4a7a);}
+.sc .sl{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:5px;}
+.sc h4{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.sc p{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.45;}
+.steps{list-style:none;margin-bottom:12px;}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.step:last-child{border:none;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--plum);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step h4{font-size:0.86rem;font-weight:700;margin-bottom:3px;}
+.step p{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.eg-box{background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;}
+.eg-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:7px;}
+.eg-box h4{font-size:0.87rem;font-weight:700;margin-bottom:5px;}
+.eg-box p{font-size:0.82rem;color:var(--mid);line-height:1.55;}
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+@media(max-width:600px){.eg-grid{grid-template-columns:1fr;}}
+.eg-item{background:#fff;border-radius:9px;padding:11px;}
+.eg-type{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.eg-s .eg-type{color:#2d6b4a;} .eg-w .eg-type{color:#7a2e2e;} .eg-o .eg-type{color:var(--plum);} .eg-t .eg-type{color:#2e4a7a;}
+.eg-item ul{list-style:none;}
+.eg-item ul li{font-size:0.76rem;color:var(--mid);padding:2px 0;display:flex;gap:5px;line-height:1.35;}
+.eg-s ul li::before{content:'•';color:#2d6b4a;font-weight:700;flex-shrink:0;}
+.eg-w ul li::before{content:'•';color:#7a2e2e;font-weight:700;flex-shrink:0;}
+.eg-o ul li::before{content:'•';color:var(--plum);font-weight:700;flex-shrink:0;}
+.eg-t ul li::before{content:'•';color:#2e4a7a;font-weight:700;flex-shrink:0;}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+@media(max-width:500px){.tpl-grid{grid-template-columns:1fr;}}
+.tpl-cell{border-radius:10px;padding:12px;}
+.tpl-s{background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);}
+.tpl-w{background:rgba(122,46,46,0.05);border:1.5px solid rgba(122,46,46,0.2);}
+.tpl-o{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.2);}
+.tpl-t{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.2);}
+.tpl-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.tpl-letter{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;}
+.tpl-s .tpl-letter{color:#2d6b4a;} .tpl-w .tpl-letter{color:#7a2e2e;} .tpl-o .tpl-letter{color:var(--plum);} .tpl-t .tpl-letter{color:#2e4a7a;}
+.tpl-hdr span{font-size:0.73rem;font-weight:600;color:var(--mid);}
+.tpl-cell textarea{width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--black);resize:vertical;min-height:85px;outline:none;line-height:1.45;}
+.qz-q{background:#fff;border-radius:11px;padding:14px;margin-bottom:9px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.qz-q p{font-size:0.85rem;font-weight:600;margin-bottom:9px;}
+.qz-opts{display:flex;flex-direction:column;gap:6px;}
+.qz-opt{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:8px 12px;font-size:0.8rem;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--mid);transition:all 0.15s;}
+.qz-opt:hover{border-color:var(--mauve);color:var(--plum);}
+.qz-opt.correct{background:rgba(45,107,74,0.08);border-color:#2d6b4a;color:#2d6b4a;font-weight:600;}
+.qz-opt.wrong{background:rgba(122,46,46,0.08);border-color:#7a2e2e;color:#7a2e2e;}
+.qz-fb{font-size:0.76rem;margin-top:6px;padding:7px 10px;border-radius:7px;display:none;}
+.qz-fb.show{display:block;}
+.qz-fb.ok{background:rgba(45,107,74,0.08);color:#2d6b4a;}
+.qz-fb.bad{background:rgba(122,46,46,0.08);color:#7a2e2e;}
+.qz-score{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:11px;padding:16px;text-align:center;color:#fff;display:none;margin-top:10px;}
+.qz-score h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;}
+.qz-score p{font-size:0.8rem;color:rgba(255,255,255,0.7);}
+.nc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(121,69,119,0.15);}
+.nc-hdr h3{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--plum);}
+.nc-hdr span{font-size:0.7rem;color:var(--light);}
+.nb{margin-bottom:11px;}
+.nb-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:4px;}
+.nb-hint{font-size:0.72rem;color:var(--light);margin-bottom:4px;font-style:italic;line-height:1.35;}
+.nb textarea{width:100%;border:1.5px solid rgba(121,69,119,0.14);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.77rem;color:var(--black);resize:vertical;min-height:66px;outline:none;background:#fff;line-height:1.45;}
+.nb textarea:focus{border-color:var(--plum);}
+.nb textarea::placeholder{color:#bbb;font-size:0.73rem;}
+.save-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px;font-family:'Montserrat',sans-serif;font-size:0.77rem;font-weight:700;cursor:pointer;margin-top:3px;}
+.save-btn:hover{background:var(--dk);}
+.saved-msg{font-size:0.68rem;color:var(--plum);font-weight:600;text-align:center;margin-top:5px;min-height:16px;}
+.cum-panel{background:#fff;border-radius:10px;padding:12px;margin-top:14px;border-top:3px solid var(--plum);}
+.cum-hdr{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;}
+.cum-empty{font-size:0.74rem;color:var(--light);font-style:italic;text-align:center;padding:10px 0;}
+.cum-entry{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.05);}
+.cum-entry:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+.cum-entry-lbl{font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mauve);margin-bottom:2px;}
+.cum-entry-txt{font-size:0.75rem;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.cum-btns{display:flex;gap:7px;margin-top:10px;}
+.cum-print{flex:1;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:7px;font-size:0.72rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;}
+.cum-copy{flex:1;background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:7px;padding:7px;font-size:0.72rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;}
+.botnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,0.07);padding:10px 22px;display:flex;align-items:center;justify-content:space-between;z-index:998;box-shadow:0 -3px 16px rgba(0,0,0,0.06);}
+.bot-btn{background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;}
+.bot-btn:hover{background:var(--dk);}
+.bot-btn.sec{background:transparent;color:var(--mid);border:1.5px solid rgba(0,0,0,0.12);}
+.bot-btn.sec:hover{border-color:var(--mauve);color:var(--plum);}
+.bot-btn:disabled{opacity:0.3;cursor:default;}
+.dots{display:flex;gap:5px;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;}
+.dot.on{background:var(--plum);width:16px;border-radius:4px;}
+.badge{display:inline-block;background:rgba(121,69,119,0.1);border:1px solid rgba(121,69,119,0.25);color:var(--plum);font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px;}
+.price-box{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:16px 24px;display:inline-block;margin-bottom:24px;}
+.price-box .pl{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.price-box .pp{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;}
+.price-box .ps{font-size:0.72rem;color:rgba(255,255,255,0.5);}
+.start-btn{background:var(--plum);color:#fff;border:none;border-radius:9px;padding:13px 34px;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;}
+.start-btn:hover{background:var(--dk);}
+.check-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:9px;padding:10px;font-family:'Montserrat',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.strat-back{background:none;border:none;color:var(--mauve);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;padding:0;display:block;}
+.s-print{background:var(--plum);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-right:8px;}
+.s-copy{background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;}
+.strat-card{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.strat-card .sl{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.strat-card .sc2{font-size:0.78rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.strat-card .sn{font-size:0.81rem;color:var(--mid);line-height:1.55;white-space:pre-wrap;background:var(--cream);border-radius:7px;padding:8px 10px;}
+.comp-badge{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 14px;}
+.comp-keys{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:18px;color:#fff;text-align:left;margin-bottom:20px;}
+.comp-keys .ck-title{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.comp-keys p{font-size:0.83rem;color:rgba(255,255,255,0.85);line-height:1.85;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;text-align:left;}
+@media(max-width:480px){.next-grid{grid-template-columns:1fr;}}
+.next-card{background:#fff;border-radius:10px;padding:13px;border:1.5px solid rgba(0,0,0,0.06);}
+.next-card .nc-num{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.next-card h4{font-size:0.83rem;font-weight:700;margin-bottom:2px;}
+.next-card p{font-size:0.7rem;color:var(--light);}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="topbar">
+  <div class="topbar-logo">Small Business <span>Therapy</span></div>
+  <div class="topbar-right">
+    <button class="strategy-btn" id="stratbtn">📋 My Strategy</button>
+    <div class="prog-wrap">
+      <span class="prog-label" id="plabel">1/8</span>
+      <div class="prog-bar"><div class="prog-fill" id="pfill" style="width:12%"></div></div>
+    </div>
+  </div>
+</div>
+<div id="p1" style="display:block;">
+  <div style="max-width:580px;margin:0 auto;padding:44px 22px 100px;text-align:center;">
+    <div class="badge">Module 06 · Strategy Tools</div>
+    <h1 style="font-family:Montserrat,sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;margin-bottom:12px;">Strategy Map <span style="color:var(--plum);">and KPIs</span></h1>
+    <p style="font-size:0.92rem;color:var(--mid);line-height:1.7;margin-bottom:24px;">What gets measured gets managed. Learn how to build a simple strategy map, choose the right KPIs for your business, and create a monthly scorecard that keeps you and your team accountable — without drowning in data.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <span style="font-size:0.78rem;color:var(--mid);">⏱ 25–30 min</span>
+      <span style="font-size:0.78rem;color:var(--mid);">📋 6 lessons</span>
+      <span style="font-size:0.78rem;color:var(--mid);">📝 Notes beside every point</span>
+      <span style="font-size:0.78rem;color:var(--mid);">🖨️ Print your strategy</span>
+    </div>
+    <div class="price-box"><div class="pl">Lifetime Access</div><div class="pp">$19.99</div><div class="ps">one-off · no subscription</div></div>
+    <br><br><button class="start-btn" id="startbtn">Start Module →</button>
+  </div>
+</div><div id="p2" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 1 of 6</div><h2>What is a Strategy Map?</h2><p>How to visualise your business strategy so it drives decisions — not just decorates a wall.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Strategy Made Visual</h3><p>A strategy map is a one-page visual that shows how your business activities connect to your financial goals. It was developed by Kaplan and Norton as part of the Balanced Scorecard framework and is now used by businesses of every size. The core idea: your financial results are the outcome of everything else you do — customer satisfaction, internal processes, and learning and growth.</p></div><div style="background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="display:flex;flex-direction:column;gap:8px;"><div style="background:linear-gradient(135deg,#1a4731,#2d6b4a);border-radius:9px;padding:12px;text-align:center;"><div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:3px;">Financial</div><p style="font-size:0.82rem;color:#fff;">Increase Revenue · Improve Profit Margins · Grow Cash Reserves</p></div><div style="text-align:center;font-size:0.7rem;color:var(--light);">↑ driven by</div><div style="background:linear-gradient(135deg,var(--plum-dk),var(--plum));border-radius:9px;padding:12px;text-align:center;"><div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:3px;">Customer</div><p style="font-size:0.82rem;color:#fff;">Satisfaction · Retention · Referrals · New Client Acquisition</p></div><div style="text-align:center;font-size:0.7rem;color:var(--light);">↑ driven by</div><div style="background:linear-gradient(135deg,#1a2a4a,#2e4a7a);border-radius:9px;padding:12px;text-align:center;"><div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:3px;">Internal Processes</div><p style="font-size:0.82rem;color:#fff;">Service Delivery · Quoting Speed · Systems · Communication</p></div><div style="text-align:center;font-size:0.7rem;color:var(--light);">↑ driven by</div><div style="background:linear-gradient(135deg,#3a1a3a,#5a2f59);border-radius:9px;padding:12px;text-align:center;"><div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:3px;">Learning and Growth</div><p style="font-size:0.82rem;color:#fff;">Training · New Services · Systems Investment · Culture</p></div></div></div><div class="insight"><div class="insight-tag">💡 The Cause and Effect Chain</div><h4>Every financial result has a chain of causes beneath it</h4><p>Want more revenue? You need more clients or higher value clients. To get more clients, you need better referrals or better marketing. To get better referrals, you need higher client satisfaction. To get higher satisfaction, you need better internal processes. To improve processes, you need training and systems. See the chain? That is a strategy map.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My financial goals — the top of my map</div><div class="nb-hint">What are your specific financial targets for the next 12 months?</div><textarea id="n2a" placeholder="e.g. Revenue: $480k (from $320k)
+Profit margin: 35% (from 22%)
+Monthly recurring revenue: $30k (from $18k)"></textarea></div><div class="nb"><div class="nb-label">What drives those financial results for me?</div><div class="nb-hint">What customer outcomes would produce those financial results?</div><textarea id="n2b" placeholder="e.g. I need to retain 95% of clients (currently ~80%), increase average client value from $1,500 to $2,200, and add 3 new clients per month..."></textarea></div><div class="nb"><div class="nb-label">My most critical internal process</div><div class="nb-hint">Which internal process, if improved, would most impact client outcomes?</div><textarea id="n2c" placeholder="e.g. My monthly reporting process. Clients who get clear reports are retained longer. If I automate and improve reporting I keep clients for longer and get more referrals..."></textarea></div>
+      <button class="save-btn" id="save2">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm2"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd2"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p3" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 2 of 6</div><h2>Choosing the Right KPIs</h2><p>Most businesses measure the wrong things. Here's how to choose the 8–12 numbers that actually tell you if you're on track.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Lead vs Lag Indicators</h3><p>There are two types of KPIs. Lag indicators measure outcomes that have already happened — revenue, profit, number of clients. Lead indicators measure activities that predict future outcomes — number of proposals sent, conversion rate, client satisfaction score. Most businesses only measure lag indicators. But by the time a lag indicator is bad, it is already too late. Lead indicators give you early warning.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Financial KPIs — lag indicators</h4><p>Monthly revenue vs target, gross profit margin, net profit, monthly recurring revenue, cash in bank, debtor days. These tell you how you did.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Customer KPIs — mix of lead and lag</h4><p>Number of active clients, client retention rate, referrals received per month, new enquiries, average client value, NPS (Net Promoter Score). These tell you how your clients feel.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Internal Process KPIs — lead indicators</h4><p>Quote turnaround time, proposal conversion rate, project delivery on time, number of client complaints, average response time to enquiries. These predict your future customer metrics.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Learning and Growth KPIs — lead indicators</h4><p>Hours of training per month, number of new services developed, staff satisfaction, system improvements completed. These predict your future process metrics.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Choose 8–12 total — not more</h4><p>More than 12 KPIs and nothing gets the focus it needs. Be ruthless. Choose the metrics most directly connected to your strategy and your current biggest challenges.</p></div></li></ul><div class="insight"><div class="insight-tag">📊 The MMS Recommended KPI Set for Service Businesses</div><h4>A starting point you can customise</h4><p>Financial (4): Monthly revenue, Gross margin %, Monthly recurring revenue, Cash balance<br>Customer (3): Active clients, Retention rate, Referrals received<br>Process (3): Quote conversion rate, Average response time, Client satisfaction score<br>Growth (2): Training hours, New services developed<br>Total: 12 KPIs. Review monthly. Act on anything more than 10% from target.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My 12 KPIs — first draft</div><div class="nb-hint">List the KPIs you will track monthly in your business</div><textarea id="n3a" placeholder="e.g. Revenue vs target
+Gross margin %
+MRR
+Active client count
+Retention rate
+Referrals received
+Conversion rate
+Quote turnaround
+Client satisfaction
+Response time
+Training hours
+New services"></textarea></div><div class="nb"><div class="nb-label">My most important lead indicator</div><div class="nb-hint">Which single activity metric, if tracked, would most change your behaviour?</div><textarea id="n3b" placeholder="e.g. Quote conversion rate. If I know I'm converting 1 in 3, I'll be more motivated to improve my proposal quality and follow-up process..."></textarea></div><div class="nb"><div class="nb-label">What I have never measured that I probably should</div><div class="nb-hint">What important aspect of your business has no number attached to it?</div><textarea id="n3c" placeholder="e.g. Client satisfaction. I've never formally asked. I assume they're happy because they don't leave. But I don't actually know their NPS score..."></textarea></div>
+      <button class="save-btn" id="save3">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm3"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd3"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p4" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 3 of 6</div><h2>Building Your Monthly Scorecard</h2><p>A simple, consistent review process that keeps you on track every month.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>What a Scorecard Looks Like</h3><p>A monthly scorecard is a simple document — one page maximum — that shows each of your 12 KPIs with: the target, the actual result, the variance, and a RAG status (Red/Amber/Green). Green = on track. Amber = 5–10% off. Red = more than 10% off target and needs an action plan.</p></div><div style="background:#fff;border-radius:12px;padding:16px;margin-bottom:12px;box-shadow:0 1px 6px rgba(0,0,0,0.06);overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:0.78rem;"><tr style="background:var(--plum);color:#fff;"><th style="padding:8px 10px;text-align:left;font-weight:600;">KPI</th><th style="padding:8px 10px;text-align:right;">Target</th><th style="padding:8px 10px;text-align:right;">Actual</th><th style="padding:8px 10px;text-align:right;">Variance</th><th style="padding:8px 10px;text-align:center;">Status</th></tr><tr style="border-bottom:1px solid #eee;"><td style="padding:7px 10px;">Monthly Revenue</td><td style="padding:7px 10px;text-align:right;">$40,000</td><td style="padding:7px 10px;text-align:right;">$38,500</td><td style="padding:7px 10px;text-align:right;">-3.75%</td><td style="padding:7px 10px;text-align:center;"><span style="background:#f59e0b;color:#fff;border-radius:4px;padding:2px 8px;font-size:0.68rem;">AMBER</span></td></tr><tr style="border-bottom:1px solid #eee;background:#f9f9f9;"><td style="padding:7px 10px;">Client Retention</td><td style="padding:7px 10px;text-align:right;">95%</td><td style="padding:7px 10px;text-align:right;">96%</td><td style="padding:7px 10px;text-align:right;">+1%</td><td style="padding:7px 10px;text-align:center;"><span style="background:#2d6b4a;color:#fff;border-radius:4px;padding:2px 8px;font-size:0.68rem;">GREEN</span></td></tr><tr style="border-bottom:1px solid #eee;"><td style="padding:7px 10px;">Quote Conversion</td><td style="padding:7px 10px;text-align:right;">40%</td><td style="padding:7px 10px;text-align:right;">28%</td><td style="padding:7px 10px;text-align:right;">-30%</td><td style="padding:7px 10px;text-align:center;"><span style="background:#dc2626;color:#fff;border-radius:4px;padding:2px 8px;font-size:0.68rem;">RED</span></td></tr><tr style="background:#f9f9f9;"><td style="padding:7px 10px;">Referrals Received</td><td style="padding:7px 10px;text-align:right;">4/month</td><td style="padding:7px 10px;text-align:right;">6</td><td style="padding:7px 10px;text-align:right;">+50%</td><td style="padding:7px 10px;text-align:center;"><span style="background:#2d6b4a;color:#fff;border-radius:4px;padding:2px 8px;font-size:0.68rem;">GREEN</span></td></tr></table></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Set your monthly review meeting now</h4><p>Block 90 minutes on the first Monday of every month. This is non-negotiable. Treat it like a client meeting.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Record actuals at end of each month</h4><p>Assign responsibility for collecting each metric. Many can be automated from your accounting software, CRM or Google Analytics.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Use red KPIs to drive action plans</h4><p>For every Red KPI: identify the cause, set an action, assign a deadline, review progress next month. A Red KPI without an action plan is just a problem you are aware of.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Share with your team</h4><p>Even if you have one staff member, sharing the scorecard builds accountability and helps them understand how their work connects to the business results.</p></div></li></ul></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My monthly scorecard meeting date</div><div class="nb-hint">When will you review your KPIs every month — non-negotiable?</div><textarea id="n4a" placeholder="e.g. First Monday of every month. 8:30–10:00am. Blocked in calendar as "Business Review — do not move". Done now."></textarea></div><div class="nb"><div class="nb-label">My current Red KPIs — what's off track right now?</div><div class="nb-hint">Without waiting for a formal scorecard, what do you know is underperforming?</div><textarea id="n4b" placeholder="e.g. Quote conversion is terrible. I send proposals and about 1 in 4 becomes a client. That's costing me serious revenue every month..."></textarea></div><div class="nb"><div class="nb-label">My action plan for each Red KPI</div><div class="nb-hint">For each underperforming metric, what is your specific action and deadline?</div><textarea id="n4c" placeholder="e.g. Red: Quote conversion 28% vs 40% target
+Action: Redesign proposal template, add case study section, implement 48-hour follow-up call
+Deadline: New template ready by [date]"></textarea></div>
+      <button class="save-btn" id="save4">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm4"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd4"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p5" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 4 of 6</div><h2>Setting Meaningful Targets</h2><p>How to set KPI targets that stretch you without being fictional.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Problem with Targets</h3><p>Most business owners either set targets that are too easy (their comfort zone) or too ambitious (wishful thinking). Both are demotivating. The right target is 10–20% above your current performance — achievable with genuine effort and the right actions, but not guaranteed without them.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Start with your current baseline</h4><p>You cannot set a meaningful target without knowing your current actual. If you don't know your current conversion rate or retention rate, that is the first thing to measure.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Apply the 10–20% stretch rule</h4><p>Whatever your current number is, set this year's target at 10–20% better. Revenue: $320k actual → $370k target. Conversion: 28% actual → 33% target. Small consistent improvement compounds significantly over time.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Work backwards from your financial goal</h4><p>If you want $500k revenue and your average client pays $2,000/month, you need 21 clients (up from perhaps 14). To get 21 clients you need to acquire 10 new ones. To acquire 10 you need to convert how many proposals? To send that many proposals you need how many enquiries? Now you know your lead generation target.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Set quarterly milestones, not just annual targets</h4><p>Annual targets feel distant. Break them into quarterly milestones. By end of Q1: 16 clients. Q2: 18 clients. Q3: 20 clients. Q4: 21 clients. Now each quarter has a clear, near-term goal.</p></div></li></ul><div class="insight"><div class="insight-tag">📍 The Revenue Bridge</div><h4>Build your target from the bottom up</h4><p>Revenue target: $480k<br>÷ Average client value: $2,000/month = 20 clients needed<br>Current clients: 14 → need to add 6 net new<br>Retention: 95% → lose ~1 per year → need 7 new clients<br>Conversion rate: 33% → need 21 proposals<br>Enquiry to proposal: 60% → need 35 enquiries<br>Monthly enquiries needed: 3<br>Now you know your lead generation target precisely.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My financial target for the next 12 months</div><div class="nb-hint">What is your specific revenue and profit target?</div><textarea id="n5a" placeholder="e.g. Revenue: $420k (from $290k current)
+Gross margin: 38% (from 28%)
+MRR: $28k (from $19k)
+Net profit: $95k (from $48k)"></textarea></div><div class="nb"><div class="nb-label">My revenue bridge calculation</div><div class="nb-hint">Work backwards from your revenue target to your lead generation requirement</div><textarea id="n5b" placeholder="e.g. $420k ÷ $2,000 avg = 17.5 clients needed
+Need 4 net new clients
+At 33% conversion need 12 proposals
+At 60% proposal rate need 20 enquiries total
+Need 1.7 new enquiries per month — doable!"></textarea></div><div class="nb"><div class="nb-label">My quarterly milestones</div><div class="nb-hint">What does success look like at the end of each quarter?</div><textarea id="n5c" placeholder="e.g. Q1: 15 clients, $105k revenue, first referral program email sent
+Q2: 16 clients, $115k, Google Ads running
+Q3: 17 clients, $120k, first case study published
+Q4: 18 clients, $120k, annual plan complete"></textarea></div>
+      <button class="save-btn" id="save5">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm5"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd5"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p6" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 5 of 6 — Your Scorecard</div><h2>Build Your Monthly KPI Scorecard</h2><p>Set your 12 KPIs, targets and first-month actuals.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>My Monthly KPI Scorecard</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:10px;">Fill in each KPI and target. Update actuals each month and note your RAG status (Green/Amber/Red).</p></div><div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px;"><div style="background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:10px;padding:12px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2d6b4a;margin-bottom:5px;">📊 Financial KPIs (targets and current actuals)</div><textarea id="tpl-fin" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:75px;outline:none;" placeholder="Revenue: Target $__ | Actual $__ | Status&#10;Gross Margin: Target __% | Actual __% | Status&#10;MRR: Target $__ | Actual $__ | Status&#10;Cash Balance: Target $__ | Actual $__ | Status"></textarea></div><div style="background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.18);border-radius:10px;padding:12px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">👥 Customer KPIs</div><textarea id="tpl-cust" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:75px;outline:none;" placeholder="Active Clients: Target __ | Actual __ | Status&#10;Retention Rate: Target __% | Actual __% | Status&#10;Referrals Received: Target __ | Actual __ | Status&#10;NPS Score: Target __ | Actual __ | Status"></textarea></div><div style="background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.18);border-radius:10px;padding:12px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2e4a7a;margin-bottom:5px;">⚙️ Process and Growth KPIs</div><textarea id="tpl-proc" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:75px;outline:none;" placeholder="Quote Conversion: Target __% | Actual __% | Status&#10;Response Time: Target __ hrs | Actual __ hrs | Status&#10;Client Satisfaction: Target __ | Actual __ | Status&#10;Training Hours: Target __ | Actual __ | Status"></textarea></div></div><button class="save-btn" id="save6" style="width:100%;">💾 Save My Scorecard</button></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My most important KPI right now</div><div class="nb-hint">Which single metric would most change your business if improved?</div><textarea id="n6a" placeholder="e.g. Quote conversion rate. Going from 28% to 40% would add approximately $85k in annual revenue at no additional cost. It's the highest leverage metric I have..."></textarea></div><div class="nb"><div class="nb-label">My Red KPI action plan</div><div class="nb-hint">For your most off-track metric, what specifically are you doing about it?</div><textarea id="n6b" placeholder="e.g. Conversion rate is Red. Actions: (1) Redesign proposal to include case studies and ROI projection by [date], (2) Call every proposal within 48 hours, (3) Track reason for each lost proposal from now on..."></textarea></div><div class="nb"><div class="nb-label">My scorecard routine</div><div class="nb-hint">When, how and with whom will you review the scorecard each month?</div><textarea id="n6c" placeholder="e.g. First Monday of month, 8:30am, with my part-time admin. 60 minutes. She tracks actuals, I review and set actions. Both sign off on the action plan."></textarea></div>
+      <button class="save-btn" id="save6">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm6"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd6"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p7" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 6 of 6 — Knowledge Check</div><h2>Strategy Map and KPI Quiz</h2><p>5 questions to confirm your understanding.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="qz-q" id="q1"><p>1. What is the difference between a lead indicator and a lag indicator?</p><div class="qz-opts"><button class="qz-opt" id="q1a">Lead indicators measure revenue; lag indicators measure costs</button><button class="qz-opt" id="q1b">Lead indicators predict future outcomes; lag indicators measure past results</button><button class="qz-opt" id="q1c">Lead indicators are more important than lag indicators</button><button class="qz-opt" id="q1d">There is no meaningful difference between them</button></div><div class="qz-fb" id="fb1"></div></div><div class="qz-q" id="q2"><p>2. How many KPIs should a small business typically track monthly?</p><div class="qz-opts"><button class="qz-opt" id="q2a">As many as possible — more data is always better</button><button class="qz-opt" id="q2b">Just revenue and profit — keep it simple</button><button class="qz-opt" id="q2c">8–12 across financial, customer, process and growth</button><button class="qz-opt" id="q2d">20+ to cover all aspects of the business</button></div><div class="qz-fb" id="fb2"></div></div><div class="qz-q" id="q3"><p>3. A Red KPI requires:</p><div class="qz-opts"><button class="qz-opt" id="q3a">A note in the minutes and review next month</button><button class="qz-opt" id="q3b">An immediate action plan with a specific deadline and owner</button><button class="qz-opt" id="q3c">A new, lower target that is more achievable</button><button class="qz-opt" id="q3d">No action — one bad month does not indicate a trend</button></div><div class="qz-fb" id="fb3"></div></div><div class="qz-q" id="q4"><p>4. The Revenue Bridge calculation helps you:</p><div class="qz-opts"><button class="qz-opt" id="q4a">Calculate your break-even point</button><button class="qz-opt" id="q4b">Work backwards from a revenue target to identify your specific lead generation requirement</button><button class="qz-opt" id="q4c">Forecast your tax liability</button><button class="qz-opt" id="q4d">Compare revenue to industry benchmarks</button></div><div class="qz-fb" id="fb4"></div></div><div class="qz-q" id="q5"><p>5. A "stretch" target should be set at approximately:</p><div class="qz-opts"><button class="qz-opt" id="q5a">100% above current performance — ambitious goals create energy</button><button class="qz-opt" id="q5b">At current performance — consistency is most important</button><button class="qz-opt" id="q5c">10–20% above current performance</button><button class="qz-opt" id="q5d">Whatever the industry benchmark is</button></div><div class="qz-fb" id="fb5"></div></div><div class="qz-score" id="qscore"></div><button class="check-btn" id="checkbtn">Check My Answers →</button></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">What surprised me?</div><div class="nb-hint">What challenged your current approach to measurement?</div><textarea id="n7a" placeholder="e.g. I had no idea what my quote conversion rate was. I've been flying completely blind. Setting up a simple tracking spreadsheet today..."></textarea></div><div class="nb"><div class="nb-label">My most important insight</div><div class="nb-hint">The single most valuable thing you're taking from this module</div><textarea id="n7b" placeholder="e.g. The Revenue Bridge. I've never worked backwards from a revenue target before. Now I know I need exactly 2 new enquiries per month to hit my goal. That's completely achievable."></textarea></div><div class="nb"><div class="nb-label">What I'm doing from Monday</div><div class="nb-hint">One concrete measurement action you commit to immediately</div><textarea id="n7c" placeholder="e.g. Creating a simple 12-KPI spreadsheet this week. Blocking first Monday of every month as "Business Review" recurring appointment. Starting to track conversion rate from today..."></textarea></div>
+      <button class="save-btn" id="save7">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm7"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd7"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p8" style="display:none;">
+  <div style="max-width:640px;margin:0 auto;padding:36px 22px 100px;text-align:center;">
+    <div class="comp-badge">🎓</div>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;margin-bottom:9px;">Module 6 Complete!</h2>
+    <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:20px;">Your notes from every lesson have built into a strategy document you can print or share with your accountant.</p>
+    <div class="comp-keys"><div class="ck-title">Key Takeaways</div><p>✓ Strategy maps show how activities connect to financial outcomes<br>✓ Lead indicators predict — lag indicators confirm<br>✓ Track 8–12 KPIs across financial, customer, process and growth<br>✓ Every Red KPI needs an action plan with a deadline<br>✓ Work backwards from revenue targets using the Revenue Bridge</p></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="s-print" id="finprint">🖨️ Print My Strategy</button>
+      <button class="s-copy" id="fincopy">📋 Copy to Clipboard</button>
+    </div>
+    <p style="font-weight:700;font-size:0.88rem;margin-bottom:12px;">Continue your learning:</p>
+    <div class="next-grid"><div class="next-card" style=""><div class="nc-num">🔒 Module 07</div><h4>Vision and Goals</h4><p>Set the direction for your business</p></div><div class="next-card" style=""><div class="nc-num">🔒 Module 08</div><h4>Segmentation</h4><p>$19.99 — purchase to unlock</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 04</div><h4>Competitor Analysis</h4><p>Add competitor KPIs to your scorecard</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 05</div><h4>Marketing Mix</h4><p>Measure your marketing P effectiveness</p></div></div>
+  </div>
+</div>
+<div id="pstrat" style="display:none;">
+  <div style="max-width:860px;margin:0 auto;padding:26px 22px 100px;">
+    <button class="strat-back" id="stratback">← Back to Module</button>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:5px;">📋 My Strategy — Module 6: Strategy Map and KPIs</h2>
+    <p style="font-size:0.83rem;color:var(--mid);margin-bottom:18px;">All notes from this module built lesson by lesson.</p>
+    <div style="margin-bottom:18px;"><button class="s-print" id="stratprint">🖨️ Print</button><button class="s-copy" id="stratcopy">📋 Copy</button></div>
+    <div id="stratbody"></div>
+  </div>
+</div>
+<div class="botnav" id="botnav">
+  <button class="bot-btn sec" id="prevbtn">← Back</button>
+  <div class="dots" id="dotrow"></div>
+  <button class="bot-btn" id="nextbtn">Next →</button>
+</div>
+<script>
+var cur=1,total=8,prevPg=1,MOD_KEY='sbt_mod6_';
+var NOTES=[
+  {pg:2,fields:[{id:'n2a',lbl:'My financial goals top of my map'},{id:'n2b',lbl:'What drives those financial results'},{id:'n2c',lbl:'My most critical internal process'}]},
+  {pg:3,fields:[{id:'n3a',lbl:'My 12 KPIs first draft'},{id:'n3b',lbl:'My most important lead indicator'},{id:'n3c',lbl:'What I have never measured but should'}]},
+  {pg:4,fields:[{id:'n4a',lbl:'My monthly scorecard meeting date'},{id:'n4b',lbl:'My current Red KPIs'},{id:'n4c',lbl:'My action plan for each Red KPI'}]},
+  {pg:5,fields:[{id:'n5a',lbl:'My financial target for next 12 months'},{id:'n5b',lbl:'My revenue bridge calculation'},{id:'n5c',lbl:'My quarterly milestones'}]},
+  {pg:6,fields:[{id:'n6a',lbl:'My most important KPI right now'},{id:'n6b',lbl:'My Red KPI action plan'},{id:'n6c',lbl:'My scorecard routine'}]},
+  {pg:7,fields:[{id:'n7a',lbl:'What surprised me'},{id:'n7b',lbl:'My most important insight'},{id:'n7c',lbl:'What I am doing from Monday'}]}
+];
+function sk(id){return MOD_KEY+id;}
+function store(id,val){try{if(val.trim())localStorage.setItem(sk(id),val);else localStorage.removeItem(sk(id));}catch(e){}}
+function recall(id){try{return localStorage.getItem(sk(id))||'';}catch(e){return '';}}
+function showPg(id){var all=['p1','p2','p3','p4','p5','p6','p7','p8','p8','pstrat'];for(var i=0;i<all.length;i++){var el=document.getElementById(all[i]);if(el)el.style.display='none';}var t=document.getElementById(id);if(t)t.style.display='block';window.scrollTo(0,0);}
+function goTo(n){cur=n;showPg('p'+cur);document.getElementById('botnav').style.display='flex';updateNav();refreshAll();}
+function updateNav(){document.getElementById('prevbtn').disabled=(cur===1);document.getElementById('nextbtn').disabled=(cur===total);document.getElementById('nextbtn').textContent=(cur===total-1)?'Finish →':'Next →';document.getElementById('plabel').textContent=cur+'/'+total;document.getElementById('pfill').style.width=((cur/total)*100)+'%';buildDots();}
+function buildDots(){var c=document.getElementById('dotrow');c.innerHTML='';for(var i=1;i<=total;i++){var d=document.createElement('div');d.className='dot'+(i===cur?' on':'');d.setAttribute('data-n',i);c.appendChild(d);}var dots=c.querySelectorAll('.dot');for(var j=0;j<dots.length;j++){dots[j].addEventListener('click',function(){goTo(parseInt(this.getAttribute('data-n')));}); }}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function buildCumHTML(){var html='',has=false;for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim()){has=true;html+='<div class="cum-entry"><div class="cum-entry-lbl">'+f.lbl+'</div><div class="cum-entry-txt">'+esc(v)+'</div></div>';}}}if(!has)html='<div class="cum-empty">Your notes will appear here as you save them →</div>';return{html:html,has:has};}
+function refreshAll(){var r=buildCumHTML();var cdivs=document.querySelectorAll('[id^="cd"]');for(var i=0;i<cdivs.length;i++)cdivs[i].innerHTML=r.html;var cb=document.getElementById('cbbtns');if(cb)cb.style.display=r.has?'flex':'none';}
+function saveNotes(pg){var def=null;for(var i=0;i<NOTES.length;i++)if(NOTES[i].pg===pg){def=NOTES[i];break;}if(!def)return;for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el)store(f.id,el.value);}refreshAll();var sm=document.getElementById('sm'+pg);if(sm){sm.textContent='✓ Saved';setTimeout(function(){sm.textContent='';},2000);}showToast('Notes saved ✓');}
+function loadAll(){for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el){var v=recall(f.id);if(v)el.value=v;}}}}
+function getStratText(){var t='MY STRATEGY — MODULE 6: STRATEGY MAP AND KPIS\nSmall Business Therapy | Maximum Marketing Solutions\n----------------------------------------\n\n';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())t+=f.lbl.toUpperCase()+':\n'+v+'\n\n';}}t+='Maximum Marketing Solutions | maximummarketingsolutions.com.au | +61 459 472 739';return t;}
+function doPrint(){var w=window.open('','_blank');var b='<html><head><title>Strategy M6</title><style>body{font-family:Arial,sans-serif;max-width:760px;margin:36px auto;font-size:13px;}h1{font-size:1.2rem;margin-bottom:4px;}.sub{color:#888;font-size:11px;margin-bottom:20px;}.card{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;}.lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:3px;}.note{font-size:12px;color:#4a4a4a;line-height:1.6;white-space:pre-wrap;background:#f5f5f5;padding:7px 9px;border-left:3px solid #794577;}.foot{margin-top:24px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:8px;}</style></head><body><h1>Module 6: Strategy Map and KPIs</h1><p class="sub">Small Business Therapy · Maximum Marketing Solutions</p>';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="card"><div class="lbl">'+f.lbl+'</div><div class="note">'+v+'</div></div>';}}b+='<div class="foot">Maximum Marketing Solutions · maximummarketingsolutions.com.au · +61 459 472 739</div></body></html>';w.document.write(b);w.document.close();w.print();}
+function doCopy(){var txt=getStratText();if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){showToast('Copied ✓');}).catch(function(){showToast('Use Print instead');});else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied ✓');}catch(e){showToast('Use Print instead');}document.body.removeChild(ta);}}
+function showStrat(){prevPg=cur;showPg('pstrat');document.getElementById('botnav').style.display='none';var r=buildCumHTML(),b='';if(!r.has)b='<p style="color:#888;font-style:italic;padding:24px 0;">No notes yet.</p>';else{for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="strat-card"><div class="sl">Lesson '+(def.pg-1)+'</div><div class="sc2">'+f.lbl+'</div><div class="sn">'+esc(v)+'</div></div>';}}}document.getElementById('stratbody').innerHTML=b;}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.className='toast on';setTimeout(function(){t.className='toast';},2600);}
+window.onload=function(){
+  showPg('p1');buildDots();updateNav();loadAll();refreshAll();
+  document.getElementById('startbtn').addEventListener('click',function(){goTo(2);});
+  document.getElementById('prevbtn').addEventListener('click',function(){if(cur>1)goTo(cur-1);});
+  document.getElementById('nextbtn').addEventListener('click',function(){if(cur<total)goTo(cur+1);});
+  document.getElementById('stratbtn').addEventListener('click',function(){showStrat();});
+  document.getElementById('stratback').addEventListener('click',function(){showPg('p'+prevPg);document.getElementById('botnav').style.display='flex';updateNav();});
+  document.getElementById('stratprint').addEventListener('click',function(){doPrint();});
+  document.getElementById('stratcopy').addEventListener('click',function(){doCopy();});
+  var saveEls=document.querySelectorAll('[id^="save"]');
+  for(var i=0;i<saveEls.length;i++){(function(el){var pg=parseInt(el.id.replace('save',''));if(!isNaN(pg))el.addEventListener('click',function(){saveNotes(pg);});}) (saveEls[i]);}
+  ['finprint','cumprint'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doPrint();});});
+  ['fincopy','cumcopy'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doCopy();});});
+};
+</script>
+</body>
+</html>
