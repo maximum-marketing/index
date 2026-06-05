@@ -280,6 +280,14 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--charcoal
       <span>🔍</span>
       <input type="text" id="search-input" placeholder="Search e.g. 'lost a client', 'cash flow', 'marketing'..." oninput="searchProblems(this.value)">
     </div>
+    <div style="background:linear-gradient(135deg,#794577,#A682A4);border-radius:14px;padding:18px 20px;margin-bottom:16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:200px;">
+        <div style="font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px;">Free + Premium</div>
+        <div style="font-size:0.9rem;font-weight:700;color:white;margin-bottom:4px;">Start free. Upgrade when you're ready.</div>
+        <div style="font-size:0.75rem;color:rgba(255,255,255,0.75);line-height:1.5;">All action plans and how-to guides are free forever. Upgrade to Premium for AI-powered personalised advice, downloadable templates and more.</div>
+      </div>
+      <button onclick="showSubscribeModal()" style="background:white;color:#794577;border:none;border-radius:10px;padding:10px 18px;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;">See Premium →</button>
+    </div>
     <div class="category-grid" id="cat-grid">
       <div class="cat-card featured" onclick="openCategory('sales')">
         <div class="cat-badge">Most Common</div>
@@ -384,7 +392,7 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--charcoal
     </div>
     <div class="about-card">
       <h4>Who made this?</h4>
-      <p>Maximum Marketing Solutions is a Brisbane-based SEO and digital marketing agency specialising in helping small and medium businesses grow across Brisbane, Gold Coast and Sunshine Coast.</p>
+      <p>Maximum Marketing Solutions is a Brisbane-based SEO, Marketing and Sales Strategy agency specialising in helping small and medium businesses grow across Brisbane, Gold Coast and Sunshine Coast.</p>
     </div>
     <div class="about-card">
       <h4>Is this free?</h4>
@@ -399,7 +407,7 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--charcoal
       <p>Every business situation is different. Reach out for a free 30-minute consult — no hard sell, just honest advice tailored to your situation.</p>
     </div>
     <button class="contact-btn" onclick="openModal()">📞 Book a Free Consult</button>
-    <button class="contact-btn forest-btn" onclick="openModal()">✉️ Email Maximum Marketing Solutions</button>
+    <button class="contact-btn forest-btn" onclick="openModal()">✉️ info.maximumms@gmail.com</button>
   </div>
 </div>
 
@@ -418,6 +426,43 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--charcoal
     <button class="nav-item" id="nav-about" onclick="goTo('about')">
       <span>ℹ️</span><span>About</span>
     </button>
+  </div>
+</div>
+
+<!-- ════ SUBSCRIBE MODAL ════ -->
+<div class="modal-overlay" id="subscribe-modal" onclick="if(event.target===this)closeSubscribeModal()">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <button class="modal-close" onclick="closeSubscribeModal()">✕</button>
+    <div style="text-align:center;margin-bottom:20px;">
+      <div style="font-size:2rem;margin-bottom:8px;">⭐</div>
+      <h3 style="font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:6px;">Small Business Therapy</h3>
+      <p style="font-size:0.82rem;color:#888;margin-bottom:0;">Free vs Premium</p>
+    </div>
+    <div style="background:#F8F6F9;border-radius:12px;padding:16px;margin-bottom:14px;">
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:10px;">✅ Always Free</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div style="font-size:0.82rem;color:#333;display:flex;gap:8px;align-items:center;"><span style="color:#794577;font-weight:700;">✓</span>All 6 problem categories</div>
+        <div style="font-size:0.82rem;color:#333;display:flex;gap:8px;align-items:center;"><span style="color:#794577;font-weight:700;">✓</span>Step-by-step action plans</div>
+        <div style="font-size:0.82rem;color:#333;display:flex;gap:8px;align-items:center;"><span style="color:#794577;font-weight:700;">✓</span>How-to guides on every action point</div>
+        <div style="font-size:0.82rem;color:#333;display:flex;gap:8px;align-items:center;"><span style="color:#794577;font-weight:700;">✓</span>Personal strategy notes & print</div>
+        <div style="font-size:0.82rem;color:#333;display:flex;gap:8px;align-items:center;"><span style="color:#794577;font-weight:700;">✓</span>Save plans for later</div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#794577,#5A2F59);border-radius:12px;padding:16px;margin-bottom:16px;">
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:10px;">⭐ Premium — Coming Soon</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.9);display:flex;gap:8px;align-items:center;"><span style="color:#A682A4;font-weight:700;">★</span>AI-powered personalised advice for your specific situation</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.9);display:flex;gap:8px;align-items:center;"><span style="color:#A682A4;font-weight:700;">★</span>Downloadable business templates — cash flow, proposals, scripts</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.9);display:flex;gap:8px;align-items:center;"><span style="color:#A682A4;font-weight:700;">★</span>Monthly Business Health Check — guided review of key metrics</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.9);display:flex;gap:8px;align-items:center;"><span style="color:#A682A4;font-weight:700;">★</span>Email your strategy direct to your accountant or advisor</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.9);display:flex;gap:8px;align-items:center;"><span style="color:#A682A4;font-weight:700;">★</span>Priority access to the MMS team for quick questions</div>
+        <div style="font-size:0.82rem;color:rgba(255,255,255,0.9);display:flex;gap:8px;align-items:center;"><span style="color:#A682A4;font-weight:700;">★</span>Exclusive resources for your business journey</div>
+      </div>
+      <div style="margin-top:14px;font-size:1rem;font-weight:800;color:white;font-family:'Montserrat',sans-serif;">$9.99<span style="font-size:0.75rem;font-weight:400;color:rgba(255,255,255,0.6);"> /month</span></div>
+    </div>
+    <button onclick="registerInterest()" style="width:100%;background:#794577;color:white;border:none;border-radius:10px;padding:13px;font-family:'Inter',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;margin-bottom:8px;">Register Interest in Premium</button>
+    <button onclick="closeSubscribeModal()" style="width:100%;background:transparent;color:#888;border:1px solid rgba(0,0,0,0.1);border-radius:10px;padding:11px;font-family:'Inter',sans-serif;font-size:0.85rem;cursor:pointer;">Continue with Free Version</button>
   </div>
 </div>
 
@@ -734,7 +779,7 @@ function getPlanText(){
     }
   });
   if(!hasNotes) text += '(No notes added yet)\n';
-  text += `\n${'─'.repeat(50)}\nMaximum Marketing Solutions | maximummarketing.com.au`;
+  text += `\n${'─'.repeat(50)}\nMaximum Marketing Solutions | maximummarketingsolutions.com.au`;
   return text;
 }
 
@@ -755,7 +800,7 @@ function printPlan(){
     });
     if(secHTML) html+=secHTML;
   });
-  html+=`<div class="print-meta">Maximum Marketing Solutions | maximummarketing.com.au | Generated ${new Date().toLocaleDateString('en-AU')}</div>`;
+  html+=`<div class="print-meta">Maximum Marketing Solutions | maximummarketingsolutions.com.au | Generated ${new Date().toLocaleDateString('en-AU')}</div>`;
   document.getElementById('print-area').innerHTML=html;
   window.print();
 }
@@ -807,7 +852,7 @@ function printStrategy(){
       });
     });
   });
-  html+=`<div class="print-meta">Maximum Marketing Solutions | maximummarketing.com.au | Generated ${new Date().toLocaleDateString('en-AU')}</div>`;
+  html+=`<div class="print-meta">Maximum Marketing Solutions | maximummarketingsolutions.com.au | Generated ${new Date().toLocaleDateString('en-AU')}</div>`;
   document.getElementById('print-area').innerHTML=html;
   window.print();
 }
