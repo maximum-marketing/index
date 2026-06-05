@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small Business Therapy — Free Crisis Help for Australian Business Owners</title>
+<meta name="description" content="When your business hits a wall, Small Business Therapy gives you a step-by-step action plan — free, practical, Australian. For cash flow, lost clients, marketing, staff and more.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#F8F6F9;--warm:#EDE8EE;
+  --terracotta:#794577;--terra-lt:#A682A4;--terra-dk:#5A2F59;
+  --forest:#1A1A1A;--forest-lt:#2D2D2D;
+  --gold:#A682A4;--gold-lt:#D4C3D3;
+  --charcoal:#0D0D0D;--mid:#4A4A4A;--light:#888888;
+  --white:#FFFFFF;
+  --max-w:1100px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--charcoal);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;color:var(--forest);}
+.nav-logo em{color:var(--terracotta);font-style:normal;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{text-decoration:none;font-size:0.88rem;font-weight:500;color:var(--mid);transition:color 0.2s;}
+.nav-links a:hover{color:var(--terracotta);}
+.nav-cta{background:var(--terracotta);color:var(--white);padding:10px 22px;border-radius:24px;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.nav-cta:hover{background:var(--terra-dk);transform:translateY(-1px);}
+@media(max-width:700px){.nav-links{display:none;}}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:linear-gradient(135deg,#1A1A1A 0%,#3D1F3C 100%);display:flex;align-items:center;padding:100px 32px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 80% 50%,rgba(196,97,58,0.2) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 10% 80%,rgba(212,168,67,0.1) 0%,transparent 60%);}
+.hero-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
+@media(max-width:800px){.hero-inner{grid-template-columns:1fr;gap:48px;}}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(166,130,164,0.15);border:1px solid rgba(166,130,164,0.35);color:var(--gold);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:20px;}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.8rem,5vw,4.2rem);font-weight:900;color:var(--white);line-height:1.05;margin-bottom:20px;}
+.hero h1 em{color:var(--terra-lt);font-style:normal;}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:36px;max-width:480px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:var(--terracotta);color:var(--white);padding:15px 32px;border-radius:28px;font-size:0.95rem;font-weight:700;text-decoration:none;transition:all 0.2s;display:inline-block;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.btn-primary:hover{background:var(--terra-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,97,58,0.4);}
+.btn-secondary{background:transparent;color:rgba(255,255,255,0.9);padding:15px 32px;border-radius:28px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;display:inline-block;border:1.5px solid rgba(255,255,255,0.3);}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.08);}
+.hero-stats{display:flex;gap:32px;margin-top:44px;flex-wrap:wrap;}
+.stat{border-left:2px solid rgba(166,130,164,0.5);padding-left:16px;}
+.stat-num{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;color:var(--white);}
+.stat-label{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;}
+
+/* Hero visual */
+.hero-visual{display:flex;flex-direction:column;gap:14px;}
+@media(max-width:800px){.hero-visual{display:none;}}
+.hv-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px 20px;backdrop-filter:blur(8px);transition:all 0.3s;}
+.hv-card:hover{background:rgba(255,255,255,0.12);transform:translateX(6px);}
+.hv-card-row{display:flex;align-items:center;gap:14px;}
+.hv-icon{font-size:1.6rem;flex-shrink:0;}
+.hv-card h4{font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:3px;}
+.hv-card p{font-size:0.76rem;color:rgba(255,255,255,0.55);}
+.hv-arrow{margin-left:auto;color:var(--terra-lt);font-size:1.1rem;}
+
+/* ── PROBLEM STRIP ── */
+.problem-strip{background:var(--terracotta);padding:18px 32px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
+.ps-item{display:flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.9);}
+.ps-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* ── SECTIONS ── */
+section{padding:100px 32px;}
+@media(max-width:600px){section{padding:64px 20px;}}
+.section-inner{max-width:var(--max-w);margin:0 auto;}
+.section-tag{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px;}
+.section-inner h2{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:16px;}
+.section-inner .lead{font-size:1rem;color:var(--mid);line-height:1.7;max-width:580px;margin-bottom:60px;}
+
+/* ── HOW IT WORKS ── */
+.hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+@media(max-width:900px){.hiw-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.hiw-grid{grid-template-columns:1fr;}}
+.hiw-card{background:var(--cream);border-radius:18px;padding:28px 24px;position:relative;}
+.hiw-num{font-family:'Montserrat',sans-serif;font-size:3rem;font-weight:900;color:rgba(196,97,58,0.12);line-height:1;margin-bottom:14px;}
+.hiw-card h4{font-size:0.95rem;font-weight:700;margin-bottom:8px;}
+.hiw-card p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+
+/* ── CATEGORIES ── */
+.cat-section{background:var(--cream);}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:900px){.cats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.cats-grid{grid-template-columns:1fr;}}
+.cat-item{background:var(--white);border-radius:16px;padding:24px 20px;border:1.5px solid transparent;transition:all 0.25s;cursor:default;}
+.cat-item:hover{border-color:rgba(196,97,58,0.2);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
+.cat-item.featured{background:linear-gradient(135deg,#1A1A1A,#3D1F3C);color:var(--white);grid-column:1/-1;}
+.cat-emoji{font-size:2rem;margin-bottom:12px;display:block;}
+.cat-item h4{font-size:0.95rem;font-weight:700;margin-bottom:6px;}
+.cat-item p{font-size:0.8rem;color:var(--mid);line-height:1.5;}
+.cat-item.featured p{color:rgba(255,255,255,0.65);}
+.cat-badge{display:inline-block;background:var(--gold);color:var(--forest);font-size:0.62rem;font-weight:700;padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
+
+/* ── FEATURES ── */
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+@media(max-width:800px){.features-grid{grid-template-columns:1fr;}}
+.feature-list{display:flex;flex-direction:column;gap:24px;}
+.feature-item{display:flex;gap:16px;align-items:flex-start;}
+.fi-icon{width:44px;height:44px;border-radius:12px;background:rgba(196,97,58,0.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.fi-icon.forest{background:rgba(44,74,62,0.1);}
+.fi-icon.gold{background:rgba(212,168,67,0.15);}
+.feature-item h4{font-size:0.95rem;font-weight:700;margin-bottom:4px;}
+.feature-item p{font-size:0.83rem;color:var(--mid);line-height:1.6;}
+.features-mockup{background:var(--forest);border-radius:24px;padding:28px;color:var(--white);position:relative;overflow:hidden;}
+.features-mockup::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(196,97,58,0.15);}
+.mockup-header{margin-bottom:20px;}
+.mockup-header h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:4px;}
+.mockup-header p{font-size:0.75rem;color:rgba(255,255,255,0.5);}
+.mockup-step{background:rgba(255,255,255,0.07);border-radius:10px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px;}
+.mockup-step-num{width:22px;height:22px;border-radius:50%;background:var(--terracotta);font-size:0.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.mockup-step-text{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.4;}
+.mockup-note{background:rgba(212,168,67,0.15);border:1px solid rgba(212,168,67,0.3);border-radius:8px;padding:10px 12px;margin-top:12px;}
+.mockup-note-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.mockup-note-text{font-size:0.75rem;color:rgba(255,255,255,0.7);font-style:normal;}
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:var(--cream);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+.testi-card{background:var(--white);border-radius:18px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
+.testi-stars{color:var(--gold);font-size:0.9rem;margin-bottom:14px;letter-spacing:2px;}
+.testi-text{font-size:0.88rem;color:var(--charcoal);line-height:1.7;margin-bottom:20px;font-style:normal;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--forest),var(--forest-lt));display:flex;align-items:center;justify-content:center;font-size:1rem;color:white;font-weight:700;flex-shrink:0;}
+.testi-name{font-size:0.85rem;font-weight:700;}
+.testi-biz{font-size:0.75rem;color:var(--light);}
+
+/* ── MONETISE / BUSINESS MODEL ── */
+.biz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media(max-width:700px){.biz-grid{grid-template-columns:1fr;}}
+.biz-card{border-radius:18px;padding:28px;position:relative;overflow:hidden;}
+.biz-card.card-1{background:linear-gradient(135deg,var(--forest),var(--forest-lt));color:var(--white);}
+.biz-card.card-2{background:linear-gradient(135deg,var(--terracotta),var(--terra-lt));color:var(--white);}
+.biz-card.card-3{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);}
+.biz-card.card-4{background:linear-gradient(135deg,#5A2F59,var(--terracotta));color:var(--white);}
+.biz-tag{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;}
+.biz-card.card-3 .biz-tag{color:var(--mid);}
+.biz-card h4{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+.biz-card p{font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.75);}
+.biz-card.card-3 p{color:var(--mid);}
+.biz-price{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;margin-top:12px;}
+.biz-price span{font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:400;opacity:0.7;}
+
+/* ── MMS SECTION ── */
+.mms-section{background:linear-gradient(135deg,#1A1A1A 0%,#3D1F3C 100%);}
+.mms-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+@media(max-width:800px){.mms-inner{grid-template-columns:1fr;gap:40px;}}
+.mms-inner h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:var(--white);line-height:1.2;margin-bottom:16px;}
+.mms-inner p{font-size:0.95rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:24px;}
+.mms-services{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.mms-service{display:flex;align-items:center;gap:10px;font-size:0.88rem;color:rgba(255,255,255,0.85);}
+.mms-service::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+.mms-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:28px;}
+.mms-card h4{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:8px;}
+.mms-card p{font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:20px;}
+.mms-card-input{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:11px 14px;color:var(--white);font-family:'Inter',sans-serif;font-size:0.88rem;width:100%;outline:none;margin-bottom:10px;transition:border-color 0.2s;}
+.mms-card-input:focus{border-color:var(--gold);}
+.mms-card-input::placeholder{color:rgba(255,255,255,0.35);}
+.mms-submit{width:100%;background:var(--terracotta);color:var(--white);border:none;border-radius:10px;padding:13px;font-family:'Inter',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.mms-submit:hover{background:var(--terra-dk);}
+
+/* ── FAQ ── */
+.faq-list{max-width:720px;}
+.faq-item{border-bottom:1px solid rgba(0,0,0,0.08);padding:20px 0;}
+.faq-q{font-size:0.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;user-select:none;}
+.faq-q .faq-icon{font-size:1.2rem;color:var(--terracotta);flex-shrink:0;transition:transform 0.2s;}
+.faq-a{font-size:0.87rem;color:var(--mid);line-height:1.7;margin-top:12px;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+
+/* ── CTA FINAL ── */
+.final-cta{background:linear-gradient(135deg,#794577,#5A2F59);padding:100px 32px;text-align:center;}
+.final-cta h2{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--white);margin-bottom:16px;}
+.final-cta p{font-size:1rem;color:rgba(255,255,255,0.75);margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6;}
+.final-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-white{background:var(--white);color:var(--terracotta);padding:16px 36px;border-radius:28px;font-size:0.95rem;font-weight:700;text-decoration:none;transition:all 0.2s;display:inline-block;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+.btn-outline-white{background:transparent;color:var(--white);padding:16px 36px;border-radius:28px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;display:inline-block;border:1.5px solid rgba(255,255,255,0.5);}
+.btn-outline-white:hover{border-color:var(--white);background:rgba(255,255,255,0.1);}
+
+/* ── FOOTER ── */
+footer{background:var(--charcoal);padding:48px 32px 32px;}
+.footer-inner{max-width:var(--max-w);margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:40px;}
+@media(max-width:700px){.footer-grid{grid-template-columns:1fr;gap:32px;}}
+.footer-logo{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:var(--white);margin-bottom:12px;}
+.footer-logo em{color:var(--terra-lt);font-style:normal;}
+footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
+.footer-col h5{font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px;}
+.footer-col a{display:block;font-size:0.85rem;color:rgba(255,255,255,0.55);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--terra-lt);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.3);}
+.mms-credit{font-size:0.78rem;color:rgba(255,255,255,0.3);}
+.mms-credit a{color:var(--terra-lt);text-decoration:none;}
+
+/* ── MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--white);border-radius:24px;padding:36px;width:100%;max-width:480px;animation:fadeUp 0.3s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.modal-close{float:right;background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--light);margin-top:-8px;}
+.modal h3{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:8px;}
+.modal p{font-size:0.85rem;color:var(--mid);margin-bottom:20px;line-height:1.6;}
+.modal input,.modal textarea,.modal select{width:100%;background:var(--cream);border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--charcoal);margin-bottom:10px;outline:none;transition:border-color 0.2s;}
+.modal input:focus,.modal textarea:focus{border-color:var(--terracotta);}
+.modal textarea{min-height:80px;resize:vertical;}
+.modal-submit{width:100%;background:var(--terracotta);color:var(--white);border:none;border-radius:10px;padding:14px;font-family:'Inter',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;margin-top:4px;transition:opacity 0.2s;}
+.modal-submit:hover{opacity:0.88;}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--charcoal);color:var(--white);padding:12px 24px;border-radius:24px;font-size:0.85rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:300;pointer-events:none;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- ════ NAV ════ -->
+<nav>
+  <div class="nav-logo">Small Business <span style="color:var(--terracotta)">Therapy</span></div>
+  <div class="nav-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#categories">Topics</a>
+    <a href="#for-business">For Business</a>
+    <a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+  </div>
+  <a href="#" class="nav-cta" onclick="openApp()">Open the Free App →</a>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">🇦🇺 Free to Start · Australian · No Sign-Up Required</div>
+      <h1>When your business<br>hits a wall,<br>We've Got You.</h1>
+      <p class="hero-sub">Small Business Therapy gives Australian business owners a step-by-step action plan for their biggest crisis — with exactly how to action each step, and a strategy notepad to build their own recovery plan.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-primary" onclick="openApp()">Get My Free Action Plan →</a>
+        <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">6</div><div class="stat-label">Crisis Categories</div></div>
+        <div class="stat"><div class="stat-num">11</div><div class="stat-label">Problem Plans</div></div>
+        <div class="stat"><div class="stat-num">Free</div><div class="stat-label">Core Platform Forever</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-card">
+        <div class="hv-card-row">
+          <span class="hv-icon">🚪</span>
+          <div><h4>I've lost a major client</h4><p>Revenue has suddenly dropped significantly</p></div>
+          <span class="hv-arrow">›</span>
+        </div>
+      </div>
+      <div class="hv-card">
+        <div class="hv-card-row">
+          <span class="hv-icon">🚨</span>
+          <div><h4>I can't make payroll this week</h4><p>Critical cash shortage — immediate crisis</p></div>
+          <span class="hv-arrow">›</span>
+        </div>
+      </div>
+      <div class="hv-card">
+        <div class="hv-card-row">
+          <span class="hv-icon">👻</span>
+          <div><h4>Nobody knows my business exists</h4><p>Zero new enquiries, surviving on referrals</p></div>
+          <span class="hv-arrow">›</span>
+        </div>
+      </div>
+      <div class="hv-card">
+        <div class="hv-card-row">
+          <span class="hv-icon">🌐</span>
+          <div><h4>Competitors dominate Google</h4><p>Can't be found online — they get all the leads</p></div>
+          <span class="hv-arrow">›</span>
+        </div>
+      </div>
+      <div class="hv-card" style="background:rgba(196,97,58,0.15);border-color:rgba(196,97,58,0.3);">
+        <div class="hv-card-row">
+          <span class="hv-icon">🌀</span>
+          <div><h4>I feel completely stuck</h4><p>Working hard but not getting anywhere</p></div>
+          <span class="hv-arrow" style="color:var(--terra-lt)">›</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROBLEM STRIP ════ -->
+<div class="problem-strip">
+  <div class="ps-item"><div class="ps-dot"></div>Lost a major client</div>
+  <div class="ps-item"><div class="ps-dot"></div>Cash flow crisis</div>
+  <div class="ps-item"><div class="ps-dot"></div>Nobody finding you online</div>
+  <div class="ps-item"><div class="ps-dot"></div>Marketing not working</div>
+  <div class="ps-item"><div class="ps-dot"></div>Key staff quit</div>
+  <div class="ps-item"><div class="ps-dot"></div>Losing to competitors</div>
+</div>
+
+<!-- ── SUBSCRIPTION STRIP ── -->
+<div style="background:#F8F6F9;border-top:1px solid rgba(121,69,119,0.1);border-bottom:1px solid rgba(121,69,119,0.1);padding:14px 32px;text-align:center;">
+  <span style="font-size:0.82rem;color:#4A4A4A;font-family:'Inter',sans-serif;">
+    ✅ <strong>Free forever</strong> — action plans, how-to guides, strategy builder &nbsp;·&nbsp; 
+    ⭐ <strong>Premium</strong> — AI advice, templates & business resources &nbsp;·&nbsp;
+    <a href="#pricing" style="color:#794577;font-weight:700;text-decoration:none;">See what's included →</a>
+  </span>
+</div>
+
+<!-- ════ HOW IT WORKS ════ -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <div class="section-tag">How It Works</div>
+    <h2>From crisis to action plan<br>in under 2 minutes</h2>
+    <p class="lead">No sign-up, no paywall, no fluff. Just practical Australian business advice at the moment you need it most.</p>
+    <div class="hiw-grid reveal">
+      <div class="hiw-card">
+        <div class="hiw-num">01</div>
+        <h4>Pick your problem</h4>
+        <p>Choose the challenge you're facing right now — from 6 categories covering the most common small business crises.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">02</div>
+        <h4>Get your action plan</h4>
+        <p>Receive a tiered plan: what to do today, what to fix this week, and how to prevent it long-term.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">03</div>
+        <h4>Tap "How to do this"</h4>
+        <p>Every action point has a numbered step-by-step guide. Not just what to do — exactly how to do it.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-num">04</div>
+        <h4>Build your strategy</h4>
+        <p>Add your own notes next to each point. They build into a printable strategy document you can share with an advisor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CATEGORIES ════ -->
+<section id="categories" class="cat-section">
+  <div class="section-inner">
+    <div class="section-tag">What We Cover</div>
+    <h2>Six categories.<br>Every major crisis.</h2>
+    <p class="lead">Built around the problems Australian business owners actually face — not a textbook version of what they should face.</p>
+    <div class="cats-grid reveal">
+      <div class="cat-item featured">
+        <div class="cat-badge">Most Common</div>
+        <span class="cat-emoji">📉</span>
+        <h4>Sales & Revenue Problems</h4>
+        <p>Lost a major client, sales have dried up, can't find new customers. The most common crisis — and the most fixable.</p>
+      </div>
+      <div class="cat-item">
+        <span class="cat-emoji">💸</span>
+        <h4>Cash Flow Crisis</h4>
+        <p>Can't make payroll, invoices unpaid, running out of runway. Step-by-step crisis management for when cash dries up.</p>
+      </div>
+      <div class="cat-item">
+        <span class="cat-emoji">📣</span>
+        <h4>Marketing & Visibility</h4>
+        <p>Nobody knows you exist, competitors winning your customers. How to get found and build a reliable lead pipeline.</p>
+      </div>
+      <div class="cat-item">
+        <span class="cat-emoji">🧭</span>
+        <h4>Strategy & Direction</h4>
+        <p>Stuck, no clear plan, not sure where to take the business. Frameworks for getting unstuck and setting direction.</p>
+      </div>
+      <div class="cat-item">
+        <span class="cat-emoji">👥</span>
+        <h4>Staff & Team Issues</h4>
+        <p>Key person left, performance problems, can't afford staff. People problems handled fairly, legally and effectively.</p>
+      </div>
+      <div class="cat-item">
+        <span class="cat-emoji">⚔️</span>
+        <h4>Losing to Competitors</h4>
+        <p>Being undercut on price, losing tenders, invisible online. How to compete on value, not price — and win.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FEATURES ════ -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag">What Makes It Different</div>
+    <h2>Not just advice.<br>A complete action system.</h2>
+    <p class="lead">Most business advice tells you what to do. Small Business Therapy tells you exactly how — step by step — and lets you build your own strategy as you go.</p>
+    <div class="features-grid reveal">
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="fi-icon">🇦🇺</div>
+          <div><h4>Built for Australia</h4><p>All advice, contacts and resources are Australian. References to QCAT, the ATO, Fair Work — not the IRS or US courts.</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon forest">▾</div>
+          <div><h4>How-to guides on every step</h4><p>Click "How to do this" on any action point and get a numbered walkthrough. Not just "call your bank" — but exactly what to say.</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon gold">📝</div>
+          <div><h4>Per-point strategy notes</h4><p>Add your own notes next to each action point. They accumulate into a printable strategy document — your personal recovery plan.</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🖨️</div>
+          <div><h4>Print or copy your strategy</h4><p>Print your completed strategy or copy it to your phone's notes app to share with your accountant, advisor or business partner.</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon forest">📱</div>
+          <div><h4>Works on any device</h4><p>Phone, tablet or desktop — the tool is fully responsive and works offline once loaded. Install it to your home screen like an app.</p></div>
+        </div>
+      </div>
+      <div class="features-mockup">
+        <div class="mockup-header">
+          <h3>I've lost a major client</h3>
+          <p>🚨 Do This Today — Immediate Actions</p>
+        </div>
+        <div class="mockup-step">
+          <div class="mockup-step-num">→</div>
+          <div class="mockup-step-text">Calculate exactly how much revenue you've lost and how long your runway is at current burn rate</div>
+        </div>
+        <div style="background:rgba(44,74,62,0.4);border-radius:8px;padding:10px 12px;margin:4px 0 8px;">
+          <div style="font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;">▾ Step-by-step</div>
+          <div style="font-size:0.72rem;color:rgba(255,255,255,0.75);line-height:1.5;">1. Open a spreadsheet right now<br>2. Write: Monthly revenue from lost client = $X<br>3. Monthly expenses = $Y<br>4. Runway = savings ÷ (expenses − lost revenue)</div>
+        </div>
+        <div class="mockup-note">
+          <div class="mockup-note-label">📝 My Note</div>
+          <div class="mockup-note-text">"Lost $8k/month from ABC Co. Runway = ~4 months. Need to find 2 new clients by end of month."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TESTIMONIALS ════ -->
+<section class="testi-section">
+  <div class="section-inner">
+    <div class="section-tag">What Business Owners Say</div>
+    <h2>Real businesses.<br>Real situations.</h2>
+    <p class="lead">Small Business Therapy was built for the business owner who's up at midnight wondering what to do next.</p>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I lost my biggest client and had no idea where to start. This tool gave me a clear plan within minutes. I followed the steps and had two new clients within 6 weeks."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div><div class="testi-name">Mark T.</div><div class="testi-biz">Trade Services, Brisbane</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The cash flow section literally saved my business. The ATO payment plan tip alone was worth its weight in gold. I didn't know that was even an option."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div><div class="testi-name">Sarah K.</div><div class="testi-biz">Retail, Gold Coast</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I've paid consultants thousands for less useful advice. The fact this is free is incredible. I used the strategy notes to build a plan I could actually show my accountant."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">D</div>
+          <div><div class="testi-name">Dave R.</div><div class="testi-biz">Industrial Services, Sunshine Coast</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOR BUSINESS ════ -->
+<section id="for-business">
+  <div class="section-inner">
+    <div class="section-tag">Commercial Opportunities</div>
+    <h2>Built to grow.<br>Multiple revenue paths.</h2>
+    <p class="lead">Small Business Therapy is a free tool — but it's also a platform with several clear monetisation opportunities as it grows.</p>
+    <div class="biz-grid reveal">
+      <div class="biz-card card-1">
+        <div class="biz-tag">Primary Revenue</div>
+        <h4>Lead Generation for MMS</h4>
+        <p>Every action plan ends with a free consult offer from Maximum Marketing Solutions. Users who engage deeply are highly qualified leads who already trust the brand.</p>
+        <div class="biz-price">Free tool<span> → paying clients</span></div>
+      </div>
+      <div class="biz-card card-2">
+        <div class="biz-tag">Partnership Revenue</div>
+        <h4>Sponsored Specialists</h4>
+        <p>Feature trusted accountants, lawyers, HR consultants and financial advisers as "recommended specialists" within relevant problem categories.</p>
+        <div class="biz-price">$200–$500<span> /month per partner</span></div>
+      </div>
+      <div class="biz-card card-3">
+        <div class="biz-tag">Licensing Revenue</div>
+        <h4>White Label for Agencies</h4>
+        <p>Other marketing agencies, business coaches and accountancy firms across Australia can licence a branded version for their own client base.</p>
+        <div class="biz-price" style="color:var(--charcoal);">$500–$2,000<span style="color:var(--mid);"> setup + monthly licence</span></div>
+      </div>
+      <div class="biz-card card-4">
+        <div class="biz-tag">Subscription Revenue</div>
+        <h4>Premium Version</h4>
+        <p>A paid tier unlocking AI-powered personalised advice, live advisor chat, downloadable strategy templates and multi-business tracking.</p>
+        <div class="biz-price">$9.99<span> /month per user</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ MMS SECTION ════ -->
+<section class="mms-section">
+  <div class="mms-inner">
+    <div>
+      <div class="section-tag" style="color:var(--gold);">Built by</div>
+      <h2>Maximum Marketing Solutions</h2>
+      <p>Small Business Therapy is a free resource built by MMS — a Brisbane-based SEO, Marketing and Sales Strategy agency helping small businesses across Brisbane, Gold Coast and Sunshine Coast grow their online presence.</p>
+      <div class="mms-services">
+        <div class="mms-service">SEO — get found when customers search Google</div>
+        <div class="mms-service">Marketing Strategy — integrated marketing that works</div>
+        <div class="mms-service">Sales Coaching — close more of the leads you generate</div>
+        <div class="mms-service">Free consultation — real world advice, no hard sell</div>
+      </div>
+      <a href="#" class="btn-primary" onclick="openModal()">Book a Free Consult with MMS</a>
+    </div>
+    <div class="mms-card">
+      <h4>Get personalised advice</h4>
+      <p>Tell us about your situation and we'll come back to you within one business day with honest, tailored advice.</p>
+      <input type="text" class="mms-card-input" id="c-name" placeholder="Your name *">
+      <input type="text" class="mms-card-input" id="c-biz" placeholder="Business name">
+      <input type="tel" class="mms-card-input" id="c-phone" placeholder="Phone number *">
+      <input type="email" class="mms-card-input" id="c-email" placeholder="Email address">
+      <textarea class="mms-card-input" id="c-msg" placeholder="What's your main challenge right now?" style="min-height:70px;resize:vertical;"></textarea>
+      <button class="mms-submit" onclick="submitForm()">Send — I'd Like Help →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FREE VS PREMIUM ════ -->
+<div id='pricing'></div>
+<section style="background:linear-gradient(135deg,#1A1A1A,#3D1F3C);padding:100px 32px;">
+  <div class="section-inner">
+    <div class="section-tag" style="color:#A682A4;">Pricing</div>
+    <h2 style="color:white;">Free to start.<br>Premium when you're ready.</h2>
+    <p class="lead" style="color:rgba(255,255,255,0.6);margin-bottom:48px;">Small Business Therapy is free forever for the core tools. When you're ready to go deeper, Premium gives you AI-powered personalised advice and a full suite of resources for your business journey.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;">
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;">Free Forever</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:white;margin-bottom:4px;">$0</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:24px;">No credit card. No sign-up.</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>All 6 crisis categories</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>Full action plans — today, short & long term</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>How-to guides on every action point</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>Personal strategy notes & print</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>Save & revisit plans anytime</div>
+        </div>
+        <a href="#" onclick="openApp()" style="display:block;text-align:center;background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:12px;font-size:0.88rem;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:'Inter',sans-serif;">Start for Free →</a>
+      </div>
+      <div style="background:linear-gradient(135deg,#794577,#5A2F59);border-radius:20px;padding:32px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.05);"></div>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px;">⭐ Premium</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:white;margin-bottom:4px;">$9.99<span style="font-size:1rem;font-weight:400;opacity:0.6;">/mo</span></div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:24px;">or $79/year — save 34%</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;gap:10px;"><span style="color:#A682A4;font-weight:700;">★</span>Everything in Free</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;gap:10px;"><span style="color:#A682A4;font-weight:700;">★</span>AI-powered advice for your specific situation</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;gap:10px;"><span style="color:#A682A4;font-weight:700;">★</span>Downloadable templates — cash flow, proposals, scripts</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;gap:10px;"><span style="color:#A682A4;font-weight:700;">★</span>Monthly Business Health Check</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;gap:10px;"><span style="color:#A682A4;font-weight:700;">★</span>Email strategy to your accountant</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;gap:10px;"><span style="color:#A682A4;font-weight:700;">★</span>Priority MMS team access</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.9);display:flex;gap:10px;"><span style="color:#A682A4;font-weight:700;">★</span>Exclusive resources for your business journey</div>
+        </div>
+        <button onclick="openModal()" style="width:100%;background:white;color:#794577;border:none;border-radius:12px;padding:13px;font-size:0.88rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;">Register Interest →</button>
+        <div style="text-align:center;margin-top:10px;font-size:0.72rem;color:rgba(255,255,255,0.4);">Launching soon — register now for early access</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+    <p class="lead" style="margin-bottom:40px;">Everything you need to know about Small Business Therapy.</p>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is this really free? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — completely free, forever. No sign-up, no credit card, no catch. It's a free resource built by Maximum Marketing Solutions to help Australian small business owners. The only ask is that if you find value in it, you consider reaching out to MMS when you're ready for professional marketing help.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Who is this built for? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Small and medium business owners in Australia — particularly in trades, services, retail and industrial sectors. The advice is practical and Australian-specific, referencing the ATO, QCAT, Fair Work and other local resources.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do the strategy notes work? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Every action point in every plan has a "+ Note" button. Click it and type your own thoughts, decisions and next steps for that specific point. Your notes are saved privately on your device and automatically build into a strategy document under the Strategy tab. You can print it or copy it to share with your accountant or advisor.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I use it on my phone? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — it's fully mobile-optimised. Open it in your phone browser and you can add it to your home screen for quick access. It works on iPhone and Android, and on desktop computers and laptops as well.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is my data private? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Your strategy notes are saved only on your device — they're not sent to any server or seen by anyone at MMS. The only data we collect is if you fill in the contact form to request a consult.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I want this for my clients — can I licence it? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — we offer white-label versions for marketing agencies, business coaches, accountants and banks who want their own branded version for their client base. Get in touch to discuss pricing and options.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Does it replace a business advisor? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No — and it's not designed to. It's a first-response tool for when you need to act fast and don't know where to start. Think of it like a first aid kit — it stabilises the situation. For deep, ongoing strategy, working with a real advisor is always better. That's why every plan includes a free consult offer from MMS.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What's the difference between Free and Premium? <span class="faq-icon">+</span></div>
+        <div class="faq-a">The free version gives you everything you need to get started — all 6 crisis categories, full step-by-step action plans, how-to guides on every action point, personal strategy notes and printing. It's genuinely useful and completely free forever with no strings attached. Premium takes it further — you get AI-powered advice personalised to your specific business situation, downloadable templates (cash flow forecasters, proposal scripts, staff agreements), a monthly Business Health Check, the ability to email your strategy directly to your accountant, priority access to the MMS team for quick questions, and exclusive resources to support your ongoing business journey. Premium is $9.99/month or $79/year.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">When is Premium launching? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Premium is currently in development and launching soon. Register your interest using the button in the Pricing section and we'll notify you the moment it goes live — along with an early bird discount for those who register before launch. Your details go directly to the Maximum Marketing Solutions team.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need to pay anything to use the app right now? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Absolutely not. The core platform — everything currently in the app — is free forever. No credit card required, no trial period, no hidden fees. You can use every action plan, every how-to guide, write all your strategy notes and print your strategy document without spending a cent. Premium is an optional upgrade for business owners who want to go deeper on their business journey.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What templates and resources come with Premium? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Premium subscribers will get access to a growing library of practical business resources including: a 13-week cash flow forecaster, a new client proposal template, a cold calling script builder, a staff performance review template, a business health scorecard, a Google Ads budget calculator, a break-even analysis tool, and monthly new resources added based on subscriber feedback. Every resource is designed for Australian small businesses — not generic American templates.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I cancel Premium at any time? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — cancel anytime with no lock-in, no cancellation fees and no awkward phone calls. If you cancel, you keep access until the end of your billing period and then revert to the free version. Your notes and saved plans are never deleted regardless of your subscription status.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How does the AI advice in Premium work? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Rather than fixed action plans, Premium subscribers can describe their specific situation — their industry, location, revenue, the exact problem they're facing — and receive personalised advice tailored to their business. Think of it as having a business advisor available 24/7 who understands the Australian market, knows your industry, and gives you straight answers without the consulting fee. It's powered by leading AI technology and guided by the real-world business experience of the Maximum Marketing Solutions team.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FINAL CTA ════ -->
+<div class="final-cta">
+  <h2>Ready to get your<br>action plan?</h2>
+  <p>Free, instant, Australian. No sign-up required. Built for the business owner who needs answers right now — not next week.</p>
+  <div class="final-btns">
+    <button class="btn-white" onclick="openApp()">Open Small Business Therapy →</button>
+    <button class="btn-outline-white" onclick="openModal()">Talk to MMS Instead</button>
+  </div>
+</div>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Small Business <span style="color:var(--terracotta)">Therapy</span></div>
+        <p>Free, practical crisis help for Australian small business owners. Built by Maximum Marketing Solutions — Unit 6/140 Wecker Rd, Mansfield QLD 4122 | info.maximumms@gmail.com | +61 459 472 739</p>
+      </div>
+      <div class="footer-col">
+        <h5>Problem Areas</h5>
+        <a href="#">Sales & Revenue</a>
+        <a href="#">Cash Flow</a>
+        <a href="#">Marketing</a>
+        <a href="#">Strategy</a>
+        <a href="#">Staff Issues</a>
+        <a href="#">Competition</a>
+      </div>
+      <div class="footer-col">
+        <h5>MMS Services</h5>
+        <a href="#">Local SEO</a>
+        <a href="#">Google Ads</a>
+        <a href="#">Free Consult</a>
+        <a href="#">White Label</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Small Business Therapy by Maximum Marketing Solutions. Free to use, forever.</p>
+      <p class="mms-credit">Built by <a href="#">Maximum Marketing Solutions</a> · Brisbane, QLD</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ MODAL ════ -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3>Book a Free Consult</h3>
+    <p>Tell us about your situation — we'll come back to you within one business day with honest, tailored advice. No hard sell.</p>
+    <input type="text" id="m-name" placeholder="Your name *">
+    <input type="text" id="m-biz" placeholder="Business name">
+    <input type="tel" id="m-phone" placeholder="Phone number *">
+    <input type="email" id="m-email" placeholder="Email address">
+    <textarea id="m-msg" placeholder="What's your main challenge right now?"></textarea>
+    <button class="modal-submit" onclick="submitModal()">Send — I'd Like Help →</button>
+  </div>
+</div>
+
+<script>
+// FAQ
+function toggleFaq(el){
+  const item = el.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+// Modal
+function openModal(){ document.getElementById('modal').classList.add('open'); }
+function closeModal(){ document.getElementById('modal').classList.remove('open'); }
+function submitModal(){
+  const name = document.getElementById('m-name').value.trim();
+  const phone = document.getElementById('m-phone').value.trim();
+  if(!name||!phone){ showToast('Please enter your name and phone number'); return; }
+  closeModal(); showToast('✅ Sent! We\'ll be in touch within one business day.');
+}
+
+// Inline form
+function submitForm(){
+  const name = document.getElementById('c-name').value.trim();
+  const phone = document.getElementById('c-phone').value.trim();
+  if(!name||!phone){ showToast('Please enter your name and phone number'); return; }
+  showToast('✅ Sent! We\'ll be in touch within one business day.');
+}
+
+// Open app — links to the actual tool
+function openApp(){
+  showToast('Opening Small Business Therapy...');
+  setTimeout(()=> window.open('index.html','_blank'), 600);
+}
+
+// Toast
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, {threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
