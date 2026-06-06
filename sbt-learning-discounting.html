@@ -151,6 +151,8 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 .next-card p{font-size:0.7rem;color:var(--light);}
 .toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+.topbar-nav{display:flex;}
+@media(max-width:640px){.topbar-nav{display:none;}}
 
 .calc-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:0.82rem;}
 .calc-table th{background:var(--plum);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:0.78rem;}
@@ -176,7 +178,12 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 <body>
 <div class="toast" id="toast"></div>
 <div class="topbar">
-  <div class="topbar-logo">Small Business <span>Therapy</span></div>
+  <div class="topbar-logo"><a href="index.html" style="text-decoration:none;color:inherit;">Small Business <span>Therapy</span></a></div>
+  <div class="topbar-nav" style="display:flex;gap:16px;align-items:center;">
+    <a href="index.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Free App</a>
+    <a href="learning-centre.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Learning Centre</a>
+    <a href="small-business-therapy-landing.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">About</a>
+  </div>
   <div class="topbar-right">
     <button class="strategy-btn" id="stratbtn">📋 My Strategy</button>
     <div class="prog-wrap">
