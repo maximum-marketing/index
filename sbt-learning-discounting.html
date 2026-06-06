@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 9: The True Cost of Discounting — Small Business Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--plum-dk:#5A2F59;--plum-lt:#EDE8EE;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--warm:#EDE8EE;--white:#fff;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
+.topbar{background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;}
+.topbar-logo{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;}
+.topbar-logo span{color:var(--mauve);}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.strategy-btn{background:rgba(166,130,164,0.2);border:1px solid var(--mauve);color:var(--mauve);font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;}
+.prog-wrap{display:flex;align-items:center;gap:8px;}
+.prog-label{font-size:0.7rem;color:rgba(255,255,255,0.4);}
+.prog-bar{width:80px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--mauve);transition:width 0.4s;}
+.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:24px 28px;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-step{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.hero p{font-size:0.83rem;color:rgba(255,255,255,0.55);}
+.cols{display:grid;grid-template-columns:1fr 320px;max-width:1100px;margin:0 auto;min-height:calc(100vh - 130px);}
+@media(max-width:850px){.cols{grid-template-columns:1fr;}}
+.col-content{padding:22px 24px 100px;border-right:1px solid rgba(0,0,0,0.07);}
+.col-notes{padding:18px 18px 100px;background:rgba(121,69,119,0.03);}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.06);}
+.card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:7px;}
+.card p{font-size:0.83rem;color:var(--mid);line-height:1.65;}
+.card.c-mauve{border-left-color:var(--mauve);}
+.card.c-dark{border-left-color:var(--black);}
+.card.c-red{border-left-color:#9b3535;}
+.insight{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:12px;color:#fff;}
+.insight-tag{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.insight h4{font-size:0.9rem;font-weight:700;margin-bottom:5px;}
+.insight p{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.6;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.sc{padding:18px 14px;}
+.sc.s{background:linear-gradient(135deg,#1a4731,#2d6b4a);}
+.sc.w{background:linear-gradient(135deg,#4a1a1a,#7a2e2e);}
+.sc.o{background:linear-gradient(135deg,var(--dk),var(--plum));}
+.sc.t{background:linear-gradient(135deg,#1a2a4a,#2e4a7a);}
+.sc .sl{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:5px;}
+.sc h4{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.sc p{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.45;}
+.steps{list-style:none;margin-bottom:12px;}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.step:last-child{border:none;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--plum);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step h4{font-size:0.86rem;font-weight:700;margin-bottom:3px;}
+.step p{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.eg-box{background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;}
+.eg-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:7px;}
+.eg-box h4{font-size:0.87rem;font-weight:700;margin-bottom:5px;}
+.eg-box p{font-size:0.82rem;color:var(--mid);line-height:1.55;}
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+@media(max-width:600px){.eg-grid{grid-template-columns:1fr;}}
+.eg-item{background:#fff;border-radius:9px;padding:11px;}
+.eg-type{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.eg-s .eg-type{color:#2d6b4a;} .eg-w .eg-type{color:#7a2e2e;} .eg-o .eg-type{color:var(--plum);} .eg-t .eg-type{color:#2e4a7a;}
+.eg-item ul{list-style:none;}
+.eg-item ul li{font-size:0.76rem;color:var(--mid);padding:2px 0;display:flex;gap:5px;line-height:1.35;}
+.eg-s ul li::before{content:'•';color:#2d6b4a;font-weight:700;flex-shrink:0;}
+.eg-w ul li::before{content:'•';color:#7a2e2e;font-weight:700;flex-shrink:0;}
+.eg-o ul li::before{content:'•';color:var(--plum);font-weight:700;flex-shrink:0;}
+.eg-t ul li::before{content:'•';color:#2e4a7a;font-weight:700;flex-shrink:0;}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+@media(max-width:500px){.tpl-grid{grid-template-columns:1fr;}}
+.tpl-cell{border-radius:10px;padding:12px;}
+.tpl-s{background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);}
+.tpl-w{background:rgba(122,46,46,0.05);border:1.5px solid rgba(122,46,46,0.2);}
+.tpl-o{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.2);}
+.tpl-t{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.2);}
+.tpl-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.tpl-letter{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;}
+.tpl-s .tpl-letter{color:#2d6b4a;} .tpl-w .tpl-letter{color:#7a2e2e;} .tpl-o .tpl-letter{color:var(--plum);} .tpl-t .tpl-letter{color:#2e4a7a;}
+.tpl-hdr span{font-size:0.73rem;font-weight:600;color:var(--mid);}
+.tpl-cell textarea{width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--black);resize:vertical;min-height:85px;outline:none;line-height:1.45;}
+.qz-q{background:#fff;border-radius:11px;padding:14px;margin-bottom:9px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.qz-q p{font-size:0.85rem;font-weight:600;margin-bottom:9px;}
+.qz-opts{display:flex;flex-direction:column;gap:6px;}
+.qz-opt{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:8px 12px;font-size:0.8rem;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--mid);transition:all 0.15s;}
+.qz-opt:hover{border-color:var(--mauve);color:var(--plum);}
+.qz-opt.correct{background:rgba(45,107,74,0.08);border-color:#2d6b4a;color:#2d6b4a;font-weight:600;}
+.qz-opt.wrong{background:rgba(122,46,46,0.08);border-color:#7a2e2e;color:#7a2e2e;}
+.qz-fb{font-size:0.76rem;margin-top:6px;padding:7px 10px;border-radius:7px;display:none;}
+.qz-fb.show{display:block;}
+.qz-fb.ok{background:rgba(45,107,74,0.08);color:#2d6b4a;}
+.qz-fb.bad{background:rgba(122,46,46,0.08);color:#7a2e2e;}
+.qz-score{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:11px;padding:16px;text-align:center;color:#fff;display:none;margin-top:10px;}
+.qz-score h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;}
+.qz-score p{font-size:0.8rem;color:rgba(255,255,255,0.7);}
+.nc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(121,69,119,0.15);}
+.nc-hdr h3{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--plum);}
+.nc-hdr span{font-size:0.7rem;color:var(--light);}
+.nb{margin-bottom:11px;}
+.nb-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:4px;}
+.nb-hint{font-size:0.72rem;color:var(--light);margin-bottom:4px;font-style:italic;line-height:1.35;}
+.nb textarea{width:100%;border:1.5px solid rgba(121,69,119,0.14);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.77rem;color:var(--black);resize:vertical;min-height:66px;outline:none;background:#fff;line-height:1.45;}
+.nb textarea:focus{border-color:var(--plum);}
+.nb textarea::placeholder{color:#bbb;font-size:0.73rem;}
+.save-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px;font-family:'Montserrat',sans-serif;font-size:0.77rem;font-weight:700;cursor:pointer;margin-top:3px;}
+.save-btn:hover{background:var(--dk);}
+.saved-msg{font-size:0.68rem;color:var(--plum);font-weight:600;text-align:center;margin-top:5px;min-height:16px;}
+.cum-panel{background:#fff;border-radius:10px;padding:12px;margin-top:14px;border-top:3px solid var(--plum);}
+.cum-hdr{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;}
+.cum-empty{font-size:0.74rem;color:var(--light);font-style:italic;text-align:center;padding:10px 0;}
+.cum-entry{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.05);}
+.cum-entry:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+.cum-entry-lbl{font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mauve);margin-bottom:2px;}
+.cum-entry-txt{font-size:0.75rem;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.cum-btns{display:flex;gap:7px;margin-top:10px;}
+.cum-print{flex:1;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:7px;font-size:0.72rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;}
+.cum-copy{flex:1;background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:7px;padding:7px;font-size:0.72rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;}
+.botnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,0.07);padding:10px 22px;display:flex;align-items:center;justify-content:space-between;z-index:998;box-shadow:0 -3px 16px rgba(0,0,0,0.06);}
+.bot-btn{background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;}
+.bot-btn:hover{background:var(--dk);}
+.bot-btn.sec{background:transparent;color:var(--mid);border:1.5px solid rgba(0,0,0,0.12);}
+.bot-btn.sec:hover{border-color:var(--mauve);color:var(--plum);}
+.bot-btn:disabled{opacity:0.3;cursor:default;}
+.dots{display:flex;gap:5px;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;}
+.dot.on{background:var(--plum);width:16px;border-radius:4px;}
+.badge{display:inline-block;background:rgba(121,69,119,0.1);border:1px solid rgba(121,69,119,0.25);color:var(--plum);font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px;}
+.price-box{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:16px 24px;display:inline-block;margin-bottom:24px;}
+.price-box .pl{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.price-box .pp{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;}
+.price-box .ps{font-size:0.72rem;color:rgba(255,255,255,0.5);}
+.start-btn{background:var(--plum);color:#fff;border:none;border-radius:9px;padding:13px 34px;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;}
+.start-btn:hover{background:var(--dk);}
+.check-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:9px;padding:10px;font-family:'Montserrat',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.strat-back{background:none;border:none;color:var(--mauve);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;padding:0;display:block;}
+.s-print{background:var(--plum);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-right:8px;}
+.s-copy{background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;}
+.strat-card{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.strat-card .sl{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.strat-card .sc2{font-size:0.78rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.strat-card .sn{font-size:0.81rem;color:var(--mid);line-height:1.55;white-space:pre-wrap;background:var(--cream);border-radius:7px;padding:8px 10px;}
+.comp-badge{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 14px;}
+.comp-keys{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:18px;color:#fff;text-align:left;margin-bottom:20px;}
+.comp-keys .ck-title{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.comp-keys p{font-size:0.83rem;color:rgba(255,255,255,0.85);line-height:1.85;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;text-align:left;}
+@media(max-width:480px){.next-grid{grid-template-columns:1fr;}}
+.next-card{background:#fff;border-radius:10px;padding:13px;border:1.5px solid rgba(0,0,0,0.06);}
+.next-card .nc-num{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.next-card h4{font-size:0.83rem;font-weight:700;margin-bottom:2px;}
+.next-card p{font-size:0.7rem;color:var(--light);}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.calc-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:0.82rem;}
+.calc-table th{background:var(--plum);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:0.78rem;}
+.calc-table td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,0.06);color:var(--mid);}
+.calc-table tr:nth-child(even){background:rgba(121,69,119,0.04);}
+.calc-table tr.highlight{background:rgba(121,69,119,0.1);font-weight:600;color:var(--black);}
+.calc-table tr.red-row{background:rgba(155,53,53,0.08);color:#9b3535;font-weight:600;}
+.calc-table tr.green-row{background:rgba(45,107,74,0.08);color:#2d6b4a;font-weight:600;}
+.calc-input{width:100%;border:1.5px solid rgba(121,69,119,0.2);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.82rem;outline:none;background:#fff;}
+.calc-input:focus{border-color:var(--plum);}
+.calc-result{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:10px;padding:14px;color:#fff;margin-top:10px;text-align:center;}
+.calc-result .cr-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:4px;}
+.calc-result .cr-value{font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;}
+.calc-result .cr-sub{font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:2px;}
+.warning-box{background:rgba(155,53,53,0.06);border:1.5px solid rgba(155,53,53,0.2);border-radius:12px;padding:16px;margin-bottom:12px;}
+.warning-box h4{font-size:0.9rem;font-weight:700;color:#9b3535;margin-bottom:6px;}
+.warning-box p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+.green-box{background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:12px;padding:16px;margin-bottom:12px;}
+.green-box h4{font-size:0.9rem;font-weight:700;color:#2d6b4a;margin-bottom:6px;}
+.green-box p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="topbar">
+  <div class="topbar-logo">Small Business <span>Therapy</span></div>
+  <div class="topbar-right">
+    <button class="strategy-btn" id="stratbtn">📋 My Strategy</button>
+    <div class="prog-wrap">
+      <span class="prog-label" id="plabel">1/8</span>
+      <div class="prog-bar"><div class="prog-fill" id="pfill" style="width:12%"></div></div>
+    </div>
+  </div>
+</div>
+<div id="p1" style="display:block;">
+  <div style="max-width:580px;margin:0 auto;padding:44px 22px 100px;text-align:center;">
+    <div class="badge">Module 09 · Profit & Finance</div>
+    <h1 style="font-family:Montserrat,sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;margin-bottom:12px;">The True Cost of <span style="color:var(--plum);">Discounting</span></h1>
+    <p style="font-size:0.92rem;color:var(--mid);line-height:1.7;margin-bottom:24px;">A 10% discount does not require 10% more sales to recover. For most businesses the real number is 25–50% more sales. This module shows you exactly what discounting costs you — with an interactive calculator for your own numbers — and gives you the tools to protect your prices with confidence.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <span style="font-size:0.78rem;color:var(--mid);">⏱ 25–30 min</span>
+      <span style="font-size:0.78rem;color:var(--mid);">📋 6 lessons</span>
+      <span style="font-size:0.78rem;color:var(--mid);">🧮 Interactive calculators</span>
+      <span style="font-size:0.78rem;color:var(--mid);">🖨️ Print your strategy</span>
+    </div>
+    <div class="price-box"><div class="pl">Lifetime Access</div><div class="pp">$19.99</div><div class="ps">one-off · no subscription</div></div>
+    <br><br><button class="start-btn" id="startbtn">Start Module →</button>
+  </div>
+</div><div id="p2" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 1 of 6</div><h2>Why Discounting is Dangerous</h2><p>The hidden maths that most business owners have never seen.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Discounting Illusion</h3><p>When a client asks for a 10% discount, most business owners think: I need to sell 10% more to compensate. That is almost never true. The actual extra sales required to recover a discount depends on your gross margin — and for most businesses, it is shockingly higher than 10%. Understanding this maths is one of the most important financial lessons a business owner can learn.</p></div><div style="background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-family:Montserrat,sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:12px;color:var(--black);">The Discounting Impact Table</div><table class="calc-table"><thead><tr><th>Your Gross Margin</th><th>10% Discount</th><th>15% Discount</th><th>20% Discount</th></tr></thead><tbody><tr><td>60% margin</td><td class="green-row">+20% more sales</td><td class="red-row">+33% more sales</td><td class="red-row">+50% more sales</td></tr><tr><td>50% margin</td><td class="red-row">+25% more sales</td><td class="red-row">+43% more sales</td><td class="red-row">+67% more sales</td></tr><tr><td>40% margin</td><td class="red-row">+33% more sales</td><td class="red-row">+60% more sales</td><td class="red-row">+100% more sales</td></tr><tr><td>30% margin</td><td class="red-row">+50% more sales</td><td class="red-row">+100% more sales</td><td class="red-row">+200% more sales</td></tr></tbody></table></div><div class="warning-box"><h4>⚠️ The 30% Margin Reality</h4><p>If your gross margin is 30% and you give a 20% discount, you need to DOUBLE your sales volume just to make the same profit as before the discount. Does doubling your volume seem realistic? For most businesses the answer is no — which means every 20% discount at 30% margin destroys profit permanently.</p></div><div class="insight"><div class="insight-tag">💡 Why This Happens</div><h4>The discount comes entirely out of your margin, not your costs</h4><p>When you discount 10%, your costs don't change. Your revenue drops. Every dollar of discount comes directly from profit. That's why the recovery rate is so much higher than the discount rate — you're trying to recover pure profit loss through additional volume.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">What is my gross margin?</div><div class="nb-hint">If you don't know, estimate it — what percentage of each sale is gross profit?</div><textarea id="n2a" placeholder="e.g. I think my gross margin is around 45%. Which means a 10% discount requires 29% more sales to recover. I had no idea it was that much..."></textarea></div><div class="nb"><div class="nb-label">How often do I discount?</div><div class="nb-hint">Be honest — how frequently do you reduce your price when clients push back?</div><textarea id="n2b" placeholder="e.g. Probably 30-40% of my proposals end up with some discount. Usually 10-15%. I've been thinking of it as a cost of doing business but looking at this table it's costing me a fortune..."></textarea></div><div class="nb"><div class="nb-label">What this table tells me about my business</div><div class="nb-hint">What is your reaction to seeing the actual numbers?</div><textarea id="n2c" placeholder="e.g. At my 45% margin, a 15% discount requires 50% more sales to recover. That's genuinely shocking. I need a completely different approach to pricing conversations..."></textarea></div>
+      <button class="save-btn" id="save2">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm2"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd2"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p3" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 2 of 6</div><h2>The Discount Calculator — Your Numbers</h2><p>Calculate exactly what discounting is costing your business every year.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>🧮 My Discount Impact Calculator</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:14px;">Enter your numbers to see the real cost of discounting in your business.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;"><div><div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">Average Sale Value ($)</div><input type="number" id="avg-sale" class="calc-input" placeholder="e.g. 5000" oninput="calcDiscount()"></div><div><div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">Your Gross Margin (%)</div><input type="number" id="gross-margin" class="calc-input" placeholder="e.g. 45" oninput="calcDiscount()"></div><div><div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">Discount You're Giving (%)</div><input type="number" id="discount-pct" class="calc-input" placeholder="e.g. 10" oninput="calcDiscount()"></div><div><div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">Number of Discounts Per Year</div><input type="number" id="discount-count" class="calc-input" placeholder="e.g. 20" oninput="calcDiscount()"></div></div><div id="calc-results" style="display:none;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;"><div class="calc-result"><div class="cr-label">Profit Lost Per Discount</div><div class="cr-value" id="profit-per-discount">-</div></div><div class="calc-result"><div class="cr-label">Annual Profit Lost</div><div class="cr-value" id="annual-loss">-</div></div><div class="calc-result"><div class="cr-label">Extra Sales Needed to Recover</div><div class="cr-value" id="extra-sales-pct">-</div><div class="cr-sub">increase in sales volume required</div></div><div class="calc-result"><div class="cr-label">Extra Revenue Required</div><div class="cr-value" id="extra-revenue">-</div><div class="cr-sub">in additional sales per year</div></div></div></div></div><script>function calcDiscount(){var sale=parseFloat(document.getElementById("avg-sale").value)||0;var margin=parseFloat(document.getElementById("gross-margin").value)||0;var disc=parseFloat(document.getElementById("discount-pct").value)||0;var count=parseFloat(document.getElementById("discount-count").value)||0;if(sale>0&&margin>0&&disc>0&&count>0){var origGP=sale*(margin/100);var discSale=sale*(1-disc/100);var newGP=discSale*(margin/100);var gpLost=origGP-newGP;var annualLoss=gpLost*count;var extraSalesPct=(disc/(margin-disc))*100;var extraRevenue=annualLoss/(margin/100);document.getElementById("profit-per-discount").textContent="$"+gpLost.toFixed(0);document.getElementById("annual-loss").textContent="$"+annualLoss.toFixed(0);document.getElementById("extra-sales-pct").textContent=extraSalesPct.toFixed(1)+"%";document.getElementById("extra-revenue").textContent="$"+extraRevenue.toFixed(0);document.getElementById("calc-results").style.display="block";}}</script></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My calculator results — what do they show?</div><div class="nb-hint">Record your specific numbers from the calculator above</div><textarea id="n3a" placeholder="e.g. At $3,000 avg sale, 45% margin, 10% discount, 25 times per year:
+Profit lost per discount: $300
+Annual profit lost: $7,500
+Extra sales needed: 29% more
+Extra revenue required: $16,667 — that's genuinely shocking"></textarea></div><div class="nb"><div class="nb-label">My annual cost of discounting</div><div class="nb-hint">What is the total annual profit you are losing to discounts?</div><textarea id="n3b" placeholder="e.g. $7,500 per year minimum. But I suspect I discount more than 25 times. Probably closer to $12,000-15,000 per year in pure profit loss from discounting alone..."></textarea></div><div class="nb"><div class="nb-label">My reaction to these numbers</div><div class="nb-hint">How does this change how you think about the next discount request?</div><textarea id="n3c" placeholder="e.g. I will never casually give a discount again. Every 10% discount I give on a $3k job costs me $300 in profit and requires $667 in new sales to replace. The maths are undeniable..."></textarea></div>
+      <button class="save-btn" id="save3">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm3"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd3"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p4" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 3 of 6</div><h2>Why Clients Ask for Discounts — and What They Really Mean</h2><p>Understanding the psychology behind price objections so you can respond confidently.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Discount Request is Usually a Test</h3><p>Most clients who ask for a discount are not genuinely unable to afford your price. They are testing whether you believe in your own value. When you immediately offer a discount, you signal two things: my price was wrong to begin with, and I don't have confidence in my value. Both signals undermine the relationship before it starts.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Understand what "it's too expensive" actually means</h4><p>In most cases it means one of three things: (1) I don't yet see enough value to justify the price, (2) I'm testing whether this is your real price, (3) I genuinely have a budget constraint. Each requires a different response. Discounting solves only the third case — and only if it's genuine.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Respond with value, not a lower price</h4><p>When a client says the price is too high, ask: "What would need to be different for this to be worth that investment to you?" This forces a conversation about value rather than price, and often reveals what they actually need to hear.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Offer a scope reduction rather than a discount</h4><p>Instead of reducing price for the same work, offer to remove something from the scope. "I can't reduce the price on this package, but I can do a smaller scope for $X if that works better for your budget." This maintains your price integrity while giving the client options.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Have a genuine no-discount policy and explain it</h4><p>Many businesses successfully operate with a no-discount policy. The key is communicating it with confidence: "We don't discount because our pricing reflects the quality of work we deliver and we don't want to compromise that for any client." Confidence in your position is persuasive.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Know your walk-away number</h4><p>Before every proposal, decide the minimum you will accept. If a client asks for more discount than your walk-away, you politely decline and move on. Not every client is the right client — and a client you won by deep discounting is often more trouble than they're worth.</p></div></li></ul><div class="insight"><div class="insight-tag">📍 The Confident Response</div><h4>A script for the next time a client asks for a discount</h4><p>Client: "Can you do it for less?"<br><br>Response: "I appreciate you asking. Our pricing reflects [specific value element — e.g. the monthly strategy calls, the specialised industry knowledge, the guaranteed response time]. I'm not able to reduce the price on this package, but what I can do is [offer a smaller scope alternative or explain the payment terms]. Would either of those work better for you?"<br><br>This response does not apologise, does not immediately discount, and gives the client a genuine alternative.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My current response when asked for a discount</div><div class="nb-hint">What do you usually say — and what does that signal to the client?</div><textarea id="n4a" placeholder="e.g. I usually say "let me see what I can do" and then come back with 10-15% off. That signals my price was padded to begin with. I need to change this completely..."></textarea></div><div class="nb"><div class="nb-label">My new response script</div><div class="nb-hint">Write your confident, no-discount response for the next time a client asks</div><textarea id="n4b" placeholder="e.g. "Our pricing reflects the specialised trade industry knowledge and the monthly strategy calls included in every package. I'm not able to reduce that price, but I can offer a 3-month trial package at a reduced scope for $X if that works better right now.""></textarea></div><div class="nb"><div class="nb-label">My walk-away number</div><div class="nb-hint">What is the minimum you will accept for your core service?</div><textarea id="n4c" placeholder="e.g. My standard SEO retainer is $2,200. I will accept $1,900 absolute minimum for a 12-month contract. Below $1,900 I politely decline — those clients cost more in time than they generate in profit."></textarea></div>
+      <button class="save-btn" id="save4">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm4"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd4"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p5" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 4 of 6</div><h2>Building a Pricing Defence System</h2><p>The systems and policies that protect your prices without needing to have the same conversation every time.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Systematise Your Price Defence</h3><p>Ad hoc responses to discount requests produce inconsistent results. Building a systematic approach to pricing defence means your response is always confident, always consistent and always in the best interest of your business margin.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Create a formal pricing policy</h4><p>Write it down. Your pricing policy should state: standard prices, what is and is not negotiable, payment terms, and the conditions under which you will offer a reduced scope. Having it written makes it real — for you and your staff.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Build value into your proposal before price appears</h4><p>By the time the client sees your price, they should already understand exactly what they are getting and why it is worth it. Lead with outcomes and ROI. Show the problem, show your solution, show the result — then show the price. Price at the end of a strong value story lands very differently than price at the top of a quote.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Use annual price increases as a discipline</h4><p>Build a 3–5% annual price increase into your business calendar. Communicate it professionally and in advance. Clients who push back on a small annual increase are telling you something important about the relationship.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Train staff who quote to never discount without approval</h4><p>If you have staff or contractors who provide quotes, they must not have authority to discount without management approval. A 10% discount given casually by a staff member costs the same as one given by the owner — the business doesn't know the difference.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Track your average sale value monthly</h4><p>If your average sale value starts declining, it is often an early warning of discounting creep — the gradual normalisation of discounting across the business. Tracking it monthly catches this early.</p></div></li></ul><div class="insight"><div class="insight-tag">💡 The Annual Price Increase Letter</div><h4>A simple template that protects margin every year</h4><p>Dear [Client],<br><br>Thank you for your continued support of [Business Name]. As of [date], our pricing will increase by [X]% to reflect rising costs and continued investment in the quality of our service.<br><br>Your new [service] price will be [new price] per month. Your current pricing will remain in place until [date].<br><br>We value your business and remain committed to delivering [key value proposition].<br><br>This simple annual communication, sent 60 days before the increase takes effect, typically results in 85–90% of clients accepting the increase without question.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My pricing policy — first draft</div><div class="nb-hint">Write your business's pricing policy in plain language</div><textarea id="n5a" placeholder="e.g. Standard SEO retainer: $2,200/month. No discounts on standard packages. Reduced scope option available at $1,500/month with fewer deliverables clearly defined. Annual price increase of 4% every July 1..."></textarea></div><div class="nb"><div class="nb-label">My next annual price increase</div><div class="nb-hint">When is your next price increase and by how much?</div><textarea id="n5b" placeholder="e.g. Last price increase was 18 months ago. Due for 5% increase on July 1. That's $110/month per client. With 14 clients that's $1,540/month in additional revenue for zero additional work..."></textarea></div><div class="nb"><div class="nb-label">My proposal structure change</div><div class="nb-hint">How will you restructure your proposals to lead with value before price?</div><textarea id="n5c" placeholder="e.g. Going to redesign my proposal template this week. New order: 1) Their problem, 2) My solution, 3) Expected outcomes with examples, 4) What's included, 5) Investment. Price last, not first..."></textarea></div>
+      <button class="save-btn" id="save5">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm5"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd5"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p6" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 5 of 6 — Your Discount Elimination Plan</div><h2>Commit to Your Pricing Strategy</h2><p>Define your policy, your response and your annual increase plan.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>My Pricing Protection Strategy</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:10px;">Complete each section. This becomes your pricing policy document.</p></div><div style="display:flex;flex-direction:column;gap:9px;margin-bottom:12px;"><div style="background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2d6b4a;margin-bottom:5px;">💰 My Standard Pricing</div><textarea id="tpl-pricing" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:70px;outline:none;" placeholder="My core services and standard prices. No discount below these without approval..."></textarea></div><div style="background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">🗣️ My Discount Response Script</div><textarea id="tpl-script" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:70px;outline:none;" placeholder="What I say when a client asks for a discount..."></textarea></div><div style="background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2e4a7a;margin-bottom:5px;">📅 My Annual Price Increase Plan</div><textarea id="tpl-increase" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:60px;outline:none;" placeholder="Date of next increase, percentage, which clients, communication plan..."></textarea></div><div style="background:rgba(155,53,53,0.05);border:1.5px solid rgba(155,53,53,0.15);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#9b3535;margin-bottom:5px;">🚫 My Walk-Away Numbers</div><textarea id="tpl-walkaway" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:60px;outline:none;" placeholder="The minimum I will accept for each service. Below this I walk away politely..."></textarea></div></div><button class="save-btn" id="save6" style="width:100%;">💾 Save My Pricing Strategy</button></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My annual profit recovered by eliminating discounting</div><div class="nb-hint">Based on your calculator results, what is the annual profit recovery potential?</div><textarea id="n6a" placeholder="e.g. Calculator showed $7,500/year in profit lost. If I can eliminate 80% of unnecessary discounting that's $6,000/year straight back to profit. Plus the annual price increase adds another $1,540/month = $18,480/year..."></textarea></div><div class="nb"><div class="nb-label">The next discount request I will handle differently</div><div class="nb-hint">What is the very next opportunity to apply this module?</div><textarea id="n6b" placeholder="e.g. I have a proposal going out on Thursday for $2,800/month. I'm going to lead with value in the proposal, include a case study, and if they ask for a discount I'm using my new script instead of caving..."></textarea></div><div class="nb"><div class="nb-label">My pricing confidence commitment</div><div class="nb-hint">What do you commit to changing about how you handle pricing going forward?</div><textarea id="n6c" placeholder="e.g. No more casual discounts. Every discount request gets my script first. Walk-away number is set and firm. Annual increase goes in the calendar for July 1 today. Proposal template redesigned this week."></textarea></div>
+      <button class="save-btn" id="save6">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm6"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd6"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p7" style="display:none;"><div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 6 of 6 — Knowledge Check</div><h2>Knowledge Check</h2><p>5 questions to confirm your understanding.</p></div></div><div class="cols"><div class="col-content"><div class="qz-q" id="q1"><p>1. A business has a 40% gross margin and gives a 10% discount. How much extra sales volume is needed to recover the lost profit?</p><div class="qz-opts"><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! At 40% margin with a 10% discount: 10/(40-10) = 33% more sales needed. The lower your margin, the more devastating discounting becomes." data-msg-w="Not quite. At 40% margin with 10% discount, the formula is: discount/(margin-discount) = 10/30 = 33% more sales required.">10% more sales</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! At 40% margin with a 10% discount: 10/(40-10) = 33% more sales needed. The lower your margin, the more devastating discounting becomes." data-msg-w="Not quite. At 40% margin with 10% discount, the formula is: discount/(margin-discount) = 10/30 = 33% more sales required.">20% more sales</button><button class="qz-opt" data-q="1" data-correct="true" data-msg-c="Correct! At 40% margin with a 10% discount: 10/(40-10) = 33% more sales needed. The lower your margin, the more devastating discounting becomes." data-msg-w="Not quite. At 40% margin with 10% discount, the formula is: discount/(margin-discount) = 10/30 = 33% more sales required.">33% more sales</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! At 40% margin with a 10% discount: 10/(40-10) = 33% more sales needed. The lower your margin, the more devastating discounting becomes." data-msg-w="Not quite. At 40% margin with 10% discount, the formula is: discount/(margin-discount) = 10/30 = 33% more sales required.">5% more sales</button></div><div class="qz-fb" id="fb1"></div></div><div class="qz-q" id="q2"><p>2. When a client says "it's too expensive," this most commonly means:</p><div class="qz-opts"><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Most "too expensive" objections are about perceived value, not actual budget. The right response is a value conversation, not a discount." data-msg-w="Not quite. Most price objections are actually value objections — the client doesn't yet see enough value to justify the price.">They genuinely cannot afford your service</button><button class="qz-opt" data-q="2" data-correct="true" data-msg-c="Correct! Most "too expensive" objections are about perceived value, not actual budget. The right response is a value conversation, not a discount." data-msg-w="Not quite. Most price objections are actually value objections — the client doesn't yet see enough value to justify the price.">They don't see enough value yet to justify the price</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Most "too expensive" objections are about perceived value, not actual budget. The right response is a value conversation, not a discount." data-msg-w="Not quite. Most price objections are actually value objections — the client doesn't yet see enough value to justify the price.">Your price is above market rate</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Most "too expensive" objections are about perceived value, not actual budget. The right response is a value conversation, not a discount." data-msg-w="Not quite. Most price objections are actually value objections — the client doesn't yet see enough value to justify the price.">They are comparing you to a cheaper competitor</button></div><div class="qz-fb" id="fb2"></div></div><div class="qz-q" id="q3"><p>3. Instead of offering a discount, the preferred alternative is to:</p><div class="qz-opts"><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! A scope reduction maintains your price integrity — you are charging the same rate for less work, which preserves your margin and your positioning." data-msg-w="Not quite. Offering a reduced scope at a lower price maintains your price per unit of work while giving the client a genuine option.">Apologise for the high price and offer 5% off</button><button class="qz-opt" data-q="3" data-correct="true" data-msg-c="Correct! A scope reduction maintains your price integrity — you are charging the same rate for less work, which preserves your margin and your positioning." data-msg-w="Not quite. Offering a reduced scope at a lower price maintains your price per unit of work while giving the client a genuine option.">Offer a reduced scope for a lower price</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! A scope reduction maintains your price integrity — you are charging the same rate for less work, which preserves your margin and your positioning." data-msg-w="Not quite. Offering a reduced scope at a lower price maintains your price per unit of work while giving the client a genuine option.">Explain your costs in detail</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! A scope reduction maintains your price integrity — you are charging the same rate for less work, which preserves your margin and your positioning." data-msg-w="Not quite. Offering a reduced scope at a lower price maintains your price per unit of work while giving the client a genuine option.">Match the competitor's price</button></div><div class="qz-fb" id="fb3"></div></div><div class="qz-q" id="q4"><p>4. Tracking average sale value monthly helps you:</p><div class="qz-opts"><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! If average sale value is declining over time, it is often a sign that discounting is becoming normalised across the business." data-msg-w="Not quite. Declining average sale value is often an early warning sign of discounting creep becoming normalised.">Calculate your tax liability</button><button class="qz-opt" data-q="4" data-correct="true" data-msg-c="Correct! If average sale value is declining over time, it is often a sign that discounting is becoming normalised across the business." data-msg-w="Not quite. Declining average sale value is often an early warning sign of discounting creep becoming normalised.">Detect discounting creep before it becomes a systemic problem</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! If average sale value is declining over time, it is often a sign that discounting is becoming normalised across the business." data-msg-w="Not quite. Declining average sale value is often an early warning sign of discounting creep becoming normalised.">Set annual sales targets</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! If average sale value is declining over time, it is often a sign that discounting is becoming normalised across the business." data-msg-w="Not quite. Declining average sale value is often an early warning sign of discounting creep becoming normalised.">Compare performance to competitors</button></div><div class="qz-fb" id="fb4"></div></div><div class="qz-q" id="q5"><p>5. The annual price increase letter should be sent:</p><div class="qz-opts"><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! 60 days notice is professional, gives clients time to plan their budgets, and results in very high acceptance rates." data-msg-w="Not quite. Best practice is 60 days before the increase — professional notice that results in the highest client acceptance rates.">On the day the price increase takes effect</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! 60 days notice is professional, gives clients time to plan their budgets, and results in very high acceptance rates." data-msg-w="Not quite. Best practice is 60 days before the increase — professional notice that results in the highest client acceptance rates.">After the price increase has already been applied</button><button class="qz-opt" data-q="5" data-correct="true" data-msg-c="Correct! 60 days notice is professional, gives clients time to plan their budgets, and results in very high acceptance rates." data-msg-w="Not quite. Best practice is 60 days before the increase — professional notice that results in the highest client acceptance rates.">60 days before the increase takes effect</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! 60 days notice is professional, gives clients time to plan their budgets, and results in very high acceptance rates." data-msg-w="Not quite. Best practice is 60 days before the increase — professional notice that results in the highest client acceptance rates.">Only to clients who ask about pricing</button></div><div class="qz-fb" id="fb5"></div></div><div class="qz-score" id="qscore"></div><button class="check-btn" id="checkbtn">Check My Answers →</button></div><div class="col-notes"><div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div><div class="nb"><div class="nb-label">What surprised me</div><div class="nb-hint">Note anything that challenged your thinking</div><textarea id="n7a" placeholder="e.g. I had no idea how much discounting was costing me..."></textarea></div>
+    <div class="nb"><div class="nb-label">My biggest learning</div><div class="nb-hint">The single most valuable insight from this module</div><textarea id="n7b" placeholder="e.g. The leverage of expense reduction vs sales growth completely changed how I think about costs..."></textarea></div>
+    <div class="nb"><div class="nb-label">What I am doing from Monday</div><div class="nb-hint">One concrete action you commit to</div><textarea id="n7c" placeholder="e.g. Reviewing every supplier contract this week and calling 3 of them to renegotiate terms..."></textarea></div><button class="save-btn" id="save7">💾 Save These Notes</button><div class="saved-msg" id="sm7"></div><div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd7"><div class="cum-empty">Your notes will appear here →</div></div></div></div></div></div><div id="p8" style="display:none;">
+  <div style="max-width:640px;margin:0 auto;padding:36px 22px 100px;text-align:center;">
+    <div class="comp-badge">🎓</div>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;margin-bottom:9px;">Module 9 Complete!</h2>
+    <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:20px;">Your notes from every lesson have built into a strategy document you can print or share with your accountant.</p>
+    <div class="comp-keys"><div class="ck-title">Key Takeaways</div><p>✓ A 10% discount requires far more than 10% extra sales to recover<br>✓ The lower your margin, the more devastating discounting is<br>✓ Most discount requests are value objections, not budget problems<br>✓ Offer scope reductions, not price reductions<br>✓ Annual price increases protect margin systematically</p></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="s-print" id="finprint">🖨️ Print My Strategy</button>
+      <button class="s-copy" id="fincopy">📋 Copy to Clipboard</button>
+    </div>
+    <p style="font-weight:700;font-size:0.88rem;margin-bottom:12px;">Continue your learning:</p>
+    <div class="next-grid"><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 08</div><h4>Increasing Profit</h4><p>All five profit levers in detail</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 10</div><h4>Expense Reduction Deep Dive</h4><p>Systematic cost control strategies</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 05</div><h4>Marketing Mix (4Ps)</h4><p>Revisit pricing strategy with this module</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 06</div><h4>Strategy Map and KPIs</h4><p>Add margin KPIs to your scorecard</p></div></div>
+  </div>
+</div>
+<div id="pstrat" style="display:none;">
+  <div style="max-width:860px;margin:0 auto;padding:26px 22px 100px;">
+    <button class="strat-back" id="stratback">← Back to Module</button>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:5px;">📋 My Strategy — Module 9: The True Cost of Discounting</h2>
+    <p style="font-size:0.83rem;color:var(--mid);margin-bottom:18px;">All notes from this module built lesson by lesson.</p>
+    <div style="margin-bottom:18px;"><button class="s-print" id="stratprint">🖨️ Print</button><button class="s-copy" id="stratcopy">📋 Copy</button></div>
+    <div id="stratbody"></div>
+  </div>
+</div>
+<div class="botnav" id="botnav">
+  <button class="bot-btn sec" id="prevbtn">← Back</button>
+  <div class="dots" id="dotrow"></div>
+  <button class="bot-btn" id="nextbtn">Next →</button>
+</div>
+<script>
+var cur=1,total=8,prevPg=1,MOD_KEY='sbt_mod9_';
+var NOTES=[
+  {pg:2,fields:[{id:'n2a',lbl:'What is my gross margin'},{id:'n2b',lbl:'How often do I discount'},{id:'n2c',lbl:'What this table tells me about my business'}]},
+  {pg:3,fields:[{id:'n3a',lbl:'My calculator results'},{id:'n3b',lbl:'My annual cost of discounting'},{id:'n3c',lbl:'My reaction to these numbers'}]},
+  {pg:4,fields:[{id:'n4a',lbl:'My current response when asked for discount'},{id:'n4b',lbl:'My new response script'},{id:'n4c',lbl:'My walk-away number'}]},
+  {pg:5,fields:[{id:'n5a',lbl:'My pricing policy first draft'},{id:'n5b',lbl:'My next annual price increase'},{id:'n5c',lbl:'My proposal structure change'}]},
+  {pg:6,fields:[{id:'n6a',lbl:'My annual profit recovered by eliminating discounting'},{id:'n6b',lbl:'The next discount request I will handle differently'},{id:'n6c',lbl:'My pricing confidence commitment'}]},
+  {pg:7,fields:[{id:'n7a',lbl:'What surprised me in the quiz'},{id:'n7b',lbl:'My biggest learning'},{id:'n7c',lbl:'What I am doing from Monday'}]}
+];
+function sk(id){return MOD_KEY+id;}
+function store(id,val){try{if(val.trim())localStorage.setItem(sk(id),val);else localStorage.removeItem(sk(id));}catch(e){}}
+function recall(id){try{return localStorage.getItem(sk(id))||'';}catch(e){return '';}}
+function showPg(id){var all=['p1','p2','p3','p4','p5','p6','p7','p8','p8','pstrat'];for(var i=0;i<all.length;i++){var el=document.getElementById(all[i]);if(el)el.style.display='none';}var t=document.getElementById(id);if(t)t.style.display='block';window.scrollTo(0,0);}
+function goTo(n){cur=n;showPg('p'+cur);document.getElementById('botnav').style.display='flex';updateNav();refreshAll();}
+function updateNav(){document.getElementById('prevbtn').disabled=(cur===1);document.getElementById('nextbtn').disabled=(cur===total);document.getElementById('nextbtn').textContent=(cur===total-1)?'Finish →':'Next →';document.getElementById('plabel').textContent=cur+'/'+total;document.getElementById('pfill').style.width=((cur/total)*100)+'%';buildDots();}
+function buildDots(){var c=document.getElementById('dotrow');c.innerHTML='';for(var i=1;i<=total;i++){var d=document.createElement('div');d.className='dot'+(i===cur?' on':'');d.setAttribute('data-n',i);c.appendChild(d);}var dots=c.querySelectorAll('.dot');for(var j=0;j<dots.length;j++){dots[j].addEventListener('click',function(){goTo(parseInt(this.getAttribute('data-n')));}); }}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function buildCumHTML(){var html='',has=false;for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim()){has=true;html+='<div class="cum-entry"><div class="cum-entry-lbl">'+f.lbl+'</div><div class="cum-entry-txt">'+esc(v)+'</div></div>';}}}if(!has)html='<div class="cum-empty">Your notes will appear here as you save them →</div>';return{html:html,has:has};}
+function refreshAll(){var r=buildCumHTML();var cdivs=document.querySelectorAll('[id^="cd"]');for(var i=0;i<cdivs.length;i++)cdivs[i].innerHTML=r.html;var cb=document.getElementById('cbbtns');if(cb)cb.style.display=r.has?'flex':'none';}
+function saveNotes(pg){var def=null;for(var i=0;i<NOTES.length;i++)if(NOTES[i].pg===pg){def=NOTES[i];break;}if(!def)return;for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el)store(f.id,el.value);}refreshAll();var sm=document.getElementById('sm'+pg);if(sm){sm.textContent='✓ Saved';setTimeout(function(){sm.textContent='';},2000);}showToast('Notes saved ✓');}
+function loadAll(){for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el){var v=recall(f.id);if(v)el.value=v;}}}}
+function getStratText(){var t='MY STRATEGY — MODULE 9: THE TRUE COST OF DISCOUNTING\nSmall Business Therapy | Maximum Marketing Solutions\n----------------------------------------\n\n';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())t+=f.lbl.toUpperCase()+':\n'+v+'\n\n';}}t+='Maximum Marketing Solutions | maximummarketingsolutions.com.au | +61 459 472 739';return t;}
+function doPrint(){var w=window.open('','_blank');var b='<html><head><title>Strategy M9</title><style>body{font-family:Arial,sans-serif;max-width:760px;margin:36px auto;font-size:13px;}h1{font-size:1.2rem;margin-bottom:4px;}.sub{color:#888;font-size:11px;margin-bottom:20px;}.card{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;}.lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:3px;}.note{font-size:12px;color:#4a4a4a;line-height:1.6;white-space:pre-wrap;background:#f5f5f5;padding:7px 9px;border-left:3px solid #794577;}.foot{margin-top:24px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:8px;}</style></head><body><h1>Module 9: The True Cost of Discounting</h1><p class="sub">Small Business Therapy · Maximum Marketing Solutions</p>';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="card"><div class="lbl">'+f.lbl+'</div><div class="note">'+v+'</div></div>';}}b+='<div class="foot">Maximum Marketing Solutions · maximummarketingsolutions.com.au · +61 459 472 739</div></body></html>';w.document.write(b);w.document.close();w.print();}
+function doCopy(){var txt=getStratText();if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){showToast('Copied ✓');}).catch(function(){showToast('Use Print instead');});else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied ✓');}catch(e){showToast('Use Print instead');}document.body.removeChild(ta);}}
+function showStrat(){prevPg=cur;showPg('pstrat');document.getElementById('botnav').style.display='none';var r=buildCumHTML(),b='';if(!r.has)b='<p style="color:#888;font-style:italic;padding:24px 0;">No notes yet.</p>';else{for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="strat-card"><div class="sl">Lesson '+(def.pg-1)+'</div><div class="sc2">'+f.lbl+'</div><div class="sn">'+esc(v)+'</div></div>';}}}document.getElementById('stratbody').innerHTML=b;}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.className='toast on';setTimeout(function(){t.className='toast';},2600);}
+window.onload=function(){
+  showPg('p1');buildDots();updateNav();loadAll();refreshAll();
+  document.getElementById('startbtn').addEventListener('click',function(){goTo(2);});
+  document.getElementById('prevbtn').addEventListener('click',function(){if(cur>1)goTo(cur-1);});
+  document.getElementById('nextbtn').addEventListener('click',function(){if(cur<total)goTo(cur+1);});
+  document.getElementById('stratbtn').addEventListener('click',function(){showStrat();});
+  document.getElementById('stratback').addEventListener('click',function(){showPg('p'+prevPg);document.getElementById('botnav').style.display='flex';updateNav();});
+  document.getElementById('stratprint').addEventListener('click',function(){doPrint();});
+  document.getElementById('stratcopy').addEventListener('click',function(){doCopy();});
+  var saveEls=document.querySelectorAll('[id^="save"]');
+  for(var i=0;i<saveEls.length;i++){(function(el){var pg=parseInt(el.id.replace('save',''));if(!isNaN(pg))el.addEventListener('click',function(){saveNotes(pg);});}) (saveEls[i]);}
+  ['finprint','cumprint'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doPrint();});});
+  ['fincopy','cumcopy'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doCopy();});});
+  // Quiz buttons
+  var qbtns=document.querySelectorAll('.qz-opt');
+  for(var i=0;i<qbtns.length;i++){
+    (function(btn){
+      btn.addEventListener('click',function(){
+        var qn=parseInt(btn.getAttribute('data-q'));
+        var correct=btn.getAttribute('data-correct')==='true';
+        var qEl=document.getElementById('q'+qn);
+        var allBtns=qEl.querySelectorAll('.qz-opt');
+        for(var k=0;k<allBtns.length;k++){allBtns[k].disabled=true;allBtns[k].style.cursor='default';}
+        btn.className='qz-opt '+(correct?'correct':'wrong');
+        var fb=document.getElementById('fb'+qn);
+        fb.textContent=btn.getAttribute(correct?'data-msg-c':'data-msg-w');
+        fb.className='qz-fb show '+(correct?'ok':'bad');
+        if(!window.qAns)window.qAns={};
+        window.qAns[qn]=correct?'c':'w';
+      });
+    })(qbtns[i]);
+  }
+  var checkbtn=document.getElementById('checkbtn');
+  if(checkbtn){
+    checkbtn.addEventListener('click',function(){
+      var score=0,total_q=5;
+      if(window.qAns)for(var k in window.qAns)if(window.qAns[k]==='c')score++;
+      var sc=document.getElementById('qscore');
+      sc.style.display='block';
+      sc.innerHTML='<h4>'+score+'/'+total_q+' '+(score===5?'🎉':score>=4?'👍':'📚')+'</h4><p>'+(score===5?'Perfect!':score>=4?'Excellent work.':score>=3?'Good — review the lessons you missed.':'Work through the module again.')+'</p>';
+      if(score>=4){checkbtn.textContent='Continue to Completion →';checkbtn.addEventListener('click',function(){goTo(8);},{once:true});}
+      else{checkbtn.textContent='Review Module';checkbtn.addEventListener('click',function(){goTo(2);},{once:true});}
+    });
+  }
+};
+</script>
+</body>
+</html>

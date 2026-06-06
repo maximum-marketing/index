@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 10: Expense Reduction vs Sales Growth — Small Business Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--plum-dk:#5A2F59;--plum-lt:#EDE8EE;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--warm:#EDE8EE;--white:#fff;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
+.topbar{background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;}
+.topbar-logo{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;}
+.topbar-logo span{color:var(--mauve);}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.strategy-btn{background:rgba(166,130,164,0.2);border:1px solid var(--mauve);color:var(--mauve);font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;}
+.prog-wrap{display:flex;align-items:center;gap:8px;}
+.prog-label{font-size:0.7rem;color:rgba(255,255,255,0.4);}
+.prog-bar{width:80px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--mauve);transition:width 0.4s;}
+.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:24px 28px;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-step{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.hero p{font-size:0.83rem;color:rgba(255,255,255,0.55);}
+.cols{display:grid;grid-template-columns:1fr 320px;max-width:1100px;margin:0 auto;min-height:calc(100vh - 130px);}
+@media(max-width:850px){.cols{grid-template-columns:1fr;}}
+.col-content{padding:22px 24px 100px;border-right:1px solid rgba(0,0,0,0.07);}
+.col-notes{padding:18px 18px 100px;background:rgba(121,69,119,0.03);}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.06);}
+.card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:7px;}
+.card p{font-size:0.83rem;color:var(--mid);line-height:1.65;}
+.card.c-mauve{border-left-color:var(--mauve);}
+.card.c-dark{border-left-color:var(--black);}
+.card.c-red{border-left-color:#9b3535;}
+.insight{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:12px;color:#fff;}
+.insight-tag{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.insight h4{font-size:0.9rem;font-weight:700;margin-bottom:5px;}
+.insight p{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.6;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.sc{padding:18px 14px;}
+.sc.s{background:linear-gradient(135deg,#1a4731,#2d6b4a);}
+.sc.w{background:linear-gradient(135deg,#4a1a1a,#7a2e2e);}
+.sc.o{background:linear-gradient(135deg,var(--dk),var(--plum));}
+.sc.t{background:linear-gradient(135deg,#1a2a4a,#2e4a7a);}
+.sc .sl{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:5px;}
+.sc h4{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.sc p{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.45;}
+.steps{list-style:none;margin-bottom:12px;}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.step:last-child{border:none;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--plum);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step h4{font-size:0.86rem;font-weight:700;margin-bottom:3px;}
+.step p{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.eg-box{background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;}
+.eg-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:7px;}
+.eg-box h4{font-size:0.87rem;font-weight:700;margin-bottom:5px;}
+.eg-box p{font-size:0.82rem;color:var(--mid);line-height:1.55;}
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+@media(max-width:600px){.eg-grid{grid-template-columns:1fr;}}
+.eg-item{background:#fff;border-radius:9px;padding:11px;}
+.eg-type{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.eg-s .eg-type{color:#2d6b4a;} .eg-w .eg-type{color:#7a2e2e;} .eg-o .eg-type{color:var(--plum);} .eg-t .eg-type{color:#2e4a7a;}
+.eg-item ul{list-style:none;}
+.eg-item ul li{font-size:0.76rem;color:var(--mid);padding:2px 0;display:flex;gap:5px;line-height:1.35;}
+.eg-s ul li::before{content:'•';color:#2d6b4a;font-weight:700;flex-shrink:0;}
+.eg-w ul li::before{content:'•';color:#7a2e2e;font-weight:700;flex-shrink:0;}
+.eg-o ul li::before{content:'•';color:var(--plum);font-weight:700;flex-shrink:0;}
+.eg-t ul li::before{content:'•';color:#2e4a7a;font-weight:700;flex-shrink:0;}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+@media(max-width:500px){.tpl-grid{grid-template-columns:1fr;}}
+.tpl-cell{border-radius:10px;padding:12px;}
+.tpl-s{background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);}
+.tpl-w{background:rgba(122,46,46,0.05);border:1.5px solid rgba(122,46,46,0.2);}
+.tpl-o{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.2);}
+.tpl-t{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.2);}
+.tpl-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.tpl-letter{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;}
+.tpl-s .tpl-letter{color:#2d6b4a;} .tpl-w .tpl-letter{color:#7a2e2e;} .tpl-o .tpl-letter{color:var(--plum);} .tpl-t .tpl-letter{color:#2e4a7a;}
+.tpl-hdr span{font-size:0.73rem;font-weight:600;color:var(--mid);}
+.tpl-cell textarea{width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--black);resize:vertical;min-height:85px;outline:none;line-height:1.45;}
+.qz-q{background:#fff;border-radius:11px;padding:14px;margin-bottom:9px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.qz-q p{font-size:0.85rem;font-weight:600;margin-bottom:9px;}
+.qz-opts{display:flex;flex-direction:column;gap:6px;}
+.qz-opt{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:8px 12px;font-size:0.8rem;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--mid);transition:all 0.15s;}
+.qz-opt:hover{border-color:var(--mauve);color:var(--plum);}
+.qz-opt.correct{background:rgba(45,107,74,0.08);border-color:#2d6b4a;color:#2d6b4a;font-weight:600;}
+.qz-opt.wrong{background:rgba(122,46,46,0.08);border-color:#7a2e2e;color:#7a2e2e;}
+.qz-fb{font-size:0.76rem;margin-top:6px;padding:7px 10px;border-radius:7px;display:none;}
+.qz-fb.show{display:block;}
+.qz-fb.ok{background:rgba(45,107,74,0.08);color:#2d6b4a;}
+.qz-fb.bad{background:rgba(122,46,46,0.08);color:#7a2e2e;}
+.qz-score{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:11px;padding:16px;text-align:center;color:#fff;display:none;margin-top:10px;}
+.qz-score h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;}
+.qz-score p{font-size:0.8rem;color:rgba(255,255,255,0.7);}
+.nc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(121,69,119,0.15);}
+.nc-hdr h3{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--plum);}
+.nc-hdr span{font-size:0.7rem;color:var(--light);}
+.nb{margin-bottom:11px;}
+.nb-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:4px;}
+.nb-hint{font-size:0.72rem;color:var(--light);margin-bottom:4px;font-style:italic;line-height:1.35;}
+.nb textarea{width:100%;border:1.5px solid rgba(121,69,119,0.14);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.77rem;color:var(--black);resize:vertical;min-height:66px;outline:none;background:#fff;line-height:1.45;}
+.nb textarea:focus{border-color:var(--plum);}
+.nb textarea::placeholder{color:#bbb;font-size:0.73rem;}
+.save-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px;font-family:'Montserrat',sans-serif;font-size:0.77rem;font-weight:700;cursor:pointer;margin-top:3px;}
+.save-btn:hover{background:var(--dk);}
+.saved-msg{font-size:0.68rem;color:var(--plum);font-weight:600;text-align:center;margin-top:5px;min-height:16px;}
+.cum-panel{background:#fff;border-radius:10px;padding:12px;margin-top:14px;border-top:3px solid var(--plum);}
+.cum-hdr{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;}
+.cum-empty{font-size:0.74rem;color:var(--light);font-style:italic;text-align:center;padding:10px 0;}
+.cum-entry{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.05);}
+.cum-entry:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+.cum-entry-lbl{font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mauve);margin-bottom:2px;}
+.cum-entry-txt{font-size:0.75rem;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.cum-btns{display:flex;gap:7px;margin-top:10px;}
+.cum-print{flex:1;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:7px;font-size:0.72rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;}
+.cum-copy{flex:1;background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:7px;padding:7px;font-size:0.72rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;}
+.botnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,0.07);padding:10px 22px;display:flex;align-items:center;justify-content:space-between;z-index:998;box-shadow:0 -3px 16px rgba(0,0,0,0.06);}
+.bot-btn{background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;}
+.bot-btn:hover{background:var(--dk);}
+.bot-btn.sec{background:transparent;color:var(--mid);border:1.5px solid rgba(0,0,0,0.12);}
+.bot-btn.sec:hover{border-color:var(--mauve);color:var(--plum);}
+.bot-btn:disabled{opacity:0.3;cursor:default;}
+.dots{display:flex;gap:5px;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;}
+.dot.on{background:var(--plum);width:16px;border-radius:4px;}
+.badge{display:inline-block;background:rgba(121,69,119,0.1);border:1px solid rgba(121,69,119,0.25);color:var(--plum);font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px;}
+.price-box{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:16px 24px;display:inline-block;margin-bottom:24px;}
+.price-box .pl{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.price-box .pp{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;}
+.price-box .ps{font-size:0.72rem;color:rgba(255,255,255,0.5);}
+.start-btn{background:var(--plum);color:#fff;border:none;border-radius:9px;padding:13px 34px;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;}
+.start-btn:hover{background:var(--dk);}
+.check-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:9px;padding:10px;font-family:'Montserrat',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.strat-back{background:none;border:none;color:var(--mauve);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;padding:0;display:block;}
+.s-print{background:var(--plum);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-right:8px;}
+.s-copy{background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;}
+.strat-card{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.strat-card .sl{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.strat-card .sc2{font-size:0.78rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.strat-card .sn{font-size:0.81rem;color:var(--mid);line-height:1.55;white-space:pre-wrap;background:var(--cream);border-radius:7px;padding:8px 10px;}
+.comp-badge{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 14px;}
+.comp-keys{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:18px;color:#fff;text-align:left;margin-bottom:20px;}
+.comp-keys .ck-title{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.comp-keys p{font-size:0.83rem;color:rgba(255,255,255,0.85);line-height:1.85;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;text-align:left;}
+@media(max-width:480px){.next-grid{grid-template-columns:1fr;}}
+.next-card{background:#fff;border-radius:10px;padding:13px;border:1.5px solid rgba(0,0,0,0.06);}
+.next-card .nc-num{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.next-card h4{font-size:0.83rem;font-weight:700;margin-bottom:2px;}
+.next-card p{font-size:0.7rem;color:var(--light);}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.calc-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:0.82rem;}
+.calc-table th{background:var(--plum);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:0.78rem;}
+.calc-table td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,0.06);color:var(--mid);}
+.calc-table tr:nth-child(even){background:rgba(121,69,119,0.04);}
+.calc-table tr.highlight{background:rgba(121,69,119,0.1);font-weight:600;color:var(--black);}
+.calc-table tr.red-row{background:rgba(155,53,53,0.08);color:#9b3535;font-weight:600;}
+.calc-table tr.green-row{background:rgba(45,107,74,0.08);color:#2d6b4a;font-weight:600;}
+.calc-input{width:100%;border:1.5px solid rgba(121,69,119,0.2);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.82rem;outline:none;background:#fff;}
+.calc-input:focus{border-color:var(--plum);}
+.calc-result{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:10px;padding:14px;color:#fff;margin-top:10px;text-align:center;}
+.calc-result .cr-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:4px;}
+.calc-result .cr-value{font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;}
+.calc-result .cr-sub{font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:2px;}
+.warning-box{background:rgba(155,53,53,0.06);border:1.5px solid rgba(155,53,53,0.2);border-radius:12px;padding:16px;margin-bottom:12px;}
+.warning-box h4{font-size:0.9rem;font-weight:700;color:#9b3535;margin-bottom:6px;}
+.warning-box p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+.green-box{background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:12px;padding:16px;margin-bottom:12px;}
+.green-box h4{font-size:0.9rem;font-weight:700;color:#2d6b4a;margin-bottom:6px;}
+.green-box p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="topbar">
+  <div class="topbar-logo">Small Business <span>Therapy</span></div>
+  <div class="topbar-right">
+    <button class="strategy-btn" id="stratbtn">📋 My Strategy</button>
+    <div class="prog-wrap">
+      <span class="prog-label" id="plabel">1/8</span>
+      <div class="prog-bar"><div class="prog-fill" id="pfill" style="width:12%"></div></div>
+    </div>
+  </div>
+</div>
+<div id="p1" style="display:block;">
+  <div style="max-width:580px;margin:0 auto;padding:44px 22px 100px;text-align:center;">
+    <div class="badge">Module 10 · Profit & Finance</div>
+    <h1 style="font-family:Montserrat,sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;margin-bottom:12px;">Expense Reduction <span style="color:var(--plum);">vs Sales Growth</span></h1>
+    <p style="font-size:0.92rem;color:var(--mid);line-height:1.7;margin-bottom:24px;">For a business with a 10% net profit margin, reducing expenses by 2% delivers the same profit as growing sales by 20%. This module shows you the leverage maths, the specific expense categories to attack, and how to build a culture of cost consciousness in your business.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <span style="font-size:0.78rem;color:var(--mid);">⏱ 25–30 min</span>
+      <span style="font-size:0.78rem;color:var(--mid);">📋 6 lessons</span>
+      <span style="font-size:0.78rem;color:var(--mid);">🧮 Interactive calculators</span>
+      <span style="font-size:0.78rem;color:var(--mid);">🖨️ Print your strategy</span>
+    </div>
+    <div class="price-box"><div class="pl">Lifetime Access</div><div class="pp">$19.99</div><div class="ps">one-off · no subscription</div></div>
+    <br><br><button class="start-btn" id="startbtn">Start Module →</button>
+  </div>
+</div><div id="p2" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 1 of 6</div><h2>The Leverage Maths</h2><p>Why expense reduction is one of the highest-return activities a small business can do.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Equivalence Principle</h3><p>Expense reduction and sales growth both improve net profit — but they are not equivalent in effort. Reducing an expense by $1 puts $1 directly to net profit. Generating an extra $1 of net profit through sales requires generating $1 divided by your net margin in additional revenue. For a business with a 10% net margin, every $1 of profit requires $10 in new sales. That ratio makes expense reduction extraordinarily powerful.</p></div><div style="background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-family:Montserrat,sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:12px;">Expense Reduction vs Equivalent Sales Growth</div><div style="font-size:0.75rem;color:var(--light);margin-bottom:10px;">Based on $1,000,000 revenue with 10% net profit margin ($100,000 net profit)</div><table class="calc-table"><thead><tr><th>Expense Reduction</th><th>Annual Saving</th><th>Equivalent Sales Growth</th></tr></thead><tbody><tr class="green-row"><td>1% cost reduction</td><td>$10,000</td><td>10% sales increase</td></tr><tr><td>2% cost reduction</td><td>$20,000</td><td>20% sales increase</td></tr><tr><td>5% cost reduction</td><td>$50,000</td><td>50% sales increase</td></tr><tr class="red-row"><td>11% cost reduction</td><td>$110,000</td><td>Doubles net profit</td></tr></tbody></table></div><div class="insight"><div class="insight-tag">💡 The Most Important Number in This Module</div><h4>Your net profit margin determines your leverage ratio</h4><p>If your net profit margin is 10%, every $1 of expense saved equals $10 in new sales. At 20% margin it is $5 in sales. At 5% margin it is $20 in sales. The lower your current margin, the more powerful expense reduction is relative to sales growth.</p></div><div class="card c-mauve"><h3>This Does Not Mean Stop Growing Sales</h3><p>The lesson is not that sales growth is unimportant — it is that expense reduction is significantly underinvested in most small businesses relative to its return. The optimal business pursues both simultaneously, but most businesses spend 90% of their strategy time on sales and almost none on systematic cost reduction.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My net profit margin and leverage ratio</div><div class="nb-hint">What is your current net profit margin? What is your leverage ratio?</div><textarea id="n2a" placeholder="e.g. My net profit margin is about 12%. So my leverage ratio is 1:8.3 — every $1 of expense saved equals $8.30 in new sales. That means a $5,000 expense cut is worth $41,500 in new business..."></textarea></div><div class="nb"><div class="nb-label">What this tells me about my priorities</div><div class="nb-hint">How does the leverage maths change your strategic priorities?</div><textarea id="n2b" placeholder="e.g. I spend probably 40 hours a month on sales and marketing. I spend maybe 2 hours a month thinking about costs. Given the leverage ratio, I should be spending at least 8-10 hours a month on expense management..."></textarea></div><div class="nb"><div class="nb-label">My current annual expenses — rough total</div><div class="nb-hint">What do your total operating expenses look like? (Check your P&L)</div><textarea id="n2c" placeholder="e.g. Looking at my P&L: total expenses roughly $380k. If I can cut 5% that's $19,000 straight to profit — equivalent to winning $158,000 in new revenue at my current margin. Genuinely motivating..."></textarea></div>
+      <button class="save-btn" id="save2">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm2"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd2"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p3" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 2 of 6</div><h2>The Systematic Expense Audit</h2><p>A repeatable process for finding and eliminating cost waste in every area of your business.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Print your last 3 months of bank statements and P&L</h4><p>You cannot audit what you cannot see. Get every expense on paper or screen. Sort by amount — largest to smallest. The big numbers deserve the most attention but the small recurring ones often add up to significant totals.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Categorise every expense — necessary, negotiable, eliminate</h4><p>Three categories: (1) Necessary and correct price — leave alone. (2) Necessary but could be cheaper — schedule renegotiation. (3) No longer needed or low value — eliminate immediately. Most audits find 15–25% of expenses in category 3.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Focus on recurring monthly expenses first</h4><p>One-off costs are sunk. Recurring costs compound — every dollar saved per month is $12 per year. A $200/month software subscription you barely use is $2,400/year you are paying for nothing. Recurring costs deserve disproportionate attention.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Supplier audit — when did you last renegotiate?</h4><p>For every supplier relationship over 12 months old, the question is: are you still getting the best price? Markets change. New suppliers enter. Existing suppliers reduce rates for loyal customers who simply ask. If you have not asked in 12 months, ask now.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>The subscription audit — the modern expense trap</h4><p>Most businesses have accumulated software subscriptions they no longer actively use. Average small business has 8–12 active SaaS subscriptions. Audit every one: when was it last used? By whom? Is there a free alternative? Is there overlap with another tool?</p></div></li><li class="step"><div class="step-n">6</div><div><h4>Set a monthly expense review as a recurring calendar item</h4><p>The expense audit is not a one-time exercise. Schedule 60 minutes on the first Monday of every month to review the previous month's expenses. This habit alone typically saves 5–8% annually.</p></div></li></ul><div class="eg-box" style="background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;"><div style="font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;">📍 Real Audit Result — Service Business Brisbane</div><h4 style="font-size:0.88rem;font-weight:700;margin-bottom:8px;">What 90 minutes found in one business</h4><p style="font-size:0.82rem;color:var(--mid);line-height:1.6;">3 software subscriptions not actively used: $340/month<br>Phone plan not reviewed in 3 years: renegotiated to save $180/month<br>Insurance renewed automatically — shopped around: $2,400/year saving<br>Supplier for printed materials — never got alternative quote: $380/month saving after 3 quotes<br><strong>Total: $1,180/month ($14,160/year)</strong> found in 90 minutes. Equivalent to $118,000 in new revenue at 12% net margin.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My subscription audit results</div><div class="nb-hint">List every software subscription — when last used, cost, keep or cut?</div><textarea id="n3a" placeholder="e.g. Going through bank statement now:
+- Canva Pro: $20/month — use weekly, keep
+- Old CRM: $89/month — switched 6 months ago, cancelling today
+- Project mgmt tool: $45/month — use monthly, worth keeping
+- Video editor: $35/month — used twice last year, cancelling"></textarea></div><div class="nb"><div class="nb-label">My biggest renegotiation opportunity</div><div class="nb-hint">Which supplier or service has not been renegotiated in 12+ months?</div><textarea id="n3b" placeholder="e.g. Business insurance: $4,200/year, renews automatically every September. Never shopped around. Calling 3 brokers this week. Estimate $800-1,200 saving based on what colleagues pay..."></textarea></div><div class="nb"><div class="nb-label">My 90-day expense reduction target</div><div class="nb-hint">What is your specific monthly savings target from this audit?</div><textarea id="n3c" placeholder="e.g. Immediate cuts (subscriptions): $170/month
+Renegotiation targets: $400/month
+Insurance shopping: $100/month equivalent
+Total target: $670/month ($8,040/year)
+Equivalent sales growth at my margin: $67,000 in new revenue"></textarea></div>
+      <button class="save-btn" id="save3">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm3"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd3"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p4" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 3 of 6</div><h2>Supplier Management and Purchasing Discipline</h2><p>How to systematically reduce your cost of goods and services through better supplier relationships.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Suppliers Respond to Systems</h3><p>The businesses that pay the lowest prices for inputs are not the largest businesses — they are the most organised ones. A small business with a clear purchasing system, regular supplier reviews and a willingness to ask for better terms often achieves lower input costs than much larger competitors who treat purchasing as an administrative function.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Create a preferred supplier register</h4><p>Document your main suppliers, what you pay, payment terms, and the date you last reviewed pricing. This register becomes your purchasing management tool. Review it quarterly.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Implement annual supplier reviews</h4><p>Schedule a formal meeting with every significant supplier annually. Bring your volume data. Ask for: a loyalty discount, improved payment terms, or cost reduction ideas. Most suppliers will offer something to retain consistent volume.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Use payment terms as a negotiation tool</h4><p>Many suppliers offer 2–5% discounts for prompt payment or upfront payment. If you have the cash flow, paying early in exchange for a discount can be a very high-return use of cash — a 2% discount for paying 30 days early is equivalent to a 24% annual return on that cash.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Consolidate suppliers where possible</h4><p>Having 3 suppliers for similar items gives you less purchasing power than having 1–2 who get all your volume. Consolidation often unlocks volume discounts that more than compensate for the loss of having multiple options.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Train everyone who makes purchases</h4><p>If staff members make purchasing decisions, they should understand the business's pricing benchmarks and the expectation to always seek competitive pricing. A staff member who buys from the most convenient supplier rather than the most competitive one is costing you money every time.</p></div></li></ul><div class="insight"><div class="insight-tag">💡 The Ask Is Free</div><h4>How much do you save if you never ask? Zero.</h4><p>The single most underused profit improvement strategy is simply asking your existing suppliers for a better deal. The worst they can say is no. Most will offer something — a small discount, better terms, a rebate for volume. Schedule supplier review conversations for the next 90 days with every supplier representing more than $500/month of spend. The average improvement from these conversations is 5–12%.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My supplier review schedule</div><div class="nb-hint">Which suppliers will you review in the next 90 days?</div><textarea id="n4a" placeholder="e.g. Month 1: Main materials supplier ($3,200/month) and phone/internet provider ($290/month)
+Month 2: Insurance broker and software licences
+Month 3: Office supplies and printing. Total annual spend being reviewed: ~$56,000"></textarea></div><div class="nb"><div class="nb-label">My ask strategy for each supplier</div><div class="nb-hint">What will you ask for in each supplier review?</div><textarea id="n4b" placeholder="e.g. Materials supplier: 8% loyalty discount for guaranteed monthly volume + 30-day terms
+Phone provider: match competitor rate I've researched (saving $120/month)
+Insurance: 3 competing quotes, bring back to existing insurer for price match"></textarea></div><div class="nb"><div class="nb-label">Early payment discount opportunities</div><div class="nb-hint">Where could you save by paying faster?</div><textarea id="n4c" placeholder="e.g. Main supplier offers 2.5% for payment within 7 days. On $3,200/month that's $80/month ($960/year) just for paying earlier. Will check cash flow and implement from next invoice..."></textarea></div>
+      <button class="save-btn" id="save4">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm4"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd4"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p5" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 4 of 6</div><h2>Building a Cost-Conscious Culture</h2><p>How to get your team thinking about cost efficiency without making them feel like they're always being watched.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Culture Drives Behaviour</h3><p>The most powerful cost reduction happens when every person in your business automatically considers cost efficiency in their daily decisions — without being told to. Building this culture requires transparency about numbers, clear systems, recognition for cost-saving behaviour, and leadership that models the behaviour it wants to see.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Share relevant financial information with staff</h4><p>You don't need to share everything. But staff who know the gross margin, the monthly expense budget, and the targets are far more cost-conscious than those who work in financial darkness. Monthly team meetings with a simple financial dashboard change behaviour significantly.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Make the connection between individual actions and profit visible</h4><p>Show your team specific examples: "When we have to redo a job, it costs us $X. When we waste Y units of material, it costs $Z. When we respond to a client complaint quickly and fix it, we retain $W in annual revenue." Concrete numbers change behaviour more than general requests to "be careful."</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Create a cost-saving suggestion system</h4><p>Ask staff: where do you see waste in your work? What takes longer than it should? What materials get wasted? Staff on the front line often see cost improvement opportunities that management never notices. Reward suggestions that get implemented.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Set expense budgets for each team member who spends</h4><p>Anyone who spends business money should have a clear budget and understand they are accountable to it. Monthly review: budget vs actual, variance explanation, action if over. Accountability without information is unfair — accountability with clear information and budget is normal good management.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Lead by example — model cost consciousness</h4><p>If you as the owner spend lavishly on things of questionable business value, your team will not take cost management seriously. The most effective cost-reduction leaders are visibly thoughtful about business spending and explain their decisions.</p></div></li></ul><div class="insight"><div class="insight-tag">💡 The Monthly Financial Dashboard</div><h4>One page, shared monthly, changes everything</h4><p>Build a one-page monthly dashboard showing: revenue vs target, gross margin %, total expenses vs budget, and net profit. Share it with your team in a 15-minute monthly meeting. Answer questions honestly. Within 3 months you will notice a measurable change in how staff think about spending, waste and efficiency.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">How I will share financials with my team</div><div class="nb-hint">When, what and how will you share financial information?</div><textarea id="n5a" placeholder="e.g. Monthly team meeting — first Monday. One-page dashboard showing revenue, gross margin, expenses vs budget and net profit. Will answer questions and explain what each number means. Starting next month..."></textarea></div><div class="nb"><div class="nb-label">My cost-saving suggestion system</div><div class="nb-hint">How will you capture and reward staff cost-saving ideas?</div><textarea id="n5b" placeholder="e.g. Adding a "cost saving idea" item to our monthly team meeting agenda. Any implemented idea gets a $100 gift card for the person who suggested it. Small cost for potentially large savings..."></textarea></div><div class="nb"><div class="nb-label">The specific behaviour I want to change</div><div class="nb-hint">What cost-related staff behaviour do you most need to address?</div><textarea id="n5c" placeholder="e.g. Materials waste on jobs. We use about 15% more materials than quoted on average. I've never tracked it or talked about it. Going to start tracking waste per job and sharing with the team monthly..."></textarea></div>
+      <button class="save-btn" id="save5">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm5"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd5"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p6" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 5 of 6 — Your Expense Reduction Plan</div><h2>Build Your Complete Cost Reduction Strategy</h2><p>Your systematic plan across every expense category.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>🧮 My Expense vs Sales Leverage Calculator</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:14px;">Enter your numbers to see what your expense savings are equivalent to in sales growth.</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;"><div><div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">Annual Revenue ($)</div><input type="number" id="rev" class="calc-input" placeholder="e.g. 500000" oninput="calcLeverage()"></div><div><div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">Net Profit Margin (%)</div><input type="number" id="npm" class="calc-input" placeholder="e.g. 12" oninput="calcLeverage()"></div><div><div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">Monthly Expense Saving ($)</div><input type="number" id="saving" class="calc-input" placeholder="e.g. 800" oninput="calcLeverage()"></div></div><div id="lev-results" style="display:none;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"><div class="calc-result"><div class="cr-label">Annual Saving</div><div class="cr-value" id="ann-saving">-</div></div><div class="calc-result"><div class="cr-label">Equivalent Sales Growth</div><div class="cr-value" id="equiv-sales">-</div><div class="cr-sub">additional revenue to get same result</div></div></div></div></div><script>function calcLeverage(){var r=parseFloat(document.getElementById("rev").value)||0;var n=parseFloat(document.getElementById("npm").value)||0;var s=parseFloat(document.getElementById("saving").value)||0;if(r>0&&n>0&&s>0){var annual=s*12;var equiv=annual/(n/100);document.getElementById("ann-saving").textContent="$"+annual.toFixed(0);document.getElementById("equiv-sales").textContent="$"+equiv.toFixed(0);document.getElementById("lev-results").style.display="block";}}</script><div class="card" style="margin-top:12px;"><h3>My Complete Expense Reduction Plan</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:10px;">Plan your savings across each category with a monthly target.</p><textarea id="tpl-expplan" style="width:100%;border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:9px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:120px;outline:none;background:var(--cream);" placeholder="Subscriptions: cancel [list] = $___/month saving by [date]&#10;Suppliers: renegotiate [list] = $___/month saving by [date]&#10;Insurance: shop around = $___/year saving by [date]&#10;Phone/internet: new plan = $___/month saving by [date]&#10;Staff efficiency: reduce rework = $___/month saving by [date]&#10;TOTAL TARGET: $___/month ($___/year)"></textarea><button class="save-btn" id="save6" style="width:100%;margin-top:8px;">💾 Save My Expense Plan</button></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My leverage calculation results</div><div class="nb-hint">What does your monthly saving equate to in equivalent sales growth?</div><textarea id="n6a" placeholder="e.g. At $500k revenue and 12% net margin: saving $800/month = $9,600/year = equivalent to winning $80,000 in new sales. I can probably save $1,200/month which is equivalent to $120,000 in new revenue. That's transformational..."></textarea></div><div class="nb"><div class="nb-label">My total 90-day expense reduction target</div><div class="nb-hint">What is your specific dollar commitment?</div><textarea id="n6b" placeholder="e.g. 90-day target: reduce monthly expenses by $1,000
+Breakdown:
+- Subscriptions cancelled: $170/month
+- Phone renegotiated: $150/month
+- Supplier savings: $400/month
+- Insurance: $280/month equivalent
+Total: $1,000/month = $12,000/year"></textarea></div><div class="nb"><div class="nb-label">My first action tomorrow morning</div><div class="nb-hint">The single most important expense reduction action you will take in the next 24 hours</div><textarea id="n6c" placeholder="e.g. Cancelling 3 unused software subscriptions first thing tomorrow. Takes 20 minutes, saves $170/month immediately. No negotiation required. Then scheduling supplier review meetings for the next 6 weeks."></textarea></div>
+      <button class="save-btn" id="save6">💾 Save These Notes</button>
+      <div class="saved-msg" id="sm6"></div>
+      <div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd6"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p7" style="display:none;"><div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 6 of 6 — Knowledge Check</div><h2>Knowledge Check</h2><p>5 questions to confirm your understanding.</p></div></div><div class="cols"><div class="col-content"><div class="qz-q" id="q1"><p>1. For a business with a 10% net profit margin, a $10,000 annual expense saving is equivalent to:</p><div class="qz-opts"><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! $10,000 saving ÷ 10% margin = $100,000 equivalent sales growth. This is the fundamental leverage ratio of expense reduction." data-msg-w="Not quite. At 10% net margin: saving ÷ margin = $10,000 ÷ 0.10 = $100,000 equivalent in new sales.">$10,000 in new sales</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! $10,000 saving ÷ 10% margin = $100,000 equivalent sales growth. This is the fundamental leverage ratio of expense reduction." data-msg-w="Not quite. At 10% net margin: saving ÷ margin = $10,000 ÷ 0.10 = $100,000 equivalent in new sales.">$50,000 in new sales</button><button class="qz-opt" data-q="1" data-correct="true" data-msg-c="Correct! $10,000 saving ÷ 10% margin = $100,000 equivalent sales growth. This is the fundamental leverage ratio of expense reduction." data-msg-w="Not quite. At 10% net margin: saving ÷ margin = $10,000 ÷ 0.10 = $100,000 equivalent in new sales.">$100,000 in new sales</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! $10,000 saving ÷ 10% margin = $100,000 equivalent sales growth. This is the fundamental leverage ratio of expense reduction." data-msg-w="Not quite. At 10% net margin: saving ÷ margin = $10,000 ÷ 0.10 = $100,000 equivalent in new sales.">$20,000 in new sales</button></div><div class="qz-fb" id="fb1"></div></div><div class="qz-q" id="q2"><p>2. Which expenses should receive the most attention in an audit?</p><div class="qz-opts"><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Recurring monthly expenses compound — every dollar saved per month is $12 per year. They deserve disproportionate attention." data-msg-w="Not quite. Recurring monthly expenses compound over time and deserve the most attention in any expense audit.">The largest one-off purchases from the past year</button><button class="qz-opt" data-q="2" data-correct="true" data-msg-c="Correct! Recurring monthly expenses compound — every dollar saved per month is $12 per year. They deserve disproportionate attention." data-msg-w="Not quite. Recurring monthly expenses compound over time and deserve the most attention in any expense audit.">Recurring monthly expenses — because they compound over time</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Recurring monthly expenses compound — every dollar saved per month is $12 per year. They deserve disproportionate attention." data-msg-w="Not quite. Recurring monthly expenses compound over time and deserve the most attention in any expense audit.">Staff wages — the largest cost in most businesses</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Recurring monthly expenses compound — every dollar saved per month is $12 per year. They deserve disproportionate attention." data-msg-w="Not quite. Recurring monthly expenses compound over time and deserve the most attention in any expense audit.">Marketing and advertising — often the most wasteful</button></div><div class="qz-fb" id="fb2"></div></div><div class="qz-q" id="q3"><p>3. The preferred approach when reviewing a supplier relationship of 12+ months is to:</p><div class="qz-opts"><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! The ask is free. Most suppliers will offer something to retain loyal customers — typically 5–12% improvement without needing to switch." data-msg-w="Not quite. Simply asking your existing supplier for a better deal is free and typically results in 5–12% improvement.">Immediately switch to the cheapest alternative</button><button class="qz-opt" data-q="3" data-correct="true" data-msg-c="Correct! The ask is free. Most suppliers will offer something to retain loyal customers — typically 5–12% improvement without needing to switch." data-msg-w="Not quite. Simply asking your existing supplier for a better deal is free and typically results in 5–12% improvement.">Simply ask your existing supplier for a better deal before going elsewhere</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! The ask is free. Most suppliers will offer something to retain loyal customers — typically 5–12% improvement without needing to switch." data-msg-w="Not quite. Simply asking your existing supplier for a better deal is free and typically results in 5–12% improvement.">Accept the current pricing as the market rate</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! The ask is free. Most suppliers will offer something to retain loyal customers — typically 5–12% improvement without needing to switch." data-msg-w="Not quite. Simply asking your existing supplier for a better deal is free and typically results in 5–12% improvement.">Only renegotiate when costs become unmanageable</button></div><div class="qz-fb" id="fb3"></div></div><div class="qz-q" id="q4"><p>4. Early payment discounts are valuable because:</p><div class="qz-opts"><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! A 2% discount for paying 30 days early is equivalent to a 24% annual return on the cash used — significantly better than most investments." data-msg-w="Not quite. A 2% early payment discount is equivalent to roughly 24% annual return on the cash — a high-return use of working capital.">They improve your credit rating</button><button class="qz-opt" data-q="4" data-correct="true" data-msg-c="Correct! A 2% discount for paying 30 days early is equivalent to a 24% annual return on the cash used — significantly better than most investments." data-msg-w="Not quite. A 2% early payment discount is equivalent to roughly 24% annual return on the cash — a high-return use of working capital.">A 2% discount for paying 30 days early is equivalent to a very high annual return on that cash</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! A 2% discount for paying 30 days early is equivalent to a 24% annual return on the cash used — significantly better than most investments." data-msg-w="Not quite. A 2% early payment discount is equivalent to roughly 24% annual return on the cash — a high-return use of working capital.">They reduce your tax liability</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! A 2% discount for paying 30 days early is equivalent to a 24% annual return on the cash used — significantly better than most investments." data-msg-w="Not quite. A 2% early payment discount is equivalent to roughly 24% annual return on the cash — a high-return use of working capital.">They improve supplier relationships</button></div><div class="qz-fb" id="fb4"></div></div><div class="qz-q" id="q5"><p>5. The best way to build a cost-conscious culture in your team is to:</p><div class="qz-opts"><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Transparency about numbers, combined with connecting individual actions to financial outcomes, creates genuine cost consciousness." data-msg-w="Not quite. Sharing financial information and connecting individual actions to business outcomes builds genuine cost consciousness far more effectively than rules or threats.">Threaten consequences for overspending</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Transparency about numbers, combined with connecting individual actions to financial outcomes, creates genuine cost consciousness." data-msg-w="Not quite. Sharing financial information and connecting individual actions to business outcomes builds genuine cost consciousness far more effectively than rules or threats.">Issue detailed spending rules and enforce them strictly</button><button class="qz-opt" data-q="5" data-correct="true" data-msg-c="Correct! Transparency about numbers, combined with connecting individual actions to financial outcomes, creates genuine cost consciousness." data-msg-w="Not quite. Sharing financial information and connecting individual actions to business outcomes builds genuine cost consciousness far more effectively than rules or threats.">Share relevant financial information and connect individual actions to business outcomes</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Transparency about numbers, combined with connecting individual actions to financial outcomes, creates genuine cost consciousness." data-msg-w="Not quite. Sharing financial information and connecting individual actions to business outcomes builds genuine cost consciousness far more effectively than rules or threats.">Reduce everyone's discretionary spending authority to zero</button></div><div class="qz-fb" id="fb5"></div></div><div class="qz-score" id="qscore"></div><button class="check-btn" id="checkbtn">Check My Answers →</button></div><div class="col-notes"><div class="nc-hdr"><h3>📝 My Notes</h3><span>Builds your strategy</span></div><div class="nb"><div class="nb-label">What surprised me</div><div class="nb-hint">Note anything that challenged your thinking</div><textarea id="n7a" placeholder="e.g. I had no idea how much discounting was costing me..."></textarea></div>
+    <div class="nb"><div class="nb-label">My biggest learning</div><div class="nb-hint">The single most valuable insight from this module</div><textarea id="n7b" placeholder="e.g. The leverage of expense reduction vs sales growth completely changed how I think about costs..."></textarea></div>
+    <div class="nb"><div class="nb-label">What I am doing from Monday</div><div class="nb-hint">One concrete action you commit to</div><textarea id="n7c" placeholder="e.g. Reviewing every supplier contract this week and calling 3 of them to renegotiate terms..."></textarea></div><button class="save-btn" id="save7">💾 Save These Notes</button><div class="saved-msg" id="sm7"></div><div class="cum-panel"><div class="cum-hdr">📋 My Running Strategy</div><div id="cd7"><div class="cum-empty">Your notes will appear here →</div></div></div></div></div></div><div id="p8" style="display:none;">
+  <div style="max-width:640px;margin:0 auto;padding:36px 22px 100px;text-align:center;">
+    <div class="comp-badge">🎓</div>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;margin-bottom:9px;">Module 10 Complete!</h2>
+    <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:20px;">Your notes from every lesson have built into a strategy document you can print or share with your accountant.</p>
+    <div class="comp-keys"><div class="ck-title">Key Takeaways</div><p>✓ Expense reduction flows directly to profit — leverage is powerful<br>✓ At 10% margin, $1 saved = $10 in equivalent new sales<br>✓ Recurring monthly expenses deserve the most attention<br>✓ Ask every supplier for a better deal — the ask is free<br>✓ Share financial information with staff to build cost consciousness</p></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="s-print" id="finprint">🖨️ Print My Strategy</button>
+      <button class="s-copy" id="fincopy">📋 Copy to Clipboard</button>
+    </div>
+    <p style="font-weight:700;font-size:0.88rem;margin-bottom:12px;">Continue your learning:</p>
+    <div class="next-grid"><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 08</div><h4>Increasing Profit</h4><p>All five profit levers together</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 09</div><h4>True Cost of Discounting</h4><p>Protect your margin from the other direction</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 06</div><h4>Strategy Map and KPIs</h4><p>Add expense KPIs to your monthly scorecard</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 07</div><h4>Vision and Goals</h4><p>Set profit targets in your business vision</p></div></div>
+  </div>
+</div>
+<div id="pstrat" style="display:none;">
+  <div style="max-width:860px;margin:0 auto;padding:26px 22px 100px;">
+    <button class="strat-back" id="stratback">← Back to Module</button>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:5px;">📋 My Strategy — Module 10: Expense Reduction vs Sales Growth</h2>
+    <p style="font-size:0.83rem;color:var(--mid);margin-bottom:18px;">All notes from this module built lesson by lesson.</p>
+    <div style="margin-bottom:18px;"><button class="s-print" id="stratprint">🖨️ Print</button><button class="s-copy" id="stratcopy">📋 Copy</button></div>
+    <div id="stratbody"></div>
+  </div>
+</div>
+<div class="botnav" id="botnav">
+  <button class="bot-btn sec" id="prevbtn">← Back</button>
+  <div class="dots" id="dotrow"></div>
+  <button class="bot-btn" id="nextbtn">Next →</button>
+</div>
+<script>
+var cur=1,total=8,prevPg=1,MOD_KEY='sbt_mod10_';
+var NOTES=[
+  {pg:2,fields:[{id:'n2a',lbl:'My net profit margin and leverage ratio'},{id:'n2b',lbl:'What this tells me about my priorities'},{id:'n2c',lbl:'My current annual expenses rough total'}]},
+  {pg:3,fields:[{id:'n3a',lbl:'My subscription audit results'},{id:'n3b',lbl:'My biggest renegotiation opportunity'},{id:'n3c',lbl:'My 90 day expense reduction target'}]},
+  {pg:4,fields:[{id:'n4a',lbl:'My supplier review schedule'},{id:'n4b',lbl:'My ask strategy for each supplier'},{id:'n4c',lbl:'Early payment discount opportunities'}]},
+  {pg:5,fields:[{id:'n5a',lbl:'How I will share financials with my team'},{id:'n5b',lbl:'My cost saving suggestion system'},{id:'n5c',lbl:'The specific behaviour I want to change'}]},
+  {pg:6,fields:[{id:'n6a',lbl:'My leverage calculation results'},{id:'n6b',lbl:'My total 90 day expense reduction target'},{id:'n6c',lbl:'My first action tomorrow morning'}]},
+  {pg:7,fields:[{id:'n7a',lbl:'What surprised me in the quiz'},{id:'n7b',lbl:'My biggest learning'},{id:'n7c',lbl:'What I am doing from Monday'}]}
+];
+function sk(id){return MOD_KEY+id;}
+function store(id,val){try{if(val.trim())localStorage.setItem(sk(id),val);else localStorage.removeItem(sk(id));}catch(e){}}
+function recall(id){try{return localStorage.getItem(sk(id))||'';}catch(e){return '';}}
+function showPg(id){var all=['p1','p2','p3','p4','p5','p6','p7','p8','p8','pstrat'];for(var i=0;i<all.length;i++){var el=document.getElementById(all[i]);if(el)el.style.display='none';}var t=document.getElementById(id);if(t)t.style.display='block';window.scrollTo(0,0);}
+function goTo(n){cur=n;showPg('p'+cur);document.getElementById('botnav').style.display='flex';updateNav();refreshAll();}
+function updateNav(){document.getElementById('prevbtn').disabled=(cur===1);document.getElementById('nextbtn').disabled=(cur===total);document.getElementById('nextbtn').textContent=(cur===total-1)?'Finish →':'Next →';document.getElementById('plabel').textContent=cur+'/'+total;document.getElementById('pfill').style.width=((cur/total)*100)+'%';buildDots();}
+function buildDots(){var c=document.getElementById('dotrow');c.innerHTML='';for(var i=1;i<=total;i++){var d=document.createElement('div');d.className='dot'+(i===cur?' on':'');d.setAttribute('data-n',i);c.appendChild(d);}var dots=c.querySelectorAll('.dot');for(var j=0;j<dots.length;j++){dots[j].addEventListener('click',function(){goTo(parseInt(this.getAttribute('data-n')));}); }}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function buildCumHTML(){var html='',has=false;for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim()){has=true;html+='<div class="cum-entry"><div class="cum-entry-lbl">'+f.lbl+'</div><div class="cum-entry-txt">'+esc(v)+'</div></div>';}}}if(!has)html='<div class="cum-empty">Your notes will appear here as you save them →</div>';return{html:html,has:has};}
+function refreshAll(){var r=buildCumHTML();var cdivs=document.querySelectorAll('[id^="cd"]');for(var i=0;i<cdivs.length;i++)cdivs[i].innerHTML=r.html;var cb=document.getElementById('cbbtns');if(cb)cb.style.display=r.has?'flex':'none';}
+function saveNotes(pg){var def=null;for(var i=0;i<NOTES.length;i++)if(NOTES[i].pg===pg){def=NOTES[i];break;}if(!def)return;for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el)store(f.id,el.value);}refreshAll();var sm=document.getElementById('sm'+pg);if(sm){sm.textContent='✓ Saved';setTimeout(function(){sm.textContent='';},2000);}showToast('Notes saved ✓');}
+function loadAll(){for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el){var v=recall(f.id);if(v)el.value=v;}}}}
+function getStratText(){var t='MY STRATEGY — MODULE 10: EXPENSE REDUCTION VS SALES GROWTH\nSmall Business Therapy | Maximum Marketing Solutions\n----------------------------------------\n\n';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())t+=f.lbl.toUpperCase()+':\n'+v+'\n\n';}}t+='Maximum Marketing Solutions | maximummarketingsolutions.com.au | +61 459 472 739';return t;}
+function doPrint(){var w=window.open('','_blank');var b='<html><head><title>Strategy M10</title><style>body{font-family:Arial,sans-serif;max-width:760px;margin:36px auto;font-size:13px;}h1{font-size:1.2rem;margin-bottom:4px;}.sub{color:#888;font-size:11px;margin-bottom:20px;}.card{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;}.lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:3px;}.note{font-size:12px;color:#4a4a4a;line-height:1.6;white-space:pre-wrap;background:#f5f5f5;padding:7px 9px;border-left:3px solid #794577;}.foot{margin-top:24px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:8px;}</style></head><body><h1>Module 10: Expense Reduction vs Sales Growth</h1><p class="sub">Small Business Therapy · Maximum Marketing Solutions</p>';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="card"><div class="lbl">'+f.lbl+'</div><div class="note">'+v+'</div></div>';}}b+='<div class="foot">Maximum Marketing Solutions · maximummarketingsolutions.com.au · +61 459 472 739</div></body></html>';w.document.write(b);w.document.close();w.print();}
+function doCopy(){var txt=getStratText();if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){showToast('Copied ✓');}).catch(function(){showToast('Use Print instead');});else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied ✓');}catch(e){showToast('Use Print instead');}document.body.removeChild(ta);}}
+function showStrat(){prevPg=cur;showPg('pstrat');document.getElementById('botnav').style.display='none';var r=buildCumHTML(),b='';if(!r.has)b='<p style="color:#888;font-style:italic;padding:24px 0;">No notes yet.</p>';else{for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="strat-card"><div class="sl">Lesson '+(def.pg-1)+'</div><div class="sc2">'+f.lbl+'</div><div class="sn">'+esc(v)+'</div></div>';}}}document.getElementById('stratbody').innerHTML=b;}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.className='toast on';setTimeout(function(){t.className='toast';},2600);}
+window.onload=function(){
+  showPg('p1');buildDots();updateNav();loadAll();refreshAll();
+  document.getElementById('startbtn').addEventListener('click',function(){goTo(2);});
+  document.getElementById('prevbtn').addEventListener('click',function(){if(cur>1)goTo(cur-1);});
+  document.getElementById('nextbtn').addEventListener('click',function(){if(cur<total)goTo(cur+1);});
+  document.getElementById('stratbtn').addEventListener('click',function(){showStrat();});
+  document.getElementById('stratback').addEventListener('click',function(){showPg('p'+prevPg);document.getElementById('botnav').style.display='flex';updateNav();});
+  document.getElementById('stratprint').addEventListener('click',function(){doPrint();});
+  document.getElementById('stratcopy').addEventListener('click',function(){doCopy();});
+  var saveEls=document.querySelectorAll('[id^="save"]');
+  for(var i=0;i<saveEls.length;i++){(function(el){var pg=parseInt(el.id.replace('save',''));if(!isNaN(pg))el.addEventListener('click',function(){saveNotes(pg);});}) (saveEls[i]);}
+  ['finprint','cumprint'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doPrint();});});
+  ['fincopy','cumcopy'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doCopy();});});
+  // Quiz buttons
+  var qbtns=document.querySelectorAll('.qz-opt');
+  for(var i=0;i<qbtns.length;i++){
+    (function(btn){
+      btn.addEventListener('click',function(){
+        var qn=parseInt(btn.getAttribute('data-q'));
+        var correct=btn.getAttribute('data-correct')==='true';
+        var qEl=document.getElementById('q'+qn);
+        var allBtns=qEl.querySelectorAll('.qz-opt');
+        for(var k=0;k<allBtns.length;k++){allBtns[k].disabled=true;allBtns[k].style.cursor='default';}
+        btn.className='qz-opt '+(correct?'correct':'wrong');
+        var fb=document.getElementById('fb'+qn);
+        fb.textContent=btn.getAttribute(correct?'data-msg-c':'data-msg-w');
+        fb.className='qz-fb show '+(correct?'ok':'bad');
+        if(!window.qAns)window.qAns={};
+        window.qAns[qn]=correct?'c':'w';
+      });
+    })(qbtns[i]);
+  }
+  var checkbtn=document.getElementById('checkbtn');
+  if(checkbtn){
+    checkbtn.addEventListener('click',function(){
+      var score=0,total_q=5;
+      if(window.qAns)for(var k in window.qAns)if(window.qAns[k]==='c')score++;
+      var sc=document.getElementById('qscore');
+      sc.style.display='block';
+      sc.innerHTML='<h4>'+score+'/'+total_q+' '+(score===5?'🎉':score>=4?'👍':'📚')+'</h4><p>'+(score===5?'Perfect!':score>=4?'Excellent work.':score>=3?'Good — review the lessons you missed.':'Work through the module again.')+'</p>';
+      if(score>=4){checkbtn.textContent='Continue to Completion →';checkbtn.addEventListener('click',function(){goTo(8);},{once:true});}
+      else{checkbtn.textContent='Review Module';checkbtn.addEventListener('click',function(){goTo(2);},{once:true});}
+    });
+  }
+};
+</script>
+</body>
+</html>
