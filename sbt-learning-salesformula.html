@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 11: The Sales Growth Formula &#8212; Small Business Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--plum-dk:#5A2F59;--plum-lt:#EDE8EE;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--warm:#EDE8EE;--white:#fff;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
+.topbar{background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;}
+.topbar-logo{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;}
+.topbar-logo span{color:var(--mauve);}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.strategy-btn{background:rgba(166,130,164,0.2);border:1px solid var(--mauve);color:var(--mauve);font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;}
+.prog-wrap{display:flex;align-items:center;gap:8px;}
+.prog-label{font-size:0.7rem;color:rgba(255,255,255,0.4);}
+.prog-bar{width:80px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--mauve);transition:width 0.4s;}
+.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:24px 28px;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-step{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.hero p{font-size:0.83rem;color:rgba(255,255,255,0.55);}
+.cols{display:grid;grid-template-columns:1fr 320px;max-width:1100px;margin:0 auto;min-height:calc(100vh - 130px);}
+@media(max-width:850px){.cols{grid-template-columns:1fr;}}
+.col-content{padding:22px 24px 100px;border-right:1px solid rgba(0,0,0,0.07);}
+.col-notes{padding:18px 18px 100px;background:rgba(121,69,119,0.03);}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.06);}
+.card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:7px;}
+.card p{font-size:0.83rem;color:var(--mid);line-height:1.65;}
+.card.c-mauve{border-left-color:var(--mauve);}
+.card.c-dark{border-left-color:var(--black);}
+.card.c-red{border-left-color:#9b3535;}
+.insight{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:12px;color:#fff;}
+.insight-tag{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.insight h4{font-size:0.9rem;font-weight:700;margin-bottom:5px;}
+.insight p{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.6;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.sc{padding:18px 14px;}
+.sc.s{background:linear-gradient(135deg,#1a4731,#2d6b4a);}
+.sc.w{background:linear-gradient(135deg,#4a1a1a,#7a2e2e);}
+.sc.o{background:linear-gradient(135deg,var(--dk),var(--plum));}
+.sc.t{background:linear-gradient(135deg,#1a2a4a,#2e4a7a);}
+.sc .sl{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:5px;}
+.sc h4{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.sc p{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.45;}
+.steps{list-style:none;margin-bottom:12px;}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.step:last-child{border:none;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--plum);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step h4{font-size:0.86rem;font-weight:700;margin-bottom:3px;}
+.step p{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.eg-box{background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;}
+.eg-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:7px;}
+.eg-box h4{font-size:0.87rem;font-weight:700;margin-bottom:5px;}
+.eg-box p{font-size:0.82rem;color:var(--mid);line-height:1.55;}
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+@media(max-width:600px){.eg-grid{grid-template-columns:1fr;}}
+.eg-item{background:#fff;border-radius:9px;padding:11px;}
+.eg-type{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.eg-s .eg-type{color:#2d6b4a;} .eg-w .eg-type{color:#7a2e2e;} .eg-o .eg-type{color:var(--plum);} .eg-t .eg-type{color:#2e4a7a;}
+.eg-item ul{list-style:none;}
+.eg-item ul li{font-size:0.76rem;color:var(--mid);padding:2px 0;display:flex;gap:5px;line-height:1.35;}
+.eg-s ul li::before{content:'•';color:#2d6b4a;font-weight:700;flex-shrink:0;}
+.eg-w ul li::before{content:'•';color:#7a2e2e;font-weight:700;flex-shrink:0;}
+.eg-o ul li::before{content:'•';color:var(--plum);font-weight:700;flex-shrink:0;}
+.eg-t ul li::before{content:'•';color:#2e4a7a;font-weight:700;flex-shrink:0;}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+@media(max-width:500px){.tpl-grid{grid-template-columns:1fr;}}
+.tpl-cell{border-radius:10px;padding:12px;}
+.tpl-s{background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);}
+.tpl-w{background:rgba(122,46,46,0.05);border:1.5px solid rgba(122,46,46,0.2);}
+.tpl-o{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.2);}
+.tpl-t{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.2);}
+.tpl-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.tpl-letter{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;}
+.tpl-s .tpl-letter{color:#2d6b4a;} .tpl-w .tpl-letter{color:#7a2e2e;} .tpl-o .tpl-letter{color:var(--plum);} .tpl-t .tpl-letter{color:#2e4a7a;}
+.tpl-hdr span{font-size:0.73rem;font-weight:600;color:var(--mid);}
+.tpl-cell textarea{width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--black);resize:vertical;min-height:85px;outline:none;line-height:1.45;}
+.qz-q{background:#fff;border-radius:11px;padding:14px;margin-bottom:9px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.qz-q p{font-size:0.85rem;font-weight:600;margin-bottom:9px;}
+.qz-opts{display:flex;flex-direction:column;gap:6px;}
+.qz-opt{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:8px 12px;font-size:0.8rem;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--mid);transition:all 0.15s;}
+.qz-opt:hover{border-color:var(--mauve);color:var(--plum);}
+.qz-opt.correct{background:rgba(45,107,74,0.08);border-color:#2d6b4a;color:#2d6b4a;font-weight:600;}
+.qz-opt.wrong{background:rgba(122,46,46,0.08);border-color:#7a2e2e;color:#7a2e2e;}
+.qz-fb{font-size:0.76rem;margin-top:6px;padding:7px 10px;border-radius:7px;display:none;}
+.qz-fb.show{display:block;}
+.qz-fb.ok{background:rgba(45,107,74,0.08);color:#2d6b4a;}
+.qz-fb.bad{background:rgba(122,46,46,0.08);color:#7a2e2e;}
+.qz-score{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:11px;padding:16px;text-align:center;color:#fff;display:none;margin-top:10px;}
+.qz-score h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;}
+.qz-score p{font-size:0.8rem;color:rgba(255,255,255,0.7);}
+.nc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(121,69,119,0.15);}
+.nc-hdr h3{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--plum);}
+.nc-hdr span{font-size:0.7rem;color:var(--light);}
+.nb{margin-bottom:11px;}
+.nb-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:4px;}
+.nb-hint{font-size:0.72rem;color:var(--light);margin-bottom:4px;font-style:italic;line-height:1.35;}
+.nb textarea{width:100%;border:1.5px solid rgba(121,69,119,0.14);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.77rem;color:var(--black);resize:vertical;min-height:66px;outline:none;background:#fff;line-height:1.45;}
+.nb textarea:focus{border-color:var(--plum);}
+.nb textarea::placeholder{color:#bbb;font-size:0.73rem;}
+.save-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px;font-family:'Montserrat',sans-serif;font-size:0.77rem;font-weight:700;cursor:pointer;margin-top:3px;}
+.save-btn:hover{background:var(--dk);}
+.saved-msg{font-size:0.68rem;color:var(--plum);font-weight:600;text-align:center;margin-top:5px;min-height:16px;}
+.cum-panel{background:#fff;border-radius:10px;padding:12px;margin-top:14px;border-top:3px solid var(--plum);}
+.cum-hdr{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;}
+.cum-empty{font-size:0.74rem;color:var(--light);font-style:italic;text-align:center;padding:10px 0;}
+.cum-entry{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.05);}
+.cum-entry:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+.cum-entry-lbl{font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mauve);margin-bottom:2px;}
+.cum-entry-txt{font-size:0.75rem;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.cum-btns{display:flex;gap:7px;margin-top:10px;}
+.cum-print{flex:1;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:7px;font-size:0.72rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;}
+.cum-copy{flex:1;background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:7px;padding:7px;font-size:0.72rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;}
+.botnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,0.07);padding:10px 22px;display:flex;align-items:center;justify-content:space-between;z-index:998;box-shadow:0 -3px 16px rgba(0,0,0,0.06);}
+.bot-btn{background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;}
+.bot-btn:hover{background:var(--dk);}
+.bot-btn.sec{background:transparent;color:var(--mid);border:1.5px solid rgba(0,0,0,0.12);}
+.bot-btn.sec:hover{border-color:var(--mauve);color:var(--plum);}
+.bot-btn:disabled{opacity:0.3;cursor:default;}
+.dots{display:flex;gap:5px;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;}
+.dot.on{background:var(--plum);width:16px;border-radius:4px;}
+.badge{display:inline-block;background:rgba(121,69,119,0.1);border:1px solid rgba(121,69,119,0.25);color:var(--plum);font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px;}
+.price-box{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:16px 24px;display:inline-block;margin-bottom:24px;}
+.price-box .pl{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.price-box .pp{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;}
+.price-box .ps{font-size:0.72rem;color:rgba(255,255,255,0.5);}
+.start-btn{background:var(--plum);color:#fff;border:none;border-radius:9px;padding:13px 34px;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;}
+.start-btn:hover{background:var(--dk);}
+.check-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:9px;padding:10px;font-family:'Montserrat',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.strat-back{background:none;border:none;color:var(--mauve);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;padding:0;display:block;}
+.s-print{background:var(--plum);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-right:8px;}
+.s-copy{background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;}
+.strat-card{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.strat-card .sl{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.strat-card .sc2{font-size:0.78rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.strat-card .sn{font-size:0.81rem;color:var(--mid);line-height:1.55;white-space:pre-wrap;background:var(--cream);border-radius:7px;padding:8px 10px;}
+.comp-badge{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 14px;}
+.comp-keys{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:18px;color:#fff;text-align:left;margin-bottom:20px;}
+.comp-keys .ck-title{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.comp-keys p{font-size:0.83rem;color:rgba(255,255,255,0.85);line-height:1.85;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;text-align:left;}
+@media(max-width:480px){.next-grid{grid-template-columns:1fr;}}
+.next-card{background:#fff;border-radius:10px;padding:13px;border:1.5px solid rgba(0,0,0,0.06);}
+.next-card .nc-num{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.next-card h4{font-size:0.83rem;font-weight:700;margin-bottom:2px;}
+.next-card p{font-size:0.7rem;color:var(--light);}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.calc-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:0.82rem;}
+.calc-table th{background:var(--plum);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:0.78rem;}
+.calc-table td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,0.06);color:var(--mid);}
+.calc-table tr:nth-child(even){background:rgba(121,69,119,0.04);}
+.calc-table tr.highlight{background:rgba(121,69,119,0.1);font-weight:700;color:var(--black);}
+.calc-table tr.green-row{background:rgba(45,107,74,0.08);color:#2d6b4a;font-weight:600;}
+.calc-input{width:100%;border:1.5px solid rgba(121,69,119,0.2);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.82rem;outline:none;background:#fff;}
+.calc-input:focus{border-color:var(--plum);}
+.calc-result{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:10px;padding:14px;color:#fff;margin-top:10px;text-align:center;}
+.calc-result .cr-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:4px;}
+.calc-result .cr-value{font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;}
+.calc-result .cr-sub{font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:2px;}
+.green-box{background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:12px;padding:16px;margin-bottom:12px;}
+.green-box h4{font-size:0.9rem;font-weight:700;color:#2d6b4a;margin-bottom:6px;}
+.green-box p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+.formula-box{background:linear-gradient(135deg,#1a4731,#2d6b4a);border-radius:12px;padding:18px;margin-bottom:14px;color:#fff;text-align:center;}
+.formula-box .fb-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;}
+.formula-box .fb-formula{font-family:Montserrat,sans-serif;font-size:1rem;font-weight:700;color:#fff;line-height:1.6;}
+.formula-box .fb-sub{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="topbar">
+  <div class="topbar-logo">Small Business <span>Therapy</span></div>
+  <div class="topbar-right">
+    <button class="strategy-btn" id="stratbtn">&#128203; My Strategy</button>
+    <div class="prog-wrap">
+      <span class="prog-label" id="plabel">1/8</span>
+      <div class="prog-bar"><div class="prog-fill" id="pfill" style="width:12%"></div></div>
+    </div>
+  </div>
+</div>
+<div id="p1" style="display:block;">
+  <div style="max-width:580px;margin:0 auto;padding:44px 22px 100px;text-align:center;">
+    <div class="badge">Module 11 · Sales Growth</div>
+    <h1 style="font-family:Montserrat,sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;margin-bottom:12px;">The Sales <span style="color:var(--plum);">Growth Formula</span></h1>
+    <p style="font-size:0.92rem;color:var(--mid);line-height:1.7;margin-bottom:24px;">Three levers. Improve each by just 10% and revenue grows by 33%. Improve each by 20% and revenue nearly doubles. This module shows you the multiplier effect, how to apply it to your business, and specific strategies for each lever.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <span style="font-size:0.78rem;color:var(--mid);">&#x23F1; 25–30 min</span>
+      <span style="font-size:0.78rem;color:var(--mid);">&#x1F4CB; 6 lessons</span>
+      <span style="font-size:0.78rem;color:var(--mid);">&#x1F9EE; Interactive calculators</span>
+      <span style="font-size:0.78rem;color:var(--mid);">&#x1F5A8;&#xFE0F; Print your strategy</span>
+    </div>
+    <div class="price-box"><div class="pl">Lifetime Access</div><div class="pp">$19.99</div><div class="ps">one-off · no subscription</div></div>
+    <br><br><button class="start-btn" id="startbtn">Start Module →</button>
+  </div>
+</div><div id="p2" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 1 of 6</div><h2>The Three Sales Levers</h2><p>Why working on all three drivers simultaneously produces results no single strategy can match.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Formula</h3><p>Every business generates revenue through exactly three variables: how much each customer spends (average sale value), how often they buy (purchase frequency), and how many customers you have. Small improvements to each variable compound multiplicatively &#8212; a 10% improvement on each does not produce 10% growth. It produces 33%.</p></div><div class="formula-box"><div class="fb-label">The Sales Growth Formula</div><div class="fb-formula">Average Sale Value &times; Purchase Frequency &times; Number of Customers = Revenue</div><div class="fb-sub">Improve each lever by 10% and total revenue grows by 33.1%</div></div><div style="background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 6px rgba(0,0,0,0.06);"><table class="calc-table"><thead><tr><th>Scenario</th><th>Avg Sale</th><th>Frequency</th><th>Customers</th><th>Revenue</th></tr></thead><tbody><tr><td>Current</td><td>$1,500</td><td>2x/yr</td><td>500</td><td>$1,500,000</td></tr><tr class="highlight"><td>+10% each</td><td>$1,650</td><td>2.2x</td><td>550</td><td>$1,998,900</td></tr><tr class="green-row"><td>+20% each</td><td>$1,800</td><td>2.4x</td><td>600</td><td>$2,592,000</td></tr></tbody></table></div><div class="insight"><div class="insight-tag">&#x1F4A1; The Most Overlooked Lever</div><h4>Acquisition is the most expensive growth strategy</h4><p>Most businesses spend 80% of sales effort on finding new customers and almost nothing on increasing what existing customers spend or how often they buy. Acquiring a new customer costs 5-7x more than selling to an existing one. The formula shows exactly why this leaves enormous revenue on the table.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My current three lever numbers</div><div class="nb-hint">What are your current average sale, purchase frequency and customer count?</div><textarea id="n2a" placeholder="e.g. Avg sale: $2,200/month retainer | Frequency: 12/year (monthly) | Active clients: 14 | Annual revenue: $369,600"></textarea></div><div class="nb"><div class="nb-label">Which lever am I focused on?</div><div class="nb-hint">Where is most of your sales effort going right now?</div><textarea id="n2b" placeholder="e.g. Almost entirely new customer acquisition. I spend 90% of my effort finding new clients and almost nothing on increasing what existing clients spend..."></textarea></div><div class="nb"><div class="nb-label">My 10% improvement scenario</div><div class="nb-hint">What would 10% improvement in each lever mean for your revenue?</div><textarea id="n2c" placeholder="e.g. Avg sale +10% = $2,420 | Clients +10% = 15.4 | Frequency slightly higher from add-ons | Estimated revenue: ~$464k &#8212; $94k more without tripling my marketing spend"></textarea></div>
+      <button class="save-btn" id="save2">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm2"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd2"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p3" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 2 of 6</div><h2>Increasing Average Sale Value</h2><p>How to get more revenue from every transaction without finding new customers.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Three Core Strategies</h3><p>There are three proven ways to increase average sale value: raise your prices, create premium tiers that give clients a reason to spend more, and bundle complementary services so clients pay more for greater convenience and value. Each strategy works on its own &#8212; together they are transformational.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Raise your prices &#8212; the fastest lever</h4><p>If you have not raised prices in 12 months you have absorbed cost increases and compressed your margin. A 5-10% price increase communicated professionally is accepted by 85-90% of clients. The revenue lost from the 10-15% who leave rarely justifies keeping prices low for everyone.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Create a premium tier</h4><p>Bundle your best services at a higher price point. Clients who want the best will pay for it. Those who want basics stay at standard pricing. Premium tiers typically generate 30-50% higher revenue per client with minimal additional cost.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Bundle complementary services</h4><p>Package services that naturally complement each other at a price that feels like value but is higher than the sum of parts. An SEO agency bundles SEO + Google Ads + reporting into one package. The client pays more and perceives more value.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Add premium add-ons to your core service</h4><p>A monthly strategy call. A competitor report. Priority response. Express delivery. These cost you relatively little but meaningfully increase average revenue per client.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Stop giving away value for free</h4><p>Many businesses provide informal extras they never bill for &#8212; quick calls, minor amendments, ad hoc advice. Formalise these into your pricing or a premium tier. Time you give away is revenue you never capture.</p></div></li><li class="step"><div class="step-n">6</div><div><h4>Review your pricing model</h4><p>Are you charging by the hour when you should charge by outcome? Outcome-based pricing allows your efficiency to become profit rather than a discount for the client.</p></div></li></ul><div class="eg-box" style="background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;"><div style="font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;">&#x1F4CD; Brisbane Example</div><h4 style="font-size:0.88rem;font-weight:700;margin-bottom:8px;">How a premium tier added $78k in 12 months</h4><p style="font-size:0.82rem;color:var(--mid);line-height:1.6;">14 clients on $1,800/month SEO. Introduced: (1) 6% price increase &#8212; 13 of 14 accepted: +$11,232/year. (2) Premium tier at $2,800 including Google Ads &#8212; 4 clients upgraded: +$48,000/year. (3) Competitor report add-on at $300/month &#8212; 6 clients: +$21,600/year. Total: $80,832 additional from existing clients. Zero new acquisition required.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My premium tier opportunity</div><div class="nb-hint">What would Entry, Standard and Premium look like for your business?</div><textarea id="n3a" placeholder="e.g. Entry $1,400: basics only | Standard $2,200: current offer | Premium $3,400: everything plus strategy call and competitor monitoring. Target 4 upgrades = $4,800/month additional."></textarea></div><div class="nb"><div class="nb-label">What I currently give away free</div><div class="nb-hint">What value-adds could you formalise or charge for?</div><textarea id="n3b" placeholder="e.g. Quick calls that last 30 mins (4/week = 2hrs free). Monthly competitor check never billed. Strategy advice in emails &#8212; free consulting happening constantly."></textarea></div><div class="nb"><div class="nb-label">My top 3 average sale value actions</div><div class="nb-hint">Which specific actions will you implement in the next 90 days?</div><textarea id="n3c" placeholder="e.g. 1. Launch premium tier $3,400 &#8212; pitch top 5 clients this month
+2. Add competitor report add-on at $250/month &#8212; pitch all 14 clients
+3. Annual price increase 5% on July 1 &#8212; send notification 60 days prior"></textarea></div>
+      <button class="save-btn" id="save3">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm3"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd3"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p4" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 3 of 6</div><h2>Increasing Transaction Frequency</h2><p>Getting existing customers to buy more often &#8212; the most underused sales strategy.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Your Existing Customers Are Your Best Asset</h3><p>An existing customer already knows you, trusts you and has demonstrated willingness to pay. Marketing to them costs a fraction of new customer acquisition. Yet most businesses invest almost nothing in systematically encouraging existing customers to buy again. Transaction frequency is typically the highest-return lever &#8212; and the least invested in.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Build a regular communication system</h4><p>Customers who hear from you regularly buy more often. A monthly email newsletter, a quarterly check-in call, a regular update email &#8212; any consistent touchpoint that reminds your customer you exist. Consistent is the key word. One email a year does nothing. Monthly contact changes behaviour significantly.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Create seasonal reasons to come back</h4><p>Promotions, new service launches, seasonal specials and exclusive client offers create specific moments that trigger a purchase decision. Plan 4-6 "reasons to come back" events per year and communicate them to your existing client base proactively.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Map adjacent services your clients naturally need</h4><p>What do your clients need alongside what they already buy from you? If you provide SEO, they need Google Ads, content, social. If you do accounting, they need financial planning. If you do cleaning, they need carpet and window cleaning. Map adjacent needs and make sure clients know you solve them.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Introduce accessory and complementary products</h4><p>Sell the accessories alongside the main product. Train staff to mention complementary services at every transaction. Build these into your quoting and proposal process as standard items.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Build a quarterly client review into your service</h4><p>A structured quarterly review surfaces new needs, demonstrates your value, and protects retention. A client who feels genuinely looked after and understands your results will buy more and refer more.</p></div></li><li class="step"><div class="step-n">6</div><div><h4>Sequence your service offering</h4><p>Design your range so each purchase naturally leads to the next. Every service should have a logical next step &#8212; and you should be proactively offering it at the right moment.</p></div></li></ul><div class="insight"><div class="insight-tag">&#x1F4A1; The Monthly Newsletter</div><h4>The highest-ROI marketing activity most businesses never do</h4><p>A monthly email to existing clients takes 2 hours and costs nothing. It keeps you front of mind, positions you as an expert, surfaces clients ready to buy more, and generates referrals. Open rates from existing clients are 35-55% &#8212; far higher than cold marketing. Fewer than 20% of small businesses do this consistently. Start this week.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My communication calendar</div><div class="nb-hint">How will you proactively contact existing clients and how often?</div><textarea id="n4a" placeholder="e.g. Weekly: brief email update with 1 key result
+Monthly: report + 30 min video call with all retainer clients
+Quarterly: strategy session
+Monthly newsletter: 2nd Tuesday to all clients and prospects"></textarea></div><div class="nb"><div class="nb-label">My adjacent services map</div><div class="nb-hint">What do your clients need that you could offer them?</div><textarea id="n4b" placeholder="e.g. SEO clients need: Google Ads, website refresh, content writing, social strategy
+All clients: Small Business Therapy Learning Centre modules
+Business coaching opportunity for engaged clients"></textarea></div><div class="nb"><div class="nb-label">My seasonal event calendar</div><div class="nb-hint">What are 4-6 specific "reasons to come back" moments each year?</div><textarea id="n4c" placeholder="e.g. July 1: new FY review and upgrade offer
+September: Q4 planning push
+November: new year planning offer
+March: end of summer review
+May: EOFY marketing sprint"></textarea></div>
+      <button class="save-btn" id="save4">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm4"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd4"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p5" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 4 of 6</div><h2>Increasing Customer Count &#8212; Smarter Acquisition</h2><p>How to grow your customer base efficiently without wasting marketing budget.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Acquisition Comes Third for a Reason</h3><p>Before investing heavily in customer acquisition, optimise average sale value and transaction frequency. A business that converts well, retains clients and generates referrals needs far fewer new leads to hit growth targets than one relying purely on volume acquisition. Get the first two levers working, then scale the third.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Define your ideal customer precisely</h4><p>Most businesses waste acquisition budget targeting everyone. Define your ideal customer with specificity: industry, size, location, pain point, budget, decision maker. Every acquisition dollar works harder when aimed at the right person.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Build a referral program first</h4><p>A referred customer converts at 3-5x the rate of a cold lead, costs a fraction to acquire, and has higher lifetime value. A structured referral program with a meaningful incentive, a clear ask, and regular prompting is the highest-return acquisition investment most small businesses can make.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Improve conversion before increasing leads</h4><p>If you convert 25% of proposals you have two options: get 4x more leads, or improve conversion to 50% and achieve the same result. Conversion improvement is almost always faster and cheaper. Measure and improve your conversion rate before spending more on marketing.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Focus on 2-3 channels where your clients actually are</h4><p>Stop spreading thin across every channel. Your ideal clients are concentrated in 2-3 specific places. For most B2B service businesses: Google (SEO + Ads), LinkedIn, and industry associations. Be consistently present there.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Train staff on telephone and in-person scripts</h4><p>How enquiries are handled determines conversion. A structured phone script that qualifies, builds rapport and books an appointment converts at significantly higher rates than ad hoc responses. Practice scripts in team meetings monthly.</p></div></li><li class="step"><div class="step-n">6</div><div><h4>Measure cost per acquired client &#8212; not cost per lead</h4><p>A cheap lead that never converts is more expensive than a costly lead that always does. Track where each new client comes from and what it cost. Cost per acquired client &#8212; not cost per lead &#8212; is the metric that matters.</p></div></li></ul><div class="insight"><div class="insight-tag">&#x1F4CD; The Referral Program That Doubled Acquisition</div><h4>A Brisbane business coach's result</h4><p>She emailed all 22 existing clients offering $300 account credit per referral who signed up. Result: 11 referrals in 6 months, 7 converted. Cost: $2,100. Revenue from 7 new clients at $2,000/month over 12 months: $168,000. Most cost-effective acquisition she had ever done.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My ideal client definition</div><div class="nb-hint">Who specifically is your ideal client? Industry, size, location, pain point, budget?</div><textarea id="n5a" placeholder="e.g. Trade businesses (plumbers, electricians, builders) in Brisbane/Gold Coast with 2-10 staff, $500k-$3m revenue, getting fewer than 5 Google leads per month. Owner is decision maker. Budget $1,500-$3,000/month."></textarea></div><div class="nb"><div class="nb-label">My referral program design</div><div class="nb-hint">What will you offer, to whom, and how will you ask?</div><textarea id="n5b" placeholder="e.g. Offer: $300 account credit per referral who becomes a paying client for 3+ months
+To: all 14 existing clients via personal email from me
+Ask: specifically name the type of business they could refer
+Launch: this Monday"></textarea></div><div class="nb"><div class="nb-label">My conversion rate and improvement target</div><div class="nb-hint">What percentage of proposals become clients? What would improvement mean?</div><textarea id="n5c" placeholder="e.g. Currently converting 28% of proposals. Send ~4 per month = 1.1 new clients/month. If I improve to 38% that is 1.5/month &#8212; 5 extra clients per year at $2,200 = $132,000 additional annual revenue."></textarea></div>
+      <button class="save-btn" id="save5">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm5"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd5"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p6" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 5 of 6 &#8212; Your Sales Calculator</div><h2>Model Your Growth Then Build Your Plan</h2><p>Use the interactive calculator to see what three-lever improvements mean in real revenue.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>&#x1F9EE; My Sales Growth Calculator</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:14px;">Enter your current numbers then set improvement targets to see the compounding revenue impact.</p><div style="font-size:0.75rem;font-weight:700;color:var(--plum);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Current Numbers</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-bottom:14px;"><div><div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:4px;">Avg Sale ($)</div><input type="number" id="cs" class="calc-input" placeholder="e.g. 2200" oninput="calcS()"></div><div><div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:4px;">Purchases/Year</div><input type="number" id="cf" class="calc-input" placeholder="e.g. 12" oninput="calcS()"></div><div><div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:4px;">Customers</div><input type="number" id="cc" class="calc-input" placeholder="e.g. 14" oninput="calcS()"></div></div><div style="font-size:0.75rem;font-weight:700;color:var(--plum);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">My Improvement Targets (%)</div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-bottom:14px;"><div><div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:4px;">Avg Sale %</div><input type="number" id="is" class="calc-input" placeholder="e.g. 15" oninput="calcS()"></div><div><div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:4px;">Frequency %</div><input type="number" id="ifc" class="calc-input" placeholder="e.g. 10" oninput="calcS()"></div><div><div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--mid);margin-bottom:4px;">Customers %</div><input type="number" id="ic" class="calc-input" placeholder="e.g. 20" oninput="calcS()"></div></div><div id="sr" style="display:none;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"><div class="calc-result"><div class="cr-label">Current Revenue</div><div class="cr-value" id="cr1">-</div></div><div class="calc-result"><div class="cr-label">Projected Revenue</div><div class="cr-value" id="cr2">-</div></div><div class="calc-result"><div class="cr-label">Revenue Increase</div><div class="cr-value" id="cr3">-</div></div><div class="calc-result"><div class="cr-label">Growth %</div><div class="cr-value" id="cr4">-</div></div></div></div></div><script>function calcS(){var cs=parseFloat(document.getElementById("cs").value)||0,cf=parseFloat(document.getElementById("cf").value)||0,cc=parseFloat(document.getElementById("cc").value)||0,is=parseFloat(document.getElementById("is").value)||0,ifc=parseFloat(document.getElementById("ifc").value)||0,ic=parseFloat(document.getElementById("ic").value)||0;if(cs>0&&cf>0&&cc>0){var cur=cs*cf*cc,ns=cs*(1+is/100),nf=cf*(1+ifc/100),nc2=cc*(1+ic/100),nrev=ns*nf*nc2;document.getElementById("cr1").textContent="$"+cur.toLocaleString();document.getElementById("cr2").textContent="$"+Math.round(nrev).toLocaleString();document.getElementById("cr3").textContent="$"+Math.round(nrev-cur).toLocaleString();document.getElementById("cr4").textContent=((nrev-cur)/cur*100).toFixed(1)+"%";document.getElementById("sr").style.display="block";}}</script><div class="card" style="margin-top:12px;"><h3>My 90-Day Sales Growth Action Plan</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:10px;">One specific action for each lever with a deadline.</p><textarea id="tpl-sp" style="width:100%;border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:9px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:120px;outline:none;background:var(--cream);" placeholder="LEVER 1 &#8212; Average Sale Value: [action] by [date]&#10;LEVER 2 &#8212; Transaction Frequency: [action] by [date]&#10;LEVER 3 &#8212; Customer Count: [action] by [date]&#10;90-Day Revenue Target: $___"></textarea><button class="save-btn" id="save6" style="width:100%;margin-top:8px;">&#x1F4BE; Save My Sales Plan</button></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My calculator results</div><div class="nb-hint">What does your improvement scenario show?</div><textarea id="n6a" placeholder="e.g. Current: $2,200 x 12 x 14 = $369,600/year
++15% avg sale, +10% frequency, +20% clients = $561k projected
+That is $191k more revenue &#8212; 52% growth from three moderate improvements"></textarea></div><div class="nb"><div class="nb-label">My biggest leverage opportunity</div><div class="nb-hint">Which of the three levers will deliver the fastest return?</div><textarea id="n6b" placeholder="e.g. Average sale value &#8212; launching premium tier. 4 upgrades at $3,400 vs $2,200 = $4,800/month, $57,600/year with zero new clients. Highest return per unit of effort."></textarea></div><div class="nb"><div class="nb-label">My 90-day commitment</div><div class="nb-hint">Three specific actions &#8212; one per lever &#8212; with deadlines</div><textarea id="n6c" placeholder="e.g. Lever 1: Premium tier proposals to top 5 clients &#8212; by end of this month
+Lever 2: Monthly newsletter launch &#8212; first send next Tuesday
+Lever 3: Referral program email to all clients &#8212; this Friday
+90-day revenue target: $420k annualised"></textarea></div>
+      <button class="save-btn" id="save6">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm6"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd6"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p7" style="display:none;"><div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 6 of 6 — Knowledge Check</div><h2>Knowledge Check</h2><p>5 questions to lock in your learning.</p></div></div><div class="cols"><div class="col-content"><div class="qz-q" id="q1"><p>1. Revenue equals:</p><div class="qz-opts"><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! Revenue = Average Sale Value x Purchase Frequency x Number of Customers. Improving each multiplies to create compounding growth." data-msg-w="Not quite. The formula is Average Sale Value x Purchase Frequency x Number of Customers.">Gross margin x customers x conversion rate</button><button class="qz-opt" data-q="1" data-correct="true" data-msg-c="Correct! Revenue = Average Sale Value x Purchase Frequency x Number of Customers. Improving each multiplies to create compounding growth." data-msg-w="Not quite. The formula is Average Sale Value x Purchase Frequency x Number of Customers.">Average sale value x purchase frequency x number of customers</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! Revenue = Average Sale Value x Purchase Frequency x Number of Customers. Improving each multiplies to create compounding growth." data-msg-w="Not quite. The formula is Average Sale Value x Purchase Frequency x Number of Customers.">Marketing spend x conversion rate x margin</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! Revenue = Average Sale Value x Purchase Frequency x Number of Customers. Improving each multiplies to create compounding growth." data-msg-w="Not quite. The formula is Average Sale Value x Purchase Frequency x Number of Customers.">Leads x closing rate x average margin</button></div><div class="qz-fb" id="fb1"></div></div><div class="qz-q" id="q2"><p>2. A 10% improvement on each of the three levers produces approximately:</p><div class="qz-opts"><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! 1.1 x 1.1 x 1.1 = 1.331 &#8212; a 33.1% revenue increase through the compounding multiplier effect." data-msg-w="Not quite. The multiplication gives 1.1 x 1.1 x 1.1 = 1.331 &#8212; approximately 33% growth, not 30%.">10% growth</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! 1.1 x 1.1 x 1.1 = 1.331 &#8212; a 33.1% revenue increase through the compounding multiplier effect." data-msg-w="Not quite. The multiplication gives 1.1 x 1.1 x 1.1 = 1.331 &#8212; approximately 33% growth, not 30%.">20% growth</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! 1.1 x 1.1 x 1.1 = 1.331 &#8212; a 33.1% revenue increase through the compounding multiplier effect." data-msg-w="Not quite. The multiplication gives 1.1 x 1.1 x 1.1 = 1.331 &#8212; approximately 33% growth, not 30%.">30% growth</button><button class="qz-opt" data-q="2" data-correct="true" data-msg-c="Correct! 1.1 x 1.1 x 1.1 = 1.331 &#8212; a 33.1% revenue increase through the compounding multiplier effect." data-msg-w="Not quite. The multiplication gives 1.1 x 1.1 x 1.1 = 1.331 &#8212; approximately 33% growth, not 30%.">33% growth</button></div><div class="qz-fb" id="fb2"></div></div><div class="qz-q" id="q3"><p>3. Why should you focus on average sale value and frequency before heavy acquisition investment?</p><div class="qz-opts"><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Existing customers cost 5-7x less to sell to. Optimising these levers first is faster and cheaper before scaling acquisition." data-msg-w="Not quite. Existing customers already trust you and cost far less to sell to &#8212; optimise these levers before scaling acquisition.">Acquisition is too expensive to ever be worthwhile</button><button class="qz-opt" data-q="3" data-correct="true" data-msg-c="Correct! Existing customers cost 5-7x less to sell to. Optimising these levers first is faster and cheaper before scaling acquisition." data-msg-w="Not quite. Existing customers already trust you and cost far less to sell to &#8212; optimise these levers before scaling acquisition.">Existing customers cost far less to sell to and already trust you</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Existing customers cost 5-7x less to sell to. Optimising these levers first is faster and cheaper before scaling acquisition." data-msg-w="Not quite. Existing customers already trust you and cost far less to sell to &#8212; optimise these levers before scaling acquisition.">New customers always take too long to convert</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Existing customers cost 5-7x less to sell to. Optimising these levers first is faster and cheaper before scaling acquisition." data-msg-w="Not quite. Existing customers already trust you and cost far less to sell to &#8212; optimise these levers before scaling acquisition.">Referrals are the only reliable strategy</button></div><div class="qz-fb" id="fb3"></div></div><div class="qz-q" id="q4"><p>4. A referred customer compared to a cold lead typically:</p><div class="qz-opts"><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Referred customers convert at 3-5x the rate of cold leads, cost less to acquire, and typically have higher lifetime value." data-msg-w="Not quite. Referrals convert at 3-5x cold leads, cost less to acquire, and typically deliver higher lifetime value.">Costs more to acquire but converts at similar rates</button><button class="qz-opt" data-q="4" data-correct="true" data-msg-c="Correct! Referred customers convert at 3-5x the rate of cold leads, cost less to acquire, and typically have higher lifetime value." data-msg-w="Not quite. Referrals convert at 3-5x cold leads, cost less to acquire, and typically deliver higher lifetime value.">Converts at 3-5x the rate and has higher lifetime value</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Referred customers convert at 3-5x the rate of cold leads, cost less to acquire, and typically have higher lifetime value." data-msg-w="Not quite. Referrals convert at 3-5x cold leads, cost less to acquire, and typically deliver higher lifetime value.">Requires more time to onboard</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Referred customers convert at 3-5x the rate of cold leads, cost less to acquire, and typically have higher lifetime value." data-msg-w="Not quite. Referrals convert at 3-5x cold leads, cost less to acquire, and typically deliver higher lifetime value.">Is more likely to ask for a discount</button></div><div class="qz-fb" id="fb4"></div></div><div class="qz-q" id="q5"><p>5. The most important customer acquisition metric to track is:</p><div class="qz-opts"><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Cost per acquired client accounts for both lead cost AND conversion rate. A cheap lead that never converts is more expensive than a costly lead that always does." data-msg-w="Not quite. Cost per acquired client &#8212; not cost per lead &#8212; accounts for conversion rate differences across channels.">Cost per lead by channel</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Cost per acquired client accounts for both lead cost AND conversion rate. A cheap lead that never converts is more expensive than a costly lead that always does." data-msg-w="Not quite. Cost per acquired client &#8212; not cost per lead &#8212; accounts for conversion rate differences across channels.">Number of leads per month</button><button class="qz-opt" data-q="5" data-correct="true" data-msg-c="Correct! Cost per acquired client accounts for both lead cost AND conversion rate. A cheap lead that never converts is more expensive than a costly lead that always does." data-msg-w="Not quite. Cost per acquired client &#8212; not cost per lead &#8212; accounts for conversion rate differences across channels.">Cost per acquired client by channel</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Cost per acquired client accounts for both lead cost AND conversion rate. A cheap lead that never converts is more expensive than a costly lead that always does." data-msg-w="Not quite. Cost per acquired client &#8212; not cost per lead &#8212; accounts for conversion rate differences across channels.">Social media follower growth</button></div><div class="qz-fb" id="fb5"></div></div><div class="qz-score" id="qscore"></div><button class="check-btn" id="checkbtn">Check My Answers →</button></div><div class="col-notes"><div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div><div class="nb"><div class="nb-label">What surprised me</div><div class="nb-hint">Anything that challenged your thinking</div><textarea id="n7a" placeholder="e.g. I had no idea how much the multiplier effect compounds small improvements..."></textarea></div>
+<div class="nb"><div class="nb-label">My biggest learning</div><div class="nb-hint">The single most valuable insight</div><textarea id="n7b" placeholder="e.g. Working all three levers simultaneously instead of just chasing new customers..."></textarea></div>
+<div class="nb"><div class="nb-label">What I am doing from Monday</div><div class="nb-hint">One concrete action you commit to</div><textarea id="n7c" placeholder="e.g. Launching my referral program this week and scheduling monthly client calls..."></textarea></div><button class="save-btn" id="save7">&#x1F4BE; Save These Notes</button><div class="saved-msg" id="sm7"></div><div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd7"><div class="cum-empty">Your notes will appear here →</div></div></div></div></div></div><div id="p8" style="display:none;">
+  <div style="max-width:640px;margin:0 auto;padding:36px 22px 100px;text-align:center;">
+    <div class="comp-badge">🎓</div>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;margin-bottom:9px;">Module 11 Complete!</h2>
+    <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:20px;">Your notes have built into a strategy document you can print or share with your team.</p>
+    <div class="comp-keys"><div class="ck-title">Key Takeaways</div><p>&#x2713; Three levers: average sale value, frequency, customer count<br>&#x2713; 10% improvement on each = 33% revenue growth through compounding<br>&#x2713; Existing customers are your highest-return sales opportunity<br>&#x2713; Referrals convert at 3-5x cold leads at a fraction of the cost<br>&#x2713; Improve conversion before scaling lead volume</p></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="s-print" id="finprint">&#x1F5A8;&#xFE0F; Print My Strategy</button>
+      <button class="s-copy" id="fincopy">&#x1F4CB; Copy to Clipboard</button>
+    </div>
+    <p style="font-weight:700;font-size:0.88rem;margin-bottom:12px;">Continue your learning:</p>
+    <div class="next-grid"><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 12</div><h4>Increasing Average Sale Value</h4><p>Deep dive into upselling, bundling and premium tiers</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 13</div><h4>Customer Retention and Frequency</h4><p>Keep clients longer and buying more often</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 09</div><h4>True Cost of Discounting</h4><p>Protect your average sale value from erosion</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 08</div><h4>Increasing Profit</h4><p>Connect sales growth to bottom-line profit</p></div></div>
+  </div>
+</div>
+<div id="pstrat" style="display:none;">
+  <div style="max-width:860px;margin:0 auto;padding:26px 22px 100px;">
+    <button class="strat-back" id="stratback">&#8592; Back to Module</button>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:5px;">&#128203; My Strategy &#8212; Module 11: The Sales Growth Formula</h2>
+    <p style="font-size:0.83rem;color:var(--mid);margin-bottom:18px;">All notes from this module built lesson by lesson.</p>
+    <div style="margin-bottom:18px;"><button class="s-print" id="stratprint">&#128424;&#65039; Print</button><button class="s-copy" id="stratcopy">&#128203; Copy</button></div>
+    <div id="stratbody"></div>
+  </div>
+</div>
+<div class="botnav" id="botnav">
+  <button class="bot-btn sec" id="prevbtn">&#8592; Back</button>
+  <div class="dots" id="dotrow"></div>
+  <button class="bot-btn" id="nextbtn">Next &#8594;</button>
+</div>
+<script>
+var cur=1,total=8,prevPg=1,MOD_KEY='sbt_mod11_';
+var NOTES=[
+  {pg:2,fields:[{id:'n2a',lbl:'My current three lever numbers'},{id:'n2b',lbl:'Which lever I am focused on'},{id:'n2c',lbl:'My 10 percent improvement scenario'}]},
+  {pg:3,fields:[{id:'n3a',lbl:'My premium tier opportunity'},{id:'n3b',lbl:'What I currently give away free'},{id:'n3c',lbl:'My top 3 average sale value actions'}]},
+  {pg:4,fields:[{id:'n4a',lbl:'My communication calendar'},{id:'n4b',lbl:'My adjacent services map'},{id:'n4c',lbl:'My seasonal event calendar'}]},
+  {pg:5,fields:[{id:'n5a',lbl:'My ideal client definition'},{id:'n5b',lbl:'My referral program design'},{id:'n5c',lbl:'My conversion rate and improvement target'}]},
+  {pg:6,fields:[{id:'n6a',lbl:'My calculator results'},{id:'n6b',lbl:'My biggest leverage opportunity'},{id:'n6c',lbl:'My 90 day commitment one action per lever'}]},
+  {pg:7,fields:[{id:'n7a',lbl:'What surprised me'},{id:'n7b',lbl:'My biggest learning'},{id:'n7c',lbl:'What I am doing from Monday'}]}
+];
+function sk(id){return MOD_KEY+id;}
+function store(id,val){try{if(val.trim())localStorage.setItem(sk(id),val);else localStorage.removeItem(sk(id));}catch(e){}}
+function recall(id){try{return localStorage.getItem(sk(id))||'';}catch(e){return '';}}
+function showPg(id){var all=['p1','p2','p3','p4','p5','p6','p7','p8','p8','pstrat'];for(var i=0;i<all.length;i++){var el=document.getElementById(all[i]);if(el)el.style.display='none';}var t=document.getElementById(id);if(t)t.style.display='block';window.scrollTo(0,0);}
+function goTo(n){cur=n;showPg('p'+cur);document.getElementById('botnav').style.display='flex';updateNav();refreshAll();}
+function updateNav(){document.getElementById('prevbtn').disabled=(cur===1);document.getElementById('nextbtn').disabled=(cur===total);document.getElementById('nextbtn').textContent=(cur===total-1)?'Finish →':'Next →';document.getElementById('plabel').textContent=cur+'/'+total;document.getElementById('pfill').style.width=((cur/total)*100)+'%';buildDots();}
+function buildDots(){var c=document.getElementById('dotrow');c.innerHTML='';for(var i=1;i<=total;i++){var d=document.createElement('div');d.className='dot'+(i===cur?' on':'');d.setAttribute('data-n',i);c.appendChild(d);}var dots=c.querySelectorAll('.dot');for(var j=0;j<dots.length;j++){dots[j].addEventListener('click',function(){goTo(parseInt(this.getAttribute('data-n')));}); }}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function buildCumHTML(){var html='',has=false;for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim()){has=true;html+='<div class="cum-entry"><div class="cum-entry-lbl">'+f.lbl+'</div><div class="cum-entry-txt">'+esc(v)+'</div></div>';}}}if(!has)html='<div class="cum-empty">Your notes will appear here as you save them →</div>';return{html:html,has:has};}
+function refreshAll(){var r=buildCumHTML();var cdivs=document.querySelectorAll('[id^="cd"]');for(var i=0;i<cdivs.length;i++)cdivs[i].innerHTML=r.html;var cb=document.getElementById('cbbtns');if(cb)cb.style.display=r.has?'flex':'none';}
+function saveNotes(pg){var def=null;for(var i=0;i<NOTES.length;i++)if(NOTES[i].pg===pg){def=NOTES[i];break;}if(!def)return;for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el)store(f.id,el.value);}refreshAll();var sm=document.getElementById('sm'+pg);if(sm){sm.textContent='✓ Saved';setTimeout(function(){sm.textContent='';},2000);}showToast('Notes saved ✓');}
+function loadAll(){for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el){var v=recall(f.id);if(v)el.value=v;}}}}
+function getStratText(){var t='MY STRATEGY — MODULE 11: THE SALES GROWTH FORMULA\nSmall Business Therapy | Maximum Marketing Solutions\n----------------------------------------\n\n';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())t+=f.lbl.toUpperCase()+':\n'+v+'\n\n';}}t+='Maximum Marketing Solutions | maximummarketingsolutions.com.au | +61 459 472 739';return t;}
+function doPrint(){var w=window.open('','_blank');var b='<html><head><title>Strategy M11</title><style>body{font-family:Arial,sans-serif;max-width:760px;margin:36px auto;font-size:13px;}h1{font-size:1.2rem;margin-bottom:4px;}.sub{color:#888;font-size:11px;margin-bottom:20px;}.card{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;}.lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:3px;}.note{font-size:12px;color:#4a4a4a;line-height:1.6;white-space:pre-wrap;background:#f5f5f5;padding:7px 9px;border-left:3px solid #794577;}.foot{margin-top:24px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:8px;}</style></head><body><h1>Module 11: The Sales Growth Formula</h1><p class="sub">Small Business Therapy · Maximum Marketing Solutions</p>';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="card"><div class="lbl">'+f.lbl+'</div><div class="note">'+v+'</div></div>';}}b+='<div class="foot">Maximum Marketing Solutions · maximummarketingsolutions.com.au · +61 459 472 739</div></body></html>';w.document.write(b);w.document.close();w.print();}
+function doCopy(){var txt=getStratText();if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){showToast('Copied ✓');}).catch(function(){showToast('Use Print instead');});else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied ✓');}catch(e){showToast('Use Print instead');}document.body.removeChild(ta);}}
+function showStrat(){prevPg=cur;showPg('pstrat');document.getElementById('botnav').style.display='none';var r=buildCumHTML(),b='';if(!r.has)b='<p style="color:#888;font-style:italic;padding:24px 0;">No notes yet.</p>';else{for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="strat-card"><div class="sl">Lesson '+(def.pg-1)+'</div><div class="sc2">'+f.lbl+'</div><div class="sn">'+esc(v)+'</div></div>';}}}document.getElementById('stratbody').innerHTML=b;}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.className='toast on';setTimeout(function(){t.className='toast';},2600);}
+window.onload=function(){
+  showPg('p1');buildDots();updateNav();loadAll();refreshAll();
+  document.getElementById('startbtn').addEventListener('click',function(){goTo(2);});
+  document.getElementById('prevbtn').addEventListener('click',function(){if(cur>1)goTo(cur-1);});
+  document.getElementById('nextbtn').addEventListener('click',function(){if(cur<total)goTo(cur+1);});
+  document.getElementById('stratbtn').addEventListener('click',function(){showStrat();});
+  document.getElementById('stratback').addEventListener('click',function(){showPg('p'+prevPg);document.getElementById('botnav').style.display='flex';updateNav();});
+  document.getElementById('stratprint').addEventListener('click',function(){doPrint();});
+  document.getElementById('stratcopy').addEventListener('click',function(){doCopy();});
+  var saveEls=document.querySelectorAll('[id^="save"]');
+  for(var i=0;i<saveEls.length;i++){(function(el){var pg=parseInt(el.id.replace('save',''));if(!isNaN(pg))el.addEventListener('click',function(){saveNotes(pg);});}) (saveEls[i]);}
+  ['finprint','cumprint'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doPrint();});});
+  ['fincopy','cumcopy'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doCopy();});});
+  var qbtns=document.querySelectorAll('.qz-opt');
+  for(var i=0;i<qbtns.length;i++){(function(btn){btn.addEventListener('click',function(){var qn=parseInt(btn.getAttribute('data-q'));var correct=btn.getAttribute('data-correct')==='true';var qEl=document.getElementById('q'+qn);var allBtns=qEl.querySelectorAll('.qz-opt');for(var k=0;k<allBtns.length;k++){allBtns[k].disabled=true;allBtns[k].style.cursor='default';}btn.className='qz-opt '+(correct?'correct':'wrong');var fb=document.getElementById('fb'+qn);fb.textContent=btn.getAttribute(correct?'data-msg-c':'data-msg-w');fb.className='qz-fb show '+(correct?'ok':'bad');if(!window.qAns)window.qAns={};window.qAns[qn]=correct?'c':'w';});}) (qbtns[i]);}
+  var checkbtn=document.getElementById('checkbtn');
+  if(checkbtn){checkbtn.addEventListener('click',function(){var score=0;if(window.qAns)for(var k in window.qAns)if(window.qAns[k]==='c')score++;var sc=document.getElementById('qscore');sc.style.display='block';sc.innerHTML='<h4>'+score+'/5 '+(score===5?'??':score>=4?'??':'??')+'</h4><p>'+(score===5?'Perfect!':score>=4?'Excellent.':score>=3?'Good — review missed lessons.':'Work through the module again.')+'</p>';if(score>=4){checkbtn.textContent='Continue →';checkbtn.addEventListener('click',function(){goTo(8);},{once:true});}else{checkbtn.textContent='Review Module';checkbtn.addEventListener('click',function(){goTo(2);},{once:true});}});}
+};
+</script>
+</body>
+</html>

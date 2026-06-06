@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 12: Increasing Average Sale Value &#8212; Small Business Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--plum-dk:#5A2F59;--plum-lt:#EDE8EE;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--warm:#EDE8EE;--white:#fff;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
+.topbar{background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;}
+.topbar-logo{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;}
+.topbar-logo span{color:var(--mauve);}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.strategy-btn{background:rgba(166,130,164,0.2);border:1px solid var(--mauve);color:var(--mauve);font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;}
+.prog-wrap{display:flex;align-items:center;gap:8px;}
+.prog-label{font-size:0.7rem;color:rgba(255,255,255,0.4);}
+.prog-bar{width:80px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--mauve);transition:width 0.4s;}
+.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:24px 28px;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-step{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.hero p{font-size:0.83rem;color:rgba(255,255,255,0.55);}
+.cols{display:grid;grid-template-columns:1fr 320px;max-width:1100px;margin:0 auto;min-height:calc(100vh - 130px);}
+@media(max-width:850px){.cols{grid-template-columns:1fr;}}
+.col-content{padding:22px 24px 100px;border-right:1px solid rgba(0,0,0,0.07);}
+.col-notes{padding:18px 18px 100px;background:rgba(121,69,119,0.03);}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.06);}
+.card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:7px;}
+.card p{font-size:0.83rem;color:var(--mid);line-height:1.65;}
+.card.c-mauve{border-left-color:var(--mauve);}
+.card.c-dark{border-left-color:var(--black);}
+.card.c-red{border-left-color:#9b3535;}
+.insight{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:12px;color:#fff;}
+.insight-tag{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.insight h4{font-size:0.9rem;font-weight:700;margin-bottom:5px;}
+.insight p{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.6;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.sc{padding:18px 14px;}
+.sc.s{background:linear-gradient(135deg,#1a4731,#2d6b4a);}
+.sc.w{background:linear-gradient(135deg,#4a1a1a,#7a2e2e);}
+.sc.o{background:linear-gradient(135deg,var(--dk),var(--plum));}
+.sc.t{background:linear-gradient(135deg,#1a2a4a,#2e4a7a);}
+.sc .sl{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:5px;}
+.sc h4{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.sc p{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.45;}
+.steps{list-style:none;margin-bottom:12px;}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.step:last-child{border:none;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--plum);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step h4{font-size:0.86rem;font-weight:700;margin-bottom:3px;}
+.step p{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.eg-box{background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;}
+.eg-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:7px;}
+.eg-box h4{font-size:0.87rem;font-weight:700;margin-bottom:5px;}
+.eg-box p{font-size:0.82rem;color:var(--mid);line-height:1.55;}
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+@media(max-width:600px){.eg-grid{grid-template-columns:1fr;}}
+.eg-item{background:#fff;border-radius:9px;padding:11px;}
+.eg-type{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.eg-s .eg-type{color:#2d6b4a;} .eg-w .eg-type{color:#7a2e2e;} .eg-o .eg-type{color:var(--plum);} .eg-t .eg-type{color:#2e4a7a;}
+.eg-item ul{list-style:none;}
+.eg-item ul li{font-size:0.76rem;color:var(--mid);padding:2px 0;display:flex;gap:5px;line-height:1.35;}
+.eg-s ul li::before{content:'•';color:#2d6b4a;font-weight:700;flex-shrink:0;}
+.eg-w ul li::before{content:'•';color:#7a2e2e;font-weight:700;flex-shrink:0;}
+.eg-o ul li::before{content:'•';color:var(--plum);font-weight:700;flex-shrink:0;}
+.eg-t ul li::before{content:'•';color:#2e4a7a;font-weight:700;flex-shrink:0;}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+@media(max-width:500px){.tpl-grid{grid-template-columns:1fr;}}
+.tpl-cell{border-radius:10px;padding:12px;}
+.tpl-s{background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);}
+.tpl-w{background:rgba(122,46,46,0.05);border:1.5px solid rgba(122,46,46,0.2);}
+.tpl-o{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.2);}
+.tpl-t{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.2);}
+.tpl-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.tpl-letter{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;}
+.tpl-s .tpl-letter{color:#2d6b4a;} .tpl-w .tpl-letter{color:#7a2e2e;} .tpl-o .tpl-letter{color:var(--plum);} .tpl-t .tpl-letter{color:#2e4a7a;}
+.tpl-hdr span{font-size:0.73rem;font-weight:600;color:var(--mid);}
+.tpl-cell textarea{width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--black);resize:vertical;min-height:85px;outline:none;line-height:1.45;}
+.qz-q{background:#fff;border-radius:11px;padding:14px;margin-bottom:9px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.qz-q p{font-size:0.85rem;font-weight:600;margin-bottom:9px;}
+.qz-opts{display:flex;flex-direction:column;gap:6px;}
+.qz-opt{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:8px 12px;font-size:0.8rem;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--mid);transition:all 0.15s;}
+.qz-opt:hover{border-color:var(--mauve);color:var(--plum);}
+.qz-opt.correct{background:rgba(45,107,74,0.08);border-color:#2d6b4a;color:#2d6b4a;font-weight:600;}
+.qz-opt.wrong{background:rgba(122,46,46,0.08);border-color:#7a2e2e;color:#7a2e2e;}
+.qz-fb{font-size:0.76rem;margin-top:6px;padding:7px 10px;border-radius:7px;display:none;}
+.qz-fb.show{display:block;}
+.qz-fb.ok{background:rgba(45,107,74,0.08);color:#2d6b4a;}
+.qz-fb.bad{background:rgba(122,46,46,0.08);color:#7a2e2e;}
+.qz-score{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:11px;padding:16px;text-align:center;color:#fff;display:none;margin-top:10px;}
+.qz-score h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;}
+.qz-score p{font-size:0.8rem;color:rgba(255,255,255,0.7);}
+.nc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(121,69,119,0.15);}
+.nc-hdr h3{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--plum);}
+.nc-hdr span{font-size:0.7rem;color:var(--light);}
+.nb{margin-bottom:11px;}
+.nb-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:4px;}
+.nb-hint{font-size:0.72rem;color:var(--light);margin-bottom:4px;font-style:italic;line-height:1.35;}
+.nb textarea{width:100%;border:1.5px solid rgba(121,69,119,0.14);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.77rem;color:var(--black);resize:vertical;min-height:66px;outline:none;background:#fff;line-height:1.45;}
+.nb textarea:focus{border-color:var(--plum);}
+.nb textarea::placeholder{color:#bbb;font-size:0.73rem;}
+.save-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px;font-family:'Montserrat',sans-serif;font-size:0.77rem;font-weight:700;cursor:pointer;margin-top:3px;}
+.save-btn:hover{background:var(--dk);}
+.saved-msg{font-size:0.68rem;color:var(--plum);font-weight:600;text-align:center;margin-top:5px;min-height:16px;}
+.cum-panel{background:#fff;border-radius:10px;padding:12px;margin-top:14px;border-top:3px solid var(--plum);}
+.cum-hdr{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;}
+.cum-empty{font-size:0.74rem;color:var(--light);font-style:italic;text-align:center;padding:10px 0;}
+.cum-entry{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.05);}
+.cum-entry:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+.cum-entry-lbl{font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mauve);margin-bottom:2px;}
+.cum-entry-txt{font-size:0.75rem;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.cum-btns{display:flex;gap:7px;margin-top:10px;}
+.cum-print{flex:1;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:7px;font-size:0.72rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;}
+.cum-copy{flex:1;background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:7px;padding:7px;font-size:0.72rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;}
+.botnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,0.07);padding:10px 22px;display:flex;align-items:center;justify-content:space-between;z-index:998;box-shadow:0 -3px 16px rgba(0,0,0,0.06);}
+.bot-btn{background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;}
+.bot-btn:hover{background:var(--dk);}
+.bot-btn.sec{background:transparent;color:var(--mid);border:1.5px solid rgba(0,0,0,0.12);}
+.bot-btn.sec:hover{border-color:var(--mauve);color:var(--plum);}
+.bot-btn:disabled{opacity:0.3;cursor:default;}
+.dots{display:flex;gap:5px;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;}
+.dot.on{background:var(--plum);width:16px;border-radius:4px;}
+.badge{display:inline-block;background:rgba(121,69,119,0.1);border:1px solid rgba(121,69,119,0.25);color:var(--plum);font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px;}
+.price-box{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:16px 24px;display:inline-block;margin-bottom:24px;}
+.price-box .pl{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.price-box .pp{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;}
+.price-box .ps{font-size:0.72rem;color:rgba(255,255,255,0.5);}
+.start-btn{background:var(--plum);color:#fff;border:none;border-radius:9px;padding:13px 34px;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;}
+.start-btn:hover{background:var(--dk);}
+.check-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:9px;padding:10px;font-family:'Montserrat',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.strat-back{background:none;border:none;color:var(--mauve);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;padding:0;display:block;}
+.s-print{background:var(--plum);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-right:8px;}
+.s-copy{background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;}
+.strat-card{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.strat-card .sl{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.strat-card .sc2{font-size:0.78rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.strat-card .sn{font-size:0.81rem;color:var(--mid);line-height:1.55;white-space:pre-wrap;background:var(--cream);border-radius:7px;padding:8px 10px;}
+.comp-badge{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 14px;}
+.comp-keys{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:18px;color:#fff;text-align:left;margin-bottom:20px;}
+.comp-keys .ck-title{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.comp-keys p{font-size:0.83rem;color:rgba(255,255,255,0.85);line-height:1.85;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;text-align:left;}
+@media(max-width:480px){.next-grid{grid-template-columns:1fr;}}
+.next-card{background:#fff;border-radius:10px;padding:13px;border:1.5px solid rgba(0,0,0,0.06);}
+.next-card .nc-num{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.next-card h4{font-size:0.83rem;font-weight:700;margin-bottom:2px;}
+.next-card p{font-size:0.7rem;color:var(--light);}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.calc-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:0.82rem;}
+.calc-table th{background:var(--plum);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:0.78rem;}
+.calc-table td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,0.06);color:var(--mid);}
+.calc-table tr:nth-child(even){background:rgba(121,69,119,0.04);}
+.calc-table tr.highlight{background:rgba(121,69,119,0.1);font-weight:700;color:var(--black);}
+.calc-table tr.green-row{background:rgba(45,107,74,0.08);color:#2d6b4a;font-weight:600;}
+.calc-input{width:100%;border:1.5px solid rgba(121,69,119,0.2);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.82rem;outline:none;background:#fff;}
+.calc-input:focus{border-color:var(--plum);}
+.calc-result{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:10px;padding:14px;color:#fff;margin-top:10px;text-align:center;}
+.calc-result .cr-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:4px;}
+.calc-result .cr-value{font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;}
+.calc-result .cr-sub{font-size:0.75rem;color:rgba(255,255,255,0.6);margin-top:2px;}
+.green-box{background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:12px;padding:16px;margin-bottom:12px;}
+.green-box h4{font-size:0.9rem;font-weight:700;color:#2d6b4a;margin-bottom:6px;}
+.green-box p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+.formula-box{background:linear-gradient(135deg,#1a4731,#2d6b4a);border-radius:12px;padding:18px;margin-bottom:14px;color:#fff;text-align:center;}
+.formula-box .fb-label{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;}
+.formula-box .fb-formula{font-family:Montserrat,sans-serif;font-size:1rem;font-weight:700;color:#fff;line-height:1.6;}
+.formula-box .fb-sub{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="topbar">
+  <div class="topbar-logo">Small Business <span>Therapy</span></div>
+  <div class="topbar-right">
+    <button class="strategy-btn" id="stratbtn">&#128203; My Strategy</button>
+    <div class="prog-wrap">
+      <span class="prog-label" id="plabel">1/8</span>
+      <div class="prog-bar"><div class="prog-fill" id="pfill" style="width:12%"></div></div>
+    </div>
+  </div>
+</div>
+<div id="p1" style="display:block;">
+  <div style="max-width:580px;margin:0 auto;padding:44px 22px 100px;text-align:center;">
+    <div class="badge">Module 12 · Sales Growth</div>
+    <h1 style="font-family:Montserrat,sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;margin-bottom:12px;">Increasing Average <span style="color:var(--plum);">Sale Value</span></h1>
+    <p style="font-size:0.92rem;color:var(--mid);line-height:1.7;margin-bottom:24px;">The fastest way to grow revenue without finding new customers. Upselling, bundling, premium tiers, pricing models and staff training. Everything you need to get more from every transaction.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <span style="font-size:0.78rem;color:var(--mid);">&#x23F1; 25–30 min</span>
+      <span style="font-size:0.78rem;color:var(--mid);">&#x1F4CB; 6 lessons</span>
+      <span style="font-size:0.78rem;color:var(--mid);">&#x1F9EE; Interactive calculators</span>
+      <span style="font-size:0.78rem;color:var(--mid);">&#x1F5A8;&#xFE0F; Print your strategy</span>
+    </div>
+    <div class="price-box"><div class="pl">Lifetime Access</div><div class="pp">$19.99</div><div class="ps">one-off · no subscription</div></div>
+    <br><br><button class="start-btn" id="startbtn">Start Module →</button>
+  </div>
+</div><div id="p2" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 1 of 6</div><h2>The Value Mindset</h2><p>Why getting more from existing transactions is a service, not a sales tactic.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Reframing Upselling</h3><p>Most business owners are uncomfortable with upselling because they associate it with pushy selling. But genuine upselling is the opposite -- ensuring clients know everything available to them that could solve their problems. A client who leaves without knowing you could have solved their second problem has been underserved, not protected.</p></div><div class="card c-mauve"><h3>The Gap Between What Clients Buy and What They Need</h3><p>In most businesses there is a significant gap between what clients currently buy and what they genuinely need. They may be unaware of your full service range. They may not have connected their problems to your solutions. They may be buying individual services from multiple providers when you could serve all their needs better. Closing this gap is better client service -- not upselling.</p></div><div class="insight"><div class="insight-tag">&#x1F4A1; The Full Needs Audit</div><h4>The most natural upsell conversation</h4><p>The most effective way to increase average sale value is to understand the full scope of a client's needs at the start of the relationship. A 45-minute onboarding conversation that maps all their challenges and goals will naturally surface 2-3 additional service opportunities. This is thorough professional practice -- not selling.</p></div><div class="card c-dark"><h3>What Your Numbers Tell You</h3><p>If your average sale value has been flat for 12+ months you are leaving revenue on the table. If you are not actively upselling, bundling or upgrading clients, your average sale value is declining in real terms as inflation erodes your prices. Average sale value requires active management -- it does not grow by default.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">The gap in my client relationships</div><div class="nb-hint">What do your clients need that you currently do not provide or actively offer?</div><textarea id="n2a" placeholder="e.g. At least 6 SEO clients also need Google Ads. Mentioned it casually but never formally proposed it. That is $800/month x 6 = $4,800/month I am not capturing..."></textarea></div><div class="nb"><div class="nb-label">My discomfort with upselling</div><div class="nb-hint">What specifically makes you uncomfortable about offering more to existing clients?</div><textarea id="n2b" placeholder="e.g. I worry about seeming greedy. But if I know Google Ads would help a client get more leads, NOT telling them is the worse outcome for them. I need to reframe this..."></textarea></div><div class="nb"><div class="nb-label">My onboarding -- does it surface all needs?</div><div class="nb-hint">When a new client starts, do you map all their challenges or just address the specific thing they called about?</div><textarea id="n2c" placeholder="e.g. Very narrow. Client calls about SEO, I scope the SEO and start. Never ask about their broader situation, goals or current challenges. Missing the full picture from day one..."></textarea></div>
+      <button class="save-btn" id="save2">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm2"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd2"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p3" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 2 of 6</div><h2>Pricing Strategies That Drive Higher Sale Values</h2><p>How to structure your pricing to naturally drive higher transaction values.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Three-tier pricing -- Good, Better, Best</h4><p>When clients see three options most choose the middle tier -- which you price as your preferred option. The premium tier makes the middle look reasonable. The entry tier reassures clients they have a choice. Businesses switching from single-price to three-tier typically see average sale value increase 15-25%.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Price for outcomes not inputs</h4><p>Hourly pricing caps your revenue at your time. Outcome-based pricing -- a set fee for a defined result -- means your efficiency becomes profit. "We will get you to page 1 of Google for these 10 keywords for $2,200/month" is more compelling and more profitable than charging by the hour.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Bundle to increase perceived value and actual price</h4><p>A bundle of three services priced at $2,800 feels like better value than three services individually totalling $2,400. The client pays more but perceives more value. Combine complementary services, name the bundle compellingly, and price it above the sum of individual services.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Introduce annual prepayment with a discount</h4><p>Offer 10% off for 12 months upfront. You get better cash flow and guaranteed revenue. The client gets a saving. Clients who prepay stay -- switching costs are higher when they have already paid.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Charge for value-adds you currently give away</h4><p>Quick consultations, minor amendments, reporting, ad hoc advice -- formalise these. Either include them in a premium tier or charge for them. Time you give away is revenue you never see.</p></div></li><li class="step"><div class="step-n">6</div><div><h4>Review and increase prices annually</h4><p>A business that increases prices 5% annually has prices 28% higher after 5 years. A business that never increases has prices that have declined significantly in real terms. Build your annual price review into your business calendar as non-negotiable.</p></div></li></ul><div class="eg-box" style="background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;"><div style="font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;">&#x1F4CD; Three-Tier Pricing in Practice</div><h4 style="font-size:0.88rem;font-weight:700;margin-bottom:8px;">Marketing Agency Example</h4><p style="font-size:0.82rem;color:var(--mid);line-height:1.6;"><strong>Entry $1,400/month:</strong> SEO only, monthly report, email support.<br><strong>Standard $2,200/month:</strong> SEO + Google Ads, weekly report, monthly call, phone support.<br><strong>Premium $3,400/month:</strong> Everything plus social media strategy, competitor monitoring, quarterly business review.<br><br>Before introducing this: avg client value $1,800/month. After 6 months: avg client value $2,350/month. 30% increase with the same clients.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My three-tier pricing design</div><div class="nb-hint">What would Entry, Standard and Premium look like for your business?</div><textarea id="n3a" placeholder="e.g. Entry $1,400: SEO basics, monthly report
+Standard $2,200: SEO + reporting + monthly call (current)
+Premium $3,400: SEO + Google Ads + social + competitor monitoring + quarterly review
+Currently all on Standard. Premium launch next month."></textarea></div><div class="nb"><div class="nb-label">What am I giving away free?</div><div class="nb-hint">What value-adds could you formalise or charge for?</div><textarea id="n3b" placeholder="e.g. Quick calls that last 30 mins -- 4/week = 2hrs free. Monthly competitor check never billed. Strategy advice in emails -- effectively free consulting happening constantly."></textarea></div><div class="nb"><div class="nb-label">My pricing increase plan</div><div class="nb-hint">When is your next price review and what will you change?</div><textarea id="n3c" placeholder="e.g. No formal review in 18 months. Plan: 5% increase for all existing clients on July 1. New client pricing $2,400 from next month. Premium tier launch Q1 -- target 4 upgrades = $4,800/month additional."></textarea></div>
+      <button class="save-btn" id="save3">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm3"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd3"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p4" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 3 of 6</div><h2>Upselling and Cross-Selling Systems</h2><p>Building the conversations, scripts and incentives that make selling more natural and consistent.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Systems Beat Willpower</h3><p>The most common reason businesses fail to upsell is not lack of desire -- it is lack of system. When upselling depends on someone remembering to mention additional services, it happens inconsistently. When it is built into every client interaction as a standard process, it happens every time.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Map every natural upsell in your client journey</h4><p>For each point in your client relationship -- onboarding, monthly delivery, quarterly review, annual renewal -- what upsell is naturally relevant at that moment? Document these. Build them into your standard process.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Create upsell scripts for your team</h4><p>Scripts ensure the right conversation happens every time. "Since you are getting great results from SEO, many clients find Google Ads dramatically accelerates growth -- would you like me to put a proposal together?" Practice this. Make it natural. It converts.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Align incentives with average sale value</h4><p>If staff are paid on revenue they sell whatever is easiest, not what is most valuable. Consider bonuses tied to average sale value, lifetime value or add-ons sold.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Use quarterly reviews to surface new needs</h4><p>A structured quarterly review agenda should include results delivered, goals for next quarter, and any new challenges or opportunities. The last item naturally surfaces service opportunities. Most clients appreciate being asked.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Track upsell rate as a KPI</h4><p>What percentage of your clients buy more than one service? Track this monthly. A client who has been with you 12 months and only buys one service is a missed opportunity.</p></div></li><li class="step"><div class="step-n">6</div><div><h4>Make it easy to say yes</h4><p>A one-page add-on proposal with clear outcomes, clear price and simple sign-off converts dramatically better than a full formal proposal process.</p></div></li></ul><div class="insight"><div class="insight-tag">&#x1F4A1; The Add-On Menu</div><h4>Give clients a simple way to buy more</h4><p>Create a one-page add-on services document listing everything available beyond the core service. Price each item clearly. Include it in every quarterly review. Businesses that implement an add-on menu typically see 20-40% of clients add at least one service within the first quarter.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My upsell conversation map</div><div class="nb-hint">At which points in the client journey should upsell conversations happen?</div><textarea id="n4a" placeholder="e.g. Onboarding: map all their challenges (surface Google Ads, social, content needs)
+Month 3: review results and propose next service
+Quarterly: structured review with "what else do you need?" as standard agenda item
+Annual: full service review and upgrade proposal"></textarea></div><div class="nb"><div class="nb-label">My upsell script for my most common opportunity</div><div class="nb-hint">Write a natural script for the upsell you should be having most often</div><textarea id="n4b" placeholder="e.g. "Your SEO results have been strong -- you are generating around X leads per month from organic. Many clients at this stage find combining SEO with Google Ads means you are visible in both organic and paid results simultaneously. Would it be worth me putting together a proposal for what that would look like for you?""></textarea></div><div class="nb"><div class="nb-label">My add-on menu</div><div class="nb-hint">List every service or add-on you could offer existing clients with pricing</div><textarea id="n4c" placeholder="e.g. Google Ads management: $800/month
+Monthly competitor monitoring: $250/month
+Social media strategy: $600/month
+Quarterly business review: $350/quarter
+Content writing: $150/article
+Website maintenance: $200/month"></textarea></div>
+      <button class="save-btn" id="save4">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm4"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd4"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p5" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 4 of 6</div><h2>Staff Training for Higher Sale Values</h2><p>Building a team that naturally sells more without it feeling like selling.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Your Team Is Your Sales Force</h3><p>Every person who interacts with clients is either increasing or decreasing your average sale value. A staff member who never mentions additional services is costing you revenue just as surely as one who actively discourages upselling. The difference between a team that naturally increases average sale value and one that does not is training and incentives -- not personality.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Train upselling as a customer service skill</h4><p>Reframe upselling to your team as "making sure clients know everything we can do for them." This mindset shift is significant. Staff who see upselling as customer service perform it more consistently than those who see it as selling.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Practice scripts in team meetings</h4><p>15 minutes of script practice in a monthly team meeting -- role-play the upsell conversation -- dramatically improves consistency and confidence. The scripts become natural through repetition.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Create a daily upsell target and track it</h4><p>Even a simple target -- every client interaction should include one mention of an additional service -- creates accountability. Track it. Review it. Celebrate wins.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Incentivise add-ons and upgrades</h4><p>A $50-100 bonus for each client upgrade costs very little relative to the ongoing revenue generated. A staff member who upgrades a client from $2,200 to $3,400/month has generated $14,400 in additional annual revenue. A $100 bonus is an excellent return.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Share average sale value data with the team monthly</h4><p>Teams that see the numbers perform better than teams that do not. Share average sale value, add-ons sold, upgrade conversions at every monthly meeting.</p></div></li><li class="step"><div class="step-n">6</div><div><h4>Hire and review for selling capability</h4><p>When hiring, assess whether candidates can naturally have conversations about additional services. Include average sale value contribution as a performance metric alongside delivery quality.</p></div></li></ul><div class="insight"><div class="insight-tag">&#x1F4A1; The Weekly Upsell Meeting</div><h4>15 minutes that pays</h4><p>Every Monday, 15 minutes: (1) Review client interactions -- any upsell opportunities missed? (2) Practice one script for the most common upsell. (3) Set one upsell target per team member for the week. This meeting costs nothing, takes 15 minutes, and directly drives average sale value improvement.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My current staff upsell capability</div><div class="nb-hint">Do your team members ever mention additional services? How often?</div><textarea id="n5a" placeholder="e.g. Almost never. They focus entirely on delivering the specific work. The idea of mentioning other services has never been part of our culture. Never trained them on it or incentivised it. Starting from scratch."></textarea></div><div class="nb"><div class="nb-label">My upsell training plan</div><div class="nb-hint">How will you train your team to have natural upsell conversations?</div><textarea id="n5b" placeholder="e.g. Introducing a 15-min upsell practice into our monthly team meeting starting next month. Creating 3 scripts for our most common upsell opportunities. Practicing them in the meeting. Reviewing results next month."></textarea></div><div class="nb"><div class="nb-label">My staff incentive for average sale value</div><div class="nb-hint">What incentive will you introduce to reward upselling?</div><textarea id="n5c" placeholder="e.g. $150 bonus for any team member who converts a client add-on or upgrade that I approve. No cap. Retroactive from this month. Announcing it at Monday meeting."></textarea></div>
+      <button class="save-btn" id="save5">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm5"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd5"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p6" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 5 of 6 -- Your Average Sale Value Plan</div><h2>Build Your Complete Strategy</h2><p>Your plan to systematically increase revenue per client.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>My Average Sale Value Strategy</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:10px;">Complete each section. This is your working pricing and upsell strategy document.</p></div><div style="display:flex;flex-direction:column;gap:9px;margin-bottom:12px;"><div style="background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:5px;">My Three-Tier Pricing</div><textarea id="tpl-tiers" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:75px;outline:none;" placeholder="Entry tier: $___/month -- what is included&#10;Standard tier: $___/month -- what is included&#10;Premium tier: $___/month -- what is included"></textarea></div><div style="background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2d6b4a;margin-bottom:5px;">My Add-On Menu</div><textarea id="tpl-addons" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:75px;outline:none;" placeholder="Add-on 1: [name] -- $[price]/month&#10;Add-on 2: [name] -- $[price]/month&#10;Add-on 3: [name] -- $[price]/month"></textarea></div><div style="background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2e4a7a;margin-bottom:5px;">My Primary Upsell Script</div><textarea id="tpl-uscript" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:65px;outline:none;" placeholder="The script I will use when the natural upsell opportunity arises..."></textarea></div><div style="background:rgba(90,47,89,0.05);border:1.5px solid rgba(90,47,89,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--dk);margin-bottom:5px;">My 90-Day Target</div><textarea id="tpl-avtgt" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:7px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:60px;outline:none;" placeholder="Current average sale value: $___&#10;90-day target: $___&#10;How I will get there: [specific actions]"></textarea></div></div><button class="save-btn" id="save6" style="width:100%;">&#x1F4BE; Save My Average Sale Value Plan</button></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My current vs target average sale value</div><div class="nb-hint">What are you at today and where do you want to be in 90 days?</div><textarea id="n6a" placeholder="e.g. Current: $2,200/month average across 14 clients
+90-day target: $2,650/month average
+How: 4 premium upgrades + 6 add-on sales + 5% price increase on renewal
+Revenue impact: $6,300/month additional ($75,600/year)"></textarea></div><div class="nb"><div class="nb-label">The single biggest opportunity</div><div class="nb-hint">What one change would have the most impact on average sale value?</div><textarea id="n6b" placeholder="e.g. Launching the premium tier. 4 clients at $3,400 vs $2,200 = $4,800/month immediately. It has been designed but not launched. Sending proposals to top 5 clients this week."></textarea></div><div class="nb"><div class="nb-label">My first action tomorrow</div><div class="nb-hint">What will you do in the next 24 hours?</div><textarea id="n6c" placeholder="e.g. Writing premium tier proposals for my top 3 clients tonight. Sending them tomorrow morning with a personal cover note. Target: at least 2 upgrades within 2 weeks."></textarea></div>
+      <button class="save-btn" id="save6">&#x1F4BE; Save These Notes</button>
+      <div class="saved-msg" id="sm6"></div>
+      <div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd6"><div class="cum-empty">Your notes will appear here →</div></div></div>
+    </div>
+  </div>
+</div><div id="p7" style="display:none;"><div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 6 of 6 — Knowledge Check</div><h2>Knowledge Check</h2><p>5 questions to lock in your learning.</p></div></div><div class="cols"><div class="col-content"><div class="qz-q" id="q1"><p>1. Three-tier pricing increases average sale value primarily because:</p><div class="qz-opts"><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! Most clients choose the middle tier. The premium tier makes the middle feel like good value. You design the middle to be your preferred option." data-msg-w="Not quite. Most clients choose the middle tier -- which you price as your preferred option. The premium tier makes the middle feel like good value.">Clients always choose the most expensive option</button><button class="qz-opt" data-q="1" data-correct="true" data-msg-c="Correct! Most clients choose the middle tier. The premium tier makes the middle feel like good value. You design the middle to be your preferred option." data-msg-w="Not quite. Most clients choose the middle tier -- which you price as your preferred option. The premium tier makes the middle feel like good value.">Most clients choose the middle tier which you price as your preferred option and the premium tier makes it seem reasonable</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! Most clients choose the middle tier. The premium tier makes the middle feel like good value. You design the middle to be your preferred option." data-msg-w="Not quite. Most clients choose the middle tier -- which you price as your preferred option. The premium tier makes the middle feel like good value.">It confuses clients into spending more</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! Most clients choose the middle tier. The premium tier makes the middle feel like good value. You design the middle to be your preferred option." data-msg-w="Not quite. Most clients choose the middle tier -- which you price as your preferred option. The premium tier makes the middle feel like good value.">It reduces the number of decisions clients make</button></div><div class="qz-fb" id="fb1"></div></div><div class="qz-q" id="q2"><p>2. Outcome-based pricing is more profitable than hourly pricing because:</p><div class="qz-opts"><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! With outcome-based pricing your efficiency becomes margin rather than giving the client a cheaper bill for the same result." data-msg-w="Not quite. With outcome-based pricing your efficiency becomes profit rather than a client discount.">Clients prefer paying by outcome</button><button class="qz-opt" data-q="2" data-correct="true" data-msg-c="Correct! With outcome-based pricing your efficiency becomes margin rather than giving the client a cheaper bill for the same result." data-msg-w="Not quite. With outcome-based pricing your efficiency becomes profit rather than a client discount.">Your efficiency becomes profit rather than a discount for the client</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! With outcome-based pricing your efficiency becomes margin rather than giving the client a cheaper bill for the same result." data-msg-w="Not quite. With outcome-based pricing your efficiency becomes profit rather than a client discount.">It is easier to invoice</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! With outcome-based pricing your efficiency becomes margin rather than giving the client a cheaper bill for the same result." data-msg-w="Not quite. With outcome-based pricing your efficiency becomes profit rather than a client discount.">It requires less time to manage</button></div><div class="qz-fb" id="fb2"></div></div><div class="qz-q" id="q3"><p>3. An add-on menu is effective at increasing average sale value because:</p><div class="qz-opts"><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Many clients simply do not know your full range. An add-on menu makes these visible and gives clients a natural way to request them." data-msg-w="Not quite. The add-on menu makes your full range visible to clients who may not have known what else you offer.">It pressures clients to buy more</button><button class="qz-opt" data-q="3" data-correct="true" data-msg-c="Correct! Many clients simply do not know your full range. An add-on menu makes these visible and gives clients a natural way to request them." data-msg-w="Not quite. The add-on menu makes your full range visible to clients who may not have known what else you offer.">It gives clients permission to buy services they may not have known were available</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Many clients simply do not know your full range. An add-on menu makes these visible and gives clients a natural way to request them." data-msg-w="Not quite. The add-on menu makes your full range visible to clients who may not have known what else you offer.">It makes your business look larger</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Many clients simply do not know your full range. An add-on menu makes these visible and gives clients a natural way to request them." data-msg-w="Not quite. The add-on menu makes your full range visible to clients who may not have known what else you offer.">It allows higher prices on existing services</button></div><div class="qz-fb" id="fb3"></div></div><div class="qz-q" id="q4"><p>4. The most effective way to get staff to upsell consistently is:</p><div class="qz-opts"><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Scripts + practice + incentives = consistent upselling. Without all three it remains ad hoc and inconsistent." data-msg-w="Not quite. Consistent upselling requires scripts to know what to say, practice to make it natural, and incentives to make it worthwhile.">Tell them it is part of their job description</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Scripts + practice + incentives = consistent upselling. Without all three it remains ad hoc and inconsistent." data-msg-w="Not quite. Consistent upselling requires scripts to know what to say, practice to make it natural, and incentives to make it worthwhile.">Threaten consequences for not upselling</button><button class="qz-opt" data-q="4" data-correct="true" data-msg-c="Correct! Scripts + practice + incentives = consistent upselling. Without all three it remains ad hoc and inconsistent." data-msg-w="Not quite. Consistent upselling requires scripts to know what to say, practice to make it natural, and incentives to make it worthwhile.">Provide scripts, regular practice in team meetings, and incentives aligned to upsell performance</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Scripts + practice + incentives = consistent upselling. Without all three it remains ad hoc and inconsistent." data-msg-w="Not quite. Consistent upselling requires scripts to know what to say, practice to make it natural, and incentives to make it worthwhile.">Make upselling completely voluntary</button></div><div class="qz-fb" id="fb4"></div></div><div class="qz-q" id="q5"><p>5. A 5% annual price increase compounded over 5 years results in prices approximately:</p><div class="qz-opts"><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! 1.05 to the power of 5 = 1.276 -- approximately 28% higher. Annual increases compound significantly more than the annual rate suggests." data-msg-w="Not quite. 1.05 to the power of 5 = 1.276 -- annual increases compound to approximately 28% over 5 years.">5% higher</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! 1.05 to the power of 5 = 1.276 -- approximately 28% higher. Annual increases compound significantly more than the annual rate suggests." data-msg-w="Not quite. 1.05 to the power of 5 = 1.276 -- annual increases compound to approximately 28% over 5 years.">10% higher</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! 1.05 to the power of 5 = 1.276 -- approximately 28% higher. Annual increases compound significantly more than the annual rate suggests." data-msg-w="Not quite. 1.05 to the power of 5 = 1.276 -- annual increases compound to approximately 28% over 5 years.">25% higher</button><button class="qz-opt" data-q="5" data-correct="true" data-msg-c="Correct! 1.05 to the power of 5 = 1.276 -- approximately 28% higher. Annual increases compound significantly more than the annual rate suggests." data-msg-w="Not quite. 1.05 to the power of 5 = 1.276 -- annual increases compound to approximately 28% over 5 years.">28% higher</button></div><div class="qz-fb" id="fb5"></div></div><div class="qz-score" id="qscore"></div><button class="check-btn" id="checkbtn">Check My Answers →</button></div><div class="col-notes"><div class="nc-hdr"><h3>&#x1F4DD; My Notes</h3><span>Builds your strategy</span></div><div class="nb"><div class="nb-label">What surprised me</div><div class="nb-hint">Anything that challenged your thinking</div><textarea id="n7a" placeholder="e.g. I had no idea how much the multiplier effect compounds small improvements..."></textarea></div>
+<div class="nb"><div class="nb-label">My biggest learning</div><div class="nb-hint">The single most valuable insight</div><textarea id="n7b" placeholder="e.g. Working all three levers simultaneously instead of just chasing new customers..."></textarea></div>
+<div class="nb"><div class="nb-label">What I am doing from Monday</div><div class="nb-hint">One concrete action you commit to</div><textarea id="n7c" placeholder="e.g. Launching my referral program this week and scheduling monthly client calls..."></textarea></div><button class="save-btn" id="save7">&#x1F4BE; Save These Notes</button><div class="saved-msg" id="sm7"></div><div class="cum-panel"><div class="cum-hdr">&#x1F4CB; My Running Strategy</div><div id="cd7"><div class="cum-empty">Your notes will appear here →</div></div></div></div></div></div><div id="p8" style="display:none;">
+  <div style="max-width:640px;margin:0 auto;padding:36px 22px 100px;text-align:center;">
+    <div class="comp-badge">🎓</div>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;margin-bottom:9px;">Module 12 Complete!</h2>
+    <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:20px;">Your notes have built into a strategy document you can print or share with your team.</p>
+    <div class="comp-keys"><div class="ck-title">Key Takeaways</div><p>&#x2713; Upselling is customer service -- ensure clients know what you can do<br>&#x2713; Three-tier pricing increases average sale naturally<br>&#x2713; Outcome-based pricing turns your efficiency into profit<br>&#x2713; Add-on menus make it easy for clients to buy more<br>&#x2713; Scripts + practice + incentives = consistent upselling</p></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="s-print" id="finprint">&#x1F5A8;&#xFE0F; Print My Strategy</button>
+      <button class="s-copy" id="fincopy">&#x1F4CB; Copy to Clipboard</button>
+    </div>
+    <p style="font-weight:700;font-size:0.88rem;margin-bottom:12px;">Continue your learning:</p>
+    <div class="next-grid"><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 11</div><h4>Sales Growth Formula</h4><p>Apply average sale value to the three-lever model</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 13</div><h4>Customer Retention and Frequency</h4><p>Keep clients longer and buying more often</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 09</div><h4>True Cost of Discounting</h4><p>Protect what you build here from price erosion</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 05</div><h4>Marketing Mix (4Ps)</h4><p>Align pricing with your broader marketing strategy</p></div></div>
+  </div>
+</div>
+<div id="pstrat" style="display:none;">
+  <div style="max-width:860px;margin:0 auto;padding:26px 22px 100px;">
+    <button class="strat-back" id="stratback">&#8592; Back to Module</button>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:5px;">&#128203; My Strategy &#8212; Module 12: Increasing Average Sale Value</h2>
+    <p style="font-size:0.83rem;color:var(--mid);margin-bottom:18px;">All notes from this module built lesson by lesson.</p>
+    <div style="margin-bottom:18px;"><button class="s-print" id="stratprint">&#128424;&#65039; Print</button><button class="s-copy" id="stratcopy">&#128203; Copy</button></div>
+    <div id="stratbody"></div>
+  </div>
+</div>
+<div class="botnav" id="botnav">
+  <button class="bot-btn sec" id="prevbtn">&#8592; Back</button>
+  <div class="dots" id="dotrow"></div>
+  <button class="bot-btn" id="nextbtn">Next &#8594;</button>
+</div>
+<script>
+var cur=1,total=8,prevPg=1,MOD_KEY='sbt_mod12_';
+var NOTES=[
+  {pg:2,fields:[{id:'n2a',lbl:'The gap in my client relationships'},{id:'n2b',lbl:'My discomfort with upselling'},{id:'n2c',lbl:'My onboarding does it surface all needs'}]},
+  {pg:3,fields:[{id:'n3a',lbl:'My three tier pricing design'},{id:'n3b',lbl:'What am I giving away free'},{id:'n3c',lbl:'My pricing increase plan'}]},
+  {pg:4,fields:[{id:'n4a',lbl:'My upsell conversation map'},{id:'n4b',lbl:'My upsell script for most common opportunity'},{id:'n4c',lbl:'My add on menu'}]},
+  {pg:5,fields:[{id:'n5a',lbl:'My current staff upsell capability'},{id:'n5b',lbl:'My upsell training plan'},{id:'n5c',lbl:'My staff incentive for average sale value'}]},
+  {pg:6,fields:[{id:'n6a',lbl:'My current vs target average sale value'},{id:'n6b',lbl:'The single biggest opportunity'},{id:'n6c',lbl:'My first action tomorrow'}]},
+  {pg:7,fields:[{id:'n7a',lbl:'What surprised me'},{id:'n7b',lbl:'My biggest learning'},{id:'n7c',lbl:'What I am doing from Monday'}]}
+];
+function sk(id){return MOD_KEY+id;}
+function store(id,val){try{if(val.trim())localStorage.setItem(sk(id),val);else localStorage.removeItem(sk(id));}catch(e){}}
+function recall(id){try{return localStorage.getItem(sk(id))||'';}catch(e){return '';}}
+function showPg(id){var all=['p1','p2','p3','p4','p5','p6','p7','p8','p8','pstrat'];for(var i=0;i<all.length;i++){var el=document.getElementById(all[i]);if(el)el.style.display='none';}var t=document.getElementById(id);if(t)t.style.display='block';window.scrollTo(0,0);}
+function goTo(n){cur=n;showPg('p'+cur);document.getElementById('botnav').style.display='flex';updateNav();refreshAll();}
+function updateNav(){document.getElementById('prevbtn').disabled=(cur===1);document.getElementById('nextbtn').disabled=(cur===total);document.getElementById('nextbtn').textContent=(cur===total-1)?'Finish →':'Next →';document.getElementById('plabel').textContent=cur+'/'+total;document.getElementById('pfill').style.width=((cur/total)*100)+'%';buildDots();}
+function buildDots(){var c=document.getElementById('dotrow');c.innerHTML='';for(var i=1;i<=total;i++){var d=document.createElement('div');d.className='dot'+(i===cur?' on':'');d.setAttribute('data-n',i);c.appendChild(d);}var dots=c.querySelectorAll('.dot');for(var j=0;j<dots.length;j++){dots[j].addEventListener('click',function(){goTo(parseInt(this.getAttribute('data-n')));}); }}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function buildCumHTML(){var html='',has=false;for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim()){has=true;html+='<div class="cum-entry"><div class="cum-entry-lbl">'+f.lbl+'</div><div class="cum-entry-txt">'+esc(v)+'</div></div>';}}}if(!has)html='<div class="cum-empty">Your notes will appear here as you save them →</div>';return{html:html,has:has};}
+function refreshAll(){var r=buildCumHTML();var cdivs=document.querySelectorAll('[id^="cd"]');for(var i=0;i<cdivs.length;i++)cdivs[i].innerHTML=r.html;var cb=document.getElementById('cbbtns');if(cb)cb.style.display=r.has?'flex':'none';}
+function saveNotes(pg){var def=null;for(var i=0;i<NOTES.length;i++)if(NOTES[i].pg===pg){def=NOTES[i];break;}if(!def)return;for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el)store(f.id,el.value);}refreshAll();var sm=document.getElementById('sm'+pg);if(sm){sm.textContent='✓ Saved';setTimeout(function(){sm.textContent='';},2000);}showToast('Notes saved ✓');}
+function loadAll(){for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el){var v=recall(f.id);if(v)el.value=v;}}}}
+function getStratText(){var t='MY STRATEGY — MODULE 12: INCREASING AVERAGE SALE VALUE\nSmall Business Therapy | Maximum Marketing Solutions\n----------------------------------------\n\n';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())t+=f.lbl.toUpperCase()+':\n'+v+'\n\n';}}t+='Maximum Marketing Solutions | maximummarketingsolutions.com.au | +61 459 472 739';return t;}
+function doPrint(){var w=window.open('','_blank');var b='<html><head><title>Strategy M12</title><style>body{font-family:Arial,sans-serif;max-width:760px;margin:36px auto;font-size:13px;}h1{font-size:1.2rem;margin-bottom:4px;}.sub{color:#888;font-size:11px;margin-bottom:20px;}.card{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;}.lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:3px;}.note{font-size:12px;color:#4a4a4a;line-height:1.6;white-space:pre-wrap;background:#f5f5f5;padding:7px 9px;border-left:3px solid #794577;}.foot{margin-top:24px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:8px;}</style></head><body><h1>Module 12: Increasing Average Sale Value</h1><p class="sub">Small Business Therapy · Maximum Marketing Solutions</p>';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="card"><div class="lbl">'+f.lbl+'</div><div class="note">'+v+'</div></div>';}}b+='<div class="foot">Maximum Marketing Solutions · maximummarketingsolutions.com.au · +61 459 472 739</div></body></html>';w.document.write(b);w.document.close();w.print();}
+function doCopy(){var txt=getStratText();if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){showToast('Copied ✓');}).catch(function(){showToast('Use Print instead');});else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied ✓');}catch(e){showToast('Use Print instead');}document.body.removeChild(ta);}}
+function showStrat(){prevPg=cur;showPg('pstrat');document.getElementById('botnav').style.display='none';var r=buildCumHTML(),b='';if(!r.has)b='<p style="color:#888;font-style:italic;padding:24px 0;">No notes yet.</p>';else{for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="strat-card"><div class="sl">Lesson '+(def.pg-1)+'</div><div class="sc2">'+f.lbl+'</div><div class="sn">'+esc(v)+'</div></div>';}}}document.getElementById('stratbody').innerHTML=b;}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.className='toast on';setTimeout(function(){t.className='toast';},2600);}
+window.onload=function(){
+  showPg('p1');buildDots();updateNav();loadAll();refreshAll();
+  document.getElementById('startbtn').addEventListener('click',function(){goTo(2);});
+  document.getElementById('prevbtn').addEventListener('click',function(){if(cur>1)goTo(cur-1);});
+  document.getElementById('nextbtn').addEventListener('click',function(){if(cur<total)goTo(cur+1);});
+  document.getElementById('stratbtn').addEventListener('click',function(){showStrat();});
+  document.getElementById('stratback').addEventListener('click',function(){showPg('p'+prevPg);document.getElementById('botnav').style.display='flex';updateNav();});
+  document.getElementById('stratprint').addEventListener('click',function(){doPrint();});
+  document.getElementById('stratcopy').addEventListener('click',function(){doCopy();});
+  var saveEls=document.querySelectorAll('[id^="save"]');
+  for(var i=0;i<saveEls.length;i++){(function(el){var pg=parseInt(el.id.replace('save',''));if(!isNaN(pg))el.addEventListener('click',function(){saveNotes(pg);});}) (saveEls[i]);}
+  ['finprint','cumprint'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doPrint();});});
+  ['fincopy','cumcopy'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doCopy();});});
+  var qbtns=document.querySelectorAll('.qz-opt');
+  for(var i=0;i<qbtns.length;i++){(function(btn){btn.addEventListener('click',function(){var qn=parseInt(btn.getAttribute('data-q'));var correct=btn.getAttribute('data-correct')==='true';var qEl=document.getElementById('q'+qn);var allBtns=qEl.querySelectorAll('.qz-opt');for(var k=0;k<allBtns.length;k++){allBtns[k].disabled=true;allBtns[k].style.cursor='default';}btn.className='qz-opt '+(correct?'correct':'wrong');var fb=document.getElementById('fb'+qn);fb.textContent=btn.getAttribute(correct?'data-msg-c':'data-msg-w');fb.className='qz-fb show '+(correct?'ok':'bad');if(!window.qAns)window.qAns={};window.qAns[qn]=correct?'c':'w';});}) (qbtns[i]);}
+  var checkbtn=document.getElementById('checkbtn');
+  if(checkbtn){checkbtn.addEventListener('click',function(){var score=0;if(window.qAns)for(var k in window.qAns)if(window.qAns[k]==='c')score++;var sc=document.getElementById('qscore');sc.style.display='block';sc.innerHTML='<h4>'+score+'/5 '+(score===5?'??':score>=4?'??':'??')+'</h4><p>'+(score===5?'Perfect!':score>=4?'Excellent.':score>=3?'Good — review missed lessons.':'Work through the module again.')+'</p>';if(score>=4){checkbtn.textContent='Continue →';checkbtn.addEventListener('click',function(){goTo(8);},{once:true});}else{checkbtn.textContent='Review Module';checkbtn.addEventListener('click',function(){goTo(2);},{once:true});}});}
+};
+</script>
+</body>
+</html>
