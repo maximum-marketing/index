@@ -9,8 +9,6 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--white:#fff;}
 body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
-
-/* TOP BAR */
 .topbar{background:var(--black);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;}
 .logo{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;}
 .logo span{color:var(--mauve);}
@@ -18,55 +16,41 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 .nav-links a{font-size:0.78rem;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover{color:#fff;}
 @media(max-width:600px){.nav-links{display:none;}}
-
-/* HERO */
 .hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:60px 24px 48px;text-align:center;}
 .hero-tag{display:inline-block;background:rgba(166,130,164,0.2);border:1px solid rgba(166,130,164,0.4);color:var(--mauve);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:16px;margin-bottom:16px;}
 .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:12px;line-height:1.15;}
 .hero h1 span{color:var(--mauve);}
-.hero p{font-size:0.92rem;color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto 28px;line-height:1.7;}
+.hero p{font-size:0.92rem;color:rgba(255,255,255,0.6);max-width:580px;margin:0 auto 28px;line-height:1.7;}
 .hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;}
 .stat{text-align:center;}
 .stat-n{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;}
 .stat-l{font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:2px;}
-
-/* MAIN */
-.main{max-width:1000px;margin:0 auto;padding:40px 24px 80px;}
-
-/* FREE TOOL CARD */
-.free-card{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:16px;padding:28px 32px;margin-bottom:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.main{max-width:1020px;margin:0 auto;padding:40px 24px 80px;}
+.free-card{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:16px;padding:28px 32px;margin-bottom:40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.free-card-text .fc-tag{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;}
 .free-card-text h2{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:6px;}
 .free-card-text p{font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.6;max-width:480px;}
-.free-card-text .fc-tag{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:8px;}
 .free-btn{background:#fff;color:var(--plum);border:none;border-radius:10px;padding:12px 24px;font-family:'Montserrat',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-block;transition:all 0.2s;}
 .free-btn:hover{background:var(--cream);transform:translateY(-2px);}
-
-/* SECTION TITLE */
-.section-title{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:6px;color:var(--black);}
-.section-sub{font-size:0.83rem;color:var(--light);margin-bottom:20px;}
-
-/* MODULE GRID */
-.module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:40px;}
-
+.section-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:8px;}
+.section-title{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:var(--black);}
+.section-tag{font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);}
+.section-sub{font-size:0.82rem;color:var(--light);margin-bottom:20px;}
+.module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px;margin-bottom:14px;}
 .module-card{background:#fff;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,0.07);box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:all 0.2s;text-decoration:none;display:block;position:relative;overflow:hidden;}
 .module-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(121,69,119,0.12);border-color:var(--mauve);}
-.module-card.locked{opacity:0.75;cursor:default;}
-.module-card.locked:hover{transform:none;box-shadow:0 2px 8px rgba(0,0,0,0.05);border-color:rgba(0,0,0,0.07);}
-
+.mc-bar{position:absolute;top:0;left:0;right:0;height:3px;}
+.mc-bar.strategy{background:linear-gradient(90deg,var(--plum),var(--mauve));}
+.mc-bar.profit{background:linear-gradient(90deg,#2d6b4a,#5a9e72);}
 .mc-num{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:8px;}
+.mc-num.profit-num{color:#2d6b4a;}
 .mc-icon{font-size:1.8rem;margin-bottom:10px;display:block;}
 .mc-title{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:5px;color:var(--black);}
 .mc-desc{font-size:0.8rem;color:var(--mid);line-height:1.55;margin-bottom:14px;}
 .mc-footer{display:flex;align-items:center;justify-content:space-between;}
 .mc-price{font-size:0.85rem;font-weight:700;color:var(--plum);}
-.mc-price.free{color:#2d6b4a;}
+.mc-price.profit-price{color:#2d6b4a;}
 .mc-action{font-size:0.75rem;font-weight:600;color:var(--mauve);}
-.mc-action.locked-tag{color:var(--light);}
-
-.mc-bar{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--plum),var(--mauve));}
-.mc-bar.locked-bar{background:rgba(0,0,0,0.08);}
-
-/* BUNDLE CARD */
 .bundle-card{background:var(--black);border-radius:16px;padding:28px 32px;margin-bottom:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
 .bundle-card h2{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:6px;}
 .bundle-card p{font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;max-width:440px;}
@@ -76,16 +60,13 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 .bundle-price .bp-save{font-size:0.72rem;color:var(--mauve);font-weight:600;}
 .bundle-btn{background:var(--plum);color:#fff;border:none;border-radius:10px;padding:12px 24px;font-family:'Montserrat',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;margin-top:14px;transition:opacity 0.2s;}
 .bundle-btn:hover{opacity:0.85;}
-
-/* MMS STRIP */
+.divider{height:1px;background:rgba(0,0,0,0.07);margin:32px 0;}
 .mms-strip{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:14px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
 .mms-strip-text h3{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:4px;}
 .mms-strip-text p{font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.5;}
 .mms-strip-contacts{display:flex;gap:16px;flex-wrap:wrap;}
 .mms-contact{font-size:0.78rem;color:rgba(255,255,255,0.7);}
 .mms-contact a{color:var(--mauve);text-decoration:none;}
-
-/* FOOTER */
 footer{background:var(--black);padding:20px 24px;text-align:center;}
 footer p{font-size:0.75rem;color:rgba(255,255,255,0.3);}
 footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
@@ -93,7 +74,6 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="logo">Small Business <span>Therapy</span></div>
   <div class="nav-links">
@@ -103,14 +83,13 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
   </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-tag">Learning Centre</div>
   <h1>Build a Stronger Business<br><span>One Module at a Time</span></h1>
-  <p>7 practical strategy modules built for Australian small business owners. Real frameworks, real examples, notes that build into your own strategy document — and a quiz to lock it in.</p>
+  <p>10 practical modules covering business strategy and profit — built for Australian small business owners. Real frameworks, real examples, interactive calculators and notes that build into your own strategy document.</p>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-n">7</div><div class="stat-l">Modules</div></div>
-    <div class="stat"><div class="stat-n">42</div><div class="stat-l">Lessons</div></div>
+    <div class="stat"><div class="stat-n">10</div><div class="stat-l">Modules</div></div>
+    <div class="stat"><div class="stat-n">60</div><div class="stat-l">Lessons</div></div>
     <div class="stat"><div class="stat-n">$19.99</div><div class="stat-l">Per Module</div></div>
     <div class="stat"><div class="stat-n">Lifetime</div><div class="stat-l">Access</div></div>
   </div>
@@ -128,109 +107,121 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
     <a href="index.html" class="free-btn">Open Free App →</a>
   </div>
 
-  <!-- MODULES -->
-  <div class="section-title">Strategy Learning Modules</div>
-  <div class="section-sub">Each module includes 6 lessons, real Australian business examples, an interactive template, notes panel beside every lesson and a knowledge quiz. $19.99 each — lifetime access.</div>
+  <!-- STRATEGY MODULES -->
+  <div class="section-hdr">
+    <div class="section-title">Strategy Modules</div>
+    <div class="section-tag">Modules 01–07</div>
+  </div>
+  <div class="section-sub">Build your business strategy from the ground up. Each module includes 6 lessons, Australian examples, an interactive template, notes beside every lesson and a knowledge quiz.</div>
 
   <div class="module-grid">
-
     <a href="sbt-learning-swot.html" class="module-card">
-      <div class="mc-bar"></div>
+      <div class="mc-bar strategy"></div>
       <div class="mc-num">Module 01</div>
       <span class="mc-icon">🔍</span>
       <div class="mc-title">SWOT Analysis</div>
       <div class="mc-desc">Build a SWOT that actually changes your business. Learn the cross-combination method that turns analysis into strategy.</div>
-      <div class="mc-footer">
-        <span class="mc-price">$19.99</span>
-        <span class="mc-action">Start now →</span>
-      </div>
+      <div class="mc-footer"><span class="mc-price">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
-
     <a href="sbt-learning-ansoff.html" class="module-card">
-      <div class="mc-bar"></div>
+      <div class="mc-bar strategy"></div>
       <div class="mc-num">Module 02</div>
       <span class="mc-icon">📈</span>
       <div class="mc-title">Ansoff Matrix</div>
       <div class="mc-desc">Four proven strategies for growing your business. Find the right growth path and understand the risk of each option.</div>
-      <div class="mc-footer">
-        <span class="mc-price">$19.99</span>
-        <span class="mc-action">Start now →</span>
-      </div>
+      <div class="mc-footer"><span class="mc-price">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
-
     <a href="sbt-learning-boston.html" class="module-card">
-      <div class="mc-bar"></div>
+      <div class="mc-bar strategy"></div>
       <div class="mc-num">Module 03</div>
       <span class="mc-icon">⭐</span>
       <div class="mc-title">Boston Matrix</div>
       <div class="mc-desc">Identify your Stars, Cash Cows, Question Marks and Dogs. Make hard decisions about your product and service portfolio.</div>
-      <div class="mc-footer">
-        <span class="mc-price">$19.99</span>
-        <span class="mc-action">Start now →</span>
-      </div>
+      <div class="mc-footer"><span class="mc-price">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
-
     <a href="sbt-learning-competitor.html" class="module-card">
-      <div class="mc-bar"></div>
+      <div class="mc-bar strategy"></div>
       <div class="mc-num">Module 04</div>
       <span class="mc-icon">🎯</span>
       <div class="mc-title">Competitor Analysis</div>
       <div class="mc-desc">Map your competitive landscape, find gaps they're missing, and position your business so clients choose you.</div>
-      <div class="mc-footer">
-        <span class="mc-price">$19.99</span>
-        <span class="mc-action">Start now →</span>
-      </div>
+      <div class="mc-footer"><span class="mc-price">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
-
     <a href="sbt-learning-4ps.html" class="module-card">
-      <div class="mc-bar"></div>
+      <div class="mc-bar strategy"></div>
       <div class="mc-num">Module 05</div>
       <span class="mc-icon">📢</span>
       <div class="mc-title">Marketing Mix (4Ps)</div>
       <div class="mc-desc">Price, Product, Promotion, Place. Build an integrated marketing strategy where all four levers work together.</div>
-      <div class="mc-footer">
-        <span class="mc-price">$19.99</span>
-        <span class="mc-action">Start now →</span>
-      </div>
+      <div class="mc-footer"><span class="mc-price">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
-
     <a href="sbt-learning-kpis.html" class="module-card">
-      <div class="mc-bar"></div>
+      <div class="mc-bar strategy"></div>
       <div class="mc-num">Module 06</div>
       <span class="mc-icon">📊</span>
       <div class="mc-title">Strategy Map & KPIs</div>
       <div class="mc-desc">Choose the right 12 metrics, build a monthly scorecard and create accountability structures that keep you on track.</div>
-      <div class="mc-footer">
-        <span class="mc-price">$19.99</span>
-        <span class="mc-action">Start now →</span>
-      </div>
+      <div class="mc-footer"><span class="mc-price">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
-
     <a href="sbt-learning-vision.html" class="module-card">
-      <div class="mc-bar"></div>
+      <div class="mc-bar strategy"></div>
       <div class="mc-num">Module 07</div>
-      <span class="mc-icon">🎯</span>
+      <span class="mc-icon">🚀</span>
       <div class="mc-title">Vision & Goals</div>
-      <div class="mc-desc">Write a specific, measurable vision. Set annual goals, 90-day Rocks and weekly actions that make it actually happen.</div>
-      <div class="mc-footer">
-        <span class="mc-price">$19.99</span>
-        <span class="mc-action">Start now →</span>
-      </div>
+      <div class="mc-desc">Write a specific measurable vision. Set annual goals, 90-day Rocks and weekly actions that make it actually happen.</div>
+      <div class="mc-footer"><span class="mc-price">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
-
   </div>
+
+  <div class="divider"></div>
+
+  <!-- PROFIT MODULES -->
+  <div class="section-hdr">
+    <div class="section-title">Profit & Finance Modules</div>
+    <div class="section-tag" style="color:#2d6b4a;">Modules 08–10</div>
+  </div>
+  <div class="section-sub">The numbers side of your business. Interactive calculators, real financial examples and strategies you can implement immediately to improve your bottom line.</div>
+
+  <div class="module-grid">
+    <a href="sbt-learning-profit.html" class="module-card">
+      <div class="mc-bar profit"></div>
+      <div class="mc-num profit-num">Module 08</div>
+      <span class="mc-icon">💰</span>
+      <div class="mc-title">Increasing Profit</div>
+      <div class="mc-desc">The five profit levers — sales, gross margin, expense reduction, productivity and margin protection. Strategies for each one.</div>
+      <div class="mc-footer"><span class="mc-price profit-price">$19.99</span><span class="mc-action">Start now →</span></div>
+    </a>
+    <a href="sbt-learning-discounting.html" class="module-card">
+      <div class="mc-bar profit"></div>
+      <div class="mc-num profit-num">Module 09</div>
+      <span class="mc-icon">🚫</span>
+      <div class="mc-title">True Cost of Discounting</div>
+      <div class="mc-desc">A 10% discount requires far more than 10% extra sales to recover. See the real numbers with our interactive calculator.</div>
+      <div class="mc-footer"><span class="mc-price profit-price">$19.99</span><span class="mc-action">Start now →</span></div>
+    </a>
+    <a href="sbt-learning-expenses.html" class="module-card">
+      <div class="mc-bar profit"></div>
+      <div class="mc-num profit-num">Module 10</div>
+      <span class="mc-icon">✂️</span>
+      <div class="mc-title">Expense Reduction vs Sales Growth</div>
+      <div class="mc-desc">At 10% net margin, saving $10k in expenses equals $100k in new sales. Learn the leverage maths and how to find the savings.</div>
+      <div class="mc-footer"><span class="mc-price profit-price">$19.99</span><span class="mc-action">Start now →</span></div>
+    </a>
+  </div>
+
+  <div class="divider"></div>
 
   <!-- BUNDLE -->
   <div class="bundle-card">
     <div>
-      <h2>🎓 Full Learning Centre Bundle</h2>
-      <p>All 7 modules, 42 lessons, interactive templates and strategy documents. Everything you need to build a complete business strategy — at a significant saving on individual module prices.</p>
-      <a href="mailto:info.maximumms@gmail.com?subject=Full Learning Centre Bundle&body=Hi, I'm interested in purchasing the full Small Business Therapy Learning Centre bundle (all 7 modules). Please send me payment details." class="bundle-btn">Register Interest →</a>
+      <h2>🎓 Full Learning Centre Bundle — All 10 Modules</h2>
+      <p>Strategy + Profit. 60 lessons, interactive calculators, templates and strategy documents. Everything you need to build a complete, profitable business — at a significant saving on individual module prices.</p>
+      <a href="mailto:info.maximumms@gmail.com?subject=Full Learning Centre Bundle — All 10 Modules&body=Hi, I am interested in purchasing the full Small Business Therapy Learning Centre bundle (all 10 modules). Please send me payment details." class="bundle-btn">Register Interest →</a>
     </div>
     <div class="bundle-price">
-      <div class="bp-was">$139.93 individually</div>
-      <div class="bp-now">$99</div>
-      <div class="bp-save">Save $40 — all 7 modules</div>
+      <div class="bp-was">$199.90 individually</div>
+      <div class="bp-now">$149</div>
+      <div class="bp-save">Save $50 — all 10 modules</div>
     </div>
   </div>
 
