@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 16: Customer Experience and Service Systems - Small Business Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--plum-dk:#5A2F59;--plum-lt:#EDE8EE;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--warm:#EDE8EE;--white:#fff;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
+.topbar{background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;}
+.topbar-logo{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;}
+.topbar-logo span{color:var(--mauve);}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.strategy-btn{background:rgba(166,130,164,0.2);border:1px solid var(--mauve);color:var(--mauve);font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;}
+.prog-wrap{display:flex;align-items:center;gap:8px;}
+.prog-label{font-size:0.7rem;color:rgba(255,255,255,0.4);}
+.prog-bar{width:80px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--mauve);transition:width 0.4s;}
+.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:24px 28px;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-step{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.hero p{font-size:0.83rem;color:rgba(255,255,255,0.55);}
+.cols{display:grid;grid-template-columns:1fr 320px;max-width:1100px;margin:0 auto;min-height:calc(100vh - 130px);}
+@media(max-width:850px){.cols{grid-template-columns:1fr;}}
+.col-content{padding:22px 24px 100px;border-right:1px solid rgba(0,0,0,0.07);}
+.col-notes{padding:18px 18px 100px;background:rgba(121,69,119,0.03);}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.06);}
+.card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:7px;}
+.card p{font-size:0.83rem;color:var(--mid);line-height:1.65;}
+.card.c-mauve{border-left-color:var(--mauve);}
+.card.c-dark{border-left-color:var(--black);}
+.card.c-red{border-left-color:#9b3535;}
+.insight{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:12px;color:#fff;}
+.insight-tag{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.insight h4{font-size:0.9rem;font-weight:700;margin-bottom:5px;}
+.insight p{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.6;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.sc{padding:18px 14px;}
+.sc.s{background:linear-gradient(135deg,#1a4731,#2d6b4a);}
+.sc.w{background:linear-gradient(135deg,#4a1a1a,#7a2e2e);}
+.sc.o{background:linear-gradient(135deg,var(--dk),var(--plum));}
+.sc.t{background:linear-gradient(135deg,#1a2a4a,#2e4a7a);}
+.sc .sl{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:5px;}
+.sc h4{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.sc p{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.45;}
+.steps{list-style:none;margin-bottom:12px;}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.step:last-child{border:none;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--plum);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step h4{font-size:0.86rem;font-weight:700;margin-bottom:3px;}
+.step p{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.eg-box{background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;}
+.eg-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:7px;}
+.eg-box h4{font-size:0.87rem;font-weight:700;margin-bottom:5px;}
+.eg-box p{font-size:0.82rem;color:var(--mid);line-height:1.55;}
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+@media(max-width:600px){.eg-grid{grid-template-columns:1fr;}}
+.eg-item{background:#fff;border-radius:9px;padding:11px;}
+.eg-type{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.eg-s .eg-type{color:#2d6b4a;} .eg-w .eg-type{color:#7a2e2e;} .eg-o .eg-type{color:var(--plum);} .eg-t .eg-type{color:#2e4a7a;}
+.eg-item ul{list-style:none;}
+.eg-item ul li{font-size:0.76rem;color:var(--mid);padding:2px 0;display:flex;gap:5px;line-height:1.35;}
+.eg-s ul li::before{content:'•';color:#2d6b4a;font-weight:700;flex-shrink:0;}
+.eg-w ul li::before{content:'•';color:#7a2e2e;font-weight:700;flex-shrink:0;}
+.eg-o ul li::before{content:'•';color:var(--plum);font-weight:700;flex-shrink:0;}
+.eg-t ul li::before{content:'•';color:#2e4a7a;font-weight:700;flex-shrink:0;}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+@media(max-width:500px){.tpl-grid{grid-template-columns:1fr;}}
+.tpl-cell{border-radius:10px;padding:12px;}
+.tpl-s{background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);}
+.tpl-w{background:rgba(122,46,46,0.05);border:1.5px solid rgba(122,46,46,0.2);}
+.tpl-o{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.2);}
+.tpl-t{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.2);}
+.tpl-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.tpl-letter{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;}
+.tpl-s .tpl-letter{color:#2d6b4a;} .tpl-w .tpl-letter{color:#7a2e2e;} .tpl-o .tpl-letter{color:var(--plum);} .tpl-t .tpl-letter{color:#2e4a7a;}
+.tpl-hdr span{font-size:0.73rem;font-weight:600;color:var(--mid);}
+.tpl-cell textarea{width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--black);resize:vertical;min-height:85px;outline:none;line-height:1.45;}
+.qz-q{background:#fff;border-radius:11px;padding:14px;margin-bottom:9px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.qz-q p{font-size:0.85rem;font-weight:600;margin-bottom:9px;}
+.qz-opts{display:flex;flex-direction:column;gap:6px;}
+.qz-opt{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:8px 12px;font-size:0.8rem;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--mid);transition:all 0.15s;}
+.qz-opt:hover{border-color:var(--mauve);color:var(--plum);}
+.qz-opt.correct{background:rgba(45,107,74,0.08);border-color:#2d6b4a;color:#2d6b4a;font-weight:600;}
+.qz-opt.wrong{background:rgba(122,46,46,0.08);border-color:#7a2e2e;color:#7a2e2e;}
+.qz-fb{font-size:0.76rem;margin-top:6px;padding:7px 10px;border-radius:7px;display:none;}
+.qz-fb.show{display:block;}
+.qz-fb.ok{background:rgba(45,107,74,0.08);color:#2d6b4a;}
+.qz-fb.bad{background:rgba(122,46,46,0.08);color:#7a2e2e;}
+.qz-score{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:11px;padding:16px;text-align:center;color:#fff;display:none;margin-top:10px;}
+.qz-score h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;}
+.qz-score p{font-size:0.8rem;color:rgba(255,255,255,0.7);}
+.nc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(121,69,119,0.15);}
+.nc-hdr h3{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--plum);}
+.nc-hdr span{font-size:0.7rem;color:var(--light);}
+.nb{margin-bottom:11px;}
+.nb-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:4px;}
+.nb-hint{font-size:0.72rem;color:var(--light);margin-bottom:4px;font-style:italic;line-height:1.35;}
+.nb textarea{width:100%;border:1.5px solid rgba(121,69,119,0.14);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.77rem;color:var(--black);resize:vertical;min-height:66px;outline:none;background:#fff;line-height:1.45;}
+.nb textarea:focus{border-color:var(--plum);}
+.nb textarea::placeholder{color:#bbb;font-size:0.73rem;}
+.save-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px;font-family:'Montserrat',sans-serif;font-size:0.77rem;font-weight:700;cursor:pointer;margin-top:3px;}
+.save-btn:hover{background:var(--dk);}
+.saved-msg{font-size:0.68rem;color:var(--plum);font-weight:600;text-align:center;margin-top:5px;min-height:16px;}
+.cum-panel{background:#fff;border-radius:10px;padding:12px;margin-top:14px;border-top:3px solid var(--plum);}
+.cum-hdr{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;}
+.cum-empty{font-size:0.74rem;color:var(--light);font-style:italic;text-align:center;padding:10px 0;}
+.cum-entry{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.05);}
+.cum-entry:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+.cum-entry-lbl{font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mauve);margin-bottom:2px;}
+.cum-entry-txt{font-size:0.75rem;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.cum-btns{display:flex;gap:7px;margin-top:10px;}
+.cum-print{flex:1;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:7px;font-size:0.72rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;}
+.cum-copy{flex:1;background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:7px;padding:7px;font-size:0.72rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;}
+.botnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,0.07);padding:10px 22px;display:flex;align-items:center;justify-content:space-between;z-index:998;box-shadow:0 -3px 16px rgba(0,0,0,0.06);}
+.bot-btn{background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;}
+.bot-btn:hover{background:var(--dk);}
+.bot-btn.sec{background:transparent;color:var(--mid);border:1.5px solid rgba(0,0,0,0.12);}
+.bot-btn.sec:hover{border-color:var(--mauve);color:var(--plum);}
+.bot-btn:disabled{opacity:0.3;cursor:default;}
+.dots{display:flex;gap:5px;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;}
+.dot.on{background:var(--plum);width:16px;border-radius:4px;}
+.badge{display:inline-block;background:rgba(121,69,119,0.1);border:1px solid rgba(121,69,119,0.25);color:var(--plum);font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px;}
+.price-box{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:16px 24px;display:inline-block;margin-bottom:24px;}
+.price-box .pl{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.price-box .pp{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;}
+.price-box .ps{font-size:0.72rem;color:rgba(255,255,255,0.5);}
+.start-btn{background:var(--plum);color:#fff;border:none;border-radius:9px;padding:13px 34px;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;}
+.start-btn:hover{background:var(--dk);}
+.check-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:9px;padding:10px;font-family:'Montserrat',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.strat-back{background:none;border:none;color:var(--mauve);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;padding:0;display:block;}
+.s-print{background:var(--plum);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-right:8px;}
+.s-copy{background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;}
+.strat-card{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.strat-card .sl{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.strat-card .sc2{font-size:0.78rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.strat-card .sn{font-size:0.81rem;color:var(--mid);line-height:1.55;white-space:pre-wrap;background:var(--cream);border-radius:7px;padding:8px 10px;}
+.comp-badge{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 14px;}
+.comp-keys{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:18px;color:#fff;text-align:left;margin-bottom:20px;}
+.comp-keys .ck-title{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.comp-keys p{font-size:0.83rem;color:rgba(255,255,255,0.85);line-height:1.85;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;text-align:left;}
+@media(max-width:480px){.next-grid{grid-template-columns:1fr;}}
+.next-card{background:#fff;border-radius:10px;padding:13px;border:1.5px solid rgba(0,0,0,0.06);}
+.next-card .nc-num{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.next-card h4{font-size:0.83rem;font-weight:700;margin-bottom:2px;}
+.next-card p{font-size:0.7rem;color:var(--light);}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.journey-step{display:flex;gap:14px;margin-bottom:10px;align-items:flex-start;}
+.js-num{width:36px;height:36px;border-radius:50%;background:var(--plum);color:#fff;font-family:Montserrat,sans-serif;font-size:0.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.js-body{flex:1;background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.js-body h4{font-size:0.84rem;font-weight:700;margin-bottom:4px;color:var(--black);}
+.js-body p{font-size:0.78rem;color:var(--mid);line-height:1.5;}
+.js-body .js-q{font-size:0.74rem;color:var(--plum);font-style:italic;margin-top:5px;}
+.js-connector{width:2px;background:rgba(121,69,119,0.2);height:10px;margin-left:17px;}
+.audit-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:0.8rem;}
+.audit-table th{background:var(--plum);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:0.76rem;}
+.audit-table td{padding:8px 10px;border-bottom:1px solid rgba(0,0,0,0.06);color:var(--mid);vertical-align:top;}
+.audit-table tr:nth-child(even){background:rgba(121,69,119,0.03);}
+.audit-table .ok{color:#2d6b4a;font-weight:600;}
+.audit-table .fix{color:#9b3535;font-weight:600;}
+.topbar-nav{display:flex;gap:16px;align-items:center;}
+@media(max-width:640px){.topbar-nav{display:none;}}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="topbar">
+  <div class="topbar-logo"><a href="index.html" style="text-decoration:none;color:inherit;">Small Business <span>Therapy</span></a></div>
+  <div class="topbar-nav">
+    <a href="index.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Free App</a>
+    <a href="learning-centre.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Learning Centre</a>
+    <a href="small-business-therapy-landing.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">About</a>
+  </div>
+  <div class="topbar-right">
+    <button class="strategy-btn" id="stratbtn">My Strategy</button>
+    <div class="prog-wrap">
+      <span class="prog-label" id="plabel">1/8</span>
+      <div class="prog-bar"><div class="prog-fill" id="pfill" style="width:12%"></div></div>
+    </div>
+  </div>
+</div>
+<div id="p1" style="display:block;">
+  <div style="max-width:580px;margin:0 auto;padding:44px 22px 100px;text-align:center;">
+    <div class="badge">Module 16 - Customer Strategy</div>
+    <h1 style="font-family:Montserrat,sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;margin-bottom:12px;">Customer Experience <span style="color:var(--plum);">and Service Systems</span></h1>
+    <p style="font-size:0.92rem;color:var(--mid);line-height:1.7;margin-bottom:24px;">Your customers form an impression at every single interaction with your business -- not just when they speak to you personally. This module maps every touchpoint in the customer journey, shows you where experience breaks down, and gives you the systems to make every interaction consistently excellent.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <span style="font-size:0.78rem;color:var(--mid);">25-30 min</span>
+      <span style="font-size:0.78rem;color:var(--mid);">6 lessons</span>
+      <span style="font-size:0.78rem;color:var(--mid);">Audit templates</span>
+      <span style="font-size:0.78rem;color:var(--mid);">Print your strategy</span>
+    </div>
+    <div class="price-box"><div class="pl">Lifetime Access</div><div class="pp">$19.99</div><div class="ps">one-off - no subscription</div></div>
+    <br><br><button class="start-btn" id="startbtn">Start Module</button>
+  </div>
+</div><div id="p2" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 1 of 6</div><h2>Why Customer Experience Drives Profitability</h2><p>The financial case for investing in every touchpoint -- not just the sale.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Customer Experience Is a Profit Lever</h3><p>Most businesses focus on the sale as the end goal. In reality, the sale is just the beginning. The experience a customer has after buying -- during delivery, support, invoicing, follow-up -- determines whether they buy again, how much they tell others, and whether they stay or leave. A customer who has an excellent experience from first contact to final invoice is worth five to ten times more over their lifetime than one who simply had an adequate sales interaction.</p></div><div style="background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:14px;color:#fff;"><div style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:12px;">The Customer Experience Profit Chain</div><div style="display:flex;flex-direction:column;gap:6px;"><div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:12px;"><div style="font-family:Montserrat,sans-serif;font-size:1.1rem;font-weight:900;color:var(--mauve);width:28px;text-align:center;">1</div><div><div style="font-size:0.8rem;font-weight:700;color:#fff;">Better experience at every touchpoint</div><div style="font-size:0.74rem;color:rgba(255,255,255,0.55);">First contact, delivery, support, invoicing, follow-up</div></div></div><div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:12px;"><div style="font-family:Montserrat,sans-serif;font-size:1.1rem;font-weight:900;color:var(--mauve);width:28px;text-align:center;">2</div><div><div style="font-size:0.8rem;font-weight:700;color:#fff;">Higher satisfaction and trust</div><div style="font-size:0.74rem;color:rgba(255,255,255,0.55);">Clients feel valued, confident and well-served throughout</div></div></div><div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:12px;"><div style="font-family:Montserrat,sans-serif;font-size:1.1rem;font-weight:900;color:var(--mauve);width:28px;text-align:center;">3</div><div><div style="font-size:0.8rem;font-weight:700;color:#fff;">Longer retention and higher average spend</div><div style="font-size:0.74rem;color:rgba(255,255,255,0.55);">Satisfied clients stay longer and buy more</div></div></div><div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:12px;"><div style="font-family:Montserrat,sans-serif;font-size:1.1rem;font-weight:900;color:var(--mauve);width:28px;text-align:center;">4</div><div><div style="font-size:0.8rem;font-weight:700;color:#fff;">More referrals and word of mouth</div><div style="font-size:0.74rem;color:rgba(255,255,255,0.55);">Delighted clients actively recommend you to others</div></div></div><div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:12px;"><div style="font-family:Montserrat,sans-serif;font-size:1.1rem;font-weight:900;color:var(--mauve);width:28px;text-align:center;">5</div><div><div style="font-size:0.8rem;font-weight:700;color:#fff;">Lower acquisition costs and higher revenue</div><div style="font-size:0.74rem;color:rgba(255,255,255,0.55);">Referrals replace expensive cold marketing</div></div></div></div></div><div class="insight"><div class="insight-tag">Key Insight</div><h4>Satisfied customers are also more willing to pay premium pricing</h4><p>A client who trusts you completely, who knows from experience that you deliver what you promise, and who values the relationship -- that client is significantly less price-sensitive than a new client who has no experience to draw on. Customer experience investment pays back through retention, referrals and pricing power simultaneously.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My customer experience honest score</div><div class="nb-hint">If you scored your customer experience from first contact to final invoice out of 10, what would it be? Why?</div><textarea id="n2a" placeholder="e.g. Probably 7/10 overall. My personal interactions are strong but I know my invoicing is slow and confusing. I have heard clients mention this twice. And my response time when I am busy drops to 24+ hours which I know is not good enough."></textarea></div><div class="nb"><div class="nb-label">Where I know experience breaks down</div><div class="nb-hint">Which specific touchpoints in your business are weakest right now?</div><textarea id="n2b" placeholder="e.g. 1. Response time when I am busy -- sometimes 2 days between replies
+2. Invoicing -- clients have asked for clearer breakdowns twice in the past year
+3. Onboarding new clients -- no formal process, everyone gets a different experience depending on how busy I am"></textarea></div><div class="nb"><div class="nb-label">The financial case for fixing it</div><div class="nb-hint">What would better customer experience mean for your revenue and profit?</div><textarea id="n2c" placeholder="e.g. If I reduced churn by just 2 clients per year at $2,200/month average that is $52,800 in lifetime value preserved. Better experience directly protects that revenue. Plus referrals -- each referred client is worth $30k+ and I currently get maybe 3 per year. Could easily be 6-8 with a more deliberate experience."></textarea></div>
+      <button class="save-btn" id="save2">Save These Notes</button>
+      <div class="saved-msg" id="sm2"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd2"><div class="cum-empty">Your notes will appear here as you save them</div></div></div>
+    </div>
+  </div>
+</div><div id="p3" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 2 of 6</div><h2>The Customer Chain -- Mapping Every Touchpoint</h2><p>Every interaction your business has with a client shapes their perception. Most businesses audit almost none of them.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Customer Chain Concept</h3><p>The customer chain maps every sequential interaction between your business and a client -- from the moment they first hear about you to the moment they receive their final invoice and beyond. Each link in the chain is a moment where their impression of your business is either strengthened or weakened. A single poor experience at any link -- a rude receptionist, a confusing invoice, a missed callback -- can undo multiple positive ones.</p></div><div style="background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-family:Montserrat,sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:14px;">The Typical Customer Chain for a Service Business</div><div class="journey-step"><div class="js-num">1</div><div class="js-body"><h4>Awareness</h4><p>Client first hears about your business. Google search, referral, social media, ad.</p><div class="js-q">Does your first impression online match the experience you deliver?</div></div></div><div class="js-connector"></div><div class="journey-step"><div class="js-num">2</div><div class="js-body"><h4>First Contact</h4><p>Client calls, emails or submits a website enquiry for the first time.</p><div class="js-q">How quickly do you respond? How professional and warm is that first interaction?</div></div></div><div class="js-connector"></div><div class="journey-step"><div class="js-num">3</div><div class="js-body"><h4>Information and Proposal</h4><p>You provide information, a quote or a proposal.</p><div class="js-q">Is it prompt, clear and professional? Does it address what they actually asked for?</div></div></div><div class="js-connector"></div><div class="journey-step"><div class="js-num">4</div><div class="js-body"><h4>Onboarding</h4><p>Client signs up and starts receiving your service for the first time.</p><div class="js-q">Do they feel welcomed and informed? Do they know what to expect and when?</div></div></div><div class="js-connector"></div><div class="journey-step"><div class="js-num">5</div><div class="js-body"><h4>Service Delivery</h4><p>The ongoing delivery of your product or service.</p><div class="js-q">Is it consistent? Does it match what was promised? Are issues resolved quickly?</div></div></div><div class="js-connector"></div><div class="journey-step"><div class="js-num">6</div><div class="js-body"><h4>Invoicing and Accounts</h4><p>Client receives and processes invoices.</p><div class="js-q">Is invoicing accurate, clear and timely? Is the accounts interaction professional?</div></div></div><div class="js-connector"></div><div class="journey-step"><div class="js-num">7</div><div class="js-body"><h4>Ongoing Communication</h4><p>Regular updates, reports, check-ins and support interactions.</p><div class="js-q">Is communication proactive or reactive? Do clients feel informed and valued?</div></div></div><div class="js-connector"></div><div class="journey-step"><div class="js-num">8</div><div class="js-body"><h4>Problem Resolution</h4><p>How you handle complaints, errors or difficult situations.</p><div class="js-q">Do problems get resolved quickly and professionally? Or do they escalate and damage the relationship?</div></div></div></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My customer chain -- all touchpoints listed</div><div class="nb-hint">Write out every interaction your business has with a client from first contact to ongoing service</div><textarea id="n3a" placeholder="e.g. 1. Google search (website first impression)
+2. Email enquiry (my response time)
+3. Initial call (my professionalism and listening)
+4. Proposal sent (quality and speed)
+5. Onboarding call
+6. Monthly work delivery
+7. Monthly report
+8. Monthly invoice
+9. Ad hoc client questions
+10. Quarterly review call
+11. Annual renewal conversation"></textarea></div><div class="nb"><div class="nb-label">My weakest links in the chain</div><div class="nb-hint">Score each touchpoint 1-10 and identify the 2-3 worst ones</div><textarea id="n3b" placeholder="e.g. Website first impression: 6/10 -- looks dated, not specific enough to trades
+Response time: 5/10 -- inconsistent, sometimes same day sometimes 2 days
+Onboarding: 4/10 -- no formal process, everyone gets different experience
+Invoicing: 5/10 -- clients have mentioned it is confusing
+Best: Monthly report (8/10) and personal service delivery (9/10)"></textarea></div><div class="nb"><div class="nb-label">Who else in my business touches the customer chain</div><div class="nb-hint">Which team members interact with clients and how?</div><textarea id="n3c" placeholder="e.g. Sarah: handles all client emails, monthly reports, onboarding calls, invoice queries
+Mark: answers technical SEO questions when clients email about rankings
+Me: new client sales, quarterly reviews, problem resolution
+Gap: Sarah has never been formally trained on our customer service standards"></textarea></div>
+      <button class="save-btn" id="save3">Save These Notes</button>
+      <div class="saved-msg" id="sm3"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd3"><div class="cum-empty">Your notes will appear here as you save them</div></div></div>
+    </div>
+  </div>
+</div><div id="p4" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 3 of 6</div><h2>The Touchpoint Audit -- Finding and Fixing the Weak Links</h2><p>How to systematically score and improve every point in your customer chain.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Touchpoint Audit Process</h3><p>A touchpoint audit is a structured review of every customer interaction to identify what is working, what is average and what is actively damaging the client relationship. The goal is not to find fault but to find opportunity. Every weak touchpoint you improve either reduces churn, increases referrals or improves the premium you can charge -- usually all three.</p></div><div style="background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-family:Montserrat,sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:12px;">Touchpoint Audit Framework -- Example Service Business</div><table class="audit-table"><thead><tr><th>Touchpoint</th><th>Current Standard</th><th>Client Experience</th><th>Action</th></tr></thead><tbody><tr><td>Phone answered within</td><td>3 rings target</td><td class="fix">Average 6 rings, sometimes voicemail</td><td>Set call forwarding rule</td></tr><tr><td>Email response time</td><td>Same day target</td><td class="fix">1-2 days when busy</td><td>Set auto-reply + 4hr SLA</td></tr><tr><td>Proposal turnaround</td><td>48 hours</td><td class="ok">Usually 24 hours</td><td>Maintain and document</td></tr><tr><td>Onboarding process</td><td>No formal process</td><td class="fix">Inconsistent, ad hoc</td><td>Create onboarding checklist</td></tr><tr><td>Monthly reporting</td><td>By 5th of month</td><td class="ok">Consistently on time</td><td>Maintain and systemise</td></tr><tr><td>Invoice clarity</td><td>Standard template</td><td class="fix">Clients ask for explanation</td><td>Redesign invoice template</td></tr><tr><td>Complaint resolution</td><td>No formal process</td><td class="fix">Reactive and inconsistent</td><td>Create resolution protocol</td></tr></tbody></table></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Do the audit yourself first</h4><p>Go through every touchpoint as if you were a new client. Submit an enquiry through your own website. Read your proposals as a prospect would. Look at your invoices with fresh eyes. The perspective shift alone reveals problems you have been too close to see.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Ask your best clients directly</h4><p>Your best clients will give you honest feedback if you ask specifically. Not "how are we doing?" but "if there is one thing about working with us that could be smoother or easier, what would it be?" Most will tell you something valuable. Many will mention the same thing -- and that consensus is your priority.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Fix the worst touchpoint first</h4><p>Do not try to fix everything at once. Identify the single touchpoint that causes the most client friction and fix that first. One excellent improvement implemented beats five partial improvements started and abandoned.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Create minimum standards for each touchpoint</h4><p>Document what good looks like at every point in the chain. Response time within 4 hours. Proposals within 48 hours. Reports by the 5th. These written standards become the brief for staff training and the basis for accountability.</p></div></li><li class="step"><div class="step-n">5</div><div><h4>Review the audit quarterly</h4><p>Touchpoints change as your business grows. Staff change. Technology changes. Client expectations evolve. A quarterly 30-minute audit review keeps standards current and prevents slow drift back to old habits.</p></div></li></ul><div class="insight"><div class="insight-tag">The Mystery Client Audit</div><h4>Have a trusted contact experience your business as a new prospect</h4><p>Ask a friend, family member or trusted contact to make an enquiry through your website as if they were a genuine prospect. Note: how long before they received a response? Was it warm and professional? Did the proposal address their specific question? This exercise consistently reveals issues that internal review misses completely.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My audit findings -- scored touchpoints</div><div class="nb-hint">Go through your customer chain and score each one honestly 1-10</div><textarea id="n4a" placeholder="e.g. Awareness/website: 6
+First contact response: 5
+Proposal quality: 8
+Onboarding: 4
+Monthly delivery: 9
+Reporting: 8
+Invoicing: 5
+Problem resolution: 6
+Lowest scores: Onboarding (4) and Response time (5) -- these are my two priorities"></textarea></div><div class="nb"><div class="nb-label">My minimum standards for each touchpoint</div><div class="nb-hint">What is the written standard for each interaction?</div><textarea id="n4b" placeholder="e.g. Email enquiry: respond within 4 business hours (auto-reply confirms receipt immediately)
+Proposal: delivered within 48 hours of enquiry
+Onboarding: formal welcome call within 48 hours of signing, onboarding checklist completed within 5 days
+Reporting: delivered by 5th of each month without exception
+Invoice query: resolved within 24 hours"></textarea></div><div class="nb"><div class="nb-label">My first fix -- what and by when</div><div class="nb-hint">Which single touchpoint will you fix first and how?</div><textarea id="n4c" placeholder="e.g. Onboarding process -- this is the highest leverage fix. First impressions compound. A client who has a great onboarding experience starts the relationship with confidence and trust. I am creating a formal onboarding checklist and welcome email sequence this week. Done by Friday."></textarea></div>
+      <button class="save-btn" id="save4">Save These Notes</button>
+      <div class="saved-msg" id="sm4"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd4"><div class="cum-empty">Your notes will appear here as you save them</div></div></div>
+    </div>
+  </div>
+</div><div id="p5" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 4 of 6</div><h2>Staff, Service Standards and Managing Expectations</h2><p>Everyone in your business who touches a client is part of your customer experience -- whether they know it or not.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Customer Service Is Organisation-Wide</h3><p>Most small businesses train their sales people on customer service and leave everyone else to figure it out. But the accounts person who sends a confusing invoice, the delivery person who arrives late without calling, the admin who puts a client on hold without explanation -- these people shape customer experience just as powerfully as the person who made the sale. Every customer-facing role needs clear service standards.</p></div><div style="background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 6px rgba(0,0,0,0.06);"><div style="font-family:Montserrat,sans-serif;font-size:0.82rem;font-weight:700;margin-bottom:12px;">Customer-Facing Roles -- Who Shapes Your Experience</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"><div style="background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.15);border-radius:9px;padding:12px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#2d6b4a;margin-bottom:6px;">Obvious Roles</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;">Sales staff, account managers, customer service team, receptionists, technical support -- roles people know are customer-facing and typically get some training.</p></div><div style="background:rgba(155,53,53,0.05);border:1.5px solid rgba(155,53,53,0.15);border-radius:9px;padding:12px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9b3535;margin-bottom:6px;">Overlooked Roles</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;">Accounts and invoicing staff, delivery and logistics, technical specialists, admin assistants -- roles that interact with clients but rarely receive customer service training.</p></div></div></div><div class="card c-mauve"><h3>Managing Client Expectations -- The Single Most Underrated Skill</h3><p>More client dissatisfaction comes from unmet expectations than from poor quality work. A client who was told their website would be updated in 48 hours and it took 72 hours is dissatisfied -- even if the quality was excellent. A client who was told it would take up to 5 days and it was done in 3 is delighted -- even though the outcome is the same. Managing expectations proactively is one of the most powerful and cheapest customer experience improvements available.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Never overpromise -- build in a buffer</h4><p>Whatever your realistic delivery time is, promise a little more. If you can usually respond in 2 hours, promise 4. If delivery takes 3 days, promise 5. Then consistently beat your promise. This creates a pattern of positive surprise that builds deep trust over time.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Communicate proactively when things change</h4><p>The single biggest source of client frustration is silence when something is running late or has changed. A brief proactive message -- "just letting you know your report will be with you tomorrow instead of today as we identified something worth investigating further" -- transforms a potential complaint into a positive experience. Most clients respect transparency. Almost none respect silence.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Train every customer-facing staff member on service standards</h4><p>Create a one-page customer service standard for your business. Response times, tone of communication, how to handle complaints, what to do when you do not know the answer. Give it to every team member who touches a client. Review it in monthly team meetings.</p></div></li><li class="step"><div class="step-n">4</div><div><h4>Create a complaint resolution process</h4><p>Every business gets complaints. The businesses that handle them well turn complainers into advocates. The businesses that handle them poorly turn complainers into detractors who tell everyone. Your complaint process: acknowledge within 2 hours, take ownership, fix the problem, follow up to confirm resolution, offer something small as a goodwill gesture.</p></div></li></ul><div class="insight"><div class="insight-tag">The Expectation Gap</div><h4>The gap between what you promise and what you deliver creates either delight or disappointment</h4><p>Underpromise and overdeliver -- every time. Build this principle into your service standards, your proposals and your onboarding communications. A client who consistently receives slightly more than promised is a client who stays, refers and resists competitive offers.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">Which non-sales staff interact with my clients?</div><div class="nb-hint">List every team member who has any contact with clients and what that contact looks like</div><textarea id="n5a" placeholder="e.g. Sarah: emails (daily), phone calls (weekly), invoices (monthly), onboarding calls (as needed)
+Mark: technical email queries (weekly), occasionally joins quarterly review calls
+Me: all new client sales, quarterly reviews, problem escalations
+Gap: Sarah handles most client contact but has never had formal customer service training from me"></textarea></div><div class="nb"><div class="nb-label">My current expectation management -- honest assessment</div><div class="nb-hint">Do you consistently underpromise and overdeliver? Where do you overpromise?</div><textarea id="n5b" placeholder="e.g. I overpromise on response time when I am busy. I sometimes say "I will look at that today" when I know I will not get to it until tomorrow. That creates disappointment. I need to build a habit of adding buffer time to all commitments."></textarea></div><div class="nb"><div class="nb-label">My customer service standard -- one page</div><div class="nb-hint">Write the key service standards every team member must follow</div><textarea id="n5c" placeholder="e.g. Response time: all client communications acknowledged within 4 business hours, even if just "received, will respond fully by [time]"
+Tone: warm, professional, first name always
+Problems: never say "that is not my area" -- take ownership and find the right person
+Complaints: acknowledge within 2 hours, update within 24 hours, resolve with follow-up
+Promises: never commit to a time you are not 80% confident you can beat"></textarea></div>
+      <button class="save-btn" id="save5">Save These Notes</button>
+      <div class="saved-msg" id="sm5"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd5"><div class="cum-empty">Your notes will appear here as you save them</div></div></div>
+    </div>
+  </div>
+</div><div id="p6" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 5 of 6 -- Your Customer Experience System</div><h2>Build Your Complete CX Strategy</h2><p>Your touchpoint standards, service guidelines and measurement system in one place.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>My Customer Experience Strategy</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:10px;">Complete each section to build a comprehensive customer experience system.</p></div><div style="display:flex;flex-direction:column;gap:9px;margin-bottom:12px;"><div style="background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:6px;">My Customer Chain -- All Touchpoints with Standards</div><textarea id="tpl-chain" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:110px;outline:none;" placeholder="List each touchpoint and your minimum standard&#10;e.g. Email enquiry: respond within 4 hours&#10;Proposal: delivered within 48 hours&#10;Onboarding: welcome call within 48 hours of signing&#10;Monthly report: delivered by 5th of month&#10;Invoice: clear breakdown, sent same day as report&#10;Complaint: acknowledged within 2 hours"></textarea></div><div style="background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2d6b4a;margin-bottom:6px;">My Proactive Customer Satisfaction Strategies</div><textarea id="tpl-proactive" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:80px;outline:none;" placeholder="Things I will do to exceed expectations proactively:&#10;e.g. Deliver reports 2 days early when possible&#10;Send a handwritten thank you note at the 12-month mark&#10;Alert clients to Google updates before they ask&#10;Quarterly business review offered to all retainer clients"></textarea></div><div style="background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2e4a7a;margin-bottom:6px;">My Customer KPIs -- What I Will Measure Monthly</div><textarea id="tpl-kpis" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:80px;outline:none;" placeholder="e.g. Churn rate: target less than 1 client per quarter&#10;Referrals received: target 2+ per month&#10;Client satisfaction score: target 8+ out of 10&#10;Response time compliance: target 95% within 4 hours&#10;Complaints received: target 0 per month&#10;Re-order / upsell rate: target 2 add-ons sold per month"></textarea></div><div style="background:rgba(90,47,89,0.05);border:1.5px solid rgba(90,47,89,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--dk);margin-bottom:6px;">My Complaint Resolution Process</div><textarea id="tpl-complaints" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:70px;outline:none;" placeholder="Step 1: Acknowledge within [time]
+Step 2: Investigate and update within [time]
+Step 3: Resolution and what good looks like
+Step 4: Follow-up after resolution
+Step 5: Goodwill gesture policy"></textarea></div></div><button class="save-btn" id="save6" style="width:100%;">Save My Customer Experience Strategy</button></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My highest priority CX improvement</div><div class="nb-hint">Which single customer experience fix would have the biggest impact on retention and referrals?</div><textarea id="n6a" placeholder="e.g. The onboarding process is my highest priority. The first 30 days of a client relationship sets the tone for everything that follows. A client who has a confusing or passive onboarding starts with lower confidence and is more likely to leave at the first sign of a problem. I am building a formal onboarding sequence this week."></textarea></div><div class="nb"><div class="nb-label">My proactive satisfaction commitments</div><div class="nb-hint">What will you do above and beyond the standard to exceed client expectations?</div><textarea id="n6b" placeholder="e.g. 1. Deliver all reports 2-3 days early whenever possible -- underpromise and overdeliver
+2. Send a handwritten note at 12-month anniversary for every client
+3. Set up Google Alerts for every client's business name and competitors -- send relevant news proactively
+4. Offer a free mid-year strategy session to all retainer clients in month 6"></textarea></div><div class="nb"><div class="nb-label">My 90-day CX action plan</div><div class="nb-hint">Three specific customer experience improvements with deadlines</div><textarea id="n6c" placeholder="e.g. 1. Create formal onboarding checklist and welcome email sequence -- done by end of this week
+2. Redesign invoice template to include clear plain-English breakdown -- done by next invoice run
+3. Set up 4-hour response time rule with auto-reply system -- implemented by Monday"></textarea></div>
+      <button class="save-btn" id="save6">Save These Notes</button>
+      <div class="saved-msg" id="sm6"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd6"><div class="cum-empty">Your notes will appear here as you save them</div></div></div>
+    </div>
+  </div>
+</div><div id="p7" style="display:none;"><div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 6 of 6 - Knowledge Check</div><h2>Knowledge Check</h2><p>5 questions to confirm your understanding.</p></div></div><div class="cols"><div class="col-content"><div class="qz-q" id="q1"><p>1. A "customer chain" maps:</p><div class="qz-opts"><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! The customer chain maps every touchpoint -- awareness, first contact, proposal, onboarding, delivery, invoicing, support, complaints -- because each shapes the overall client experience." data-msg-w="Not quite. The customer chain maps every sequential interaction from first awareness through to ongoing support and beyond -- not just the sales process.">Only the sales process from first contact to purchase</button><button class="qz-opt" data-q="1" data-correct="true" data-msg-c="Correct! The customer chain maps every touchpoint -- awareness, first contact, proposal, onboarding, delivery, invoicing, support, complaints -- because each shapes the overall client experience." data-msg-w="Not quite. The customer chain maps every sequential interaction from first awareness through to ongoing support and beyond -- not just the sales process.">Every sequential interaction between your business and a client from awareness to ongoing support</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! The customer chain maps every touchpoint -- awareness, first contact, proposal, onboarding, delivery, invoicing, support, complaints -- because each shapes the overall client experience." data-msg-w="Not quite. The customer chain maps every sequential interaction from first awareness through to ongoing support and beyond -- not just the sales process.">The internal processes that produce your product or service</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! The customer chain maps every touchpoint -- awareness, first contact, proposal, onboarding, delivery, invoicing, support, complaints -- because each shapes the overall client experience." data-msg-w="Not quite. The customer chain maps every sequential interaction from first awareness through to ongoing support and beyond -- not just the sales process.">Your top customers ranked by revenue</button></div><div class="qz-fb" id="fb1"></div></div><div class="qz-q" id="q2"><p>2. Which customer-facing staff are most commonly undertrained in customer service?</p><div class="qz-opts"><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Accounts staff, delivery staff and technical specialists regularly interact with clients but rarely receive formal customer service training -- despite significantly influencing client experience." data-msg-w="Not quite. Non-sales staff such as accounts, delivery and technical support regularly interact with clients but are almost never formally trained in customer service standards.">Sales staff</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Accounts staff, delivery staff and technical specialists regularly interact with clients but rarely receive formal customer service training -- despite significantly influencing client experience." data-msg-w="Not quite. Non-sales staff such as accounts, delivery and technical support regularly interact with clients but are almost never formally trained in customer service standards.">Account managers</button><button class="qz-opt" data-q="2" data-correct="true" data-msg-c="Correct! Accounts staff, delivery staff and technical specialists regularly interact with clients but rarely receive formal customer service training -- despite significantly influencing client experience." data-msg-w="Not quite. Non-sales staff such as accounts, delivery and technical support regularly interact with clients but are almost never formally trained in customer service standards.">Non-sales staff such as accounts, delivery and technical support who interact with clients regularly</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! Accounts staff, delivery staff and technical specialists regularly interact with clients but rarely receive formal customer service training -- despite significantly influencing client experience." data-msg-w="Not quite. Non-sales staff such as accounts, delivery and technical support regularly interact with clients but are almost never formally trained in customer service standards.">Reception staff</button></div><div class="qz-fb" id="fb2"></div></div><div class="qz-q" id="q3"><p>3. The most common source of client dissatisfaction in service businesses is:</p><div class="qz-opts"><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! More client dissatisfaction comes from unmet expectations than from poor work quality. Managing expectations proactively -- underpromising and overdelivering -- prevents the majority of complaints." data-msg-w="Not quite. Unmet expectations -- the gap between what was promised and what was delivered -- are responsible for more client dissatisfaction than actual quality issues.">Poor quality of work delivered</button><button class="qz-opt" data-q="3" data-correct="true" data-msg-c="Correct! More client dissatisfaction comes from unmet expectations than from poor work quality. Managing expectations proactively -- underpromising and overdelivering -- prevents the majority of complaints." data-msg-w="Not quite. Unmet expectations -- the gap between what was promised and what was delivered -- are responsible for more client dissatisfaction than actual quality issues.">Unmet expectations -- the gap between what was promised and what was delivered</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! More client dissatisfaction comes from unmet expectations than from poor work quality. Managing expectations proactively -- underpromising and overdelivering -- prevents the majority of complaints." data-msg-w="Not quite. Unmet expectations -- the gap between what was promised and what was delivered -- are responsible for more client dissatisfaction than actual quality issues.">High pricing relative to competitors</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! More client dissatisfaction comes from unmet expectations than from poor work quality. Managing expectations proactively -- underpromising and overdelivering -- prevents the majority of complaints." data-msg-w="Not quite. Unmet expectations -- the gap between what was promised and what was delivered -- are responsible for more client dissatisfaction than actual quality issues.">Long delivery times</button></div><div class="qz-fb" id="fb3"></div></div><div class="qz-q" id="q4"><p>4. The principle of "underpromise and overdeliver" means:</p><div class="qz-opts"><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Building a buffer into your commitments means you consistently deliver slightly more than promised -- which builds deep trust and positive surprise over time." data-msg-w="Not quite. Underpromise and overdeliver means setting expectations slightly below what you are confident of achieving -- so clients are consistently and genuinely positively surprised.">Deliberately quoting low prices to win business then charging more</button><button class="qz-opt" data-q="4" data-correct="true" data-msg-c="Correct! Building a buffer into your commitments means you consistently deliver slightly more than promised -- which builds deep trust and positive surprise over time." data-msg-w="Not quite. Underpromise and overdeliver means setting expectations slightly below what you are confident of achieving -- so clients are consistently and genuinely positively surprised.">Setting expectations slightly below what you are confident you can achieve so clients are consistently positively surprised</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Building a buffer into your commitments means you consistently deliver slightly more than promised -- which builds deep trust and positive surprise over time." data-msg-w="Not quite. Underpromise and overdeliver means setting expectations slightly below what you are confident of achieving -- so clients are consistently and genuinely positively surprised.">Never making specific commitments to clients</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Building a buffer into your commitments means you consistently deliver slightly more than promised -- which builds deep trust and positive surprise over time." data-msg-w="Not quite. Underpromise and overdeliver means setting expectations slightly below what you are confident of achieving -- so clients are consistently and genuinely positively surprised.">Reducing your service scope so it is easy to exceed</button></div><div class="qz-fb" id="fb4"></div></div><div class="qz-q" id="q5"><p>5. When a problem occurs in a client engagement, the best response is:</p><div class="qz-opts"><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Fast acknowledgement, clear ownership, resolution and follow-up turns most complaints into advocacy. Silence and delay turn them into lost clients who warn others." data-msg-w="Not quite. Fast acknowledgement, taking ownership, resolving the problem and following up converts most complainers into advocates. Silence and delay does the opposite.">Wait until you have a full resolution before contacting the client</button><button class="qz-opt" data-q="5" data-correct="true" data-msg-c="Correct! Fast acknowledgement, clear ownership, resolution and follow-up turns most complaints into advocacy. Silence and delay turn them into lost clients who warn others." data-msg-w="Not quite. Fast acknowledgement, taking ownership, resolving the problem and following up converts most complainers into advocates. Silence and delay does the opposite.">Acknowledge within 2 hours, take ownership, fix the problem, follow up and offer a goodwill gesture</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Fast acknowledgement, clear ownership, resolution and follow-up turns most complaints into advocacy. Silence and delay turn them into lost clients who warn others." data-msg-w="Not quite. Fast acknowledgement, taking ownership, resolving the problem and following up converts most complainers into advocates. Silence and delay does the opposite.">Let the client raise it first so you understand exactly what they are unhappy about</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! Fast acknowledgement, clear ownership, resolution and follow-up turns most complaints into advocacy. Silence and delay turn them into lost clients who warn others." data-msg-w="Not quite. Fast acknowledgement, taking ownership, resolving the problem and following up converts most complainers into advocates. Silence and delay does the opposite.">Offer a discount on their next invoice as compensation</button></div><div class="qz-fb" id="fb5"></div></div><div class="qz-score" id="qscore"></div><button class="check-btn" id="checkbtn">Check My Answers</button></div><div class="col-notes"><div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div><div class="nb"><div class="nb-label">What surprised me</div><div class="nb-hint">Note anything that challenged your thinking</div><textarea id="n7a" placeholder="e.g. I never realised how many customer touchpoints I have that I have never audited or trained staff on..."></textarea></div>
+<div class="nb"><div class="nb-label">My biggest learning</div><div class="nb-hint">The most valuable insight from this module</div><textarea id="n7b" placeholder="e.g. The customer chain concept. My clients form impressions at every step, not just when I personally interact with them. My accounts team is part of my customer experience whether I think about it that way or not..."></textarea></div>
+<div class="nb"><div class="nb-label">What I am doing from Monday</div><div class="nb-hint">One concrete customer experience action you commit to</div><textarea id="n7c" placeholder="e.g. Walking through my own customer chain from first contact to final invoice and scoring each step honestly. Then fixing the two worst touchpoints this week..."></textarea></div><button class="save-btn" id="save7">Save These Notes</button><div class="saved-msg" id="sm7"></div><div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd7"><div class="cum-empty">Your notes will appear here</div></div></div></div></div></div><div id="p8" style="display:none;">
+  <div style="max-width:640px;margin:0 auto;padding:36px 22px 100px;text-align:center;">
+    <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px;">&#x1F393;</div>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;margin-bottom:9px;">Module 16 Complete!</h2>
+    <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:20px;">Your notes have built into a customer experience strategy you can implement with your team immediately.</p>
+    <div class="comp-keys"><div class="ck-title">Key Takeaways</div><p>Customers form impressions at every touchpoint -- not just the sale<br>Map your complete customer chain and score every link honestly<br>Non-sales staff shape client experience just as powerfully as sales staff<br>Underpromise and overdeliver -- build buffers into every commitment<br>Fast professional complaint resolution turns detractors into advocates</p></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="s-print" id="finprint">Print My Strategy</button>
+      <button class="s-copy" id="fincopy">Copy to Clipboard</button>
+    </div>
+    <p style="font-weight:700;font-size:0.88rem;margin-bottom:12px;">Continue your learning:</p>
+    <div class="next-grid"><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 13</div><h4>Customer Retention and Frequency</h4><p>Combine CX improvements with retention systems</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 15</div><h4>Building a High-Performance Team</h4><p>Train your team to deliver consistent CX</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 06</div><h4>Strategy Map and KPIs</h4><p>Add customer KPIs to your monthly scorecard</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 12</div><h4>Increasing Average Sale Value</h4><p>Great CX enables premium pricing and upselling</p></div></div>
+  </div>
+</div>
+<div id="pstrat" style="display:none;">
+  <div style="max-width:860px;margin:0 auto;padding:26px 22px 100px;">
+    <button class="strat-back" id="stratback">Back to Module</button>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:5px;">My Strategy - Module 16: Customer Experience and Service Systems</h2>
+    <p style="font-size:0.83rem;color:var(--mid);margin-bottom:18px;">All notes from this module built lesson by lesson.</p>
+    <div style="margin-bottom:18px;"><button class="s-print" id="stratprint">Print</button><button class="s-copy" id="stratcopy">Copy</button></div>
+    <div id="stratbody"></div>
+  </div>
+</div>
+<div class="botnav" id="botnav">
+  <button class="bot-btn sec" id="prevbtn">Back</button>
+  <div class="dots" id="dotrow"></div>
+  <button class="bot-btn" id="nextbtn">Next</button>
+</div>
+<script>
+var cur=1,total=8,prevPg=1,MOD_KEY='sbt_mod16_';
+var NOTES=[
+  {pg:2,fields:[{id:'n2a',lbl:'My customer experience honest score'},{id:'n2b',lbl:'Where I know experience breaks down'},{id:'n2c',lbl:'The financial case for fixing it'}]},
+  {pg:3,fields:[{id:'n3a',lbl:'My customer chain all touchpoints listed'},{id:'n3b',lbl:'My weakest links in the chain'},{id:'n3c',lbl:'Who else in my business touches the customer chain'}]},
+  {pg:4,fields:[{id:'n4a',lbl:'My audit findings scored touchpoints'},{id:'n4b',lbl:'My minimum standards for each touchpoint'},{id:'n4c',lbl:'My first fix what and by when'}]},
+  {pg:5,fields:[{id:'n5a',lbl:'Which non-sales staff interact with my clients'},{id:'n5b',lbl:'My current expectation management honest assessment'},{id:'n5c',lbl:'My customer service standard one page'}]},
+  {pg:6,fields:[{id:'n6a',lbl:'My highest priority CX improvement'},{id:'n6b',lbl:'My proactive satisfaction commitments'},{id:'n6c',lbl:'My 90 day CX action plan'}]},
+  {pg:7,fields:[{id:'n7a',lbl:'What surprised me'},{id:'n7b',lbl:'My biggest learning'},{id:'n7c',lbl:'What I am doing from Monday'}]}
+];
+function sk(id){return MOD_KEY+id;}
+function store(id,val){try{if(val.trim())localStorage.setItem(sk(id),val);else localStorage.removeItem(sk(id));}catch(e){}}
+function recall(id){try{return localStorage.getItem(sk(id))||'';}catch(e){return '';}}
+function showPg(id){var all=['p1','p2','p3','p4','p5','p6','p7','p8','p8','pstrat'];for(var i=0;i<all.length;i++){var el=document.getElementById(all[i]);if(el)el.style.display='none';}var t=document.getElementById(id);if(t)t.style.display='block';window.scrollTo(0,0);}
+function goTo(n){cur=n;showPg('p'+cur);document.getElementById('botnav').style.display='flex';updateNav();refreshAll();}
+function updateNav(){document.getElementById('prevbtn').disabled=(cur===1);document.getElementById('nextbtn').disabled=(cur===total);document.getElementById('nextbtn').textContent=(cur===total-1)?'Finish':'Next';document.getElementById('plabel').textContent=cur+'/'+total;document.getElementById('pfill').style.width=((cur/total)*100)+'%';buildDots();}
+function buildDots(){var c=document.getElementById('dotrow');c.innerHTML='';for(var i=1;i<=total;i++){var d=document.createElement('div');d.className='dot'+(i===cur?' on':'');d.setAttribute('data-n',i);c.appendChild(d);}var dots=c.querySelectorAll('.dot');for(var j=0;j<dots.length;j++){dots[j].addEventListener('click',function(){goTo(parseInt(this.getAttribute('data-n')));}); }}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function buildCumHTML(){var html='',has=false;for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim()){has=true;html+='<div class="cum-entry"><div class="cum-entry-lbl">'+f.lbl+'</div><div class="cum-entry-txt">'+esc(v)+'</div></div>';}}}if(!has)html='<div class="cum-empty">Your notes will appear here as you save them</div>';return{html:html,has:has};}
+function refreshAll(){var r=buildCumHTML();var cdivs=document.querySelectorAll('[id^="cd"]');for(var i=0;i<cdivs.length;i++)cdivs[i].innerHTML=r.html;var cb=document.getElementById('cbbtns');if(cb)cb.style.display=r.has?'flex':'none';}
+function saveNotes(pg){var def=null;for(var i=0;i<NOTES.length;i++)if(NOTES[i].pg===pg){def=NOTES[i];break;}if(!def)return;for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el)store(f.id,el.value);}refreshAll();var sm=document.getElementById('sm'+pg);if(sm){sm.textContent='Saved';setTimeout(function(){sm.textContent='';},2000);}showToast('Notes saved');}
+function loadAll(){for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el){var v=recall(f.id);if(v)el.value=v;}}}}
+function getStratText(){var t='MY STRATEGY - MODULE 16: CUSTOMER EXPERIENCE AND SERVICE SYSTEMS\nSmall Business Therapy | Maximum Marketing Solutions\n---\n\n';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())t+=f.lbl.toUpperCase()+':\n'+v+'\n\n';}}t+='Maximum Marketing Solutions | maximummarketingsolutions.com.au | +61 459 472 739';return t;}
+function doPrint(){var w=window.open('','_blank');var b='<html><head><title>Strategy M16</title><style>body{font-family:Arial,sans-serif;max-width:760px;margin:36px auto;font-size:13px;}h1{font-size:1.2rem;margin-bottom:4px;}.sub{color:#888;font-size:11px;margin-bottom:20px;}.c{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;}.l{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:3px;}.n{font-size:12px;color:#4a4a4a;line-height:1.6;white-space:pre-wrap;background:#f5f5f5;padding:7px 9px;border-left:3px solid #794577;}.f{margin-top:24px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:8px;}</style></head><body><h1>Module 16: Customer Experience and Service Systems</h1><p class="sub">Small Business Therapy - Maximum Marketing Solutions</p>';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="c"><div class="l">'+f.lbl+'</div><div class="n">'+v+'</div></div>';}}b+='<div class="f">Maximum Marketing Solutions - maximummarketingsolutions.com.au - +61 459 472 739</div></body></html>';w.document.write(b);w.document.close();w.print();}
+function doCopy(){var txt=getStratText();if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){showToast('Copied');}).catch(function(){showToast('Use Print instead');});else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied');}catch(e){showToast('Use Print instead');}document.body.removeChild(ta);}}
+function showStrat(){prevPg=cur;showPg('pstrat');document.getElementById('botnav').style.display='none';var r=buildCumHTML(),b='';if(!r.has)b='<p style="color:#888;font-style:italic;padding:24px 0;">No notes yet.</p>';else{for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="strat-card"><div class="sl">Lesson '+(def.pg-1)+'</div><div class="sc2">'+f.lbl+'</div><div class="sn">'+esc(v)+'</div></div>';}}}document.getElementById('stratbody').innerHTML=b;}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.className='toast on';setTimeout(function(){t.className='toast';},2600);}
+window.onload=function(){
+  showPg('p1');buildDots();updateNav();loadAll();refreshAll();
+  document.getElementById('startbtn').addEventListener('click',function(){goTo(2);});
+  document.getElementById('prevbtn').addEventListener('click',function(){if(cur>1)goTo(cur-1);});
+  document.getElementById('nextbtn').addEventListener('click',function(){if(cur<total)goTo(cur+1);});
+  document.getElementById('stratbtn').addEventListener('click',function(){showStrat();});
+  document.getElementById('stratback').addEventListener('click',function(){showPg('p'+prevPg);document.getElementById('botnav').style.display='flex';updateNav();});
+  document.getElementById('stratprint').addEventListener('click',function(){doPrint();});
+  document.getElementById('stratcopy').addEventListener('click',function(){doCopy();});
+  var saveEls=document.querySelectorAll('[id^="save"]');
+  for(var i=0;i<saveEls.length;i++){(function(el){var pg=parseInt(el.id.replace('save',''));if(!isNaN(pg))el.addEventListener('click',function(){saveNotes(pg);});}) (saveEls[i]);}
+  ['finprint','cumprint'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doPrint();});});
+  ['fincopy','cumcopy'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doCopy();});});
+  var qbtns=document.querySelectorAll('.qz-opt');
+  for(var i=0;i<qbtns.length;i++){(function(btn){btn.addEventListener('click',function(){var qn=parseInt(btn.getAttribute('data-q'));var correct=btn.getAttribute('data-correct')==='true';var qEl=document.getElementById('q'+qn);var allBtns=qEl.querySelectorAll('.qz-opt');for(var k=0;k<allBtns.length;k++){allBtns[k].disabled=true;allBtns[k].style.cursor='default';}btn.className='qz-opt '+(correct?'correct':'wrong');var fb=document.getElementById('fb'+qn);fb.textContent=btn.getAttribute(correct?'data-msg-c':'data-msg-w');fb.className='qz-fb show '+(correct?'ok':'bad');if(!window.qAns)window.qAns={};window.qAns[qn]=correct?'c':'w';});}) (qbtns[i]);}
+  var checkbtn=document.getElementById('checkbtn');
+  if(checkbtn){checkbtn.addEventListener('click',function(){var score=0;if(window.qAns)for(var k in window.qAns)if(window.qAns[k]==='c')score++;var sc=document.getElementById('qscore');sc.style.display='block';sc.innerHTML='<h4>'+score+'/5 '+(score===5?'Perfect!':score>=4?'Excellent':'Keep going')+'</h4><p>'+(score===5?'You have nailed customer experience.':score>=4?'Strong result.':score>=3?'Good - review the lessons you missed.':'Work through the module again.')+'</p>';if(score>=4){checkbtn.textContent='Continue to Completion';checkbtn.addEventListener('click',function(){goTo(8);},{once:true});}else{checkbtn.textContent='Review Module';checkbtn.addEventListener('click',function(){goTo(2);},{once:true});}});}
+};
+</script>
+</body>
+</html>
