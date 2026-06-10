@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 17: Innovation and Business Growth - Small Business Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--plum-dk:#5A2F59;--plum-lt:#EDE8EE;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--warm:#EDE8EE;--white:#fff;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
+.topbar{background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;}
+.topbar-logo{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:800;color:#fff;}
+.topbar-logo span{color:var(--mauve);}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.strategy-btn{background:rgba(166,130,164,0.2);border:1px solid var(--mauve);color:var(--mauve);font-size:0.72rem;font-weight:600;padding:5px 12px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;}
+.prog-wrap{display:flex;align-items:center;gap:8px;}
+.prog-label{font-size:0.7rem;color:rgba(255,255,255,0.4);}
+.prog-bar{width:80px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;}
+.prog-fill{height:100%;background:var(--mauve);transition:width 0.4s;}
+.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:24px 28px;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-step{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.hero h2{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.hero p{font-size:0.83rem;color:rgba(255,255,255,0.55);}
+.cols{display:grid;grid-template-columns:1fr 320px;max-width:1100px;margin:0 auto;min-height:calc(100vh - 130px);}
+@media(max-width:850px){.cols{grid-template-columns:1fr;}}
+.col-content{padding:22px 24px 100px;border-right:1px solid rgba(0,0,0,0.07);}
+.col-notes{padding:18px 18px 100px;background:rgba(121,69,119,0.03);}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:12px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.06);}
+.card h3{font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;margin-bottom:7px;}
+.card p{font-size:0.83rem;color:var(--mid);line-height:1.65;}
+.card.c-mauve{border-left-color:var(--mauve);}
+.card.c-dark{border-left-color:var(--black);}
+.card.c-red{border-left-color:#9b3535;}
+.insight{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:12px;color:#fff;}
+.insight-tag{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:6px;}
+.insight h4{font-size:0.9rem;font-weight:700;margin-bottom:5px;}
+.insight p{font-size:0.82rem;color:rgba(255,255,255,0.68);line-height:1.6;}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:12px;overflow:hidden;margin-bottom:12px;}
+.sc{padding:18px 14px;}
+.sc.s{background:linear-gradient(135deg,#1a4731,#2d6b4a);}
+.sc.w{background:linear-gradient(135deg,#4a1a1a,#7a2e2e);}
+.sc.o{background:linear-gradient(135deg,var(--dk),var(--plum));}
+.sc.t{background:linear-gradient(135deg,#1a2a4a,#2e4a7a);}
+.sc .sl{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:5px;}
+.sc h4{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;}
+.sc p{font-size:0.78rem;color:rgba(255,255,255,0.8);line-height:1.45;}
+.steps{list-style:none;margin-bottom:12px;}
+.step{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.step:last-child{border:none;}
+.step-n{width:26px;height:26px;border-radius:50%;background:var(--plum);color:#fff;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step h4{font-size:0.86rem;font-weight:700;margin-bottom:3px;}
+.step p{font-size:0.8rem;color:var(--mid);line-height:1.55;}
+.eg-box{background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;}
+.eg-label{font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:7px;}
+.eg-box h4{font-size:0.87rem;font-weight:700;margin-bottom:5px;}
+.eg-box p{font-size:0.82rem;color:var(--mid);line-height:1.55;}
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+@media(max-width:600px){.eg-grid{grid-template-columns:1fr;}}
+.eg-item{background:#fff;border-radius:9px;padding:11px;}
+.eg-type{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;}
+.eg-s .eg-type{color:#2d6b4a;} .eg-w .eg-type{color:#7a2e2e;} .eg-o .eg-type{color:var(--plum);} .eg-t .eg-type{color:#2e4a7a;}
+.eg-item ul{list-style:none;}
+.eg-item ul li{font-size:0.76rem;color:var(--mid);padding:2px 0;display:flex;gap:5px;line-height:1.35;}
+.eg-s ul li::before{content:'•';color:#2d6b4a;font-weight:700;flex-shrink:0;}
+.eg-w ul li::before{content:'•';color:#7a2e2e;font-weight:700;flex-shrink:0;}
+.eg-o ul li::before{content:'•';color:var(--plum);font-weight:700;flex-shrink:0;}
+.eg-t ul li::before{content:'•';color:#2e4a7a;font-weight:700;flex-shrink:0;}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;}
+@media(max-width:500px){.tpl-grid{grid-template-columns:1fr;}}
+.tpl-cell{border-radius:10px;padding:12px;}
+.tpl-s{background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);}
+.tpl-w{background:rgba(122,46,46,0.05);border:1.5px solid rgba(122,46,46,0.2);}
+.tpl-o{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.2);}
+.tpl-t{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.2);}
+.tpl-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.tpl-letter{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;}
+.tpl-s .tpl-letter{color:#2d6b4a;} .tpl-w .tpl-letter{color:#7a2e2e;} .tpl-o .tpl-letter{color:var(--plum);} .tpl-t .tpl-letter{color:#2e4a7a;}
+.tpl-hdr span{font-size:0.73rem;font-weight:600;color:var(--mid);}
+.tpl-cell textarea{width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.78rem;color:var(--black);resize:vertical;min-height:85px;outline:none;line-height:1.45;}
+.qz-q{background:#fff;border-radius:11px;padding:14px;margin-bottom:9px;box-shadow:0 1px 5px rgba(0,0,0,0.05);}
+.qz-q p{font-size:0.85rem;font-weight:600;margin-bottom:9px;}
+.qz-opts{display:flex;flex-direction:column;gap:6px;}
+.qz-opt{background:var(--cream);border:1.5px solid rgba(0,0,0,0.08);border-radius:7px;padding:8px 12px;font-size:0.8rem;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;color:var(--mid);transition:all 0.15s;}
+.qz-opt:hover{border-color:var(--mauve);color:var(--plum);}
+.qz-opt.correct{background:rgba(45,107,74,0.08);border-color:#2d6b4a;color:#2d6b4a;font-weight:600;}
+.qz-opt.wrong{background:rgba(122,46,46,0.08);border-color:#7a2e2e;color:#7a2e2e;}
+.qz-fb{font-size:0.76rem;margin-top:6px;padding:7px 10px;border-radius:7px;display:none;}
+.qz-fb.show{display:block;}
+.qz-fb.ok{background:rgba(45,107,74,0.08);color:#2d6b4a;}
+.qz-fb.bad{background:rgba(122,46,46,0.08);color:#7a2e2e;}
+.qz-score{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:11px;padding:16px;text-align:center;color:#fff;display:none;margin-top:10px;}
+.qz-score h4{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:4px;}
+.qz-score p{font-size:0.8rem;color:rgba(255,255,255,0.7);}
+.nc-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(121,69,119,0.15);}
+.nc-hdr h3{font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;color:var(--plum);}
+.nc-hdr span{font-size:0.7rem;color:var(--light);}
+.nb{margin-bottom:11px;}
+.nb-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:4px;}
+.nb-hint{font-size:0.72rem;color:var(--light);margin-bottom:4px;font-style:italic;line-height:1.35;}
+.nb textarea{width:100%;border:1.5px solid rgba(121,69,119,0.14);border-radius:7px;padding:8px;font-family:'Inter',sans-serif;font-size:0.77rem;color:var(--black);resize:vertical;min-height:66px;outline:none;background:#fff;line-height:1.45;}
+.nb textarea:focus{border-color:var(--plum);}
+.nb textarea::placeholder{color:#bbb;font-size:0.73rem;}
+.save-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px;font-family:'Montserrat',sans-serif;font-size:0.77rem;font-weight:700;cursor:pointer;margin-top:3px;}
+.save-btn:hover{background:var(--dk);}
+.saved-msg{font-size:0.68rem;color:var(--plum);font-weight:600;text-align:center;margin-top:5px;min-height:16px;}
+.cum-panel{background:#fff;border-radius:10px;padding:12px;margin-top:14px;border-top:3px solid var(--plum);}
+.cum-hdr{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;}
+.cum-empty{font-size:0.74rem;color:var(--light);font-style:italic;text-align:center;padding:10px 0;}
+.cum-entry{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,0.05);}
+.cum-entry:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+.cum-entry-lbl{font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mauve);margin-bottom:2px;}
+.cum-entry-txt{font-size:0.75rem;color:var(--mid);line-height:1.5;white-space:pre-wrap;}
+.cum-btns{display:flex;gap:7px;margin-top:10px;}
+.cum-print{flex:1;background:var(--plum);color:#fff;border:none;border-radius:7px;padding:7px;font-size:0.72rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;}
+.cum-copy{flex:1;background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:7px;padding:7px;font-size:0.72rem;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;}
+.botnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid rgba(0,0,0,0.07);padding:10px 22px;display:flex;align-items:center;justify-content:space-between;z-index:998;box-shadow:0 -3px 16px rgba(0,0,0,0.06);}
+.bot-btn{background:var(--plum);color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:'Montserrat',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;}
+.bot-btn:hover{background:var(--dk);}
+.bot-btn.sec{background:transparent;color:var(--mid);border:1.5px solid rgba(0,0,0,0.12);}
+.bot-btn.sec:hover{border-color:var(--mauve);color:var(--plum);}
+.bot-btn:disabled{opacity:0.3;cursor:default;}
+.dots{display:flex;gap:5px;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.12);cursor:pointer;transition:all 0.2s;}
+.dot.on{background:var(--plum);width:16px;border-radius:4px;}
+.badge{display:inline-block;background:rgba(121,69,119,0.1);border:1px solid rgba(121,69,119,0.25);color:var(--plum);font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:16px;margin-bottom:16px;}
+.price-box{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:16px 24px;display:inline-block;margin-bottom:24px;}
+.price-box .pl{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2px;}
+.price-box .pp{font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;}
+.price-box .ps{font-size:0.72rem;color:rgba(255,255,255,0.5);}
+.start-btn{background:var(--plum);color:#fff;border:none;border-radius:9px;padding:13px 34px;font-family:'Montserrat',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer;}
+.start-btn:hover{background:var(--dk);}
+.check-btn{width:100%;background:var(--plum);color:#fff;border:none;border-radius:9px;padding:10px;font-family:'Montserrat',sans-serif;font-size:0.83rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.strat-back{background:none;border:none;color:var(--mauve);font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;padding:0;display:block;}
+.s-print{background:var(--plum);color:#fff;border:none;border-radius:8px;padding:10px 20px;font-family:'Montserrat',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer;margin-right:8px;}
+.s-copy{background:var(--warm);color:var(--mid);border:1px solid rgba(0,0,0,0.1);border-radius:8px;padding:10px 20px;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;}
+.strat-card{background:#fff;border-radius:12px;padding:16px;margin-bottom:10px;border-left:4px solid var(--plum);box-shadow:0 1px 6px rgba(0,0,0,0.05);}
+.strat-card .sl{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.strat-card .sc2{font-size:0.78rem;font-weight:600;color:var(--black);margin-bottom:5px;}
+.strat-card .sn{font-size:0.81rem;color:var(--mid);line-height:1.55;white-space:pre-wrap;background:var(--cream);border-radius:7px;padding:8px 10px;}
+.comp-badge{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 14px;}
+.comp-keys{background:linear-gradient(135deg,var(--plum),var(--dk));border-radius:12px;padding:18px;color:#fff;text-align:left;margin-bottom:20px;}
+.comp-keys .ck-title{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.comp-keys p{font-size:0.83rem;color:rgba(255,255,255,0.85);line-height:1.85;}
+.next-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;text-align:left;}
+@media(max-width:480px){.next-grid{grid-template-columns:1fr;}}
+.next-card{background:#fff;border-radius:10px;padding:13px;border:1.5px solid rgba(0,0,0,0.06);}
+.next-card .nc-num{font-size:0.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);margin-bottom:3px;}
+.next-card h4{font-size:0.83rem;font-weight:700;margin-bottom:2px;}
+.next-card p{font-size:0.7rem;color:var(--light);}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--black);color:#fff;padding:8px 18px;border-radius:16px;font-size:0.78rem;font-weight:500;opacity:0;transition:all 0.3s;z-index:9999;pointer-events:none;white-space:nowrap;}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.inno-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+@media(max-width:600px){.inno-grid{grid-template-columns:1fr;}}
+.inno-cell{border-radius:10px;padding:14px;text-align:center;}
+.inno-cell .ic-icon{font-size:1.6rem;margin-bottom:8px;}
+.inno-cell h4{font-size:0.82rem;font-weight:700;margin-bottom:5px;}
+.inno-cell p{font-size:0.76rem;color:var(--mid);line-height:1.45;}
+.inno-c1{background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);}
+.inno-c1 h4{color:#2d6b4a;}
+.inno-c2{background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.18);}
+.inno-c2 h4{color:var(--plum);}
+.inno-c3{background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.18);}
+.inno-c3 h4{color:#2e4a7a;}
+.whatif{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:12px;padding:18px;margin-bottom:14px;color:#fff;}
+.whatif .wi-label{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:10px;}
+.whatif-item{background:rgba(255,255,255,0.06);border-radius:8px;padding:11px 14px;margin-bottom:7px;}
+.whatif-item:last-child{margin-bottom:0;}
+.whatif-item .wi-q{font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:4px;}
+.whatif-item .wi-a{font-size:0.76rem;color:rgba(255,255,255,0.6);line-height:1.5;}
+.pendulum{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;margin-bottom:14px;align-items:center;}
+.pend-left{background:rgba(121,69,119,0.06);border:1.5px solid rgba(121,69,119,0.2);border-radius:10px 0 0 10px;padding:14px;}
+.pend-mid{background:linear-gradient(180deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;height:100%;min-height:80px;}
+.pend-mid span{font-family:Montserrat,sans-serif;font-size:1.2rem;font-weight:900;color:#fff;writing-mode:vertical-rl;}
+.pend-right{background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:0 10px 10px 0;padding:14px;}
+.pend-left h4,.pend-right h4{font-size:0.8rem;font-weight:700;margin-bottom:6px;}
+.pend-left h4{color:var(--plum);}
+.pend-right h4{color:#2d6b4a;}
+.pend-left p,.pend-right p{font-size:0.76rem;color:var(--mid);line-height:1.5;}
+.topbar-nav{display:flex;gap:16px;align-items:center;}
+@media(max-width:640px){.topbar-nav{display:none;}}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+<div class="topbar">
+  <div class="topbar-logo"><a href="index.html" style="text-decoration:none;color:inherit;">Small Business <span>Therapy</span></a></div>
+  <div class="topbar-nav">
+    <a href="index.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Free App</a>
+    <a href="learning-centre.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Learning Centre</a>
+    <a href="small-business-therapy-landing.html" style="font-size:0.72rem;color:rgba(255,255,255,0.45);text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">About</a>
+  </div>
+  <div class="topbar-right">
+    <button class="strategy-btn" id="stratbtn">My Strategy</button>
+    <div class="prog-wrap">
+      <span class="prog-label" id="plabel">1/8</span>
+      <div class="prog-bar"><div class="prog-fill" id="pfill" style="width:12%"></div></div>
+    </div>
+  </div>
+</div>
+<div id="p1" style="display:block;">
+  <div style="max-width:580px;margin:0 auto;padding:44px 22px 100px;text-align:center;">
+    <div class="badge">Module 17 - Innovation Strategy</div>
+    <h1 style="font-family:Montserrat,sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:900;margin-bottom:12px;">Innovation and <span style="color:var(--plum);">Business Growth</span></h1>
+    <p style="font-size:0.92rem;color:var(--mid);line-height:1.7;margin-bottom:24px;">Innovation is not about inventing something new from scratch. Most profitable business innovation comes from repositioning what you already have, finding new segments for existing services, changing how you deliver or price your offer, and building a culture that generates ideas consistently. This module gives you the frameworks and tools to make it happen.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <span style="font-size:0.78rem;color:var(--mid);">25-30 min</span>
+      <span style="font-size:0.78rem;color:var(--mid);">6 lessons</span>
+      <span style="font-size:0.78rem;color:var(--mid);">Brainstorm templates</span>
+      <span style="font-size:0.78rem;color:var(--mid);">Print your strategy</span>
+    </div>
+    <div class="price-box"><div class="pl">Lifetime Access</div><div class="pp">$19.99</div><div class="ps">one-off - no subscription</div></div>
+    <br><br><button class="start-btn" id="startbtn">Start Module</button>
+  </div>
+</div><div id="p2" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 1 of 6</div><h2>What Innovation Actually Means for Small Business</h2><p>Why you do not need to invent anything -- and where the best innovations actually come from.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Innovation Myth</h3><p>Most business owners think innovation means inventing a completely new product, building an app or disrupting an industry. This idea stops them from innovating at all. In reality, the vast majority of profitable innovation in small businesses comes from three much simpler sources: repositioning something you already offer, serving an existing product to a customer group you have never targeted, or changing the way your service is packaged, delivered or priced. None of these require invention. All of them can create significant competitive advantage.</p></div><div class="inno-grid"><div class="inno-cell inno-c1"><div class="ic-icon">&#x1F504;</div><h4>Reposition</h4><p>Take what you already have and present it differently to the market. Different angle, different benefit emphasis, different audience.</p></div><div class="inno-cell inno-c2"><div class="ic-icon">&#x1F3AF;</div><h4>Retarget</h4><p>Identify a new segment that needs your existing service but is currently underserved by you and your competitors.</p></div><div class="inno-cell inno-c3"><div class="ic-icon">&#x1F4E6;</div><h4>Repackage</h4><p>Change how your service is bundled, priced, delivered or accessed -- without changing what it fundamentally does.</p></div></div><div class="card c-mauve"><h3>The Two Best Sources of Innovation for Small Businesses</h3><p>Your customers and your competitors are doing most of your innovation research for you -- if you pay attention. Customers tell you what problems they cannot solve. Competitors show you what the market will pay for and where the gaps are. Systematic observation of both is more valuable than any formal R&D process.</p></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Create a customer ideas system</h4><p>The simplest innovation system: a shared document or notes folder where anyone in the business can record things customers ask for, complain about or wish existed. Review it monthly. The best new services most businesses launch came from a customer asking for something that was not yet offered.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Monitor competitors for signals</h4><p>When a competitor launches something new, prices differently or enters a new market -- that is a signal worth investigating. Not to copy, but to understand what the market is telling them. Their product launches are market research you did not have to pay for.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Dedicate structured time to innovation</h4><p>Ideas do not reliably appear in the middle of a busy week. A 60-minute monthly session specifically for "what could we do differently?" -- with no other agenda -- produces more actionable innovation than a year of waiting for inspiration.</p></div></li></ul><div class="insight"><div class="insight-tag">The Volvo Insight</div><h4>Innovation often comes from finding an underserved position, not inventing a new product</h4><p>Volvo did not invent a new type of car. They identified that a segment of car buyers prioritised safety above performance and price -- and nobody was speaking directly to them. The innovation was in the positioning and the engineering emphasis, not the product category. What underserved position exists in your market that nobody is clearly owning?</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">What my customers keep asking for that I do not offer</div><div class="nb-hint">List every recurring customer request you have not acted on</div><textarea id="n2a" placeholder="e.g. At least 4 clients have asked if I can manage their social media. I keep saying no. But that is a consistent demand signal I have been ignoring.
+Clients also regularly ask me to explain Google analytics to them -- maybe a training session product?
+Two clients asked about LinkedIn last month. That is a new channel I have not offered."></textarea></div><div class="nb"><div class="nb-label">What competitors are doing that signals a market opportunity</div><div class="nb-hint">What have you noticed competitors doing that suggests the market wants something?</div><textarea id="n2b" placeholder="e.g. Competitor A just launched a "trades-only SEO package" -- that validates my own trades specialisation idea completely.
+Competitor B is charging $3,500/month for a "full digital" package. That signals the market will pay significantly more than I am currently charging for a bundled offer."></textarea></div><div class="nb"><div class="nb-label">My underserved market position</div><div class="nb-hint">What position in your market is nobody clearly owning that you could credibly claim?</div><textarea id="n2c" placeholder="e.g. No agency in Brisbane is positioning as the specialist for trade businesses AND offering training on how digital marketing works. Most agencies keep clients dependent. I could position as "the agency that teaches you what we are doing and why" -- radical transparency as a differentiator."></textarea></div>
+      <button class="save-btn" id="save2">Save These Notes</button>
+      <div class="saved-msg" id="sm2"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd2"><div class="cum-empty">Your notes will appear here</div></div></div>
+    </div>
+  </div>
+</div><div id="p3" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 2 of 6</div><h2>The Innovation Pendulum -- Finding New Segments for What You Already Have</h2><p>How to grow revenue by matching existing services to customer groups you have never targeted.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>The Innovation Pendulum Framework</h3><p>The Innovation Pendulum is a structured way of generating growth by asking two sequential questions: Who else could benefit from what we already do? And what would we need to adjust to serve them? The first question identifies new potential segments. The second question identifies the minimum modification needed to serve them. Together they produce innovation that is lower risk than launching entirely new products -- because the core service already works.</p></div><div class="pendulum"><div class="pend-left"><h4>Step 1: New Segment</h4><p>Who else could benefit from your existing service that you are not currently targeting?</p><ul style="list-style:disc;margin-left:16px;margin-top:8px;font-size:0.76rem;color:var(--mid);line-height:1.5;"><li>Different industry vertical</li><li>Different business size</li><li>Different geographic area</li><li>Different buyer motivation</li><li>Different use case for the service</li></ul></div><div class="pend-mid"><span>ADAPT</span></div><div class="pend-right"><h4>Step 2: Minimum Modification</h4><p>What is the smallest change needed to serve that segment properly?</p><ul style="list-style:disc;margin-left:16px;margin-top:8px;font-size:0.76rem;color:var(--mid);line-height:1.5;"><li>Different case studies or proof</li><li>Different language and messaging</li><li>Different pricing structure</li><li>Minor feature addition</li><li>Different delivery format</li></ul></div></div><div class="eg-box" style="background:rgba(121,69,119,0.05);border:1px solid rgba(121,69,119,0.15);border-radius:12px;padding:16px;margin-bottom:12px;"><div style="font-size:0.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--plum);margin-bottom:8px;">Brisbane Example -- SEO Agency Using the Pendulum</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div><div style="font-size:0.7rem;font-weight:700;color:var(--plum);margin-bottom:4px;">Current Service</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;">SEO for trade businesses (plumbers, electricians, builders) in Brisbane. 14 clients. Proven results.</p></div><div><div style="font-size:0.7rem;font-weight:700;color:#2d6b4a;margin-bottom:4px;">Pendulum Innovation</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;"><strong>New segment:</strong> Gold Coast trade businesses -- same buyer, different geography, underserved.<br><strong>Minimum modification:</strong> Gold Coast-specific case studies, local keyword research, GC Google Ads targeting. Core service unchanged.</p></div><div><div style="font-size:0.7rem;font-weight:700;color:var(--plum);margin-bottom:4px;">Second Pendulum Swing</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;">New segment: healthcare providers (physios, dentists, GPs) who share many of the same local search needs as tradies.<br><strong>Modification:</strong> Healthcare-specific case studies, different compliance considerations, new messaging.</p></div><div><div style="font-size:0.7rem;font-weight:700;color:#2d6b4a;margin-bottom:4px;">Revenue Impact</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;">Two pendulum swings, same core service. Potential to add 8-12 new clients without changing the fundamental product. Estimated additional revenue: $160,000-$240,000 per year.</p></div></div></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My pendulum swing 1 -- new segment for existing service</div><div class="nb-hint">Who else could benefit from exactly what you already do?</div><textarea id="n3a" placeholder="e.g. My SEO service currently serves Brisbane trade businesses.
+Pendulum swing 1: Gold Coast trade businesses -- same service, new geography. I have 0 clients there and competitors are not specialists.
+Minimum modification: Gold Coast case studies (could use Brisbane ones initially), GC-specific Google Ads campaign for my own business to generate leads there."></textarea></div><div class="nb"><div class="nb-label">My pendulum swing 2 -- second new segment</div><div class="nb-hint">What is a second new segment with different characteristics?</div><textarea id="n3b" placeholder="e.g. Pendulum swing 2: Professional services (physios, accountants, financial planners) -- they need local SEO just as much as tradies and are often neglected by specialist agencies.
+Modification needed: different case studies, slightly different keyword strategy, compliance awareness (health claims etc). Core service the same."></textarea></div><div class="nb"><div class="nb-label">My minimum viable modification for each swing</div><div class="nb-hint">What is the smallest change needed to serve each new segment?</div><textarea id="n3c" placeholder="e.g. For Gold Coast: run my own Google Ads targeting GC postcodes for 90 days. If I get enquiries, the market exists.
+For professional services: write 2 case studies for any professional service clients I already have. Update my website with a "Professional Services" section. Cost: 4 hours of my time."></textarea></div>
+      <button class="save-btn" id="save3">Save These Notes</button>
+      <div class="saved-msg" id="sm3"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd3"><div class="cum-empty">Your notes will appear here</div></div></div>
+    </div>
+  </div>
+</div><div id="p4" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 3 of 6</div><h2>Marketing Mix Innovation -- Growing Without a New Product</h2><p>How changing price, packaging, delivery or positioning can create entirely new revenue streams.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Innovation Does Not Always Mean New Products</h3><p>Some of the most profitable innovations in business history changed not what the product was but how it was sold, packaged or delivered. Subscription models, premium tiers, vending machines in new locations, direct-to-consumer channels, white-label licensing -- all of these are marketing mix innovations. The product stayed the same. The business model changed. For small businesses, marketing mix innovation is often faster, cheaper and lower-risk than product innovation.</p></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;"><div style="background:rgba(45,107,74,0.06);border:1.5px solid rgba(45,107,74,0.2);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#2d6b4a;margin-bottom:6px;">Distribution Innovation</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;margin-bottom:8px;">Change how clients access your service. Online delivery, partnerships, resellers, platforms, subscriptions, marketplaces.</p><p style="font-size:0.76rem;color:#2d6b4a;font-style:italic;">Example: A business coach who only does face-to-face sessions launches a self-paced online programme. Same content, new delivery channel, 10x the scale.</p></div><div style="background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--plum);margin-bottom:6px;">Packaging Innovation</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;margin-bottom:8px;">Bundle services, create tiers, add features without changing the core. Changes how the product is perceived and what segment it appeals to.</p><p style="font-size:0.76rem;color:var(--plum);font-style:italic;">Example: An SEO agency creates a "Trades Growth Pack" -- SEO + Google Ads + reporting + strategy call bundled as one product. Feels like a new product, largely isn't.</p></div><div style="background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#2e4a7a;margin-bottom:6px;">Pricing Innovation</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;margin-bottom:8px;">Change the pricing model rather than the price. Annual prepayment, performance-based fees, outcome pricing, tiered access, freemium models.</p><p style="font-size:0.76rem;color:#2e4a7a;font-style:italic;">Example: A marketing agency moves from monthly retainer to outcome-based pricing -- charging a percentage of new revenue generated. Completely different risk profile and client relationship.</p></div><div style="background:rgba(90,47,89,0.05);border:1.5px solid rgba(90,47,89,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--dk);margin-bottom:6px;">Positioning Innovation</div><p style="font-size:0.78rem;color:var(--mid);line-height:1.5;margin-bottom:8px;">Change the story around your product. Different benefit emphasis, different brand personality, different market position -- without changing the product itself.</p><p style="font-size:0.76rem;color:var(--dk);font-style:italic;">Example: A general accountant repositions as "the accountant for tradies" -- same service, completely different marketing, command premium pricing and referral network.</p></div></div><div class="insight"><div class="insight-tag">The White-Label Opportunity</div><h4>Your existing product can generate revenue while you sleep</h4><p>White-labelling your product -- licensing it to other businesses to use under their own brand -- is a distribution innovation that creates recurring revenue with minimal extra work. Your Small Business Therapy Learning Centre modules, for example, are a white-label opportunity: other business coaches could use them with their own clients under licence. One product, multiple revenue streams.</p></div></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My distribution innovation opportunity</div><div class="nb-hint">How could you deliver your existing service through a new channel?</div><textarea id="n4a" placeholder="e.g. I currently only do face-to-face client work. Innovation options:
+1. Online-only package at lower price point for clients outside Brisbane
+2. Group training workshop -- teach 10 businesses the basics at once for $500 each = $5,000 for a day
+3. White-label my SEO process to smaller agencies in non-competing markets who want to offer SEO without the expertise"></textarea></div><div class="nb"><div class="nb-label">My packaging innovation opportunity</div><div class="nb-hint">What bundle, tier or combination could you create?</div><textarea id="n4b" placeholder="e.g. "Trade Business Growth Pack" -- SEO + Google Ads + monthly strategy call + quarterly business review bundled at $3,600/month. Currently selling these separately for $2,200 + $800 = $3,000. Bundle at $3,600 feels like a premium product, earns more, creates stickier client relationship."></textarea></div><div class="nb"><div class="nb-label">My pricing model innovation</div><div class="nb-hint">Could you charge differently for the same service?</div><textarea id="n4c" placeholder="e.g. Exploring a performance component -- base retainer of $1,800/month plus $150 per qualified lead generated above a baseline. Aligns my incentive with the client's growth. Clients would love it. I need to model what it means for my revenue before pitching it."></textarea></div>
+      <button class="save-btn" id="save4">Save These Notes</button>
+      <div class="saved-msg" id="sm4"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd4"><div class="cum-empty">Your notes will appear here</div></div></div>
+    </div>
+  </div>
+</div><div id="p5" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 4 of 6</div><h2>The What If Framework -- Structured Brainstorming That Actually Works</h2><p>How to run innovation sessions that produce real ideas, not just conversation.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card "><h3>Why Most Brainstorming Fails</h3><p>Most brainstorming sessions produce a long list of vague ideas and no action. They fail for two reasons: the question is too open ("what should we do next?") and there is no process for converting ideas to decisions. The What If framework solves both problems by starting with a specific constraint or scenario and running it through a structured sequence. Constraints do not limit creativity -- they direct it.</p></div><div class="whatif"><div class="wi-label">The What If Framework -- Five Powerful Scenarios</div><div class="whatif-item"><div class="wi-q">What if our price doubled?</div><div class="wi-a">What would clients expect at twice the price? What would we need to add? Which clients would stay and which would leave? Who are the clients we would attract at the higher price that we cannot currently reach?</div></div><div class="whatif-item"><div class="wi-q">What if we served only one type of client?</div><div class="wi-a">If we exclusively served one industry or client type, what would we do differently? What expertise would we build? What would our marketing say? What premium could we charge for genuine specialisation?</div></div><div class="whatif-item"><div class="wi-q">What if a large competitor moved into our market?</div><div class="wi-a">What would we do that they cannot? What is our defensible advantage? What would we need to build now to be resilient? What niche would we own so firmly that scale cannot displace us?</div></div><div class="whatif-item"><div class="wi-q">What if we removed our biggest constraint?</div><div class="wi-a">If time, money or staff were not limiting factors -- what would we do? This question often reveals the most important thing to work toward, even if it cannot happen immediately.</div></div><div class="whatif-item"><div class="wi-q">What if we had to grow 50% in 12 months?</div><div class="wi-a">What specifically would we do? What would we stop doing? What would need to change about how we operate? Forced growth scenarios surface the highest-leverage ideas and the biggest internal bottlenecks simultaneously.</div></div></div><ul class="steps"><li class="step"><div class="step-n">1</div><div><h4>Run What If sessions monthly -- 60 minutes, one question per session</h4><p>Do not try to answer all five questions in one session. Pick one scenario. Spend the first 20 minutes generating ideas without filtering. The next 20 minutes prioritising. The final 20 minutes identifying the single most actionable idea and assigning it a deadline and an owner.</p></div></li><li class="step"><div class="step-n">2</div><div><h4>Invite different people to different sessions</h4><p>Your team sees different things. Your accountant sees different things. A trusted client sees different things. Rotating who participates in What If sessions produces a wider range of ideas and surfaces blind spots that a homogeneous group would miss.</p></div></li><li class="step"><div class="step-n">3</div><div><h4>Convert the best idea to a 30-day test</h4><p>The best idea from each session gets a 30-day trial, not a 12-month project. Small, fast tests with clear success criteria. What would we need to see in 30 days to know this idea has merit? If yes, invest more. If no, move on.</p></div></li></ul></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My answers to What If our price doubled</div><div class="nb-hint">Work through this scenario honestly</div><textarea id="n5a" placeholder="e.g. At double price ($4,400/month) clients would expect:
+- Dedicated account manager (currently me doing everything)
+- Weekly calls not monthly
+- Broader service (SEO + Google Ads + social)
+- Written guarantee or performance commitment
+- Senior expertise not junior execution
+This tells me exactly what I need to build to justify a significant price increase. It is a product roadmap."></textarea></div><div class="nb"><div class="nb-label">My answers to What If we served only one type of client</div><div class="nb-hint">What would full specialisation look like?</div><textarea id="n5b" placeholder="e.g. Trade businesses only -- no exceptions. Website says "we only work with tradies." Case studies are all tradies. I attend trade industry events. I join Master Builders and HIA as an associate member. I become genuinely known in that community.
+Premium I could charge: probably $500-800/month more than generalist agencies because of specialisation credibility."></textarea></div><div class="nb"><div class="nb-label">My 30-day innovation test</div><div class="nb-hint">What is the single most actionable idea from your What If sessions? How will you test it in 30 days?</div><textarea id="n5c" placeholder="e.g. Test: pitch the "Trade Business Growth Pack" bundle to my next 3 new enquiries at $3,600/month instead of quoting individual services. Success criterion: at least 1 of 3 accepts the bundle pricing without significant pushback. If yes: roll out to all new client quotes. If no: understand why and adjust the bundle composition."></textarea></div>
+      <button class="save-btn" id="save5">Save These Notes</button>
+      <div class="saved-msg" id="sm5"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd5"><div class="cum-empty">Your notes will appear here</div></div></div>
+    </div>
+  </div>
+</div><div id="p6" style="display:none;">
+  <div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 5 of 6 -- Your Innovation Strategy</div><h2>Build Your Innovation System</h2><p>Your structured plan for generating, testing and implementing ideas consistently.</p></div></div>
+  <div class="cols">
+    <div class="col-content"><div class="card" style="margin-bottom:12px;"><h3>My Innovation Strategy</h3><p style="font-size:0.82rem;color:var(--mid);margin-bottom:10px;">Complete each section. This becomes your ongoing innovation operating system.</p></div><div style="display:flex;flex-direction:column;gap:9px;margin-bottom:12px;"><div style="background:rgba(45,107,74,0.05);border:1.5px solid rgba(45,107,74,0.2);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2d6b4a;margin-bottom:6px;">My Repositioning Opportunity</div><textarea id="tpl-repos" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:70px;outline:none;" placeholder="How could I reposition my existing service to reach a new segment or command a higher price? What is the underserved position I could own?"></textarea></div><div style="background:rgba(121,69,119,0.05);border:1.5px solid rgba(121,69,119,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--plum);margin-bottom:6px;">My Marketing Mix Innovation</div><textarea id="tpl-mix" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:80px;outline:none;" placeholder="Distribution: how could I deliver through a new channel?&#10;Packaging: what bundle or tier could I create?&#10;Pricing: what pricing model innovation could I test?&#10;Positioning: what story change could I make?"></textarea></div><div style="background:rgba(46,74,122,0.05);border:1.5px solid rgba(46,74,122,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2e4a7a;margin-bottom:6px;">My Monthly Innovation Session Schedule</div><textarea id="tpl-sessions" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:65px;outline:none;" placeholder="When: [day and time] each month&#10;Duration: 60 minutes&#10;Who attends: [names]&#10;This month's What If question: [choose one from the framework]&#10;Output target: one 30-day test per session"></textarea></div><div style="background:rgba(90,47,89,0.05);border:1.5px solid rgba(90,47,89,0.18);border-radius:10px;padding:13px;"><div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--dk);margin-bottom:6px;">My Customer Ideas Capture System</div><textarea id="tpl-ideas" style="width:100%;border:none;background:rgba(255,255,255,0.8);border-radius:7px;padding:8px;font-family:Inter,sans-serif;font-size:0.78rem;resize:vertical;min-height:60px;outline:none;" placeholder="How will I capture customer innovation signals? Where will ideas be recorded? Who reviews them and how often?"></textarea></div></div><button class="save-btn" id="save6" style="width:100%;">Save My Innovation Strategy</button></div>
+    <div class="col-notes">
+      <div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div>
+      <div class="nb"><div class="nb-label">My single most valuable innovation opportunity right now</div><div class="nb-hint">Of everything covered in this module, which one opportunity would have the biggest impact if you acted on it?</div><textarea id="n6a" placeholder="e.g. The pendulum swing to Gold Coast trade businesses. I have a proven service, zero competitors who are specialists in that geography and a clear path to market (Google Ads targeting GC postcodes). I could have my first Gold Coast client within 90 days.
+Revenue potential: 6 GC clients at $2,200 = $13,200/month additional with no change to my core service."></textarea></div><div class="nb"><div class="nb-label">My innovation culture commitment</div><div class="nb-hint">What will you do to make innovation a regular part of how your business operates?</div><textarea id="n6b" placeholder="e.g. Scheduling a monthly 60-min What If session on the first Friday of every month. Rotating the question each month from the five in this module. Whoever attends -- me, Sarah, a trusted client -- commits to one 30-day test as the output. No exceptions, no carry-overs."></textarea></div><div class="nb"><div class="nb-label">My 30-day innovation test</div><div class="nb-hint">What specific idea will you test in the next 30 days and how will you measure success?</div><textarea id="n6c" placeholder="e.g. Test: pitch the Trade Growth Pack bundle ($3,600/month) to the next 3 new enquiries.
+Success criterion: 1 of 3 accepts without significant price objection.
+If yes: roll out as standard new client offer.
+If no: interview the rejecters to understand why and adjust bundle composition.
+Start date: next Monday."></textarea></div>
+      <button class="save-btn" id="save6">Save These Notes</button>
+      <div class="saved-msg" id="sm6"></div>
+      <div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd6"><div class="cum-empty">Your notes will appear here</div></div></div>
+    </div>
+  </div>
+</div><div id="p7" style="display:none;"><div class="hero"><div class="hero-inner"><div class="hero-step">Lesson 6 of 6 - Knowledge Check</div><h2>Knowledge Check</h2><p>5 questions to confirm your understanding.</p></div></div><div class="cols"><div class="col-content"><div class="qz-q" id="q1"><p>1. Most profitable innovation in small businesses comes from:</p><div class="qz-opts"><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! The vast majority of profitable small business innovation comes from repositioning, retargeting or repackaging what already exists -- not inventing something new." data-msg-w="Not quite. Most profitable small business innovation comes from repositioning existing services, finding new segments or changing packaging and delivery -- not invention.">Inventing entirely new products that have never existed before</button><button class="qz-opt" data-q="1" data-correct="true" data-msg-c="Correct! The vast majority of profitable small business innovation comes from repositioning, retargeting or repackaging what already exists -- not inventing something new." data-msg-w="Not quite. Most profitable small business innovation comes from repositioning existing services, finding new segments or changing packaging and delivery -- not invention.">Repositioning existing services, finding new segments or changing how the service is packaged or delivered</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! The vast majority of profitable small business innovation comes from repositioning, retargeting or repackaging what already exists -- not inventing something new." data-msg-w="Not quite. Most profitable small business innovation comes from repositioning existing services, finding new segments or changing packaging and delivery -- not invention.">Hiring specialist innovation consultants</button><button class="qz-opt" data-q="1" data-correct="false" data-msg-c="Correct! The vast majority of profitable small business innovation comes from repositioning, retargeting or repackaging what already exists -- not inventing something new." data-msg-w="Not quite. Most profitable small business innovation comes from repositioning existing services, finding new segments or changing packaging and delivery -- not invention.">Copying what large companies are doing</button></div><div class="qz-fb" id="fb1"></div></div><div class="qz-q" id="q2"><p>2. The Innovation Pendulum works by:</p><div class="qz-opts"><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! The pendulum asks two questions: who else could benefit from what we already do? And what is the minimum change needed to serve them? Together they produce low-risk growth innovation." data-msg-w="Not quite. The pendulum identifies a new segment first, then asks what the minimum modification to your existing service would be needed to serve them well.">Swinging between high-risk and low-risk ideas alternately</button><button class="qz-opt" data-q="2" data-correct="true" data-msg-c="Correct! The pendulum asks two questions: who else could benefit from what we already do? And what is the minimum change needed to serve them? Together they produce low-risk growth innovation." data-msg-w="Not quite. The pendulum identifies a new segment first, then asks what the minimum modification to your existing service would be needed to serve them well.">First identifying a new customer segment then asking what minimum modification is needed to serve them</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! The pendulum asks two questions: who else could benefit from what we already do? And what is the minimum change needed to serve them? Together they produce low-risk growth innovation." data-msg-w="Not quite. The pendulum identifies a new segment first, then asks what the minimum modification to your existing service would be needed to serve them well.">Alternating between product innovation and process innovation each quarter</button><button class="qz-opt" data-q="2" data-correct="false" data-msg-c="Correct! The pendulum asks two questions: who else could benefit from what we already do? And what is the minimum change needed to serve them? Together they produce low-risk growth innovation." data-msg-w="Not quite. The pendulum identifies a new segment first, then asks what the minimum modification to your existing service would be needed to serve them well.">Comparing your current products to competitor products and copying the best features</button></div><div class="qz-fb" id="fb2"></div></div><div class="qz-q" id="q3"><p>3. A marketing mix innovation changes:</p><div class="qz-opts"><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Marketing mix innovations -- new delivery channels, pricing models, bundles, repositioning -- can create significant new revenue without changing the core product." data-msg-w="Not quite. Marketing mix innovation changes how the product is delivered, priced, packaged or positioned -- the product itself may stay the same.">The fundamental technology or intellectual property behind the product</button><button class="qz-opt" data-q="3" data-correct="true" data-msg-c="Correct! Marketing mix innovations -- new delivery channels, pricing models, bundles, repositioning -- can create significant new revenue without changing the core product." data-msg-w="Not quite. Marketing mix innovation changes how the product is delivered, priced, packaged or positioned -- the product itself may stay the same.">How the product is delivered, priced, packaged or positioned -- without necessarily changing what the product does</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Marketing mix innovations -- new delivery channels, pricing models, bundles, repositioning -- can create significant new revenue without changing the core product." data-msg-w="Not quite. Marketing mix innovation changes how the product is delivered, priced, packaged or positioned -- the product itself may stay the same.">The target revenue and profit goals of the business</button><button class="qz-opt" data-q="3" data-correct="false" data-msg-c="Correct! Marketing mix innovations -- new delivery channels, pricing models, bundles, repositioning -- can create significant new revenue without changing the core product." data-msg-w="Not quite. Marketing mix innovation changes how the product is delivered, priced, packaged or positioned -- the product itself may stay the same.">The internal processes used to produce the service</button></div><div class="qz-fb" id="fb3"></div></div><div class="qz-q" id="q4"><p>4. The What If framework works because:</p><div class="qz-opts"><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Constraints direct creativity. A specific What If scenario -- "what if our price doubled?" -- produces far more actionable ideas than "what should we do next?"" data-msg-w="Not quite. Specific constraints and scenarios direct creativity more effectively than broad open questions -- What If works because it gives the brainstorm a focused starting point.">Open-ended questions always produce the most creative answers</button><button class="qz-opt" data-q="4" data-correct="true" data-msg-c="Correct! Constraints direct creativity. A specific What If scenario -- "what if our price doubled?" -- produces far more actionable ideas than "what should we do next?"" data-msg-w="Not quite. Specific constraints and scenarios direct creativity more effectively than broad open questions -- What If works because it gives the brainstorm a focused starting point.">Specific constraints and scenarios direct creativity and produce more actionable ideas than broad open questions</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Constraints direct creativity. A specific What If scenario -- "what if our price doubled?" -- produces far more actionable ideas than "what should we do next?"" data-msg-w="Not quite. Specific constraints and scenarios direct creativity more effectively than broad open questions -- What If works because it gives the brainstorm a focused starting point.">It forces teams to work faster under pressure</button><button class="qz-opt" data-q="4" data-correct="false" data-msg-c="Correct! Constraints direct creativity. A specific What If scenario -- "what if our price doubled?" -- produces far more actionable ideas than "what should we do next?"" data-msg-w="Not quite. Specific constraints and scenarios direct creativity more effectively than broad open questions -- What If works because it gives the brainstorm a focused starting point.">It eliminates the need for research by relying on imagination alone</button></div><div class="qz-fb" id="fb4"></div></div><div class="qz-q" id="q5"><p>5. The best output from a What If innovation session is:</p><div class="qz-opts"><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! One 30-day test with a clear success criterion beats a long list of ideas every time. Small fast tests convert innovation sessions into action and learning." data-msg-w="Not quite. The best output is a single 30-day test with a clear success criterion -- action and learning beats documentation every time.">A long list of all possible ideas for future reference</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! One 30-day test with a clear success criterion beats a long list of ideas every time. Small fast tests convert innovation sessions into action and learning." data-msg-w="Not quite. The best output is a single 30-day test with a clear success criterion -- action and learning beats documentation every time.">A formal business case document for the best idea</button><button class="qz-opt" data-q="5" data-correct="true" data-msg-c="Correct! One 30-day test with a clear success criterion beats a long list of ideas every time. Small fast tests convert innovation sessions into action and learning." data-msg-w="Not quite. The best output is a single 30-day test with a clear success criterion -- action and learning beats documentation every time.">A single 30-day test with a clear success criterion and a deadline</button><button class="qz-opt" data-q="5" data-correct="false" data-msg-c="Correct! One 30-day test with a clear success criterion beats a long list of ideas every time. Small fast tests convert innovation sessions into action and learning." data-msg-w="Not quite. The best output is a single 30-day test with a clear success criterion -- action and learning beats documentation every time.">A presentation to be shared with investors</button></div><div class="qz-fb" id="fb5"></div></div><div class="qz-score" id="qscore"></div><button class="check-btn" id="checkbtn">Check My Answers</button></div><div class="col-notes"><div class="nc-hdr"><h3>My Notes</h3><span>Builds your strategy</span></div><div class="nb"><div class="nb-label">What surprised me</div><div class="nb-hint">What challenged your current thinking about innovation</div><textarea id="n7a" placeholder="e.g. I always thought innovation meant inventing something new. The idea that repositioning what I already have is a form of innovation completely changes how I think about growth..."></textarea></div>
+<div class="nb"><div class="nb-label">My biggest learning</div><div class="nb-hint">The most valuable insight from this module</div><textarea id="n7b" placeholder="e.g. The What If framework. Asking what if our price doubled forced me to think about what we would need to add to justify it -- and I realised two of those things are achievable right now..."></textarea></div>
+<div class="nb"><div class="nb-label">What I am doing from Monday</div><div class="nb-hint">One concrete innovation action you commit to this week</div><textarea id="n7c" placeholder="e.g. Running a 60-minute What If brainstorm with my team this Monday. Starting with: what if we specialised exclusively in one industry? Writing up the output and actioning the best idea within 30 days..."></textarea></div><button class="save-btn" id="save7">Save These Notes</button><div class="saved-msg" id="sm7"></div><div class="cum-panel"><div class="cum-hdr">My Running Strategy</div><div id="cd7"><div class="cum-empty">Your notes will appear here</div></div></div></div></div></div><div id="p8" style="display:none;">
+  <div style="max-width:640px;margin:0 auto;padding:36px 22px 100px;text-align:center;">
+    <div style="width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--plum),var(--dk));display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 14px;">&#x1F393;</div>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.6rem;font-weight:900;margin-bottom:9px;">Module 17 Complete!</h2>
+    <p style="font-size:0.88rem;color:var(--mid);line-height:1.65;margin-bottom:20px;">Your innovation strategy notes have built into a document you can bring to your next team brainstorm.</p>
+    <div class="comp-keys"><div class="ck-title">Key Takeaways</div><p>Innovation is repositioning, retargeting or repackaging -- not just inventing<br>The pendulum framework finds new segments for existing services systematically<br>Marketing mix innovation changes how you sell without changing what you sell<br>What If constraints produce better ideas than open-ended brainstorming<br>One 30-day test per month is more valuable than a year of planning</p></div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="s-print" id="finprint">Print My Strategy</button>
+      <button class="s-copy" id="fincopy">Copy to Clipboard</button>
+    </div>
+    <p style="font-weight:700;font-size:0.88rem;margin-bottom:12px;">Continue your learning:</p>
+    <div class="next-grid"><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 02</div><h4>Ansoff Matrix</h4><p>Connect innovation to your four growth strategies</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 14</div><h4>Market Segmentation</h4><p>Use segmentation to find your pendulum targets</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 05</div><h4>Marketing Mix (4Ps)</h4><p>Apply innovation to each of the four Ps</p></div><div class="next-card" style="border-color:var(--mauve);"><div class="nc-num">Module 09</div><h4>True Cost of Discounting</h4><p>Price innovations must protect your margin</p></div></div>
+  </div>
+</div>
+<div id="pstrat" style="display:none;">
+  <div style="max-width:860px;margin:0 auto;padding:26px 22px 100px;">
+    <button class="strat-back" id="stratback">Back to Module</button>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:5px;">My Strategy - Module 17: Innovation and Business Growth</h2>
+    <p style="font-size:0.83rem;color:var(--mid);margin-bottom:18px;">All notes from this module built lesson by lesson.</p>
+    <div style="margin-bottom:18px;"><button class="s-print" id="stratprint">Print</button><button class="s-copy" id="stratcopy">Copy</button></div>
+    <div id="stratbody"></div>
+  </div>
+</div>
+<div class="botnav" id="botnav">
+  <button class="bot-btn sec" id="prevbtn">Back</button>
+  <div class="dots" id="dotrow"></div>
+  <button class="bot-btn" id="nextbtn">Next</button>
+</div>
+<script>
+var cur=1,total=8,prevPg=1,MOD_KEY='sbt_mod17_';
+var NOTES=[
+  {pg:2,fields:[{id:'n2a',lbl:'What my customers keep asking for'},{id:'n2b',lbl:'What competitors signal about market opportunities'},{id:'n2c',lbl:'My underserved market position'}]},
+  {pg:3,fields:[{id:'n3a',lbl:'My pendulum swing 1 new segment'},{id:'n3b',lbl:'My pendulum swing 2 second new segment'},{id:'n3c',lbl:'My minimum viable modification for each swing'}]},
+  {pg:4,fields:[{id:'n4a',lbl:'My distribution innovation opportunity'},{id:'n4b',lbl:'My packaging innovation opportunity'},{id:'n4c',lbl:'My pricing model innovation'}]},
+  {pg:5,fields:[{id:'n5a',lbl:'My answers to what if our price doubled'},{id:'n5b',lbl:'My answers to what if we served only one type of client'},{id:'n5c',lbl:'My 30 day innovation test'}]},
+  {pg:6,fields:[{id:'n6a',lbl:'My single most valuable innovation opportunity'},{id:'n6b',lbl:'My innovation culture commitment'},{id:'n6c',lbl:'My 30 day test with success criterion'}]},
+  {pg:7,fields:[{id:'n7a',lbl:'What surprised me'},{id:'n7b',lbl:'My biggest learning'},{id:'n7c',lbl:'What I am doing from Monday'}]}
+];
+function sk(id){return MOD_KEY+id;}
+function store(id,val){try{if(val.trim())localStorage.setItem(sk(id),val);else localStorage.removeItem(sk(id));}catch(e){}}
+function recall(id){try{return localStorage.getItem(sk(id))||'';}catch(e){return '';}}
+function showPg(id){var all=['p1','p2','p3','p4','p5','p6','p7','p8','p8','pstrat'];for(var i=0;i<all.length;i++){var el=document.getElementById(all[i]);if(el)el.style.display='none';}var t=document.getElementById(id);if(t)t.style.display='block';window.scrollTo(0,0);}
+function goTo(n){cur=n;showPg('p'+cur);document.getElementById('botnav').style.display='flex';updateNav();refreshAll();}
+function updateNav(){document.getElementById('prevbtn').disabled=(cur===1);document.getElementById('nextbtn').disabled=(cur===total);document.getElementById('nextbtn').textContent=(cur===total-1)?'Finish':'Next';document.getElementById('plabel').textContent=cur+'/'+total;document.getElementById('pfill').style.width=((cur/total)*100)+'%';buildDots();}
+function buildDots(){var c=document.getElementById('dotrow');c.innerHTML='';for(var i=1;i<=total;i++){var d=document.createElement('div');d.className='dot'+(i===cur?' on':'');d.setAttribute('data-n',i);c.appendChild(d);}var dots=c.querySelectorAll('.dot');for(var j=0;j<dots.length;j++){dots[j].addEventListener('click',function(){goTo(parseInt(this.getAttribute('data-n')));}); }}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function buildCumHTML(){var html='',has=false;for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim()){has=true;html+='<div class="cum-entry"><div class="cum-entry-lbl">'+f.lbl+'</div><div class="cum-entry-txt">'+esc(v)+'</div></div>';}}}if(!has)html='<div class="cum-empty">Your notes will appear here as you save them</div>';return{html:html,has:has};}
+function refreshAll(){var r=buildCumHTML();var cdivs=document.querySelectorAll('[id^="cd"]');for(var i=0;i<cdivs.length;i++)cdivs[i].innerHTML=r.html;var cb=document.getElementById('cbbtns');if(cb)cb.style.display=r.has?'flex':'none';}
+function saveNotes(pg){var def=null;for(var i=0;i<NOTES.length;i++)if(NOTES[i].pg===pg){def=NOTES[i];break;}if(!def)return;for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el)store(f.id,el.value);}refreshAll();var sm=document.getElementById('sm'+pg);if(sm){sm.textContent='Saved';setTimeout(function(){sm.textContent='';},2000);}showToast('Notes saved');}
+function loadAll(){for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],el=document.getElementById(f.id);if(el){var v=recall(f.id);if(v)el.value=v;}}}}
+function getStratText(){var t='MY STRATEGY - MODULE 17: INNOVATION AND BUSINESS GROWTH\nSmall Business Therapy | Maximum Marketing Solutions\n---\n\n';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())t+=f.lbl.toUpperCase()+':\n'+v+'\n\n';}}t+='Maximum Marketing Solutions | maximummarketingsolutions.com.au | +61 459 472 739';return t;}
+function doPrint(){var w=window.open('','_blank');var b='<html><head><title>Strategy M17</title><style>body{font-family:Arial,sans-serif;max-width:760px;margin:36px auto;font-size:13px;}h1{font-size:1.2rem;margin-bottom:4px;}.sub{color:#888;font-size:11px;margin-bottom:20px;}.c{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #eee;}.l{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#794577;margin-bottom:3px;}.n{font-size:12px;color:#4a4a4a;line-height:1.6;white-space:pre-wrap;background:#f5f5f5;padding:7px 9px;border-left:3px solid #794577;}.f{margin-top:24px;font-size:10px;color:#aaa;border-top:1px solid #eee;padding-top:8px;}</style></head><body><h1>Module 17: Innovation and Business Growth</h1><p class="sub">Small Business Therapy - Maximum Marketing Solutions</p>';for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="c"><div class="l">'+f.lbl+'</div><div class="n">'+v+'</div></div>';}}b+='<div class="f">Maximum Marketing Solutions - maximummarketingsolutions.com.au - +61 459 472 739</div></body></html>';w.document.write(b);w.document.close();w.print();}
+function doCopy(){var txt=getStratText();if(navigator.clipboard)navigator.clipboard.writeText(txt).then(function(){showToast('Copied');}).catch(function(){showToast('Use Print instead');});else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied');}catch(e){showToast('Use Print instead');}document.body.removeChild(ta);}}
+function showStrat(){prevPg=cur;showPg('pstrat');document.getElementById('botnav').style.display='none';var r=buildCumHTML(),b='';if(!r.has)b='<p style="color:#888;font-style:italic;padding:24px 0;">No notes yet.</p>';else{for(var i=0;i<NOTES.length;i++){var def=NOTES[i];for(var j=0;j<def.fields.length;j++){var f=def.fields[j],v=recall(f.id);if(v.trim())b+='<div class="strat-card"><div class="sl">Lesson '+(def.pg-1)+'</div><div class="sc2">'+f.lbl+'</div><div class="sn">'+esc(v)+'</div></div>';}}}document.getElementById('stratbody').innerHTML=b;}
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.className='toast on';setTimeout(function(){t.className='toast';},2600);}
+window.onload=function(){
+  showPg('p1');buildDots();updateNav();loadAll();refreshAll();
+  document.getElementById('startbtn').addEventListener('click',function(){goTo(2);});
+  document.getElementById('prevbtn').addEventListener('click',function(){if(cur>1)goTo(cur-1);});
+  document.getElementById('nextbtn').addEventListener('click',function(){if(cur<total)goTo(cur+1);});
+  document.getElementById('stratbtn').addEventListener('click',function(){showStrat();});
+  document.getElementById('stratback').addEventListener('click',function(){showPg('p'+prevPg);document.getElementById('botnav').style.display='flex';updateNav();});
+  document.getElementById('stratprint').addEventListener('click',function(){doPrint();});
+  document.getElementById('stratcopy').addEventListener('click',function(){doCopy();});
+  var saveEls=document.querySelectorAll('[id^="save"]');
+  for(var i=0;i<saveEls.length;i++){(function(el){var pg=parseInt(el.id.replace('save',''));if(!isNaN(pg))el.addEventListener('click',function(){saveNotes(pg);});}) (saveEls[i]);}
+  ['finprint','cumprint'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doPrint();});});
+  ['fincopy','cumcopy'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(){doCopy();});});
+  var qbtns=document.querySelectorAll('.qz-opt');
+  for(var i=0;i<qbtns.length;i++){(function(btn){btn.addEventListener('click',function(){var qn=parseInt(btn.getAttribute('data-q'));var correct=btn.getAttribute('data-correct')==='true';var qEl=document.getElementById('q'+qn);var allBtns=qEl.querySelectorAll('.qz-opt');for(var k=0;k<allBtns.length;k++){allBtns[k].disabled=true;allBtns[k].style.cursor='default';}btn.className='qz-opt '+(correct?'correct':'wrong');var fb=document.getElementById('fb'+qn);fb.textContent=btn.getAttribute(correct?'data-msg-c':'data-msg-w');fb.className='qz-fb show '+(correct?'ok':'bad');if(!window.qAns)window.qAns={};window.qAns[qn]=correct?'c':'w';});}) (qbtns[i]);}
+  var checkbtn=document.getElementById('checkbtn');
+  if(checkbtn){checkbtn.addEventListener('click',function(){var score=0;if(window.qAns)for(var k in window.qAns)if(window.qAns[k]==='c')score++;var sc=document.getElementById('qscore');sc.style.display='block';sc.innerHTML='<h4>'+score+'/5 '+(score===5?'Perfect!':score>=4?'Excellent':'Keep going')+'</h4><p>'+(score===5?'Innovation thinking unlocked.':score>=4?'Strong result.':score>=3?'Good - review what you missed.':'Work through again.')+'</p>';if(score>=4){checkbtn.textContent='Continue to Completion';checkbtn.addEventListener('click',function(){goTo(8);},{once:true});}else{checkbtn.textContent='Review Module';checkbtn.addEventListener('click',function(){goTo(2);},{once:true});}});}
+};
+</script>
+</body>
+</html>
