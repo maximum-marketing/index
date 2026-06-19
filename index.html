@@ -2,8 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Small Business Therapy — Maximum Marketing Solutions</title>
+
+<!-- ── PWA: installable app metadata ── -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A1A1A">
+<meta name="description" content="Free, practical crisis help for Australian small business owners — step-by-step action plans, how-to guides and a strategy builder. Install it like an app.">
+
+<!-- iOS-specific install support (Safari ignores manifest.json for some of this) -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SB Therapy">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+<!-- favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -425,6 +441,12 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--charcoal
     <div class="about-hero">
       <h2>About Small Business Therapy</h2>
       <p>A free resource by Maximum Marketing Solutions to help Queensland small business owners navigate tough times — with honest, practical advice and a personal strategy builder.</p>
+    </div>
+    <div class="about-card" style="border:1.5px dashed rgba(121,69,119,0.3);background:var(--warm);">
+      <h4>📲 Add this to your home screen</h4>
+      <p style="margin-bottom:12px;">Install Small Business Therapy like an app — it opens full-screen, works offline once loaded, and there's nothing to download from an app store.</p>
+      <p style="margin-bottom:12px;"><strong>iPhone (Safari):</strong> tap the Share icon, then "Add to Home Screen."<br><strong>Android (Chrome):</strong> tap the menu (⋮), then "Add to Home Screen" or "Install App."</p>
+      <button id="install-app-btn" class="contact-btn" style="display:none;margin-top:0;" onclick="installApp()">📲 Install App</button>
     </div>
     <div class="about-card">
       <h4>Who made this?</h4>
@@ -1491,6 +1513,36 @@ function showToast(msg){
   const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2800);
 }
+
+// ── PWA: register service worker for offline support & installability ────
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('service-worker.js').catch(()=>{
+      // Fails silently if served from file:// or an unsupported context — app still works online.
+    });
+  });
+}
+
+// ── PWA: optional "Install App" prompt support (Android/Chrome) ───────────
+let deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', (e)=>{
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const btn = document.getElementById('install-app-btn');
+  if(btn) btn.style.display = 'inline-flex';
+});
+
+function installApp(){
+  if(!deferredInstallPrompt){ showToast('Use your browser menu → "Add to Home Screen"'); return; }
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.then(()=>{ deferredInstallPrompt = null; });
+}
+
+window.addEventListener('appinstalled', ()=>{
+  const btn = document.getElementById('install-app-btn');
+  if(btn) btn.style.display = 'none';
+  showToast('✅ Installed! Find it on your home screen.');
+});
 
 </script>
 </body>
