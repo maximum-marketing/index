@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Small Business Therapy — Free Crisis Help for Australian Business Owners</title>
-<meta name="description" content="When your business hits a wall, Small Business Therapy gives you a step-by-step action plan — free, practical, Australian. For cash flow, lost clients, marketing, staff and more.">
+<meta name="description" content="When your business hits a wall, Small Business Therapy gives you a step-by-step action plan — free, practical, Australian. For cash flow, lost clients, marketing, staff, costs, compliance and more.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -24,12 +24,12 @@ body{font-family:'Inter',sans-serif;background:var(--white);color:var(--charcoal
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:900;color:var(--forest);}
 .nav-logo em{color:var(--terracotta);font-style:normal;}
-.nav-links{display:flex;align-items:center;gap:32px;}
-.nav-links a{text-decoration:none;font-size:0.88rem;font-weight:500;color:var(--mid);transition:color 0.2s;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{text-decoration:none;font-size:0.86rem;font-weight:500;color:var(--mid);transition:color 0.2s;}
 .nav-links a:hover{color:var(--terracotta);}
 .nav-cta{background:var(--terracotta);color:var(--white);padding:10px 22px;border-radius:24px;font-size:0.85rem;font-weight:700;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;font-family:'Inter',sans-serif;}
 .nav-cta:hover{background:var(--terra-dk);transform:translateY(-1px);}
-@media(max-width:700px){.nav-links{display:none;}}
+@media(max-width:850px){.nav-links{display:none;}}
 
 /* ── HERO ── */
 .hero{min-height:100vh;background:linear-gradient(135deg,#1A1A1A 0%,#3D1F3C 100%);display:flex;align-items:center;padding:100px 32px 80px;position:relative;overflow:hidden;}
@@ -45,10 +45,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .btn-primary:hover{background:var(--terra-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,97,58,0.4);}
 .btn-secondary{background:transparent;color:rgba(255,255,255,0.9);padding:15px 32px;border-radius:28px;font-size:0.95rem;font-weight:600;text-decoration:none;transition:all 0.2s;display:inline-block;border:1.5px solid rgba(255,255,255,0.3);}
 .btn-secondary:hover{border-color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.08);}
-.hero-stats{display:flex;gap:32px;margin-top:44px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:28px;margin-top:44px;flex-wrap:wrap;}
 .stat{border-left:2px solid rgba(166,130,164,0.5);padding-left:16px;}
 .stat-num{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;color:var(--white);}
-.stat-label{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;}
+.stat-label{font-size:0.73rem;color:rgba(255,255,255,0.5);margin-top:2px;}
 
 /* Hero visual */
 .hero-visual{display:flex;flex-direction:column;gap:14px;}
@@ -62,9 +62,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hv-arrow{margin-left:auto;color:var(--terra-lt);font-size:1.1rem;}
 
 /* ── PROBLEM STRIP ── */
-.problem-strip{background:var(--terracotta);padding:18px 32px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
-.ps-item{display:flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.9);}
+.problem-strip{background:var(--terracotta);padding:18px 32px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;}
+.ps-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.9);}
 .ps-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* ── PATHS STRIP (free / premium / learning centre) ── */
+.paths-strip{background:#F8F6F9;border-top:1px solid rgba(121,69,119,0.1);border-bottom:1px solid rgba(121,69,119,0.1);padding:14px 32px;}
+.paths-strip-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:0.82rem;color:#4A4A4A;font-family:'Inter',sans-serif;text-align:center;}
+.paths-strip-inner .sep{color:rgba(74,74,74,0.35);}
+.paths-strip-inner a{color:#794577;font-weight:700;text-decoration:none;}
 
 /* ── SECTIONS ── */
 section{padding:100px 32px;}
@@ -96,6 +102,10 @@ section{padding:100px 32px;}
 .cat-item p{font-size:0.8rem;color:var(--mid);line-height:1.5;}
 .cat-item.featured p{color:rgba(255,255,255,0.65);}
 .cat-badge{display:inline-block;background:var(--gold);color:var(--forest);font-size:0.62rem;font-weight:700;padding:3px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
+.cat-item.more{background:var(--warm);border:1.5px dashed rgba(121,69,119,0.3);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;cursor:pointer;text-decoration:none;}
+.cat-item.more:hover{border-color:rgba(121,69,119,0.6);background:#E4DCE3;}
+.cat-item.more h4{color:var(--terra-dk);}
+.cat-item.more .more-arrow{font-size:1.3rem;color:var(--terracotta);margin-top:8px;}
 
 /* ── FEATURES ── */
 .features-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
@@ -119,11 +129,55 @@ section{padding:100px 32px;}
 .mockup-note-label{font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
 .mockup-note-text{font-size:0.75rem;color:rgba(255,255,255,0.7);font-style:normal;}
 
+/* ── PROGRESSION / PATHS SECTION ── */
+.progression-section{background:linear-gradient(135deg,#0D0D0D,#2D2D2D);}
+.progression-section .section-tag{color:var(--gold);}
+.progression-section h2{color:var(--white);}
+.progression-section .lead{color:rgba(255,255,255,0.6);}
+.progression-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:900px){.progression-grid{grid-template-columns:1fr;}}
+.prog-card{background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.1);border-radius:20px;padding:30px;display:flex;flex-direction:column;height:100%;}
+.prog-card.highlight{background:linear-gradient(135deg,rgba(121,69,119,0.25),rgba(90,47,89,0.25));border-color:rgba(166,130,164,0.4);}
+.prog-step{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.prog-card h3{font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:var(--white);margin-bottom:10px;}
+.prog-card p{font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.6;margin-bottom:20px;flex-grow:1;}
+.prog-card .prog-price{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:800;color:var(--white);margin-bottom:16px;}
+.prog-card .prog-price span{font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:400;color:rgba(255,255,255,0.45);}
+.prog-link{display:block;text-align:center;background:rgba(255,255,255,0.1);color:var(--white);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:12px;font-size:0.85rem;font-weight:600;text-decoration:none;transition:all 0.2s;font-family:'Inter',sans-serif;}
+.prog-link:hover{background:rgba(255,255,255,0.18);}
+.prog-link.solid{background:var(--terracotta);border-color:var(--terracotta);}
+.prog-link.solid:hover{background:var(--terra-dk);}
+
+/* ── LEARNING CENTRE SECTION ── */
+.lc-section{background:var(--cream);}
+.lc-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start;}
+@media(max-width:850px){.lc-grid{grid-template-columns:1fr;gap:36px;}}
+.lc-modules-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:500px){.lc-modules-preview{grid-template-columns:1fr;}}
+.lc-mod-pill{background:var(--white);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.lc-mod-pill .lc-mod-emoji{font-size:1.1rem;flex-shrink:0;}
+.lc-mod-pill .lc-mod-text{font-size:0.78rem;font-weight:600;color:var(--charcoal);line-height:1.3;}
+.lc-mod-pill .lc-mod-num{font-size:0.62rem;color:var(--light);font-weight:700;}
+.lc-stats-row{display:flex;gap:28px;margin:24px 0 28px;flex-wrap:wrap;}
+.lc-stat-num{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--terra-dk);}
+.lc-stat-label{font-size:0.72rem;color:var(--mid);margin-top:2px;}
+.lc-card{background:linear-gradient(135deg,var(--terracotta),var(--terra-dk));border-radius:22px;padding:32px;color:var(--white);}
+.lc-card-tag{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:10px;}
+.lc-card h3{font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:10px;}
+.lc-card p{font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:22px;}
+.lc-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;}
+.lc-price-row .price-now{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;}
+.lc-price-row .price-was{font-size:0.95rem;text-decoration:line-through;color:rgba(255,255,255,0.45);}
+.lc-price-sub{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-bottom:22px;}
+.lc-bundle-btn{display:block;width:100%;text-align:center;background:var(--white);color:var(--terra-dk);border:none;border-radius:12px;padding:14px;font-size:0.9rem;font-weight:700;text-decoration:none;font-family:'Inter',sans-serif;margin-bottom:10px;transition:opacity 0.2s;}
+.lc-bundle-btn:hover{opacity:0.9;}
+.lc-single-link{display:block;text-align:center;color:rgba(255,255,255,0.75);font-size:0.8rem;text-decoration:underline;}
+
 /* ── TESTIMONIALS ── */
-.testi-section{background:var(--cream);}
+.testi-section{background:var(--white);}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
-.testi-card{background:var(--white);border-radius:18px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
+.testi-card{background:var(--cream);border-radius:18px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
 .testi-stars{color:var(--gold);font-size:0.9rem;margin-bottom:14px;letter-spacing:2px;}
 .testi-text{font-size:0.88rem;color:var(--charcoal);line-height:1.7;margin-bottom:20px;font-style:normal;}
 .testi-author{display:flex;align-items:center;gap:12px;}
@@ -187,8 +241,9 @@ section{padding:100px 32px;}
 /* ── FOOTER ── */
 footer{background:var(--charcoal);padding:48px 32px 32px;}
 .footer-inner{max-width:var(--max-w);margin:0 auto;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:40px;}
-@media(max-width:700px){.footer-grid{grid-template-columns:1fr;gap:32px;}}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr;}}
 .footer-logo{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:var(--white);margin-bottom:12px;}
 .footer-logo em{color:var(--terra-lt);font-style:normal;}
 footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
@@ -233,8 +288,9 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
   <div class="nav-links">
     <a href="#how-it-works">How It Works</a>
     <a href="#categories">Topics</a>
-    <a href="#for-business">For Business</a>
-    <a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    <a href="#learning-centre">Learning Centre</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
   </div>
   <a href="#" class="nav-cta" onclick="openApp()">Open the Free App →</a>
 </nav>
@@ -251,9 +307,9 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <a href="#how-it-works" class="btn-secondary">See How It Works</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><div class="stat-num">6</div><div class="stat-label">Crisis Categories</div></div>
-        <div class="stat"><div class="stat-num">11</div><div class="stat-label">Problem Plans</div></div>
-        <div class="stat"><div class="stat-num">Free</div><div class="stat-label">Core Platform Forever</div></div>
+        <div class="stat"><div class="stat-num">14</div><div class="stat-label">Crisis Categories</div></div>
+        <div class="stat"><div class="stat-num">34</div><div class="stat-label">Problem Plans</div></div>
+        <div class="stat"><div class="stat-num">18</div><div class="stat-label">Learning Modules</div></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -273,8 +329,8 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
       </div>
       <div class="hv-card">
         <div class="hv-card-row">
-          <span class="hv-icon">👻</span>
-          <div><h4>Nobody knows my business exists</h4><p>Zero new enquiries, surviving on referrals</p></div>
+          <span class="hv-icon">📈</span>
+          <div><h4>Rising costs are squeezing my margin</h4><p>Operating costs, interest rates, insurance all climbing</p></div>
           <span class="hv-arrow">›</span>
         </div>
       </div>
@@ -287,8 +343,8 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
       </div>
       <div class="hv-card" style="background:rgba(196,97,58,0.15);border-color:rgba(196,97,58,0.3);">
         <div class="hv-card-row">
-          <span class="hv-icon">🌀</span>
-          <div><h4>I feel completely stuck</h4><p>Working hard but not getting anywhere</p></div>
+          <span class="hv-icon">🤖</span>
+          <div><h4>AI and tech are disrupting my industry</h4><p>Not sure how to keep up — or if I even need to</p></div>
           <span class="hv-arrow" style="color:var(--terra-lt)">›</span>
         </div>
       </div>
@@ -300,19 +356,24 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
 <div class="problem-strip">
   <div class="ps-item"><div class="ps-dot"></div>Lost a major client</div>
   <div class="ps-item"><div class="ps-dot"></div>Cash flow crisis</div>
+  <div class="ps-item"><div class="ps-dot"></div>Rising costs</div>
   <div class="ps-item"><div class="ps-dot"></div>Nobody finding you online</div>
-  <div class="ps-item"><div class="ps-dot"></div>Marketing not working</div>
-  <div class="ps-item"><div class="ps-dot"></div>Key staff quit</div>
+  <div class="ps-item"><div class="ps-dot"></div>Staff shortages</div>
   <div class="ps-item"><div class="ps-dot"></div>Losing to competitors</div>
+  <div class="ps-item"><div class="ps-dot"></div>Compliance & tax debt</div>
 </div>
 
-<!-- ── SUBSCRIPTION STRIP ── -->
-<div style="background:#F8F6F9;border-top:1px solid rgba(121,69,119,0.1);border-bottom:1px solid rgba(121,69,119,0.1);padding:14px 32px;text-align:center;">
-  <span style="font-size:0.82rem;color:#4A4A4A;font-family:'Inter',sans-serif;">
-    ✅ <strong>Free forever</strong> — action plans, how-to guides, strategy builder &nbsp;·&nbsp; 
-    ⭐ <strong>Premium</strong> — AI advice, templates & business resources &nbsp;·&nbsp;
-    <a href="#pricing" style="color:#794577;font-weight:700;text-decoration:none;">See what's included →</a>
-  </span>
+<!-- ── PATHS STRIP ── -->
+<div class="paths-strip">
+  <div class="paths-strip-inner">
+    <span>✅ <strong>Free forever</strong> — action plans, how-to guides, strategy builder</span>
+    <span class="sep">·</span>
+    <span>🎓 <strong>Learning Centre</strong> — 18 in-depth modules from $19.99</span>
+    <span class="sep">·</span>
+    <span>⭐ <strong>Premium</strong> — AI advice, templates & ongoing support</span>
+    <span class="sep">·</span>
+    <a href="#pricing">See what's included →</a>
+  </div>
 </div>
 
 <!-- ════ HOW IT WORKS ════ -->
@@ -325,7 +386,7 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
       <div class="hiw-card">
         <div class="hiw-num">01</div>
         <h4>Pick your problem</h4>
-        <p>Choose the challenge you're facing right now — from 6 categories covering the most common small business crises.</p>
+        <p>Choose the challenge you're facing right now — from 14 categories covering crisis, cost pressure, compliance and more.</p>
       </div>
       <div class="hiw-card">
         <div class="hiw-num">02</div>
@@ -350,8 +411,8 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
 <section id="categories" class="cat-section">
   <div class="section-inner">
     <div class="section-tag">What We Cover</div>
-    <h2>Six categories.<br>Every major crisis.</h2>
-    <p class="lead">Built around the problems Australian business owners actually face — not a textbook version of what they should face.</p>
+    <h2>14 categories.<br>Every major pressure point.</h2>
+    <p class="lead">Built around the problems Australian business owners actually face right now — from cash flow crises to rising costs, compliance pressure and AI disruption.</p>
     <div class="cats-grid reveal">
       <div class="cat-item featured">
         <div class="cat-badge">Most Common</div>
@@ -365,25 +426,40 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <p>Can't make payroll, invoices unpaid, running out of runway. Step-by-step crisis management for when cash dries up.</p>
       </div>
       <div class="cat-item">
+        <span class="cat-emoji">📈</span>
+        <h4>Rising Costs & Cash Pressure</h4>
+        <p>Operating costs, interest rates, insurance and rent all climbing faster than revenue. Take back control of your margin.</p>
+      </div>
+      <div class="cat-item">
         <span class="cat-emoji">📣</span>
         <h4>Marketing & Visibility</h4>
         <p>Nobody knows you exist, competitors winning your customers. How to get found and build a reliable lead pipeline.</p>
       </div>
       <div class="cat-item">
-        <span class="cat-emoji">🧭</span>
-        <h4>Strategy & Direction</h4>
-        <p>Stuck, no clear plan, not sure where to take the business. Frameworks for getting unstuck and setting direction.</p>
+        <span class="cat-emoji">👥</span>
+        <h4>Workforce & Owner Wellbeing</h4>
+        <p>Can't find staff, and running on empty yourself. People problems — including your own — handled honestly.</p>
       </div>
       <div class="cat-item">
-        <span class="cat-emoji">👥</span>
-        <h4>Staff & Team Issues</h4>
-        <p>Key person left, performance problems, can't afford staff. People problems handled fairly, legally and effectively.</p>
+        <span class="cat-emoji">📜</span>
+        <h4>Government, Tax & Compliance</h4>
+        <p>Regulation overload, ATO debt, licensing pressure. Practical steps that don't require a law degree.</p>
       </div>
       <div class="cat-item">
         <span class="cat-emoji">⚔️</span>
         <h4>Losing to Competitors</h4>
         <p>Being undercut on price, losing tenders, invisible online. How to compete on value, not price — and win.</p>
       </div>
+      <div class="cat-item">
+        <span class="cat-emoji">🤖</span>
+        <h4>Online Competition & Tech Disruption</h4>
+        <p>E-commerce rivals, AI, cybersecurity and digital spend that isn't working. Keep up without losing your footing.</p>
+      </div>
+      <a href="#" class="cat-item more" onclick="openApp()">
+        <h4>+ 6 more categories</h4>
+        <p>Supply chain & freight, market pressures, difficult customers, strategy & direction, staff issues and adapting to change.</p>
+        <span class="more-arrow">See all 14 in the free app →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -439,6 +515,78 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
   </div>
 </section>
 
+<!-- ════ PROGRESSION / THREE PATHS ════ -->
+<section class="progression-section">
+  <div class="section-inner">
+    <div class="section-tag">Where To Go Next</div>
+    <h2>Free gets you moving.<br>These take you further.</h2>
+    <p class="lead">There's no single "next step" — pick whichever fits how you want to grow. Go deep on the fundamentals in the Learning Centre, get ongoing personalised support with Premium, or do both.</p>
+    <div class="progression-grid reveal">
+      <div class="prog-card">
+        <div class="prog-step">Start Here</div>
+        <h3>Free App</h3>
+        <p>14 crisis categories, full action plans, how-to guides on every step, and a strategy builder that prints or copies for your advisor. No sign-up, no catch.</p>
+        <div class="prog-price">$0<span> forever</span></div>
+        <a href="#" class="prog-link" onclick="openApp()">Open the Free App →</a>
+      </div>
+      <div class="prog-card highlight">
+        <div class="prog-step">Go Deeper</div>
+        <h3>🎓 Learning Centre</h3>
+        <p>18 self-paced modules on strategy, profit and growth — SWOT, pricing, retention, risk and more. Interactive calculators, templates and quizzes. Buy one module or the full bundle.</p>
+        <div class="prog-price">From $19.99<span> per module</span></div>
+        <a href="learning-centre.html" class="prog-link solid">Browse the Learning Centre →</a>
+      </div>
+      <div class="prog-card">
+        <div class="prog-step">Stay Supported</div>
+        <h3>⭐ Premium</h3>
+        <p>Ongoing, personalised support layered on top of the free app — AI-powered advice for your specific situation, templates, monthly health checks and priority access to the MMS team.</p>
+        <div class="prog-price">$9.99<span> /month</span></div>
+        <a href="#pricing" class="prog-link">See Premium Details →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ LEARNING CENTRE FEATURE SECTION ════ -->
+<section id="learning-centre" class="lc-section">
+  <div class="section-inner">
+    <div class="lc-grid reveal">
+      <div>
+        <div class="section-tag">The Learning Centre</div>
+        <h2 style="margin-bottom:14px;">Build a stronger business,<br>one module at a time.</h2>
+        <p style="font-size:0.95rem;color:var(--mid);line-height:1.7;margin-bottom:0;max-width:520px;">
+          While the free app is built for "what do I do right now," the Learning Centre is built for "let me actually get good at this." 18 practical modules covering business strategy, profit, sales growth, people and risk — with real frameworks, Australian examples, interactive calculators and notes that build into your own strategy document.
+        </p>
+        <div class="lc-stats-row">
+          <div><div class="lc-stat-num">18</div><div class="lc-stat-label">Modules</div></div>
+          <div><div class="lc-stat-num">108</div><div class="lc-stat-label">Lessons</div></div>
+          <div><div class="lc-stat-num">Lifetime</div><div class="lc-stat-label">Access</div></div>
+        </div>
+        <div class="lc-modules-preview">
+          <div class="lc-mod-pill"><span class="lc-mod-emoji">🔍</span><div><div class="lc-mod-text">SWOT Analysis</div><div class="lc-mod-num">Module 01</div></div></div>
+          <div class="lc-mod-pill"><span class="lc-mod-emoji">💰</span><div><div class="lc-mod-text">Increasing Profit</div><div class="lc-mod-num">Module 08</div></div></div>
+          <div class="lc-mod-pill"><span class="lc-mod-emoji">📐</span><div><div class="lc-mod-text">Sales Growth Formula</div><div class="lc-mod-num">Module 11</div></div></div>
+          <div class="lc-mod-pill"><span class="lc-mod-emoji">🤝</span><div><div class="lc-mod-text">High-Performance Team</div><div class="lc-mod-num">Module 15</div></div></div>
+          <div class="lc-mod-pill"><span class="lc-mod-emoji">⚠️</span><div><div class="lc-mod-text">Risk Management</div><div class="lc-mod-num">Module 17</div></div></div>
+          <div class="lc-mod-pill"><span class="lc-mod-emoji">🤯</span><div><div class="lc-mod-text">Difficult Customers</div><div class="lc-mod-num">Module 18</div></div></div>
+        </div>
+      </div>
+      <div class="lc-card">
+        <div class="lc-card-tag">🎓 Full Bundle — All 18 Modules</div>
+        <h3>Everything, at a saving</h3>
+        <p>Strategy, profit, sales growth, people and risk. 108 lessons, interactive calculators, templates and strategy documents — everything you need to build a complete, profitable business.</p>
+        <div class="lc-price-row">
+          <span class="price-now">$229</span>
+          <span class="price-was">$359.82</span>
+        </div>
+        <div class="lc-price-sub">Save $80 buying the bundle vs individually</div>
+        <a href="learning-centre.html" class="lc-bundle-btn">Browse All Modules →</a>
+        <a href="learning-centre.html" class="lc-single-link">Or start with a single module from $19.99</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════ TESTIMONIALS ════ -->
 <section class="testi-section">
   <div class="section-inner">
@@ -487,6 +635,12 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <p>Every action plan ends with a free consult offer from Maximum Marketing Solutions. Users who engage deeply are highly qualified leads who already trust the brand.</p>
         <div class="biz-price">Free tool<span> → paying clients</span></div>
       </div>
+      <div class="biz-card card-4">
+        <div class="biz-tag">Education Revenue</div>
+        <h4>Learning Centre Modules</h4>
+        <p>18 self-paced modules sold individually or as a bundle. The natural next step for free app users who want to go deeper on strategy, profit and growth.</p>
+        <div class="biz-price">$19.99<span> per module · $229 bundle</span></div>
+      </div>
       <div class="biz-card card-2">
         <div class="biz-tag">Partnership Revenue</div>
         <h4>Sponsored Specialists</h4>
@@ -498,12 +652,6 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <h4>White Label for Agencies</h4>
         <p>Other marketing agencies, business coaches and accountancy firms across Australia can licence a branded version for their own client base.</p>
         <div class="biz-price" style="color:var(--charcoal);">$500–$2,000<span style="color:var(--mid);"> setup + monthly licence</span></div>
-      </div>
-      <div class="biz-card card-4">
-        <div class="biz-tag">Subscription Revenue</div>
-        <h4>Premium Version</h4>
-        <p>A paid tier unlocking AI-powered personalised advice, live advisor chat, downloadable strategy templates and multi-business tracking.</p>
-        <div class="biz-price">$9.99<span> /month per user</span></div>
       </div>
     </div>
   </div>
@@ -538,10 +686,10 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
 </section>
 
 <!-- ════ FREE VS PREMIUM ════ -->
-<div id='pricing'></div>
+<div id="pricing"></div>
 <section style="background:linear-gradient(135deg,#1A1A1A,#3D1F3C);padding:100px 32px;">
   <div class="section-inner">
-    <div class="section-tag" style="color:#A682A4;">Pricing</div>
+    <div class="section-tag" style="color:#A682A4;">Pricing — The Free App</div>
     <h2 style="color:white;">Free to start.<br>Premium when you're ready.</h2>
     <p class="lead" style="color:rgba(255,255,255,0.6);margin-bottom:48px;">Small Business Therapy is free forever for the core tools. When you're ready to go deeper, Premium gives you AI-powered personalised advice and a full suite of resources for your business journey.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;">
@@ -550,7 +698,7 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <div style="font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;color:white;margin-bottom:4px;">$0</div>
         <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:24px;">No credit card. No sign-up.</div>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
-          <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>All 6 crisis categories</div>
+          <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>All 14 crisis categories</div>
           <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>Full action plans — today, short & long term</div>
           <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>How-to guides on every action point</div>
           <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);display:flex;gap:10px;"><span style="color:#794577;font-weight:700;">✓</span>Personal strategy notes & print</div>
@@ -576,6 +724,10 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <div style="text-align:center;margin-top:10px;font-size:0.72rem;color:rgba(255,255,255,0.4);">Launching soon — register now for early access</div>
       </div>
     </div>
+    <div style="margin-top:24px;max-width:800px;background:rgba(255,255,255,0.04);border:1px dashed rgba(255,255,255,0.15);border-radius:16px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div style="font-size:0.85rem;color:rgba(255,255,255,0.65);max-width:480px;">🎓 Looking for in-depth, self-paced learning instead? The <strong style="color:white;">Learning Centre</strong> has 18 modules on strategy, profit and growth — sold separately from Premium.</div>
+      <a href="learning-centre.html" style="color:#D4C3D3;font-weight:700;text-decoration:none;font-size:0.85rem;white-space:nowrap;">Browse the Learning Centre →</a>
+    </div>
   </div>
 </section>
 
@@ -591,6 +743,14 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <div class="faq-a">Yes — completely free, forever. No sign-up, no credit card, no catch. It's a free resource built by Maximum Marketing Solutions to help Australian small business owners. The only ask is that if you find value in it, you consider reaching out to MMS when you're ready for professional marketing help.</div>
       </div>
       <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What's the difference between the Learning Centre and Premium? <span class="faq-icon">+</span></div>
+        <div class="faq-a">They solve different problems. The free app is for "what do I do about this specific crisis right now" — fast, tactical, step-by-step. The Learning Centre is for "I want to actually get good at this" — 18 structured modules on strategy, profit and growth, bought once for lifetime access, with no ongoing subscription. Premium is an ongoing relationship layered on top of the free app — personalised AI advice, templates and priority support for a monthly fee. Many business owners use all three: the free app for crises, the Learning Centre to build real skills, and Premium for ongoing support in between.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need Premium to use the Learning Centre, or vice versa? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No — they're independent. You can buy a single Learning Centre module, the full bundle, subscribe to Premium, or do any combination, in any order. Nothing in the free app requires either purchase, and neither paid product requires the other.</div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Who is this built for? <span class="faq-icon">+</span></div>
         <div class="faq-a">Small and medium business owners in Australia — particularly in trades, services, retail and industrial sectors. The advice is practical and Australian-specific, referencing the ATO, QCAT, Fair Work and other local resources.</div>
       </div>
@@ -604,7 +764,7 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Is my data private? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Your strategy notes are saved only on your device — they're not sent to any server or seen by anyone at MMS. The only data we collect is if you fill in the contact form to request a consult.</div>
+        <div class="faq-a">Your strategy notes are saved only on your device — they're not sent to any server or seen by anyone at MMS. The only data we collect is if you fill in the contact form to request a consult, or purchase a Learning Centre module or Premium subscription.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">I want this for my clients — can I licence it? <span class="faq-icon">+</span></div>
@@ -616,7 +776,7 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What's the difference between Free and Premium? <span class="faq-icon">+</span></div>
-        <div class="faq-a">The free version gives you everything you need to get started — all 6 crisis categories, full step-by-step action plans, how-to guides on every action point, personal strategy notes and printing. It's genuinely useful and completely free forever with no strings attached. Premium takes it further — you get AI-powered advice personalised to your specific business situation, downloadable templates (cash flow forecasters, proposal scripts, staff agreements), a monthly Business Health Check, the ability to email your strategy directly to your accountant, priority access to the MMS team for quick questions, and exclusive resources to support your ongoing business journey. Premium is $9.99/month or $79/year.</div>
+        <div class="faq-a">The free version gives you everything you need to get started — all 14 crisis categories, full step-by-step action plans, how-to guides on every action point, personal strategy notes and printing. It's genuinely useful and completely free forever with no strings attached. Premium takes it further — you get AI-powered advice personalised to your specific business situation, downloadable templates (cash flow forecasters, proposal scripts, staff agreements), a monthly Business Health Check, the ability to email your strategy directly to your accountant, priority access to the MMS team for quick questions, and exclusive resources to support your ongoing business journey. Premium is $9.99/month or $79/year.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">When is Premium launching? <span class="faq-icon">+</span></div>
@@ -624,7 +784,7 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Do I need to pay anything to use the app right now? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Absolutely not. The core platform — everything currently in the app — is free forever. No credit card required, no trial period, no hidden fees. You can use every action plan, every how-to guide, write all your strategy notes and print your strategy document without spending a cent. Premium is an optional upgrade for business owners who want to go deeper on their business journey.</div>
+        <div class="faq-a">Absolutely not. The core platform — everything currently in the app — is free forever. No credit card required, no trial period, no hidden fees. You can use every action plan, every how-to guide, write all your strategy notes and print your strategy document without spending a cent. Premium and the Learning Centre are optional upgrades for business owners who want to go deeper.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What templates and resources come with Premium? <span class="faq-icon">+</span></div>
@@ -632,7 +792,7 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Can I cancel Premium at any time? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes — cancel anytime with no lock-in, no cancellation fees and no awkward phone calls. If you cancel, you keep access until the end of your billing period and then revert to the free version. Your notes and saved plans are never deleted regardless of your subscription status.</div>
+        <div class="faq-a">Yes — cancel anytime with no lock-in, no cancellation fees and no awkward phone calls. If you cancel, you keep access until the end of your billing period and then revert to the free version. Your notes and saved plans are never deleted regardless of your subscription status. Learning Centre modules are a one-off purchase with lifetime access, so they're never affected by your Premium status either way.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">How does the AI advice in Premium work? <span class="faq-icon">+</span></div>
@@ -648,6 +808,7 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
   <p>Free, instant, Australian. No sign-up required. Built for the business owner who needs answers right now — not next week.</p>
   <div class="final-btns">
     <button class="btn-white" onclick="openApp()">Open Small Business Therapy →</button>
+    <a href="learning-centre.html" class="btn-outline-white" style="text-decoration:none;">Browse the Learning Centre</a>
     <button class="btn-outline-white" onclick="openModal()">Talk to MMS Instead</button>
   </div>
 </div>
@@ -664,10 +825,19 @@ footer p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.6;}
         <h5>Problem Areas</h5>
         <a href="#">Sales & Revenue</a>
         <a href="#">Cash Flow</a>
+        <a href="#">Rising Costs</a>
         <a href="#">Marketing</a>
-        <a href="#">Strategy</a>
-        <a href="#">Staff Issues</a>
+        <a href="#">Workforce</a>
+        <a href="#">Compliance & Tax</a>
         <a href="#">Competition</a>
+      </div>
+      <div class="footer-col">
+        <h5>Learning Centre</h5>
+        <a href="learning-centre.html">All 18 Modules</a>
+        <a href="learning-centre.html">Strategy Modules</a>
+        <a href="learning-centre.html">Profit & Finance</a>
+        <a href="learning-centre.html">Sales Growth</a>
+        <a href="learning-centre.html">Full Bundle — $229</a>
       </div>
       <div class="footer-col">
         <h5>MMS Services</h5>
@@ -746,10 +916,12 @@ const observer = new IntersectionObserver((entries)=>{
 }, {threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// Smooth scroll for nav links
+// Smooth scroll for in-page anchor links only (not cross-page links like learning-centre.html)
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
-    const target = document.querySelector(a.getAttribute('href'));
+    const href = a.getAttribute('href');
+    if(href === '#') return;
+    const target = document.querySelector(href);
     if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
   });
 });
