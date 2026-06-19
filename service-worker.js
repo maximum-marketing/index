@@ -1,12 +1,12 @@
 // Small Business Therapy — Service Worker
 // Caches the app shell so it loads instantly and works offline once installed.
 
-const CACHE_NAME = 'sbt-cache-v1';
+const CACHE_NAME = 'sbt-cache-v2';
 const APP_SHELL = [
   './index.html',
   './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 // Install: pre-cache the app shell
