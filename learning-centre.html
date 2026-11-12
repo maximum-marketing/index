@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--plum:#794577;--mauve:#A682A4;--dk:#5A2F59;--black:#1A1A1A;--mid:#4A4A4A;--light:#888;--cream:#F8F6F9;--white:#fff;}
+:root{--plum:#1F6F6B;--mauve:#E8A33D;--mauve-dk:#A8650F;--dk:#134A47;--black:#2B2F33;--mid:#4A4F54;--light:#7A7F84;--cream:#F5F1EB;--white:#fff;}
 body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 .topbar{background:var(--black);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99;}
 .logo{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:800;color:#fff;}
@@ -16,8 +16,8 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 .nav-links a{font-size:0.78rem;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover{color:#fff;}
 @media(max-width:600px){.nav-links{display:none;}}
-.hero{background:linear-gradient(135deg,var(--black),#3D1F3C);padding:60px 24px 48px;text-align:center;}
-.hero-tag{display:inline-block;background:rgba(166,130,164,0.2);border:1px solid rgba(166,130,164,0.4);color:var(--mauve);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:16px;margin-bottom:16px;}
+.hero{background:linear-gradient(135deg,var(--black),#1E4744);padding:60px 24px 48px;text-align:center;}
+.hero-tag{display:inline-block;background:rgba(232,163,61,0.15);border:1px solid rgba(232,163,61,0.45);color:var(--mauve);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:16px;margin-bottom:16px;}
 .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:12px;line-height:1.15;}
 .hero h1 span{color:var(--mauve);}
 .hero p{font-size:0.92rem;color:rgba(255,255,255,0.6);max-width:580px;margin:0 auto 28px;line-height:1.7;}
@@ -34,23 +34,23 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 .free-btn:hover{background:var(--cream);transform:translateY(-2px);}
 .section-hdr{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:8px;}
 .section-title{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:var(--black);}
-.section-tag{font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve);}
+.section-tag{font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--mauve-dk);}
 .section-sub{font-size:0.82rem;color:var(--light);margin-bottom:20px;}
 .module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px;margin-bottom:14px;}
 .module-card{background:#fff;border-radius:14px;padding:20px;border:1.5px solid rgba(0,0,0,0.07);box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:all 0.2s;text-decoration:none;display:block;position:relative;overflow:hidden;}
-.module-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(121,69,119,0.12);border-color:var(--mauve);}
+.module-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(31,111,107,0.14);border-color:var(--mauve);}
 .mc-bar{position:absolute;top:0;left:0;right:0;height:3px;}
-.mc-bar.strategy{background:linear-gradient(90deg,var(--plum),var(--mauve));}
-.mc-bar.profit{background:linear-gradient(90deg,#2d6b4a,#5a9e72);}
-.mc-num{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:8px;}
-.mc-num.profit-num{color:#2d6b4a;}
+.mc-bar.strategy{background:linear-gradient(90deg,#1F6F6B,#3FA39D);}
+.mc-bar.profit{background:linear-gradient(90deg,#A8650F,#E8A33D);}
+.mc-num{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve-dk);margin-bottom:8px;}
+.mc-num.profit-num{color:#A8650F;}
 .mc-icon{font-size:1.8rem;margin-bottom:10px;display:block;}
 .mc-title{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;margin-bottom:5px;color:var(--black);}
 .mc-desc{font-size:0.8rem;color:var(--mid);line-height:1.55;margin-bottom:14px;}
 .mc-footer{display:flex;align-items:center;justify-content:space-between;}
 .mc-price{font-size:0.85rem;font-weight:700;color:var(--plum);}
-.mc-price.profit-price{color:#2d6b4a;}
-.mc-action{font-size:0.75rem;font-weight:600;color:var(--mauve);}
+.mc-price.profit-price{color:#A8650F;}
+.mc-action{font-size:0.75rem;font-weight:600;color:var(--plum);}
 .bundle-card{background:var(--black);border-radius:16px;padding:28px 32px;margin-bottom:36px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
 .bundle-card h2{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:6px;}
 .bundle-card p{font-size:0.83rem;color:rgba(255,255,255,0.6);line-height:1.6;max-width:440px;}
@@ -58,10 +58,10 @@ body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--black);}
 .bundle-price .bp-was{font-size:0.8rem;color:rgba(255,255,255,0.35);text-decoration:line-through;margin-bottom:2px;}
 .bundle-price .bp-now{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;}
 .bundle-price .bp-save{font-size:0.72rem;color:var(--mauve);font-weight:600;}
-.bundle-btn{background:var(--plum);color:#fff;border:none;border-radius:10px;padding:12px 24px;font-family:'Montserrat',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;margin-top:14px;transition:opacity 0.2s;}
+.bundle-btn{background:var(--mauve);color:var(--black);border:none;border-radius:10px;padding:12px 24px;font-family:'Montserrat',sans-serif;font-size:0.88rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;margin-top:14px;transition:opacity 0.2s;}
 .bundle-btn:hover{opacity:0.85;}
 .divider{height:1px;background:rgba(0,0,0,0.07);margin:32px 0;}
-.mms-strip{background:linear-gradient(135deg,var(--black),#3D1F3C);border-radius:14px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.mms-strip{background:linear-gradient(135deg,var(--black),#1E4744);border-radius:14px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
 .mms-strip-text h3{font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:4px;}
 .mms-strip-text p{font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.5;}
 .mms-strip-contacts{display:flex;gap:16px;flex-wrap:wrap;}
@@ -187,7 +187,7 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
   <!-- PROFIT MODULES -->
   <div class="section-hdr">
     <div class="section-title">Profit & Finance Modules</div>
-    <div class="section-tag" style="color:#2d6b4a;">Modules 08–10</div>
+    <div class="section-tag" style="color:#A8650F;">Modules 08–10</div>
   </div>
   <div class="section-sub">The numbers side of your business. Interactive calculators, real financial examples and strategies you can implement immediately to improve your bottom line.</div>
 
@@ -223,34 +223,34 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
   <!-- SALES MODULES -->
   <div class="section-hdr">
     <div class="section-title">Sales Growth Modules</div>
-    <div class="section-tag" style="color:#2e4a7a;">Modules 11–13</div>
+    <div class="section-tag" style="color:#2B2F33;">Modules 11–13</div>
   </div>
   <div class="section-sub">Grow revenue through the three levers that matter most — average sale value, transaction frequency and customer count. Interactive calculators and proven strategies for every module.</div>
 
   <div class="module-grid">
     <a href="sbt-learning-salesformula.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#2e4a7a,#5a7ab0);"></div>
-      <div class="mc-num" style="color:#2e4a7a;">Module 11</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#2B2F33,#6B737A);"></div>
+      <div class="mc-num" style="color:#2B2F33;">Module 11</div>
       <span class="mc-icon">📐</span>
       <div class="mc-title">The Sales Growth Formula</div>
       <div class="mc-desc">Average sale × frequency × customers. Improve each by 10% and revenue grows 33%. Interactive calculator included.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#2e4a7a;">$19.99</span><span class="mc-action">Start now →</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#2B2F33;">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
     <a href="sbt-learning-averagesale.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#2e4a7a,#5a7ab0);"></div>
-      <div class="mc-num" style="color:#2e4a7a;">Module 12</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#2B2F33,#6B737A);"></div>
+      <div class="mc-num" style="color:#2B2F33;">Module 12</div>
       <span class="mc-icon">💎</span>
       <div class="mc-title">Increasing Average Sale Value</div>
       <div class="mc-desc">Upselling, bundling, premium tiers, pricing models and staff training. Get more from every transaction.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#2e4a7a;">$19.99</span><span class="mc-action">Start now →</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#2B2F33;">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
     <a href="sbt-learning-retention.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#2e4a7a,#5a7ab0);"></div>
-      <div class="mc-num" style="color:#2e4a7a;">Module 13</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#2B2F33,#6B737A);"></div>
+      <div class="mc-num" style="color:#2B2F33;">Module 13</div>
       <span class="mc-icon">🔄</span>
       <div class="mc-title">Customer Retention and Frequency</div>
       <div class="mc-desc">Keep clients longer and get them buying more often. Communication systems, NPS, lifetime value calculator.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#2e4a7a;">$19.99</span><span class="mc-action">Start now →</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#2B2F33;">$19.99</span><span class="mc-action">Start now →</span></div>
     </a>
   </div>
 
@@ -261,7 +261,7 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
     <div>
       <h2>🎓 Full Learning Centre Bundle — All 18 Modules</h2>
       <p>Strategy + Profit. 78 lessons, interactive calculators, templates and strategy documents. Everything you need to build a complete, profitable business — at a significant saving on individual module prices.</p>
-      <a href="mailto:info.maximumms@gmail.com?subject=Full Learning Centre Bundle — All 18 Modules&body=Hi, I am interested in purchasing the full Small Business Therapy Learning Centre bundle (all 18 modules). Please send me payment details." class="bundle-btn">Register Interest →</a>
+      <a href="mailto:info@smallbusinesstherapy.com.au?subject=Full Learning Centre Bundle — All 18 Modules&body=Hi, I am interested in purchasing the full Small Business Therapy Learning Centre bundle (all 18 modules). Please send me payment details." class="bundle-btn">Register Interest →</a>
     </div>
     <div class="bundle-price">
       <div class="bp-was">$359.82 individually</div>
@@ -275,26 +275,26 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
   <!-- PEOPLE STRATEGY -->
   <div class="section-hdr">
     <div class="section-title">People and Customer Modules</div>
-    <div class="section-tag" style="color:#7a4e2e;">Modules 15-18</div>
+    <div class="section-tag" style="color:#134A47;">Modules 15-18</div>
   </div>
   <div class="section-sub">Build high-performing teams, deliver outstanding customer experiences and protect your business from risk. People strategy, CX systems and business resilience.</div>
 
   <div class="module-grid">
     <a href="sbt-learning-team.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#7a4e2e,#b07050);"></div>
-      <div class="mc-num" style="color:#7a4e2e;">Module 15</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#134A47,#2F8F86);"></div>
+      <div class="mc-num" style="color:#134A47;">Module 15</div>
       <span class="mc-icon">&#x1F91D;</span>
       <div class="mc-title">Building a High-Performance Team</div>
       <div class="mc-desc">The four drivers of employee satisfaction, performance-based job descriptions, goal alignment, leadership style and culture building.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#7a4e2e;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#134A47;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
     </a>
     <a href="sbt-learning-customerex.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#7a4e2e,#b07050);"></div>
-      <div class="mc-num" style="color:#7a4e2e;">Module 16</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#134A47,#2F8F86);"></div>
+      <div class="mc-num" style="color:#134A47;">Module 16</div>
       <span class="mc-icon">&#x1F91D;</span>
       <div class="mc-title">Customer Experience and Service Systems</div>
       <div class="mc-desc">Map every customer touchpoint, find the weak links, set service standards and build systems that make every interaction consistently excellent.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#7a4e2e;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#134A47;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
     </a>
 
   </div>
@@ -304,39 +304,39 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
   <!-- INNOVATION -->
   <div class="section-hdr">
     <div class="section-title">Innovation Module</div>
-    <div class="section-tag" style="color:#1a4a3a;">Module 17</div>
+    <div class="section-tag" style="color:#8A5A12;">Module 17</div>
   </div>
   <div class="section-sub">Systematic innovation for small businesses. Reposition, retarget and repackage what you already have to create new revenue without inventing anything from scratch.</div>
 
   <div class="module-grid">
     <a href="sbt-learning-innovation.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#1a4a3a,#2d7a5a);"></div>
-      <div class="mc-num" style="color:#1a4a3a;">Module 17</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#8A5A12,#C98A2B);"></div>
+      <div class="mc-num" style="color:#8A5A12;">Module 17</div>
       <span class="mc-icon">&#x1F4A1;</span>
       <div class="mc-title">Innovation and Business Growth</div>
       <div class="mc-desc">The Innovation Pendulum, What If brainstorming, marketing mix innovation and how to build a culture that generates ideas consistently.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#1a4a3a;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#8A5A12;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
     </a>
   </div>
 
 
     <a href="sbt-learning-risk.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#7a4e2e,#b07050);"></div>
-      <div class="mc-num" style="color:#7a4e2e;">Module 17</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#134A47,#2F8F86);"></div>
+      <div class="mc-num" style="color:#134A47;">Module 17</div>
       <span class="mc-icon">&#x26A0;&#xFE0F;</span>
       <div class="mc-title">Business Risk Management</div>
       <div class="mc-desc">Identify your risks before they become crises. Impact analysis, likelihood ranking, mitigation plans and a complete business risk register.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#7a4e2e;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#134A47;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
     </a>
 
 
     <a href="sbt-learning-difficult.html" class="module-card">
-      <div class="mc-bar" style="background:linear-gradient(90deg,#7a4e2e,#b07050);"></div>
-      <div class="mc-num" style="color:#7a4e2e;">Module 18</div>
+      <div class="mc-bar" style="background:linear-gradient(90deg,#134A47,#2F8F86);"></div>
+      <div class="mc-num" style="color:#134A47;">Module 18</div>
       <span class="mc-icon">&#x1F92F;</span>
       <div class="mc-title">Handling Difficult Customer Situations</div>
       <div class="mc-desc">Bad reviews, scope creep, unreasonable clients, abusive communication. Real scripts and systems for every difficult situation.</div>
-      <div class="mc-footer"><span class="mc-price" style="color:#7a4e2e;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
+      <div class="mc-footer"><span class="mc-price" style="color:#134A47;">$19.99</span><span class="mc-action">Start now &rarr;</span></div>
     </a>
 
   <!-- MMS STRIP -->
@@ -347,7 +347,7 @@ footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
     </div>
     <div class="mms-strip-contacts">
       <div class="mms-contact">📞 <a href="tel:+61459472739">+61 459 472 739</a></div>
-      <div class="mms-contact">✉️ <a href="mailto:info.maximumms@gmail.com">info.maximumms@gmail.com</a></div>
+      <div class="mms-contact">✉️ <a href="mailto:info@smallbusinesstherapy.com.au">info@smallbusinesstherapy.com.au</a></div>
       <div class="mms-contact">🌐 <a href="https://www.maximummarketingsolutions.com.au" target="_blank">maximummarketingsolutions.com.au</a></div>
     </div>
   </div>
